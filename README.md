@@ -144,9 +144,11 @@ Page({
 
 微信不支持动态创建元素，因此canvas要先在模板里创建好，并赋给对应的canvas-id。
 
-4. Sprite图片支持的限制
+4. 资源预加载和Sprite图片支持的限制
 
 目前不支持远程url的加载，只支持本地图片素材，另外web/node版的Sprite可以预加载图片并获得图片宽高，所以sprite可以默认自适应宽高，而微信小程序版除非使用texturepacker打包图片，否则不能获得默认的宽高，必须指定宽高才可以将sprite对象显示出来。
+
+另外**注意**scene.preload预加frames资源载时，不支持从json文件加载frameData，必须是json对象，可以将frameData存成js，然后在app中require进来。
 
 ```js
 // 微信小程序版的 scene.preload 是同步的
