@@ -216,6 +216,9 @@ class Layer extends BaseNode {
   dispatchEvent(type, evt) {
     evt.layer = this
     evt.type = type
+    evt.stopDispatch = function () {
+      this.terminated = true
+    }
     const sprites = this[_children].slice(0)
     sprites.sort((a, b) => {
       const a_zidx = a.attr('zIndex'),
@@ -230,9 +233,8 @@ class Layer extends BaseNode {
     const targetSprites = []
     for(let i = 0; i < sprites.length; i++) {
       const sprite = sprites[i]
-      const hit = sprite.dispatchEvent(type, evt)
-      if(hit) {
-        targetSprites.push(sprite)
+      if(!evt.terminated) {
+        sprite.dispatchEvent(type, evt)
       }
     }
 
