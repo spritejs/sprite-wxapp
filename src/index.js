@@ -1,6 +1,7 @@
 import Layer from './layer'
 import Sprite from './sprite'
 import Scene from './scene'
+import Path from './path'
 
 import {
   BaseSprite,
@@ -12,6 +13,7 @@ import {
 } from 'sprite-core'
 
 export {
+  Path,
   Scene,
   createGradients,
   BaseNode,
