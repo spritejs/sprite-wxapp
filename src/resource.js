@@ -6,26 +6,27 @@ const Resource = {
     if(typeof texture === 'string') {
       texture = {id: texture, src: texture}
     }
+    if(!texture.id) texture.src = texture.id
     loadedResources.set(texture.id, texture)
     return texture
   },
   loadFrames(imgSrc, frameData) {
     return Object.entries(frameData.frames).map(([id, frame]) => {
       const {x, y, w, h} = frame.frame
-      const rotated = frame.rotated
-      if(rotated) throw new Error('目前不支持被旋转的精灵图片！')
+      const {rotated, trimmed} = frame
+      if(rotated || trimmed) throw new Error('目前不支持对精灵图片的rotate和trim！')
 
       const texture = {id, src: imgSrc, srcRect: [x, y, w, h]}
       loadedResources.set(texture.id, texture)
       return texture
     })
   },
-  getTexture(src) {
-    let texture = loadedResources.get(src)
-    if(!texture) {
-      texture = this.loadTexture(src)
+  getTexture(texture) {
+    let loaded = loadedResources.get(texture.id)
+    if(!loaded) {
+      loaded = this.loadTexture(texture)
     }
-    return texture
+    return loaded
   },
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "sprite-wxapp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "spritejs 微信小程序版",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,10 @@
     "url": "https://github.com/spritejs/sprite-wxapp"
   },
   "dependencies": {
-    "axios": "^0.16.2",
     "babel-runtime": "^6.26.0",
-    "deep-equal": "^1.0.1",
-    "eslint-plugin-import": "^2.9.0",
-    "seamless-immutable": "^7.1.2",
-    "sprite-animator": "^1.1.2"
+    "sprite-core": "^1.3.4",
+    "sprite-math": "^1.0.0",
+    "sprite-utils": "^1.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

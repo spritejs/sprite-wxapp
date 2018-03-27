@@ -1,26 +1,25 @@
-import Sprite from './sprite'
 import Layer from './layer'
+import Sprite from './sprite'
 import Scene from './scene'
-import Label from './label'
-import BaseSprite from './basesprite'
-import Resource from './resource'
-import {parseColor} from './utils'
-import {Matrix, Vector} from './math'
-import {Effects} from 'sprite-animator'
 
-const Color = parseColor
-
-module.exports = {
-  version: require('../package.json').version,
-  Sprite,
-  Layer,
-  Scene,
-  Label,
-
+import {
   BaseSprite,
-  Resource,
-  Color,
-  Matrix,
-  Vector,
+  Label,
+  Group,
+  BaseNode,
+  createGradients,
+  Effects,
+} from 'sprite-core'
+
+export {
+  Scene,
+  createGradients,
+  BaseNode,
+  BaseSprite,
+  Sprite,
+  Label,
+  Layer,
+  Group,
   Effects,
 }
+

@@ -1,14 +1,15 @@
 import Layer from './layer'
 import Resource from './resource'
-import BaseNode from './basenode'
+import {BaseNode} from 'sprite-core'
 
 const _layerMap = Symbol('layerMap')
 const _rpx = Symbol('rpx')
 
 export default class extends BaseNode {
   /* eslint-disable no-undef */
-  constructor(vwr = 1) { // 默认宽度 750，即 1rpx = 1
+  constructor(host, vwr = 1) { // 默认宽度 750，即 1rpx = 1
     super()
+    this.host = host
     this[_layerMap] = {}
     if(vwr > 0) {
       this[_rpx] = wx.getSystemInfoSync().windowWidth * vwr / 750
@@ -42,8 +43,11 @@ export default class extends BaseNode {
   layer(id = 'default') {
     let layer = this[_layerMap][id]
     if(!layer) {
-      layer = new Layer(id)
-      layer.parent = this
+      /* eslint-disable no-undef */
+      const context = wx.createCanvasContext(id, this.host)
+      /* eslint-enable no-undef */
+      layer = new Layer({context})
+      layer.connect(this)
       this[_layerMap][id] = layer
     }
     return layer

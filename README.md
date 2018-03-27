@@ -13,7 +13,7 @@
 
 ## 快速使用
 
-[下载](https://s3.ssl.qhres.com/!bb02c2e7/sprite-wxapp.js)
+[下载](https://s3.ssl.qhres.com/!962fbea1/sprite-wxapp.js)
 
 将文件保存到小程序对应的目录（比如lib目录下），然后使用：
 
@@ -90,7 +90,7 @@ Page({
 
 ## 小程序版与原版限制/差异
 
-1. Scene 的参数差异
+### Scene 的参数差异
 
 不同于web/node版，小程序版的Scene构造函数只支持一个参数vwRate，默认vwRate=1.0，此时Scene中的精灵默认单位为rpx，即画布上元素大小为1时，实际呈现效果为1rpx。rpx是微信小程序特有的单位，具体描述参考[文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html)。
 
@@ -100,7 +100,7 @@ const scene = new Scene(2.0) //设置为2rpx，相当于屏幕宽度对应canvas
 
 当Scene的vwRate参数为其他非0数值时，实际精灵的默认单位为vwRate * 1rpx，例如设置vwRate=2.0，那么精灵的默认单位则为2rpx。
 
-2. 事件处理的差异
+### 事件处理的差异
 
 小程序版不提供Scene.prototype.delegateEvent来自动代理事件，微信小程序事件直接调用layer.dispatchEvent分发到相应的层。因为微信小程序的机制限制，目前只有将事件绑定在canvas对象上的touch\*事件才可以获取事件相对于canvas元素的坐标，而tap、longtap等事件拿不到相对于canvas坐标。当然如果canvas是全屏展示，我们也可以拿clientX、clientY代替。
 
@@ -140,15 +140,17 @@ Page({
 })
 ```
 
-3. layer的canvas元素需要预先创建
+### layer的canvas元素需要预先创建
 
 微信不支持动态创建元素，因此canvas要先在模板里创建好，并赋给对应的canvas-id。
 
-4. 资源预加载和Sprite图片支持的限制
+### 资源预加载和Sprite图片支持的限制
 
 目前不支持远程url的加载，只支持本地图片素材，另外web/node版的Sprite可以预加载图片并获得图片宽高，所以sprite可以默认自适应宽高，而微信小程序版除非使用texturepacker打包图片，否则不能获得默认的宽高，必须指定宽高才可以将sprite对象显示出来。
 
 另外**注意**scene.preload预加frames资源载时，不支持从json文件加载frameData，必须是json对象，可以将frameData存成js，然后在app中require进来。
+
+另外目前不支持 texture packer 的 rotated 和 trimmed 功能。
 
 ```js
 // 微信小程序版的 scene.preload 是同步的
@@ -170,14 +172,12 @@ sprite2.attr({
 scene.layer().append(sprite2)
 ```
 
-5. 目前不支持的特性
+### 目前不支持的特性
 
-高级的Path、Axis和Group类型暂时不支持。
+因为微信小程序不支持 Path2D Api，因此 Path2D、Axis 功能不支持。微信不支持动态创建Dom元素，不兼容d3，目前d3的功能暂时不支持（未来打算通过shim适配）。
 
-滤镜filter暂时不支持。
+微信context不支持滤镜，所以滤镜filter无效果。
 
-微信版不支持sprite的缓存。
+微信canvas不支持渐变（linearGradients 和 createRadialGradient)，如果在 attr 中使用渐变属性会出错。
 
-6. 小程序canvas的bug
-
-在某些真机上（比如iphone7），context.clip有bug，会让context.restore失效，因此只能先禁用clip，这会导致圆角的元素中间有texture时产生错误的结果。
+微信的canvas不支持动态创建context，因此无法使用缓存优化。
