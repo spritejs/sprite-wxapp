@@ -1,6 +1,6 @@
 {
   "name": "sprite-wxapp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "spritejs 微信小程序版",
   "main": "index.js",
   "scripts": {
