@@ -26,7 +26,7 @@ const Resource = {
     if(!loaded) {
       loaded = this.loadTexture(texture)
     }
-    return loaded
+    return Object.assign(texture, loaded)
   },
 }
 
