@@ -13,7 +13,7 @@
 
 ## 快速使用
 
-[下载](https://s3.ssl.qhres.com/!962fbea1/sprite-wxapp.js)
+[下载](https://s4.ssl.qhres.com/!5faeaf19/sprite-wxapp.js)
 
 将文件保存到小程序对应的目录（比如lib目录下），然后使用：
 
@@ -173,8 +173,6 @@ scene.layer().append(sprite2)
 ```
 
 ### 目前不支持的特性
-
-因为微信小程序不支持 Path2D Api，因此 Path2D 功能在 v1.0.0 版本不支持。v1.1.0 实现了简版的 Path2D，可以绘制 Path，但是不能自动计算 Path 元素的大小。
 
 微信不支持动态创建Dom元素，不兼容d3，目前d3的功能暂时不支持（未来打算通过shim适配）。
 

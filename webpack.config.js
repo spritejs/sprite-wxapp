@@ -39,7 +39,7 @@ module.exports = function (env = {}) {
       path,
       publicPath: '/js/',
       // library: 'spritejs',
-      libraryTarget: 'commonjs',
+      libraryTarget: 'commonjs-module',
     },
 
     plugins,
