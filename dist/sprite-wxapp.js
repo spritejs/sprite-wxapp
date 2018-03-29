@@ -1214,17 +1214,15 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
         context.translate(bound[0], bound[1]);
       }
 
-      if (context === drawingContext) {
-        var _offsetSize = (0, _slicedToArray3.default)(this.offsetSize, 2),
-            w = _offsetSize[0],
-            h = _offsetSize[1];
-
-        context.save();
-        context.beginPath();
-        context.rect(0, 0, w, h);
-        context.clip();
-        context.closePath();
-      }
+      // too slow in wxapp
+      // if(context === drawingContext) {
+      //   const [w, h] = this.offsetSize
+      //   context.save()
+      //   context.beginPath()
+      //   context.rect(0, 0, w, h)
+      //   context.clip()
+      //   context.closePath()
+      // }
       if (this[_beforeRenders].length) {
         this.userRender(t, context, 'before');
       }
@@ -1236,9 +1234,9 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
       if (this[_afterRenders].length) {
         this.userRender(t, context, 'after');
       }
-      if (context === drawingContext) {
-        context.restore();
-      }
+      // if(context === drawingContext) {
+      //   context.restore()
+      // }
 
       if (context !== drawingContext) {
         drawingContext.drawImage(context.canvas, bound[0], bound[1]);
@@ -1326,9 +1324,9 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
       var attr = this.attr(),
           bgcolor = attr.bgcolor,
           gradients = attr.gradients,
-          _offsetSize2 = (0, _slicedToArray3.default)(this.offsetSize, 2),
-          offsetWidth = _offsetSize2[0],
-          offsetHeight = _offsetSize2[1],
+          _offsetSize = (0, _slicedToArray3.default)(this.offsetSize, 2),
+          offsetWidth = _offsetSize[0],
+          offsetHeight = _offsetSize[1],
           _clientSize = (0, _slicedToArray3.default)(this.clientSize, 2),
           clientWidth = _clientSize[0],
           clientHeight = _clientSize[1];
@@ -1510,9 +1508,9 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
       var anchor = this.attr('anchor'),
           transform = this.transform;
 
-      var _offsetSize3 = (0, _slicedToArray3.default)(this.offsetSize, 2),
-          width = _offsetSize3[0],
-          height = _offsetSize3[1];
+      var _offsetSize2 = (0, _slicedToArray3.default)(this.offsetSize, 2),
+          width = _offsetSize2[0],
+          height = _offsetSize2[1];
 
       var _anchor = (0, _slicedToArray3.default)(anchor, 2),
           anchorX = _anchor[0],
@@ -1543,9 +1541,9 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'originRect',
     get: function get() {
-      var _offsetSize4 = (0, _slicedToArray3.default)(this.offsetSize, 2),
-          width = _offsetSize4[0],
-          height = _offsetSize4[1],
+      var _offsetSize3 = (0, _slicedToArray3.default)(this.offsetSize, 2),
+          width = _offsetSize3[0],
+          height = _offsetSize3[1],
           _attr8 = this.attr('anchor'),
           _attr9 = (0, _slicedToArray3.default)(_attr8, 2),
           anchorX = _attr9[0],
