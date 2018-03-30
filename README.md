@@ -13,7 +13,7 @@
 
 ## 快速使用
 
-[下载](https://s4.ssl.qhres.com/!5faeaf19/sprite-wxapp.js)
+[下载](https://s5.ssl.qhres.com/!5cceaaaa/sprite-wxapp.js)
 
 将文件保存到小程序对应的目录（比如lib目录下），然后使用：
 
