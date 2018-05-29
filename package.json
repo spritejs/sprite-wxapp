@@ -1,6 +1,6 @@
 {
   "name": "sprite-wxapp",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "spritejs 微信小程序版",
   "main": "index.js",
   "scripts": {
@@ -14,10 +14,9 @@
     "url": "https://github.com/spritejs/sprite-wxapp"
   },
   "dependencies": {
+    "babel-decorators-runtime": "^0.2.0",
     "babel-runtime": "^6.26.0",
-    "sprite-core": "^1.7.1",
-    "sprite-math": "^1.0.0",
-    "sprite-utils": "^1.0.3"
+    "sprite-core": "^1.27.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -26,12 +25,13 @@
     "babel-loader": "^6.4.1",
     "babel-plugin-inline-package-json": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-decorators-runtime": "^0.4.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.3.2",
     "eslint": "^4.17.0",
     "eslint-config-75team": "^1.0.2",
-    "webpack": "^2.7.0"
+    "webpack": "^2.3.3",
+    "install": "^0.11.0"
   },
   "author": "akira-cn",
   "license": "MIT"

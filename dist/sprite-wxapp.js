@@ -64,7 +64,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/js/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 112);
+/******/ 	return __webpack_require__(__webpack_require__.s = 116);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -84,11 +84,11 @@ if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 exports.__esModule = true;
 
-var _isIterable2 = __webpack_require__(113);
+var _isIterable2 = __webpack_require__(117);
 
 var _isIterable3 = _interopRequireDefault(_isIterable2);
 
-var _getIterator2 = __webpack_require__(79);
+var _getIterator2 = __webpack_require__(80);
 
 var _getIterator3 = _interopRequireDefault(_getIterator2);
 
@@ -136,10 +136,10 @@ exports.default = function () {
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(6);
+var global = __webpack_require__(8);
 var core = __webpack_require__(0);
-var ctx = __webpack_require__(18);
-var hide = __webpack_require__(20);
+var ctx = __webpack_require__(19);
+var hide = __webpack_require__(21);
 var PROTOTYPE = 'prototype';
 
 var $export = function (type, name, source) {
@@ -223,7 +223,7 @@ exports.default = function (instance, Constructor) {
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(81);
+var _defineProperty = __webpack_require__(45);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -251,41 +251,12 @@ exports.default = function () {
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store = __webpack_require__(64)('wks');
-var uid = __webpack_require__(45);
-var Symbol = __webpack_require__(6).Symbol;
-var USE_SYMBOL = typeof Symbol == 'function';
-
-var $exports = module.exports = function (name) {
-  return store[name] || (store[name] =
-    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
-};
-
-$exports.store = store;
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math
-  ? window : typeof self != 'undefined' && self.Math == Math ? self
-  // eslint-disable-next-line no-new-func
-  : Function('return this')();
-if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 
 exports.__esModule = true;
 
-var _from = __webpack_require__(78);
+var _from = __webpack_require__(55);
 
 var _from2 = _interopRequireDefault(_from);
 
@@ -304,23 +275,64 @@ exports.default = function (arr) {
 };
 
 /***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(136), __esModule: true };
+module.exports = { "default": __webpack_require__(145), __esModule: true };
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var store = __webpack_require__(70)('wks');
+var uid = __webpack_require__(51);
+var Symbol = __webpack_require__(8).Symbol;
+var USE_SYMBOL = typeof Symbol == 'function';
+
+var $exports = module.exports = function (name) {
+  return store[name] || (store[name] =
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
+};
+
+$exports.store = store;
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self
+  // eslint-disable-next-line no-new-func
+  : Function('return this')();
+if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
+
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = { "default": __webpack_require__(134), __esModule: true };
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(140), __esModule: true };
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(23)(function () {
+module.exports = !__webpack_require__(25)(function () {
   return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
 });
 
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports) {
 
 module.exports = function (it) {
@@ -329,15 +341,15 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(15);
-var IE8_DOM_DEFINE = __webpack_require__(86);
-var toPrimitive = __webpack_require__(66);
+var anObject = __webpack_require__(17);
+var IE8_DOM_DEFINE = __webpack_require__(87);
+var toPrimitive = __webpack_require__(72);
 var dP = Object.defineProperty;
 
-exports.f = __webpack_require__(9) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+exports.f = __webpack_require__(11) ? Object.defineProperty : function defineProperty(O, P, Attributes) {
   anObject(O);
   P = toPrimitive(P, true);
   anObject(Attributes);
@@ -351,13 +363,44 @@ exports.f = __webpack_require__(9) ? Object.defineProperty : function defineProp
 
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(141), __esModule: true };
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.sortOrderedSprites = exports.parseValue = exports.deprecate = exports.setDeprecation = exports.attr = exports.appendUnit = exports.rectVertices = exports.rectToBox = exports.boxUnion = exports.boxEqual = exports.boxToRect = exports.boxIntersect = exports.parseStringTransform = exports.fourValuesShortCut = exports.parseColorString = exports.parseStringFloat = exports.parseStringInt = exports.oneOrTwoValues = exports.parseColor = exports.Color = undefined;
+
+var _utils = __webpack_require__(211);
+
+var _decorators = __webpack_require__(210);
+
+exports.Color = _utils.Color;
+exports.parseColor = _utils.parseColor;
+exports.oneOrTwoValues = _utils.oneOrTwoValues;
+exports.parseStringInt = _utils.parseStringInt;
+exports.parseStringFloat = _utils.parseStringFloat;
+exports.parseColorString = _utils.parseColorString;
+exports.fourValuesShortCut = _utils.fourValuesShortCut;
+exports.parseStringTransform = _utils.parseStringTransform;
+exports.boxIntersect = _utils.boxIntersect;
+exports.boxToRect = _utils.boxToRect;
+exports.boxEqual = _utils.boxEqual;
+exports.boxUnion = _utils.boxUnion;
+exports.rectToBox = _utils.rectToBox;
+exports.rectVertices = _utils.rectVertices;
+exports.appendUnit = _utils.appendUnit;
+exports.attr = _decorators.attr;
+exports.setDeprecation = _decorators.setDeprecation;
+exports.deprecate = _decorators.deprecate;
+exports.parseValue = _decorators.parseValue;
+exports.sortOrderedSprites = _utils.sortOrderedSprites;
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -365,15 +408,15 @@ module.exports = { "default": __webpack_require__(141), __esModule: true };
 
 exports.__esModule = true;
 
-var _setPrototypeOf = __webpack_require__(118);
+var _setPrototypeOf = __webpack_require__(122);
 
 var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
 
-var _create = __webpack_require__(115);
+var _create = __webpack_require__(119);
 
 var _create2 = _interopRequireDefault(_create);
 
-var _typeof2 = __webpack_require__(40);
+var _typeof2 = __webpack_require__(34);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -396,7 +439,7 @@ exports.default = function (subClass, superClass) {
 };
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -404,7 +447,7 @@ exports.default = function (subClass, superClass) {
 
 exports.__esModule = true;
 
-var _typeof2 = __webpack_require__(40);
+var _typeof2 = __webpack_require__(34);
 
 var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -419,10 +462,10 @@ exports.default = function (self, call) {
 };
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(10);
+var isObject = __webpack_require__(12);
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
@@ -430,13 +473,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(130), __esModule: true };
-
-/***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -444,11 +481,11 @@ module.exports = { "default": __webpack_require__(130), __esModule: true };
 
 exports.__esModule = true;
 
-var _getPrototypeOf = __webpack_require__(8);
+var _getPrototypeOf = __webpack_require__(10);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _getOwnPropertyDescriptor = __webpack_require__(22);
+var _getOwnPropertyDescriptor = __webpack_require__(24);
 
 var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
 
@@ -480,11 +517,11 @@ exports.default = function get(object, property, receiver) {
 };
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // optional / simple context binding
-var aFunction = __webpack_require__(32);
+var aFunction = __webpack_require__(35);
 module.exports = function (fn, that, length) {
   aFunction(fn);
   if (that === undefined) return fn;
@@ -506,48 +543,18 @@ module.exports = function (fn, that, length) {
 
 
 /***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.parseValue = exports.deprecate = exports.setDeprecation = exports.attr = exports.appendUnit = exports.rectVertices = exports.rectToBox = exports.boxUnion = exports.boxEqual = exports.boxToRect = exports.boxIntersect = exports.parseStringTransform = exports.fourValuesShortCut = exports.parseColorString = exports.parseStringFloat = exports.parseStringInt = exports.oneOrTwoValues = exports.parseColor = exports.Color = undefined;
-
-var _utils = __webpack_require__(212);
-
-var _decorators = __webpack_require__(211);
-
-exports.Color = _utils.Color;
-exports.parseColor = _utils.parseColor;
-exports.oneOrTwoValues = _utils.oneOrTwoValues;
-exports.parseStringInt = _utils.parseStringInt;
-exports.parseStringFloat = _utils.parseStringFloat;
-exports.parseColorString = _utils.parseColorString;
-exports.fourValuesShortCut = _utils.fourValuesShortCut;
-exports.parseStringTransform = _utils.parseStringTransform;
-exports.boxIntersect = _utils.boxIntersect;
-exports.boxToRect = _utils.boxToRect;
-exports.boxEqual = _utils.boxEqual;
-exports.boxUnion = _utils.boxUnion;
-exports.rectToBox = _utils.rectToBox;
-exports.rectVertices = _utils.rectVertices;
-exports.appendUnit = _utils.appendUnit;
-exports.attr = _decorators.attr;
-exports.setDeprecation = _decorators.setDeprecation;
-exports.deprecate = _decorators.deprecate;
-exports.parseValue = _decorators.parseValue;
-
-/***/ }),
 /* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var dP = __webpack_require__(11);
-var createDesc = __webpack_require__(36);
-module.exports = __webpack_require__(9) ? function (object, key, value) {
+module.exports = { "default": __webpack_require__(138), __esModule: true };
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(13);
+var createDesc = __webpack_require__(39);
+module.exports = __webpack_require__(11) ? function (object, key, value) {
   return dP.f(object, key, createDesc(1, value));
 } : function (object, key, value) {
   object[key] = value;
@@ -556,25 +563,31 @@ module.exports = __webpack_require__(9) ? function (object, key, value) {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(55);
-var defined = __webpack_require__(52);
+var IObject = __webpack_require__(61);
+var defined = __webpack_require__(58);
 module.exports = function (it) {
   return IObject(defined(it));
 };
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(135), __esModule: true };
+module.exports = { "default": __webpack_require__(132), __esModule: true };
 
 /***/ }),
-/* 23 */
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(139), __esModule: true };
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = function (exec) {
@@ -587,7 +600,7 @@ module.exports = function (exec) {
 
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports) {
 
 var hasOwnProperty = {}.hasOwnProperty;
@@ -597,15 +610,15 @@ module.exports = function (it, key) {
 
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at = __webpack_require__(158)(true);
+var $at = __webpack_require__(162)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(56)(String, 'String', function (iterated) {
+__webpack_require__(62)(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -621,161 +634,7 @@ __webpack_require__(56)(String, 'String', function (iterated) {
 
 
 /***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(134), __esModule: true };
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports) {
-
-module.exports = {};
-
-
-/***/ }),
 /* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys = __webpack_require__(95);
-var enumBugKeys = __webpack_require__(54);
-
-module.exports = Object.keys || function keys(O) {
-  return $keys(O, enumBugKeys);
-};
-
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.13 ToObject(argument)
-var defined = __webpack_require__(52);
-module.exports = function (it) {
-  return Object(defined(it));
-};
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(163);
-var global = __webpack_require__(6);
-var hide = __webpack_require__(20);
-var Iterators = __webpack_require__(27);
-var TO_STRING_TAG = __webpack_require__(5)('toStringTag');
-
-var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
-  'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
-  'MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,' +
-  'SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,' +
-  'TextTrackList,TouchList').split(',');
-
-for (var i = 0; i < DOMIterables.length; i++) {
-  var NAME = DOMIterables[i];
-  var Collection = global[NAME];
-  var proto = Collection && Collection.prototype;
-  if (proto && !proto[TO_STRING_TAG]) hide(proto, TO_STRING_TAG, NAME);
-  Iterators[NAME] = Iterators.Array;
-}
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(128), __esModule: true };
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports) {
-
-module.exports = function (it) {
-  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
-  return it;
-};
-
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-var toString = {}.toString;
-
-module.exports = function (it) {
-  return toString.call(it).slice(8, -1);
-};
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var ctx = __webpack_require__(18);
-var call = __webpack_require__(89);
-var isArrayIter = __webpack_require__(87);
-var anObject = __webpack_require__(15);
-var toLength = __webpack_require__(44);
-var getIterFn = __webpack_require__(70);
-var BREAK = {};
-var RETURN = {};
-var exports = module.exports = function (iterable, entries, fn, that, ITERATOR) {
-  var iterFn = ITERATOR ? function () { return iterable; } : getIterFn(iterable);
-  var f = ctx(fn, that, entries ? 2 : 1);
-  var index = 0;
-  var length, step, iterator, result;
-  if (typeof iterFn != 'function') throw TypeError(iterable + ' is not iterable!');
-  // fast case for arrays with default iterator
-  if (isArrayIter(iterFn)) for (length = toLength(iterable.length); length > index; index++) {
-    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
-    if (result === BREAK || result === RETURN) return result;
-  } else for (iterator = iterFn.call(iterable); !(step = iterator.next()).done;) {
-    result = call(iterator, f, step.value, entries);
-    if (result === BREAK || result === RETURN) return result;
-  }
-};
-exports.BREAK = BREAK;
-exports.RETURN = RETURN;
-
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports) {
-
-exports.f = {}.propertyIsEnumerable;
-
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports) {
-
-module.exports = function (bitmap, value) {
-  return {
-    enumerable: !(bitmap & 1),
-    configurable: !(bitmap & 2),
-    writable: !(bitmap & 4),
-    value: value
-  };
-};
-
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var def = __webpack_require__(11).f;
-var has = __webpack_require__(24);
-var TAG = __webpack_require__(5)('toStringTag');
-
-module.exports = function (it, tag, stat) {
-  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
-};
-
-
-/***/ }),
-/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -785,11 +644,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getOwnPropertyDescriptor = __webpack_require__(22);
+var _assign = __webpack_require__(9);
 
-var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
+var _assign2 = _interopRequireDefault(_assign);
 
-var _toConsumableArray2 = __webpack_require__(7);
+var _toConsumableArray2 = __webpack_require__(5);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -797,75 +656,189 @@ var _slicedToArray2 = __webpack_require__(1);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-var _defineProperty2 = __webpack_require__(120);
+var _entries = __webpack_require__(20);
 
-var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+var _entries2 = _interopRequireDefault(_entries);
 
-var _assign = __webpack_require__(16);
+var _map = __webpack_require__(23);
 
-var _assign2 = _interopRequireDefault(_assign);
+var _map2 = _interopRequireDefault(_map);
 
-var _typeof2 = __webpack_require__(40);
+exports.registerNodeType = registerNodeType;
+exports.createNode = createNode;
 
-var _typeof3 = _interopRequireDefault(_typeof2);
+var _selector = __webpack_require__(202);
 
-var _set = __webpack_require__(50);
-
-var _set2 = _interopRequireDefault(_set);
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _get2 = __webpack_require__(17);
-
-var _get3 = _interopRequireDefault(_get2);
-
-var _inherits2 = __webpack_require__(13);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _symbol = __webpack_require__(12);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _dec, _dec2, _desc, _value, _class, _class2, _temp;
-
-var _attr12 = __webpack_require__(196);
-
-var _attr13 = _interopRequireDefault(_attr12);
-
-var _basenode = __webpack_require__(72);
-
-var _basenode2 = _interopRequireDefault(_basenode);
-
-var _spriteMath = __webpack_require__(73);
-
-var _animation = __webpack_require__(195);
-
-var _animation2 = _interopRequireDefault(_animation);
-
-var _spriteUtils = __webpack_require__(19);
-
-var _gradient = __webpack_require__(48);
-
-var _gradient2 = _interopRequireDefault(_gradient);
+var _selector2 = _interopRequireDefault(_selector);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+var nodeTypes = new _map2.default();
+
+var ownerDocumentDescriptor = {
+  get: function get() {
+    var that = this;
+    return {
+      createElementNS: function createElementNS(uri, name) {
+        var sprite = createNode(name);
+        if (sprite) {
+          return that.appendChild(sprite);
+        }
+        return null;
+      }
+    };
+  }
+};
+
+var elementProto = {
+  getElementById: function getElementById(id) {
+    var children = this.children;
+    for (var i = 0; i < children.length; i++) {
+      var child = children[i];
+      if (child.id === id) {
+        return child;
+      }
+    }
+    return null;
+  },
+  getElementsByName: function getElementsByName(name) {
+    return this.children.filter(function (c) {
+      return c.name === name;
+    });
+  },
+
+  /*
+    d3-friendly
+    *, nodeType, #id, :name, {nodeType: checker}
+  */
+  querySelector: function querySelector(selector) {
+    var _this = this;
+
+    var children = this.children;
+
+    var ret = null;
+
+    if (!selector || selector === '*') {
+      ret = children[0];
+    } else if (typeof selector === 'string') {
+      // querySelector('nodeType')
+      // querySelector('#id')
+      // querySelector(':name')
+      if (selector.startsWith('#')) {
+        ret = this.getElementById(selector.slice(1));
+      } else if (selector.startsWith(':')) {
+        var name = selector.slice(1);
+        var nodeList = (0, _selector2.default)(children, function (c) {
+          return c.name === name;
+        }, 1);
+        if (nodeList.length) ret = nodeList[0];
+      } else {
+        var nodeType = getNodeType(selector);
+        if (nodeType) {
+          var _nodeList = (0, _selector2.default)(children, function (c) {
+            return c instanceof nodeType;
+          }, 1);
+          if (_nodeList.length) ret = _nodeList[0];
+        }
+      }
+    } else {
+      /*
+        {
+          nodeType: () => {...},   //checker
+        }
+      */
+      var _nodeList2 = (0, _selector2.default)(children, function (child) {
+        return (0, _entries2.default)(selector).some(function (_ref) {
+          var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+              type = _ref2[0],
+              checker = _ref2[1];
+
+          var nodeType = getNodeType(type);
+          return nodeType && child instanceof nodeType && checker.call(_this, child);
+        });
+      }, 1);
+      if (_nodeList2.length) ret = _nodeList2[0];
+    }
+    return ret;
+  },
+  querySelectorAll: function querySelectorAll(selector) {
+    var _this2 = this;
+
+    var ret = [];
+    var children = this.children;
+
+    if (!selector || selector === '*') {
+      ret = [].concat((0, _toConsumableArray3.default)(children));
+    } else if (typeof selector === 'string') {
+      if (selector.startsWith('#')) {
+        var sprite = this.getElementById(selector.slice(1));
+        ret = sprite ? [sprite] : [];
+      }
+      if (selector.startsWith(':')) {
+        ret = this.getElementsByName(selector.slice(1));
+      }
+      var nodeType = getNodeType(selector);
+      if (nodeType) {
+        ret = (0, _selector2.default)(children, function (c) {
+          return c instanceof nodeType;
+        });
+      }
+    } else {
+      ret = (0, _selector2.default)(children, function (child) {
+        return (0, _entries2.default)(selector).some(function (_ref3) {
+          var _ref4 = (0, _slicedToArray3.default)(_ref3, 2),
+              type = _ref4[0],
+              checker = _ref4[1];
+
+          var nodeType = getNodeType(type);
+          if (!nodeType || !(child instanceof nodeType)) {
+            return false;
+          }
+          return checker.call(_this2, child);
+        });
+      });
+    }
+    return ret;
+  }
+};
+
+function registerNodeType(type, Class) {
+  var isQuerable = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+  Object.defineProperty(Class.prototype, 'nodeType', {
+    get: function get() {
+      return type;
+    }
+  });
+  nodeTypes.set(type, Class);
+  if (isQuerable && !Class.prototype.ownerDocument) {
+    Object.defineProperty(Class.prototype, 'ownerDocument', ownerDocumentDescriptor);
+    Class.prototype.namespaceURI = 'http://spritejs.org/' + type;
+    (0, _assign2.default)(Class.prototype, elementProto);
+  }
+}
+
+function createNode(type) {
+  var Class = nodeTypes.get(type);
+  if (Class) {
+    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    return new (Function.prototype.bind.apply(Class, [null].concat(args)))();
+  }
+  return null;
+}
+
+function getNodeType(type) {
+  return nodeTypes.get(type);
+}
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = function (target, property, decorators, descriptor, context) {
   var desc = {};
   Object['ke' + 'ys'](descriptor).forEach(function (key) {
     desc[key] = descriptor[key];
@@ -894,12 +867,276 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
   return desc;
 }
 
-var _attr = (0, _symbol2.default)('attr'),
-    _animations = (0, _symbol2.default)('animations'),
-    _beforeRenders = (0, _symbol2.default)('beforeRenders'),
-    _afterRenders = (0, _symbol2.default)('afterRenders');
 
-var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)', 'Instead use beforeDraw/afterDraw.'), _dec2 = (0, _spriteUtils.deprecate)('Instead use beforeDraw/afterDraw.'), (_class = (_temp = _class2 = function (_BaseNode) {
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = {};
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+var $keys = __webpack_require__(96);
+var enumBugKeys = __webpack_require__(60);
+
+module.exports = Object.keys || function keys(O) {
+  return $keys(O, enumBugKeys);
+};
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.1.13 ToObject(argument)
+var defined = __webpack_require__(58);
+module.exports = function (it) {
+  return Object(defined(it));
+};
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(167);
+var global = __webpack_require__(8);
+var hide = __webpack_require__(21);
+var Iterators = __webpack_require__(30);
+var TO_STRING_TAG = __webpack_require__(7)('toStringTag');
+
+var DOMIterables = ('CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,' +
+  'DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,' +
+  'MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,' +
+  'SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,' +
+  'TextTrackList,TouchList').split(',');
+
+for (var i = 0; i < DOMIterables.length; i++) {
+  var NAME = DOMIterables[i];
+  var Collection = global[NAME];
+  var proto = Collection && Collection.prototype;
+  if (proto && !proto[TO_STRING_TAG]) hide(proto, TO_STRING_TAG, NAME);
+  Iterators[NAME] = Iterators.Array;
+}
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _iterator = __webpack_require__(123);
+
+var _iterator2 = _interopRequireDefault(_iterator);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
+  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
+} : function (obj) {
+  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
+  return it;
+};
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+var toString = {}.toString;
+
+module.exports = function (it) {
+  return toString.call(it).slice(8, -1);
+};
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ctx = __webpack_require__(19);
+var call = __webpack_require__(90);
+var isArrayIter = __webpack_require__(88);
+var anObject = __webpack_require__(17);
+var toLength = __webpack_require__(50);
+var getIterFn = __webpack_require__(76);
+var BREAK = {};
+var RETURN = {};
+var exports = module.exports = function (iterable, entries, fn, that, ITERATOR) {
+  var iterFn = ITERATOR ? function () { return iterable; } : getIterFn(iterable);
+  var f = ctx(fn, that, entries ? 2 : 1);
+  var index = 0;
+  var length, step, iterator, result;
+  if (typeof iterFn != 'function') throw TypeError(iterable + ' is not iterable!');
+  // fast case for arrays with default iterator
+  if (isArrayIter(iterFn)) for (length = toLength(iterable.length); length > index; index++) {
+    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+    if (result === BREAK || result === RETURN) return result;
+  } else for (iterator = iterFn.call(iterable); !(step = iterator.next()).done;) {
+    result = call(iterator, f, step.value, entries);
+    if (result === BREAK || result === RETURN) return result;
+  }
+};
+exports.BREAK = BREAK;
+exports.RETURN = RETURN;
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+exports.f = {}.propertyIsEnumerable;
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+module.exports = function (bitmap, value) {
+  return {
+    enumerable: !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable: !(bitmap & 4),
+    value: value
+  };
+};
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var def = __webpack_require__(13).f;
+var has = __webpack_require__(26);
+var TAG = __webpack_require__(7)('toStringTag');
+
+module.exports = function (it, tag, stat) {
+  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
+};
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _defineProperty2 = __webpack_require__(45);
+
+var _defineProperty3 = _interopRequireDefault(_defineProperty2);
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _defineProperty4 = __webpack_require__(124);
+
+var _defineProperty5 = _interopRequireDefault(_defineProperty4);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _entries = __webpack_require__(20);
+
+var _entries2 = _interopRequireDefault(_entries);
+
+var _typeof2 = __webpack_require__(34);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _set = __webpack_require__(46);
+
+var _set2 = _interopRequireDefault(_set);
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(16);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _get2 = __webpack_require__(18);
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _inherits2 = __webpack_require__(15);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _class, _temp;
+
+var _attr13 = __webpack_require__(197);
+
+var _attr14 = _interopRequireDefault(_attr13);
+
+var _basenode = __webpack_require__(77);
+
+var _basenode2 = _interopRequireDefault(_basenode);
+
+var _spriteMath = __webpack_require__(43);
+
+var _animation = __webpack_require__(196);
+
+var _animation2 = _interopRequireDefault(_animation);
+
+var _spriteUtils = __webpack_require__(14);
+
+var _nodetype = __webpack_require__(28);
+
+var _render = __webpack_require__(42);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _attr = (0, _symbol2.default)('attr'),
+    _animations = (0, _symbol2.default)('animations');
+
+var BaseSprite = (_temp = _class = function (_BaseNode) {
   (0, _inherits3.default)(BaseSprite, _BaseNode);
 
   /**
@@ -916,8 +1153,6 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
 
     _this[_attr] = new _this.constructor.Attr(_this);
     _this[_animations] = new _set2.default();
-    _this[_beforeRenders] = [];
-    _this[_afterRenders] = [];
 
     if (attr) {
       _this.attr(attr);
@@ -926,11 +1161,6 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }
 
   (0, _createClass3.default)(BaseSprite, [{
-    key: 'initAttributes',
-    value: function initAttributes(attrs) {
-      this[_attr].merge(attrs);
-    }
-  }, {
     key: 'serialize',
     value: function serialize() {
       var nodeType = this.nodeType,
@@ -944,12 +1174,16 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
       };
     }
   }, {
+    key: 'merge',
+    value: function merge(attrs) {
+      this[_attr].merge(attrs);
+    }
+  }, {
     key: 'cloneNode',
-    value: function cloneNode(copyContent) {
+    value: function cloneNode() {
       var node = new this.constructor();
-      if (copyContent) {
-        node.initAttributes(this[_attr].serialize());
-      }
+      node.merge(this[_attr].serialize());
+      node.cache = this.cache;
       return node;
     }
   }, {
@@ -970,16 +1204,26 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'attr',
     value: function attr(props, val) {
+      var _this2 = this;
+
       if ((typeof props === 'undefined' ? 'undefined' : (0, _typeof3.default)(props)) === 'object') {
-        (0, _assign2.default)(this[_attr], props);
+        (0, _entries2.default)(props).forEach(function (_ref) {
+          var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+              prop = _ref2[0],
+              value = _ref2[1];
+
+          _this2.attr(prop, value);
+        });
         return this;
       } else if (typeof props === 'string') {
         if (val !== undefined) {
-          (0, _assign2.default)(this[_attr], (0, _defineProperty3.default)({}, props, val));
+          if (typeof val === 'function') {
+            val = val(this[_attr][props]);
+          }
+          (0, _assign2.default)(this[_attr], (0, _defineProperty5.default)({}, props, val));
           return this;
         }
-        var attrs = this[_attr].attrs;
-        return attrs[props];
+        return this[_attr][props];
       }
 
       return this[_attr].attrs;
@@ -987,19 +1231,66 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'attrs',
     value: function attrs() {
-      return this[_attr].attrs;
+      return this.attr();
+    }
+  }, {
+    key: 'isVisible',
+    value: function isVisible() {
+      var opacity = this.attr('opacity');
+      if (opacity <= 0) {
+        return false;
+      }
+
+      var _offsetSize = (0, _slicedToArray3.default)(this.offsetSize, 2),
+          width = _offsetSize[0],
+          height = _offsetSize[1];
+
+      if (width <= 0 || height <= 0) {
+        return false;
+      }
+
+      return true;
+    }
+  }, {
+    key: 'transition',
+    value: function transition(sec) {
+      var easing = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'linear';
+
+      var that = this;
+      return {
+        attr: function attr(prop, val) {
+          if (typeof prop === 'string') {
+            prop = (0, _defineProperty5.default)({}, prop, val);
+          }
+          (0, _entries2.default)(prop).forEach(function (_ref3) {
+            var _ref4 = (0, _slicedToArray3.default)(_ref3, 2),
+                key = _ref4[0],
+                value = _ref4[1];
+
+            if (typeof value === 'function') {
+              prop[key] = value(that.attr(key));
+            }
+          });
+          var anim = that.animate([prop], {
+            duration: sec * 1000,
+            fill: 'forwards',
+            easing: easing
+          });
+          return anim.finished;
+        }
+      };
     }
   }, {
     key: 'animate',
     value: function animate(frames, timing) {
-      var _this2 = this;
+      var _this3 = this;
 
       var animation = new _animation2.default(this, frames, timing);
       if (this.layer) {
         animation.baseTimeline = this.layer.timeline;
         animation.play();
         animation.finished.then(function () {
-          _this2[_animations].delete(animation);
+          _this3[_animations].delete(animation);
         });
       }
       this[_animations].add(animation);
@@ -1008,7 +1299,7 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'connect',
     value: function connect(parent) {
-      var _this3 = this;
+      var _this4 = this;
 
       var zOrder = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
@@ -1025,10 +1316,12 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
         configurable: true
       });
       this[_animations].forEach(function (animation) {
-        animation.baseTimeline = parent.timeline;
+        if (parent.layer) {
+          animation.baseTimeline = parent.layer.timeline;
+        }
         animation.play();
         animation.finished.then(function () {
-          _this3[_animations].delete(animation);
+          _this4[_animations].delete(animation);
         });
       });
       return ret;
@@ -1047,10 +1340,112 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
     // content width / height
 
   }, {
-    key: 'OBBCollision',
+    key: 'clearCache',
+    value: function clearCache() {
+      this.cache = null;
+      if (this.parent && this.parent.cache) {
+        this.parent.cahce = null;
+      }
+    }
+  }, {
+    key: 'remove',
+    value: function remove() {
+      if (!this.parent) return false;
+      this.parent.removeChild(this);
+      return true;
+    }
+  }, {
+    key: 'appendTo',
+    value: function appendTo(parent) {
+      parent.appendChild(this);
+    }
+  }, {
+    key: 'forceUpdate',
+    value: function forceUpdate() {
+      var clearCache = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
+      if (clearCache) {
+        this.clearCache();
+      }
+      var parent = this.parent;
+      if (parent) {
+        if (parent.forceUpdate) {
+          // is group
+          parent.cache = null;
+          parent.forceUpdate();
+        } else if (parent.update) {
+          // is layer
+          this.parent.update(this);
+        }
+      }
+    }
+
+    // layer position to sprite offset
+
+  }, {
+    key: 'pointToOffset',
+    value: function pointToOffset(x, y) {
+      var _attr2 = this.attr('pos'),
+          _attr3 = (0, _slicedToArray3.default)(_attr2, 2),
+          x0 = _attr3[0],
+          y0 = _attr3[1];
+
+      var dx = x - x0,
+          dy = y - y0;
+
+      var transform = this.transform;
+      return transform.inverse().transformPoint(dx, dy);
+    }
+  }, {
+    key: 'pointCollision',
+    value: function pointCollision(evt) {
+      if (!this.isVisible()) {
+        return false;
+      }
+
+      var parentX = void 0,
+          parentY = void 0;
+
+      if (evt.parentX != null) {
+        // group
+        parentX = evt.parentX;
+        parentY = evt.parentY;
+      } else {
+        parentX = evt.layerX;
+        parentY = evt.layerY;
+      }
+
+      var _renderRect = (0, _slicedToArray3.default)(this.renderRect, 4),
+          x = _renderRect[0],
+          y = _renderRect[1],
+          w = _renderRect[2],
+          h = _renderRect[3];
+
+      if (parentX >= x && parentX - x < w && parentY >= y && parentY - y < h) {
+        var _originalRect = (0, _slicedToArray3.default)(this.originalRect, 4),
+            ox = _originalRect[0],
+            oy = _originalRect[1],
+            ow = _originalRect[2],
+            oh = _originalRect[3];
+
+        var _pointToOffset = this.pointToOffset(parentX, parentY),
+            _pointToOffset2 = (0, _slicedToArray3.default)(_pointToOffset, 2),
+            nx = _pointToOffset2[0],
+            ny = _pointToOffset2[1];
+
+        if (nx >= ox && nx - ox < ow && ny >= oy && ny - oy < oh) {
+          evt.offsetX = nx;
+          evt.offsetY = ny;
+
+          return true;
+        }
+      }
+    }
 
     // OBB: http://blog.csdn.net/silangquan/article/details/50812425
+
+  }, {
+    key: 'OBBCollision',
     value: function OBBCollision(sprite) {
       // vertices: [p1, p2, p3, p4]
       var _vertices = (0, _slicedToArray3.default)(this.vertices, 3),
@@ -1093,259 +1488,74 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
       return projectionIntersect(verticesProjection(this.vertices, a1), verticesProjection(sprite.vertices, a1)) && projectionIntersect(verticesProjection(this.vertices, a2), verticesProjection(sprite.vertices, a2)) && projectionIntersect(verticesProjection(this.vertices, a3), verticesProjection(sprite.vertices, a3)) && projectionIntersect(verticesProjection(this.vertices, a4), verticesProjection(sprite.vertices, a4));
     }
   }, {
-    key: 'remove',
-    value: function remove() {
-      if (!this.parent) return false;
-      this.parent.removeChild(this);
-      return true;
-    }
-  }, {
-    key: 'appendTo',
-    value: function appendTo(parent) {
-      parent.appendChild(this);
-    }
-  }, {
-    key: 'forceUpdate',
-    value: function forceUpdate() {
-      var clearCache = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-
-      var parent = this.parent;
-      if (parent) {
-        if (parent.forceUpdate) {
-          parent.forceUpdate(true);
-        } else if (parent.update) {
-          if (clearCache) {
-            this.cache = null;
-          }
-          this.parent.update(this);
-        }
-      }
-    }
-
-    // layer position to sprite offset
-
-  }, {
-    key: 'pointToOffset',
-    value: function pointToOffset(x, y) {
-      var attr = this.attr();
-      var dx = x - attr.x,
-          dy = y - attr.y;
-
-      var transform = this.transform;
-      return transform.inverse().transformPoint(dx, dy);
-    }
-  }, {
-    key: 'pointCollision',
-    value: function pointCollision(evt) {
-      var parentX = void 0,
-          parentY = void 0;
-
-      if (evt.parentX != null) {
-        // group
-        parentX = evt.parentX;
-        parentY = evt.parentY;
-      } else {
-        parentX = evt.layerX;
-        parentY = evt.layerY;
-      }
-
-      var _renderRect = (0, _slicedToArray3.default)(this.renderRect, 4),
-          x = _renderRect[0],
-          y = _renderRect[1],
-          w = _renderRect[2],
-          h = _renderRect[3];
-
-      if (parentX >= x && parentX - x < w && parentY >= y && parentY - y < h) {
-        var _originRect = (0, _slicedToArray3.default)(this.originRect, 4),
-            ox = _originRect[0],
-            oy = _originRect[1],
-            ow = _originRect[2],
-            oh = _originRect[3];
-
-        var _pointToOffset = this.pointToOffset(parentX, parentY),
-            _pointToOffset2 = (0, _slicedToArray3.default)(_pointToOffset, 2),
-            nx = _pointToOffset2[0],
-            ny = _pointToOffset2[1];
-
-        if (nx >= ox && nx - ox < ow && ny >= oy && ny - oy < oh) {
-          evt.offsetX = nx;
-          evt.offsetY = ny;
-
-          return true;
-        }
-      }
-    }
-  }, {
     key: 'draw',
     value: function draw(t) {
-      if (typeof t === 'function') {
-        for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-          args[_key - 1] = arguments[_key];
-        }
-
-        return this._draw.apply(this, [t].concat(args));
-      }
-
       var drawingContext = this.context;
-      if (!drawingContext) {
-        throw new Error('No context!');
-      }
-
-      var context = drawingContext;
-
-      var transform = this.transform.m,
-          pos = this.attr('pos'),
-          bound = this.originRect;
 
       drawingContext.save();
-      drawingContext.translate(pos[0], pos[1]);
-      drawingContext.transform.apply(drawingContext, (0, _toConsumableArray3.default)(transform));
+      drawingContext.translate.apply(drawingContext, (0, _toConsumableArray3.default)(this.attr('pos')));
+      drawingContext.transform.apply(drawingContext, (0, _toConsumableArray3.default)(this.transform.m));
       drawingContext.globalAlpha = this.attr('opacity');
 
-      if (drawingContext.canvas && drawingContext.canvas.cloneNode) {
-        context = this.cache;
-        if (!context) {
-          var cacheCanvas = drawingContext.canvas.cloneNode(false);
-          cacheCanvas.width = bound[2];
-          cacheCanvas.height = bound[3];
-          context = cacheCanvas.getContext('2d');
+      var bound = this.originalRect;
+
+      // solve 1px problem
+      var cachableContext = this.cache || (0, _render.copyContext)(drawingContext, Math.ceil(bound[2]) + 2, Math.ceil(bound[3]) + 2);
+      var evtArgs = { context: cachableContext || drawingContext, target: this, renderTime: t, fromCache: !!this.cache };
+
+      if (!cachableContext) {
+        drawingContext.translate(bound[0], bound[1]);
+      } else {
+        // solve 1px problem
+        cachableContext.translate(1, 1);
+      }
+
+      this.dispatchEvent('beforedraw', evtArgs, true, true);
+
+      if (cachableContext) {
+        // set cache before render for group
+        if (!this.cache) {
+          this.cache = cachableContext;
+          this.render(t, cachableContext);
         }
       } else {
-        context.translate(bound[0], bound[1]);
+        this.render(t, drawingContext);
       }
 
-      // too slow in wxapp
-      // if(context === drawingContext) {
-      //   const [w, h] = this.offsetSize
-      //   context.save()
-      //   context.beginPath()
-      //   context.rect(0, 0, w, h)
-      //   context.clip()
-      //   context.closePath()
-      // }
-      if (this[_beforeRenders].length) {
-        this.userRender(t, context, 'before');
-      }
-      if (context !== this.cache) {
-        // set cache before render for group
-        if (context !== drawingContext) this.cache = context;
-        context = this.render(t, context);
-      }
-      if (this[_afterRenders].length) {
-        this.userRender(t, context, 'after');
-      }
-      // if(context === drawingContext) {
-      //   context.restore()
-      // }
+      this.dispatchEvent('afterdraw', evtArgs, true, true);
 
-      if (context !== drawingContext) {
-        drawingContext.drawImage(context.canvas, bound[0], bound[1]);
+      if (cachableContext) {
+        drawingContext.drawImage(cachableContext.canvas, bound[0] - 1, bound[1] - 1);
       }
       drawingContext.restore();
 
-      var updateHandlers = this.getEventHandlers('update');
-      if (updateHandlers.length) {
-        this.dispatchEvent('update', {
-          target: this, context: context, renderBox: this.renderBox, lastRenderBox: this.lastRenderBox
-        }, true);
-      }
       this.lastRenderBox = this.renderBox;
 
       return drawingContext;
     }
   }, {
-    key: '_draw',
-    value: function _draw(fn) {
-      var clearCache = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      var remove = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-      this.drawAfter(fn, clearCache, remove);
-    }
-  }, {
-    key: 'drawOnce',
-    value: function drawOnce(fn) {
-      this._draw(fn, true, true);
-    }
-  }, {
-    key: 'drawBefore',
-    value: function drawBefore(fn) {
-      var clearCache = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      var remove = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-      this[_beforeRenders].push({ fn: fn, clearCache: clearCache, remove: remove });
-      this.forceUpdate();
-    }
-  }, {
-    key: 'drawAfter',
-    value: function drawAfter(fn) {
-      var clearCache = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      var remove = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-      this[_afterRenders].push({ fn: fn, clearCache: clearCache, remove: remove });
-      this.forceUpdate();
-    }
-
-    // call by layer
-
-  }, {
-    key: 'userRender',
-    value: function userRender(t, context, type) {
-      var handlers = type;
-      if (type === 'before') handlers = this[_beforeRenders];
-      if (type === 'after') handlers = this[_afterRenders];
-      var renderers = [];
-      for (var i = 0; i < handlers.length; i++) {
-        var renderer = handlers[i];
-        var fn = renderer.fn,
-            remove = renderer.remove,
-            clearCache = renderer.clearCache;
-        /* eslint-disable no-await-in-loop */
-
-        fn.call(this, context, t, renderer);
-        /* eslint-enable no-await-in-loop */
-        if (!remove) {
-          renderers.push(renderer);
-        }
-        if (clearCache) {
-          this.cache = null;
-        }
-      }
-      if (type === 'before') {
-        this[_beforeRenders] = renderers;
-      }
-      if (type === 'after') {
-        this[_afterRenders] = renderers;
-      }
-      return renderers;
-    }
-  }, {
     key: 'render',
     value: function render(t, drawingContext) {
-      var attr = this.attr(),
-          bgcolor = attr.bgcolor,
-          gradients = attr.gradients,
-          _offsetSize = (0, _slicedToArray3.default)(this.offsetSize, 2),
-          offsetWidth = _offsetSize[0],
-          offsetHeight = _offsetSize[1],
+      var border = this.attr('border'),
+          borderRadius = this.attr('borderRadius'),
+          padding = this.attr('padding'),
+          _offsetSize2 = (0, _slicedToArray3.default)(this.offsetSize, 2),
+          offsetWidth = _offsetSize2[0],
+          offsetHeight = _offsetSize2[1],
           _clientSize = (0, _slicedToArray3.default)(this.clientSize, 2),
           clientWidth = _clientSize[0],
           clientHeight = _clientSize[1];
 
 
       if (offsetWidth === 0 || offsetHeight === 0) {
-        return drawingContext; // don't need to render
+        return; // don't need to render
       }
 
-      var _attr$border = (0, _slicedToArray3.default)(attr.border, 2),
-          borderWidth = _attr$border[0],
-          borderColor = _attr$border[1];
-
-      var borderRadius = attr.borderRadius;
-
-      drawingContext.save();
+      var borderWidth = border.width;
+      var borderStyle = border.style;
 
       // draw border
-      if (borderWidth || gradients && gradients.border) {
+      if (borderWidth) {
         drawingContext.lineWidth = borderWidth;
 
         var x = borderWidth / 2,
@@ -1355,78 +1565,52 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
             r = borderRadius;
 
 
-        drawingContext.beginPath();
-        drawingContext.moveTo(x + r, y);
-        drawingContext.arcTo(x + w, y, x + w, y + h, r);
-        drawingContext.arcTo(x + w, y + h, x, y + h, r);
-        drawingContext.arcTo(x, y + h, x, y, r);
-        drawingContext.arcTo(x, y, x + w, y, r);
-        drawingContext.closePath();
+        (0, _render.drawRadiusBox)(drawingContext, { x: x, y: y, w: w, h: h, r: r });
 
-        if (gradients && gradients.border) {
-          var rect = gradients.border.rect || [x, y, w, h];
-
-          drawingContext.strokeStyle = (0, _gradient2.default)(drawingContext, rect, gradients.border);
-        } else if (borderColor) {
-          drawingContext.strokeStyle = borderColor;
+        if (borderStyle !== 'solid') {
+          var dashOffset = this.attr('dashOffset');
+          drawingContext.lineDashOffset = dashOffset;
+          if (borderStyle === 'dashed') {
+            borderStyle = [borderWidth * 3, borderWidth * 3];
+          }
+          drawingContext.setLineDash(borderStyle);
         }
-
+        drawingContext.strokeStyle = (0, _render.findColor)(drawingContext, this, 'border');
         drawingContext.stroke();
-        drawingContext.clip();
       }
 
       // draw bgcolor
-      if (bgcolor || gradients && gradients.bgcolor) {
-        var _ref = [borderWidth, borderWidth, clientWidth, clientHeight, Math.max(0, borderRadius - borderWidth / 2)],
-            _x9 = _ref[0],
-            _y = _ref[1],
-            _w = _ref[2],
-            _h = _ref[3],
-            _r = _ref[4];
+      var bgcolor = (0, _render.findColor)(drawingContext, this, 'bgcolor');
+
+      if (borderWidth || borderRadius || bgcolor) {
+        var _ref5 = [borderWidth, borderWidth, clientWidth, clientHeight, Math.max(0, borderRadius - borderWidth / 2)],
+            _x4 = _ref5[0],
+            _y = _ref5[1],
+            _w = _ref5[2],
+            _h = _ref5[3],
+            _r = _ref5[4];
 
 
-        drawingContext.beginPath();
-        drawingContext.moveTo(_x9 + _r, _y);
-        drawingContext.arcTo(_x9 + _w, _y, _x9 + _w, _y + _h, _r);
-        drawingContext.arcTo(_x9 + _w, _y + _h, _x9, _y + _h, _r);
-        drawingContext.arcTo(_x9, _y + _h, _x9, _y, _r);
-        drawingContext.arcTo(_x9, _y, _x9 + _w, _y, _r);
-        drawingContext.closePath();
+        (0, _render.drawRadiusBox)(drawingContext, { x: _x4, y: _y, w: _w, h: _h, r: _r });
 
-        if (gradients && gradients.bgcolor) {
-          var _rect = gradients.bgcolor.rect || [_x9, _y, _w, _h];
-
-          drawingContext.fillStyle = (0, _gradient2.default)(drawingContext, _rect, gradients.bgcolor);
-        } else if (bgcolor) {
+        if (bgcolor) {
           drawingContext.fillStyle = bgcolor;
+          drawingContext.fill();
         }
-
-        drawingContext.fill();
+        // we should always clip to prevent the subclass rendering not to overflow the box
+        // but in some platform (eg. wxapp), clip regions has very high cost
+        // for performance we allow the region clip only when sprite has borderRadius
+        if (borderWidth || borderRadius) {
+          drawingContext.clip();
+        }
       }
 
-      drawingContext.restore();
-
-      var padding = attr.padding,
-          paddingTop = padding[0],
-          paddingLeft = padding[3];
-
-      drawingContext.translate(paddingLeft, paddingTop);
-
-      return drawingContext;
-    }
-  }, {
-    key: 'nodeType',
-    get: function get() {
-      return this.constructor.nodeType;
+      drawingContext.translate(borderWidth + padding[3], borderWidth + padding[0]);
     }
   }, {
     key: 'layer',
     get: function get() {
-      var node = this;
-      do {
-        node = node.parent;
-      } while (node != null && !node.drawSprites);
-      return node;
+      return this.parent && this.parent.layer;
     }
   }, {
     key: 'id',
@@ -1445,17 +1629,36 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
       return this.attr('name');
     }
   }, {
+    key: 'zIndex',
+    set: function set(val) {
+      this.attr('zIndex', val);
+    },
+    get: function get() {
+      return this.attr('zIndex');
+    }
+  }, {
     key: 'transform',
     get: function get() {
-      return new _spriteMath.Matrix(this[_attr].get('transformMatrix'));
+      var transform = new _spriteMath.Matrix(this[_attr].get('transformMatrix'));
+      var transformOrigin = this.attr('transformOrigin');
+      if (transformOrigin) {
+        var t = new _spriteMath.Matrix();
+        t.translate.apply(t, (0, _toConsumableArray3.default)(transformOrigin));
+        t.multiply(transform);
+        t.translate.apply(t, (0, _toConsumableArray3.default)(transformOrigin.map(function (v) {
+          return -v;
+        })));
+        return t;
+      }
+      return transform;
     }
   }, {
     key: 'contentSize',
     get: function get() {
-      var _attr2 = this.attr('size'),
-          _attr3 = (0, _slicedToArray3.default)(_attr2, 2),
-          width = _attr3[0],
-          height = _attr3[1];
+      var _attr4 = this.attr('size'),
+          _attr5 = (0, _slicedToArray3.default)(_attr4, 2),
+          width = _attr5[0],
+          height = _attr5[1];
 
       return [width | 0, height | 0];
     }
@@ -1465,12 +1668,12 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'clientSize',
     get: function get() {
-      var _attr4 = this.attr('padding'),
-          _attr5 = (0, _slicedToArray3.default)(_attr4, 4),
-          top = _attr5[0],
-          right = _attr5[1],
-          bottom = _attr5[2],
-          left = _attr5[3],
+      var _attr6 = this.attr('padding'),
+          _attr7 = (0, _slicedToArray3.default)(_attr6, 4),
+          top = _attr7[0],
+          right = _attr7[1],
+          bottom = _attr7[2],
+          left = _attr7[3],
           _contentSize = (0, _slicedToArray3.default)(this.contentSize, 2),
           width = _contentSize[0],
           height = _contentSize[1];
@@ -1483,9 +1686,8 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'offsetSize',
     get: function get() {
-      var _attr6 = this.attr('border'),
-          _attr7 = (0, _slicedToArray3.default)(_attr6, 1),
-          borderWidth = _attr7[0],
+      var _attr8 = this.attr('border'),
+          borderWidth = _attr8.width,
           _clientSize2 = (0, _slicedToArray3.default)(this.clientSize, 2),
           width = _clientSize2[0],
           height = _clientSize2[1];
@@ -1503,24 +1705,24 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
       return this.offsetSize;
     }
   }, {
-    key: 'boundRect',
+    key: 'boundingRect',
     get: function get() {
-      var anchor = this.attr('anchor'),
-          transform = this.transform;
+      var transform = this.transform;
 
-      var _offsetSize2 = (0, _slicedToArray3.default)(this.offsetSize, 2),
-          width = _offsetSize2[0],
-          height = _offsetSize2[1];
+      var _originalRect2 = (0, _slicedToArray3.default)(this.originalRect, 2),
+          ox = _originalRect2[0],
+          oy = _originalRect2[1];
 
-      var _anchor = (0, _slicedToArray3.default)(anchor, 2),
-          anchorX = _anchor[0],
-          anchorY = _anchor[1];
+      var _offsetSize3 = (0, _slicedToArray3.default)(this.offsetSize, 2),
+          width = _offsetSize3[0],
+          height = _offsetSize3[1];
 
-      var vertexs = [[-anchorX * width, -anchorY * height], [(1 - anchorX) * width, -anchorY * height], [-anchorX * width, (1 - anchorY) * height], [(1 - anchorX) * width, (1 - anchorY) * height]];
+      var vertexs = [[ox, oy], [width + ox, oy], [ox, height + oy], [width + ox, height + oy]];
 
       var transformed = vertexs.map(function (v) {
         return transform.transformPoint(v[0], v[1]);
       });
+
       var vx = transformed.map(function (v) {
         return v[0];
       }),
@@ -1533,28 +1735,28 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
           maxX = Math.max.apply(Math, (0, _toConsumableArray3.default)(vx)),
           maxY = Math.max.apply(Math, (0, _toConsumableArray3.default)(vy));
 
-      return [].concat((0, _toConsumableArray3.default)([minX, minY].map(Math.floor)), (0, _toConsumableArray3.default)([maxX - minX, maxY - minY].map(Math.ceil)));
+      return [minX, minY].concat([maxX - minX, maxY - minY]);
     }
 
     // rect before transform
 
   }, {
-    key: 'originRect',
+    key: 'originalRect',
     get: function get() {
-      var _offsetSize3 = (0, _slicedToArray3.default)(this.offsetSize, 2),
-          width = _offsetSize3[0],
-          height = _offsetSize3[1],
-          _attr8 = this.attr('anchor'),
-          _attr9 = (0, _slicedToArray3.default)(_attr8, 2),
-          anchorX = _attr9[0],
-          anchorY = _attr9[1];
+      var _offsetSize4 = (0, _slicedToArray3.default)(this.offsetSize, 2),
+          width = _offsetSize4[0],
+          height = _offsetSize4[1],
+          _attr9 = this.attr('anchor'),
+          _attr10 = (0, _slicedToArray3.default)(_attr9, 2),
+          anchorX = _attr10[0],
+          anchorY = _attr10[1];
 
-      return [Math.floor(-anchorX * width), Math.floor(-anchorY * height), width, height];
+      return [-anchorX * width, -anchorY * height, width, height];
     }
   }, {
-    key: 'originRenderRect',
+    key: 'originalRenderRect',
     get: function get() {
-      var bound = this.originRect,
+      var bound = this.originalRect,
           pos = this.attr('pos');
 
       return [pos[0] + bound[0], pos[1] + bound[1], bound[2], bound[3]];
@@ -1562,7 +1764,7 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'renderBox',
     get: function get() {
-      var bound = this.boundRect,
+      var bound = this.boundingRect,
           pos = this.attr('pos');
 
       return [pos[0] + bound[0] - 1, pos[1] + bound[1] - 1, pos[0] + bound[0] + bound[2] + 1, pos[1] + bound[1] + bound[3] + 1];
@@ -1570,7 +1772,7 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'renderRect',
     get: function get() {
-      var bound = this.boundRect,
+      var bound = this.boundingRect,
           pos = this.attr('pos');
 
       return [pos[0] + bound[0], pos[1] + bound[1], bound[2], bound[3]];
@@ -1578,12 +1780,12 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
   }, {
     key: 'vertices',
     get: function get() {
-      var vertices = (0, _spriteUtils.rectVertices)(this.originRect),
+      var vertices = (0, _spriteUtils.rectVertices)(this.originalRect),
           transform = this.transform,
-          _attr10 = this.attr('pos'),
-          _attr11 = (0, _slicedToArray3.default)(_attr10, 2),
-          x0 = _attr11[0],
-          y0 = _attr11[1];
+          _attr11 = this.attr('pos'),
+          _attr12 = (0, _slicedToArray3.default)(_attr11, 2),
+          x0 = _attr12[0],
+          y0 = _attr12[1];
 
 
       return vertices.map(function (v) {
@@ -1592,7 +1794,7 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
             x = _transform$transformP2[0],
             y = _transform$transformP2[1];
 
-        return [Math.round(x0 + x), Math.round(y0 + y)];
+        return [x0 + x, y0 + y];
       });
     }
   }, {
@@ -1603,13 +1805,67 @@ var BaseSprite = (_dec = (0, _spriteUtils.deprecate)('BaseSprite#draw(fn, ...)',
     get: function get() {
       return this.cacheContext;
     }
+  }], [{
+    key: 'defineAttributes',
+    value: function defineAttributes(attrs) {
+      var _this6 = this;
+
+      this.Attr = function (_Attr) {
+        (0, _inherits3.default)(_class2, _Attr);
+
+        function _class2(subject) {
+          (0, _classCallCheck3.default)(this, _class2);
+
+          var _this5 = (0, _possibleConstructorReturn3.default)(this, (_class2.__proto__ || (0, _getPrototypeOf2.default)(_class2)).call(this, subject));
+
+          attrs.init(_this5, subject);
+          return _this5;
+        }
+
+        return _class2;
+      }(this.Attr);
+      (0, _entries2.default)(attrs).forEach(function (_ref6) {
+        var _ref7 = (0, _slicedToArray3.default)(_ref6, 2),
+            prop = _ref7[0],
+            handler = _ref7[1];
+
+        var getter = function getter() {
+          return this.get(prop);
+        };
+        if (typeof handler !== 'function' && handler.set) {
+          getter = handler.get || getter;
+          handler = handler.set;
+        }
+        if (prop !== 'init') {
+          _this6.Attr.prototype.__attributeNames.push(prop);
+          (0, _defineProperty3.default)(_this6.Attr.prototype, prop, {
+            set: function set(val) {
+              this.__clearCacheTag = false;
+              this.__updateTag = false;
+              handler(this, val);
+              if (this.subject && this.__updateTag) {
+                this.subject.forceUpdate(this.__clearCacheTag);
+              }
+              delete this.__updateTag;
+              delete this.__clearCacheTag;
+            },
+
+            get: getter
+          });
+        }
+      });
+      return this.Attr;
+    }
   }]);
   return BaseSprite;
-}(_basenode2.default), _class2.Attr = _attr13.default, _temp), (_applyDecoratedDescriptor(_class.prototype, '_draw', [_dec], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, '_draw'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'drawOnce', [_dec2], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'drawOnce'), _class.prototype)), _class));
+}(_basenode2.default), _class.Attr = _attr14.default, _temp);
 exports.default = BaseSprite;
 
+
+(0, _nodetype.registerNodeType)('basesprite', BaseSprite);
+
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1618,88 +1874,298 @@ exports.default = BaseSprite;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Effects = exports.Group = exports.Layer = exports.Path = exports.Label = exports.Sprite = exports.BaseSprite = exports.BaseNode = exports.createGradients = undefined;
 
-var _basesprite = __webpack_require__(38);
+var _toConsumableArray2 = __webpack_require__(5);
 
-var _basesprite2 = _interopRequireDefault(_basesprite);
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
-var _sprite = __webpack_require__(203);
+var _slicedToArray2 = __webpack_require__(1);
 
-var _sprite2 = _interopRequireDefault(_sprite);
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-var _label = __webpack_require__(199);
-
-var _label2 = _interopRequireDefault(_label);
-
-var _layer = __webpack_require__(200);
-
-var _layer2 = _interopRequireDefault(_layer);
-
-var _group = __webpack_require__(106);
-
-var _group2 = _interopRequireDefault(_group);
-
-var _basenode = __webpack_require__(72);
-
-var _basenode2 = _interopRequireDefault(_basenode);
-
-var _path = __webpack_require__(201);
-
-var _path2 = _interopRequireDefault(_path);
-
-var _gradient = __webpack_require__(48);
-
-var _gradient2 = _interopRequireDefault(_gradient);
-
-var _spriteAnimator = __webpack_require__(47);
+exports.drawRadiusBox = drawRadiusBox;
+exports.findColor = findColor;
+exports.copyContext = copyContext;
+exports.clearContext = clearContext;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.createGradients = _gradient2.default;
+function drawRadiusBox(context, _ref) {
+  var x = _ref.x,
+      y = _ref.y,
+      w = _ref.w,
+      h = _ref.h,
+      r = _ref.r;
+
+  context.beginPath();
+  context.moveTo(x + r, y);
+  context.arcTo(x + w, y, x + w, y + h, r);
+  context.arcTo(x + w, y + h, x, y + h, r);
+  context.arcTo(x, y + h, x, y, r);
+  context.arcTo(x, y, x + w, y, r);
+  context.closePath();
+}
+
+function gradientBox(angle, rect) {
+  var _rect = (0, _slicedToArray3.default)(rect, 4),
+      x = _rect[0],
+      y = _rect[1],
+      w = _rect[2],
+      h = _rect[3];
+
+  angle %= 360;
+  if (angle < 0) {
+    angle += 360;
+  }
+
+  var ret = [x, y, x + w, y + h];
+  if (angle >= 0 && angle < 90) {
+    var tan = Math.tan(Math.PI * angle / 180);
+
+    var d = tan * w;
+
+    if (d <= h) {
+      ret = [x, y, x + w, y + d];
+    } else {
+      d = h / tan;
+      ret = [x, y, x + d, y + h];
+    }
+  } else if (angle >= 90 && angle < 180) {
+    var _tan = Math.tan(Math.PI * (angle - 90) / 180);
+
+    var _d = _tan * h;
+
+    if (_d <= w) {
+      ret = [x + w, y, x + w - _d, y + h];
+    } else {
+      _d = w / _tan;
+      ret = [x + w, y, x, y + _d];
+    }
+  } else if (angle >= 180 && angle < 270) {
+    var _tan2 = Math.tan(Math.PI * (angle - 180) / 180);
+
+    var _d2 = _tan2 * w;
+
+    if (_d2 <= h) {
+      ret = [x + w, y + h, x, y + h - _d2];
+    } else {
+      _d2 = h / _tan2;
+      ret = [x + w, y + h, x + w - _d2, y];
+    }
+  } else if (angle >= 270 && angle < 360) {
+    var _tan3 = Math.tan(Math.PI * (angle - 270) / 180);
+
+    var _d3 = _tan3 * h;
+
+    if (_d3 <= w) {
+      ret = [x, y + h, x + _d3, y];
+    } else {
+      _d3 = w / _tan3;
+      ret = [x, y + h, x + w, y + h - _d3];
+    }
+  }
+
+  return ret;
+}
+
+function findColor(context, sprite, prop) {
+  var gradients = sprite.attr('gradients') || {};
+  var color = prop === 'border' ? sprite.attr(prop).color : sprite.attr(prop),
+      gradient = void 0;
+
+  if (gradients[prop]) {
+    gradient = gradients[prop];
+  } else if (typeof color !== 'string') {
+    gradient = color;
+  }
+
+  if (gradient) {
+    var _gradient = gradient,
+        colors = _gradient.colors,
+        vector = _gradient.vector,
+        direction = _gradient.direction,
+        rect = _gradient.rect;
+
+
+    if (direction != null) {
+      if (prop === 'border') {
+        rect = rect || [0, 0].concat((0, _toConsumableArray3.default)(sprite.outerSize));
+      } else {
+        var _sprite$attr = sprite.attr('border'),
+            borderWidth = _sprite$attr.width;
+
+        rect = rect || [borderWidth, borderWidth].concat((0, _toConsumableArray3.default)(sprite.innerSize));
+      }
+      vector = gradientBox(direction, rect);
+    }
+
+    if (vector.length === 4) {
+      color = context.createLinearGradient.apply(context, (0, _toConsumableArray3.default)(vector));
+    } else if (vector.length === 6) {
+      color = context.createRadialGradient.apply(context, (0, _toConsumableArray3.default)(vector));
+    } else if (vector.length === 3) {
+      // for wxapp
+      color = context.createCircularGradient.apply(context, (0, _toConsumableArray3.default)(vector));
+    } else {
+      throw Error('Invalid gradient vector!');
+    }
+
+    colors.forEach(function (o) {
+      color.addColorStop(o.offset, o.color);
+    });
+  }
+
+  return color;
+}
+
+function copyContext(context, width, height) {
+  var canvas = context.canvas;
+  if (!canvas || !canvas.cloneNode) {
+    return;
+  }
+  var copied = canvas.cloneNode();
+  if (width != null) copied.width = width;
+  if (height != null) copied.height = height;
+
+  return copied.getContext('2d');
+}
+
+function clearContext(context) {
+  if (context.canvas) {
+    var _context$canvas = context.canvas,
+        width = _context$canvas.width,
+        height = _context$canvas.height;
+
+    context.clearRect(0, 0, width, height);
+  }
+}
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Vector = exports.Matrix = undefined;
+
+var _matrix = __webpack_require__(207);
+
+var _matrix2 = _interopRequireDefault(_matrix);
+
+var _vector = __webpack_require__(208);
+
+var _vector2 = _interopRequireDefault(_vector);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Matrix = _matrix2.default;
+exports.Vector = _vector2.default;
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SvgPath = exports.Color = exports.createNode = exports.registerNodeType = exports.Effects = exports.Group = exports.Layer = exports.Path = exports.Label = exports.Sprite = exports.Batch = exports.BaseSprite = exports.BaseNode = exports.math = exports.utils = undefined;
+
+var _basesprite = __webpack_require__(41);
+
+var _basesprite2 = _interopRequireDefault(_basesprite);
+
+var _sprite = __webpack_require__(206);
+
+var _sprite2 = _interopRequireDefault(_sprite);
+
+var _label = __webpack_require__(203);
+
+var _label2 = _interopRequireDefault(_label);
+
+var _layer = __webpack_require__(204);
+
+var _layer2 = _interopRequireDefault(_layer);
+
+var _group = __webpack_require__(110);
+
+var _group2 = _interopRequireDefault(_group);
+
+var _basenode = __webpack_require__(77);
+
+var _basenode2 = _interopRequireDefault(_basenode);
+
+var _path = __webpack_require__(205);
+
+var _path2 = _interopRequireDefault(_path);
+
+var _batch = __webpack_require__(109);
+
+var _batch2 = _interopRequireDefault(_batch);
+
+var _nodetype = __webpack_require__(28);
+
+var _spriteAnimator = __webpack_require__(53);
+
+var _svgPathToCanvas = __webpack_require__(78);
+
+var _svgPathToCanvas2 = _interopRequireDefault(_svgPathToCanvas);
+
+var _spriteUtils = __webpack_require__(14);
+
+var utils = _interopRequireWildcard(_spriteUtils);
+
+var _spriteMath = __webpack_require__(43);
+
+var math = _interopRequireWildcard(_spriteMath);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Color = utils.Color;
+
+exports.utils = utils;
+exports.math = math;
 exports.BaseNode = _basenode2.default;
 exports.BaseSprite = _basesprite2.default;
+exports.Batch = _batch2.default;
 exports.Sprite = _sprite2.default;
 exports.Label = _label2.default;
 exports.Path = _path2.default;
 exports.Layer = _layer2.default;
 exports.Group = _group2.default;
 exports.Effects = _spriteAnimator.Effects;
+exports.registerNodeType = _nodetype.registerNodeType;
+exports.createNode = _nodetype.createNode;
+exports.Color = Color;
+exports.SvgPath = _svgPathToCanvas2.default;
 
 /***/ }),
-/* 40 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-exports.__esModule = true;
-
-var _iterator = __webpack_require__(119);
-
-var _iterator2 = _interopRequireDefault(_iterator);
-
-var _symbol = __webpack_require__(12);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
-  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
-} : function (obj) {
-  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
-};
+module.exports = { "default": __webpack_require__(137), __esModule: true };
 
 /***/ }),
-/* 41 */
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(144), __esModule: true };
+
+/***/ }),
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
-var cof = __webpack_require__(33);
-var TAG = __webpack_require__(5)('toStringTag');
+var cof = __webpack_require__(36);
+var TAG = __webpack_require__(7)('toStringTag');
 // ES3 wrong here
 var ARG = cof(function () { return arguments; }()) == 'Arguments';
 
@@ -1723,34 +2189,34 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 42 */
+/* 48 */
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 
 /***/ }),
-/* 43 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-var anObject = __webpack_require__(15);
-var dPs = __webpack_require__(92);
-var enumBugKeys = __webpack_require__(54);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
+var anObject = __webpack_require__(17);
+var dPs = __webpack_require__(93);
+var enumBugKeys = __webpack_require__(60);
+var IE_PROTO = __webpack_require__(69)('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(53)('iframe');
+  var iframe = __webpack_require__(59)('iframe');
   var i = enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(85).appendChild(iframe);
+  __webpack_require__(86).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -1777,11 +2243,11 @@ module.exports = Object.create || function create(O, Properties) {
 
 
 /***/ }),
-/* 44 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
-var toInteger = __webpack_require__(65);
+var toInteger = __webpack_require__(71);
 var min = Math.min;
 module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
@@ -1789,7 +2255,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 45 */
+/* 51 */
 /***/ (function(module, exports) {
 
 var id = 0;
@@ -1800,569 +2266,46 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 46 */
+/* 52 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 47 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _promise = __webpack_require__(49);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Timeline = exports.Effects = exports.Easings = exports.Animator = undefined;
 
-var _promise2 = _interopRequireDefault(_promise);
+var _effect = __webpack_require__(108);
 
-var _entries = __webpack_require__(26);
+var _effect2 = _interopRequireDefault(_effect);
 
-var _entries2 = _interopRequireDefault(_entries);
-
-var _getIterator2 = __webpack_require__(79);
-
-var _getIterator3 = _interopRequireDefault(_getIterator2);
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _keys = __webpack_require__(117);
-
-var _keys2 = _interopRequireDefault(_keys);
-
-var _toConsumableArray2 = __webpack_require__(7);
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _symbol = __webpack_require__(12);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _assign = __webpack_require__(16);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _utils = __webpack_require__(105);
-
-var _effect2 = __webpack_require__(194);
-
-var _effect3 = _interopRequireDefault(_effect2);
-
-var _spriteTimeline = __webpack_require__(210);
+var _spriteTimeline = __webpack_require__(113);
 
 var _spriteTimeline2 = _interopRequireDefault(_spriteTimeline);
 
-var _easing = __webpack_require__(193);
+var _easing = __webpack_require__(107);
 
-var _easing2 = _interopRequireDefault(_easing);
+var _animator = __webpack_require__(194);
+
+var _animator2 = _interopRequireDefault(_animator);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var assert = __webpack_require__(76);
-
-// 计算 offset
-function calculateFramesOffset(keyframes) {
-  keyframes = keyframes.slice(0);
-
-  var firstFrame = keyframes[0],
-      lastFrame = keyframes[keyframes.length - 1];
-
-  lastFrame.offset = lastFrame.offset || 1;
-  firstFrame.offset = firstFrame.offset || 0;
-
-  var offset = 0,
-      offsetFrom = -1;
-
-  for (var i = 0; i < keyframes.length; i++) {
-    var frame = keyframes[i];
-    if (frame.offset != null) {
-      var dis = i - offsetFrom;
-      if (dis > 1) {
-        var delta = (frame.offset - offset) / dis;
-        for (var j = 0; j < dis - 1; j++) {
-          keyframes[offsetFrom + j + 1].offset = offset + delta * (j + 1);
-        }
-      }
-      offset = frame.offset;
-      offsetFrom = i;
-    }
-    if (i > 0) {
-      // 如果中间某个属性没有了，需要从前一帧复制过来
-      keyframes[i] = (0, _assign2.default)({}, keyframes[i - 1], keyframes[i]);
-    }
-  }
-
-  return keyframes;
-}
-
-var _timing = (0, _symbol2.default)('timing'),
-    _keyframes = (0, _symbol2.default)('keyframes'),
-    _initState = (0, _symbol2.default)('initState'),
-    _readyDefer = (0, _symbol2.default)('readyDefer'),
-    _finishedDefer = (0, _symbol2.default)('finishedDefer'),
-    _effects = (0, _symbol2.default)('_effects');
-
-/**
-  easing: {
-    type: 'cubic-bezier',
-    value: [...]
-  }
-  easing: {
-    type: 'steps',
-    step: 1,
-    pos: 'end'
-  }
- */
-var defaultTiming = {
-  delay: 0,
-  endDelay: 0,
-  fill: 'auto',
-  iterations: 1.0,
-  playbackRate: 1.0,
-  direction: 'normal',
-  easing: 'linear',
-  effect: null
-
-  /**
-    animation: play --> delay --> effect --> endDelay
-    playState: idle --> pending --> running --> pending --> finished
-   */
-};
-var Animator = function () {
-  function Animator(initState, keyframes, timing) {
-    var _this = this;
-
-    (0, _classCallCheck3.default)(this, Animator);
-
-    if (Array.isArray(initState)) {
-      var _ref = [initState[0], initState, keyframes];
-      // 如果 initState 缺省，默认 keyframes 的第一帧为 initState
-
-      initState = _ref[0];
-      keyframes = _ref[1];
-      timing = _ref[2];
-    }
-
-    if (typeof timing === 'number') {
-      timing = { duration: timing };
-    }
-
-    this[_timing] = (0, _assign2.default)({}, defaultTiming, timing);
-
-    var easing = this[_timing].easing;
-    if (typeof easing === 'string') {
-      if (!_easing2.default[easing]) {
-        this[_timing].easing = (0, _utils.parseEasingStr)(easing);
-      } else {
-        this[_timing].easing = _easing2.default[easing];
-      }
-    } else if (this[_timing].easing.type === 'cubic-bezier') {
-      this[_timing].easing = _utils.getBezierEasing.apply(undefined, (0, _toConsumableArray3.default)(easing.value));
-    } else if (this[_timing].easing.type === 'steps') {
-      this[_timing].easing = (0, _utils.getStepsEasing)(easing.step, easing.pos);
-    }
-
-    this[_keyframes] = calculateFramesOffset(keyframes);
-
-    var lastFrame = this[_keyframes][this[_keyframes].length - 1];
-
-    this[_initState] = {}; // 初始状态
-
-    (0, _keys2.default)(lastFrame).forEach(function (key) {
-      if (Object.prototype.hasOwnProperty.call(initState, key)) {
-        _this[_initState][key] = initState[key];
-      }
-    });
-
-    if (this[_keyframes][0].offset !== 0) {
-      // 要补第一帧
-      var startFrame = (0, _assign2.default)({}, this[_initState], { offset: 0 });
-      this[_keyframes].unshift(startFrame);
-    }
-    if (lastFrame.offset < 1) {
-      // 要补最后一帧
-      var endFrame = (0, _assign2.default)({}, lastFrame, { offset: 1 });
-      this[_keyframes].push(endFrame);
-    }
-
-    this[_effects] = {};
-    this.timeline = null; // idle, no effect
-  }
-
-  (0, _createClass3.default)(Animator, [{
-    key: 'pause',
-    value: function pause() {
-      this.timeline.playbackRate = 0;
-    }
-  }, {
-    key: 'play',
-    value: function play() {
-      var _this2 = this;
-
-      if (this.playState === 'finished') {
-        this.cancel();
-      }
-
-      if (this.playState === 'idle') {
-        var _timing2 = this[_timing],
-            delay = _timing2.delay,
-            duration = _timing2.duration,
-            iterations = _timing2.iterations,
-            endDelay = _timing2.endDelay,
-            playbackRate = _timing2.playbackRate,
-            timeline = _timing2.timeline;
-
-        this.timeline = new _spriteTimeline2.default({
-          originTime: delay,
-          playbackRate: playbackRate
-        }, timeline);
-
-        if (this[_readyDefer] && !this[_readyDefer].timerID) {
-          this[_readyDefer].timerID = this.timeline.setTimeout(function () {
-            _this2[_readyDefer].resolve();
-            assert(_this2.playState === 'running' || _this2.playState === 'finished', 'An error occured: ' + _this2.playState);
-            delete _this2[_readyDefer];
-          }, { entropy: -this.timeline.entropy });
-        }
-
-        if (this[_finishedDefer] && !this[_finishedDefer].timerID) {
-          this[_finishedDefer].timerID = this.timeline.setTimeout(function () {
-            _this2[_finishedDefer].resolve();
-          }, { entropy: duration * iterations + endDelay - this.timeline.entropy });
-        }
-      } else if (this.playState === 'paused') {
-        this.timeline.playbackRate = this.playbackRate;
-        if (this[_readyDefer] && !this[_readyDefer].timerID) {
-          this[_readyDefer].resolve();
-          delete this[_readyDefer];
-        }
-      }
-    }
-  }, {
-    key: 'cancel',
-    value: function cancel() {
-      if (this[_readyDefer]) {
-        if (this.timeline) {
-          this.timeline.clearTimeout(this[_readyDefer].timerID);
-        }
-        delete this[_readyDefer];
-      }
-      if (this[_finishedDefer]) {
-        if (this.timeline) {
-          this.timeline.clearTimeout(this[_finishedDefer].timerID);
-        }
-        delete this[_finishedDefer];
-      }
-      this.timeline = null;
-    }
-  }, {
-    key: 'finish',
-    value: function finish() {
-      if (this.playState !== 'idle') {
-        this.timeline.entropy = Infinity;
-        if (this[_readyDefer]) {
-          this.timeline.clearTimeout(this[_readyDefer].timerID);
-          delete this[_readyDefer];
-        }
-        if (this[_finishedDefer]) {
-          this.timeline.clearTimeout(this[_finishedDefer].timerID);
-          this[_finishedDefer].resolve();
-          delete this[_finishedDefer];
-        }
-      } else {
-        if (this[_readyDefer]) {
-          delete this[_readyDefer];
-        }
-        if (this[_finishedDefer]) {
-          this[_finishedDefer].resolve();
-          delete this[_finishedDefer];
-        }
-      }
-    }
-  }, {
-    key: 'applyEffects',
-    value: function applyEffects(effects) {
-      return (0, _assign2.default)(this[_effects], effects);
-    }
-  }, {
-    key: 'playbackRate',
-    get: function get() {
-      return this[_timing].playbackRate;
-    },
-    set: function set(rate) {
-      if (this.timeline && this.playState !== 'paused') {
-        this.timeline.playbackRate = rate;
-      }
-      this[_timing].playbackRate = rate;
-    }
-  }, {
-    key: 'playState',
-    get: function get() {
-      var timeline = this.timeline,
-          _timing3 = this[_timing],
-          iterations = _timing3.iterations,
-          duration = _timing3.duration,
-          endDelay = _timing3.endDelay;
-
-
-      if (timeline == null) {
-        return 'idle';
-      }
-
-      if (timeline.playbackRate === 0) {
-        return 'paused';
-      }
-
-      if (timeline.entropy < 0) {
-        // 开始 pending
-        return 'pending';
-      }
-
-      var ed = timeline.entropy - iterations * duration;
-      if (ed > 0 && ed < endDelay) {
-        // 结束 pending
-        return 'pending';
-      }
-
-      if (ed >= endDelay) {
-        return 'finished';
-      }
-
-      return 'running';
-    }
-  }, {
-    key: 'progress',
-    get: function get() {
-      var _timing4 = this[_timing],
-          duration = _timing4.duration,
-          iterations = _timing4.iterations;
-
-      var timeline = this.timeline,
-          entropy = timeline ? timeline.entropy : 0,
-          playState = this.playState;
-
-      var p = void 0;
-
-      if (playState === 'idle') {
-        p = 0;
-      } else if (playState === 'paused' && entropy < 0) {
-        p = 0;
-      } else if (playState === 'pending') {
-        if (entropy < 0) {
-          p = 0;
-        } else {
-          // return periodicity(iterations, 1)
-          var time = timeline.seekLocalTime(iterations * duration);
-          p = (0, _utils.periodicity)(time, duration) / duration;
-        }
-      } else if (playState === 'running' || playState === 'paused') {
-        p = (0, _utils.periodicity)(timeline.currentTime, duration) / duration;
-      }
-
-      if (playState === 'finished') {
-        p = (0, _utils.periodicity)(iterations, 1);
-      }
-
-      return p;
-    }
-  }, {
-    key: 'frame',
-    get: function get() {
-      var p = this.progress;
-
-      var playState = this.playState,
-          initState = this[_initState],
-          _timing5 = this[_timing],
-          fill = _timing5.fill,
-          direction = _timing5.direction,
-          duration = _timing5.duration,
-          easing = _timing5.easing,
-          effect = _timing5.effect;
-
-
-      if (playState === 'idle') {
-        return initState;
-      }
-
-      var entropy = this.timeline.entropy,
-          keyframes = this[_keyframes].slice(0);
-
-      var inversed = false;
-
-      if (direction === 'reverse') {
-        p = 1 - p;
-        inversed = true;
-      } else if (direction === 'alternate' || direction === 'alternate-reverse') {
-        var period = Math.floor(entropy / duration);
-
-        if (p === 1) period--;
-        period = Math.max(0, period);
-
-        if (period % 2 ^ direction === 'alternate-reverse') {
-          p = 1 - p;
-          inversed = true;
-        }
-      }
-
-      var ret = {};
-
-      if (entropy < 0 && playState === 'pending') {
-        if (fill === 'backwards' || fill === 'both') {
-          return inversed ? keyframes[keyframes.length - 1] : keyframes[0];
-        }
-        return initState;
-      }
-
-      if (playState === 'pending' || playState === 'finished') {
-        if (fill !== 'forwards' && fill !== 'both') {
-          return initState;
-        }
-      }
-
-      var effects = this[_effects];
-
-      p = easing(p, keyframes);
-
-      for (var i = 1; i < keyframes.length; i++) {
-        var frame = keyframes[i],
-            offset = frame.offset;
-
-        if (offset >= p || i === keyframes.length - 1) {
-          var previousFrame = keyframes[i - 1],
-              previousOffset = previousFrame.offset;
-
-          if (effect) {
-            ret = effect(previousFrame, frame, p, previousOffset, offset);
-          } else {
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-              for (var _iterator = (0, _getIterator3.default)((0, _entries2.default)(frame)), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var _ref2 = _step.value;
-
-                var _ref3 = (0, _slicedToArray3.default)(_ref2, 2);
-
-                var key = _ref3[0];
-                var value = _ref3[1];
-
-                if (key !== 'offset') {
-                  var _effect = effects[key] || _effect3.default[key] || _effect3.default.default;
-
-                  var v = _effect(previousFrame[key], value, p, previousOffset, offset);
-
-                  if (v != null) {
-                    ret[key] = v;
-                  }
-                }
-              }
-            } catch (err) {
-              _didIteratorError = true;
-              _iteratorError = err;
-            } finally {
-              try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                  _iterator.return();
-                }
-              } finally {
-                if (_didIteratorError) {
-                  throw _iteratorError;
-                }
-              }
-            }
-          }
-          break;
-        }
-      }
-
-      return ret;
-    }
-  }, {
-    key: 'baseTimeline',
-    set: function set(timeline) {
-      this[_timing].timeline = timeline;
-    },
-    get: function get() {
-      return this[_timing].timeline;
-    }
-  }, {
-    key: 'ready',
-    get: function get() {
-      var _this3 = this;
-
-      if (this[_readyDefer]) {
-        return this[_readyDefer].promise;
-      }
-
-      if (this.timeline && this.timeline.entropy >= 0) {
-        if (this.playState !== 'paused') {
-          return _promise2.default.resolve();
-        }
-        this[_readyDefer] = (0, _utils.defer)();
-        return this[_readyDefer].promise;
-      }
-      this[_readyDefer] = (0, _utils.defer)();
-
-      if (this.timeline) {
-        // 已经在 pending 状态
-        this[_readyDefer].timerID = this.timeline.setTimeout(function () {
-          _this3[_readyDefer].resolve();
-          assert(_this3.playState === 'running' || _this3.playState === 'finished', 'An error occured: ' + _this3.playState);
-          delete _this3[_readyDefer];
-        }, { entropy: -this.timeline.entropy });
-      }
-
-      return this[_readyDefer].promise;
-    }
-  }, {
-    key: 'finished',
-    get: function get() {
-      var _this4 = this;
-
-      if (this.playState === 'finished') {
-        return _promise2.default.resolve();
-      }
-      if (!this[_finishedDefer]) {
-        this[_finishedDefer] = (0, _utils.defer)();
-
-        var _timing6 = this[_timing],
-            duration = _timing6.duration,
-            iterations = _timing6.iterations,
-            endDelay = _timing6.endDelay;
-
-        if (this.timeline) {
-          this[_finishedDefer].timerID = this.timeline.setTimeout(function () {
-            _this4[_finishedDefer].resolve();
-          }, { entropy: duration * iterations + endDelay - this.timeline.entropy });
-        }
-      }
-
-      return this[_finishedDefer].promise;
-    }
-  }]);
-  return Animator;
-}();
-
-module.exports = {
-  Animator: Animator,
-  Easings: _easing2.default,
-  Effects: _effect3.default,
-  Timeline: _spriteTimeline2.default
-};
+exports.Animator = _animator2.default;
+exports.Easings = _easing.Easings;
+exports.Effects = _effect2.default;
+exports.Timeline = _spriteTimeline2.default;
 
 /***/ }),
-/* 48 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2372,123 +2315,82 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _toConsumableArray2 = __webpack_require__(7);
+var _assign = __webpack_require__(9);
 
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+var _assign2 = _interopRequireDefault(_assign);
 
 var _slicedToArray2 = __webpack_require__(1);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-exports.default = createGradients;
+var _entries = __webpack_require__(20);
+
+var _entries2 = _interopRequireDefault(_entries);
+
+var _map = __webpack_require__(23);
+
+var _map2 = _interopRequireDefault(_map);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function gradientBox(angle, rect) {
-  var _rect = (0, _slicedToArray3.default)(rect, 4),
-      x = _rect[0],
-      y = _rect[1],
-      w = _rect[2],
-      h = _rect[3];
+var loadedResources = new _map2.default();
 
-  angle %= 360;
-  if (angle < 0) {
-    angle += 360;
-  }
-
-  if (angle >= 0 && angle < 90) {
-    var tan = Math.tan(Math.PI * angle / 180);
-
-    var d = tan * w;
-
-    if (d <= h) {
-      return [x, y, x + w, y + d];
+var Resource = {
+  // {id, src, [srcRect]}
+  loadTexture: function loadTexture(texture) {
+    if (typeof texture === 'string') {
+      texture = { id: texture, src: texture };
     }
-    d = h / tan;
-    return [x, y, x + d, y + h];
-  } else if (angle >= 90 && angle < 180) {
-    var _tan = Math.tan(Math.PI * (angle - 90) / 180);
+    if (!texture.id) texture.src = texture.id;
+    loadedResources.set(texture.id, texture);
+    return texture;
+  },
+  loadFrames: function loadFrames(imgSrc, frameData) {
+    return (0, _entries2.default)(frameData.frames).map(function (_ref) {
+      var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+          id = _ref2[0],
+          frame = _ref2[1];
 
-    var _d = _tan * h;
+      var _frame$frame = frame.frame,
+          x = _frame$frame.x,
+          y = _frame$frame.y,
+          w = _frame$frame.w,
+          h = _frame$frame.h;
+      var rotated = frame.rotated,
+          trimmed = frame.trimmed;
 
-    if (_d <= w) {
-      return [x + w, y, x + w - _d, y + h];
+      if (rotated || trimmed) throw new Error('目前不支持对精灵图片的rotate和trim！');
+
+      var texture = { id: id, src: imgSrc, srcRect: [x, y, w, h] };
+      loadedResources.set(texture.id, texture);
+      return texture;
+    });
+  },
+  getTexture: function getTexture(texture) {
+    var loaded = loadedResources.get(texture.id);
+    if (!loaded) {
+      loaded = this.loadTexture(texture);
     }
-    _d = w / _tan;
-    return [x + w, y, x, y + _d];
-  } else if (angle >= 180 && angle < 270) {
-    var _tan2 = Math.tan(Math.PI * (angle - 180) / 180);
-
-    var _d2 = _tan2 * w;
-
-    if (_d2 <= h) {
-      return [x + w, y + h, x, y + h - _d2];
-    }
-    _d2 = h / _tan2;
-    return [x + w, y + h, x + w - _d2, y];
-  } else if (angle >= 270 && angle < 360) {
-    var _tan3 = Math.tan(Math.PI * (angle - 270) / 180);
-
-    var _d3 = _tan3 * h;
-
-    if (_d3 <= w) {
-      return [x, y + h, x + _d3, y];
-    }
-    _d3 = w / _tan3;
-    return [x, y + h, x + w, y + h - _d3];
+    return (0, _assign2.default)(texture, loaded);
   }
+};
 
-  return [x, y, x + w, y + h];
-}
-
-function createGradients(context, rect, gradient) {
-  var colors = gradient.colors,
-      direction = gradient.direction,
-      _rect2 = (0, _slicedToArray3.default)(rect, 4),
-      x = _rect2[0],
-      y = _rect2[1],
-      w = _rect2[2],
-      h = _rect2[3];
-
-  var vector = gradient.vector;
-
-  if (direction != null) {
-    vector = gradientBox(direction, [x, y, w, h]);
-  }
-
-  var ret = void 0;
-  if (vector.length === 4) {
-    ret = context.createLinearGradient.apply(context, (0, _toConsumableArray3.default)(vector));
-  } else if (vector.length === 6) {
-    ret = context.createRadialGradient.apply(context, (0, _toConsumableArray3.default)(vector));
-  } else if (vector.length === 3) {
-    // for wxapp
-    ret = context.createCircularGradient.apply(context, (0, _toConsumableArray3.default)(vector));
-  } else {
-    throw Error('Invalid gradient vector!');
-  }
-
-  colors.forEach(function (o) {
-    ret.addColorStop(o.offset, o.color);
-  });
-
-  return ret;
-}
+exports.default = Resource;
 
 /***/ }),
-/* 49 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(139), __esModule: true };
+module.exports = { "default": __webpack_require__(128), __esModule: true };
 
 /***/ }),
-/* 50 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(140), __esModule: true };
+module.exports = { "default": __webpack_require__(143), __esModule: true };
 
 /***/ }),
-/* 51 */
+/* 57 */
 /***/ (function(module, exports) {
 
 module.exports = function (it, Constructor, name, forbiddenField) {
@@ -2499,7 +2401,7 @@ module.exports = function (it, Constructor, name, forbiddenField) {
 
 
 /***/ }),
-/* 52 */
+/* 58 */
 /***/ (function(module, exports) {
 
 // 7.2.1 RequireObjectCoercible(argument)
@@ -2510,11 +2412,11 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 53 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(10);
-var document = __webpack_require__(6).document;
+var isObject = __webpack_require__(12);
+var document = __webpack_require__(8).document;
 // typeof document.createElement is 'object' in old IE
 var is = isObject(document) && isObject(document.createElement);
 module.exports = function (it) {
@@ -2523,7 +2425,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 54 */
+/* 60 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -2533,11 +2435,11 @@ module.exports = (
 
 
 /***/ }),
-/* 55 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = __webpack_require__(33);
+var cof = __webpack_require__(36);
 // eslint-disable-next-line no-prototype-builtins
 module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
@@ -2545,21 +2447,21 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
 
 
 /***/ }),
-/* 56 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(42);
+var LIBRARY = __webpack_require__(48);
 var $export = __webpack_require__(2);
-var redefine = __webpack_require__(98);
-var hide = __webpack_require__(20);
-var has = __webpack_require__(24);
-var Iterators = __webpack_require__(27);
-var $iterCreate = __webpack_require__(152);
-var setToStringTag = __webpack_require__(37);
-var getPrototypeOf = __webpack_require__(94);
-var ITERATOR = __webpack_require__(5)('iterator');
+var redefine = __webpack_require__(99);
+var hide = __webpack_require__(21);
+var has = __webpack_require__(26);
+var Iterators = __webpack_require__(30);
+var $iterCreate = __webpack_require__(156);
+var setToStringTag = __webpack_require__(40);
+var getPrototypeOf = __webpack_require__(95);
+var ITERATOR = __webpack_require__(7)('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
 var KEYS = 'keys';
@@ -2622,18 +2524,18 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
 
 
 /***/ }),
-/* 57 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var META = __webpack_require__(45)('meta');
-var isObject = __webpack_require__(10);
-var has = __webpack_require__(24);
-var setDesc = __webpack_require__(11).f;
+var META = __webpack_require__(51)('meta');
+var isObject = __webpack_require__(12);
+var has = __webpack_require__(26);
+var setDesc = __webpack_require__(13).f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
 };
-var FREEZE = !__webpack_require__(23)(function () {
+var FREEZE = !__webpack_require__(25)(function () {
   return isExtensible(Object.preventExtensions({}));
 });
 var setMeta = function (it) {
@@ -2681,13 +2583,13 @@ var meta = module.exports = {
 
 
 /***/ }),
-/* 58 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 25.4.1.5 NewPromiseCapability(C)
-var aFunction = __webpack_require__(32);
+var aFunction = __webpack_require__(35);
 
 function PromiseCapability(C) {
   var resolve, reject;
@@ -2706,18 +2608,18 @@ module.exports.f = function (C) {
 
 
 /***/ }),
-/* 59 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE = __webpack_require__(35);
-var createDesc = __webpack_require__(36);
-var toIObject = __webpack_require__(21);
-var toPrimitive = __webpack_require__(66);
-var has = __webpack_require__(24);
-var IE8_DOM_DEFINE = __webpack_require__(86);
+var pIE = __webpack_require__(38);
+var createDesc = __webpack_require__(39);
+var toIObject = __webpack_require__(22);
+var toPrimitive = __webpack_require__(72);
+var has = __webpack_require__(26);
+var IE8_DOM_DEFINE = __webpack_require__(87);
 var gOPD = Object.getOwnPropertyDescriptor;
 
-exports.f = __webpack_require__(9) ? gOPD : function getOwnPropertyDescriptor(O, P) {
+exports.f = __webpack_require__(11) ? gOPD : function getOwnPropertyDescriptor(O, P) {
   O = toIObject(O);
   P = toPrimitive(P, true);
   if (IE8_DOM_DEFINE) try {
@@ -2728,20 +2630,20 @@ exports.f = __webpack_require__(9) ? gOPD : function getOwnPropertyDescriptor(O,
 
 
 /***/ }),
-/* 60 */
+/* 66 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 61 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
 var $export = __webpack_require__(2);
 var core = __webpack_require__(0);
-var fails = __webpack_require__(23);
+var fails = __webpack_require__(25);
 module.exports = function (KEY, exec) {
   var fn = (core.Object || {})[KEY] || Object[KEY];
   var exp = {};
@@ -2751,10 +2653,10 @@ module.exports = function (KEY, exec) {
 
 
 /***/ }),
-/* 62 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var hide = __webpack_require__(20);
+var hide = __webpack_require__(21);
 module.exports = function (target, src, safe) {
   for (var key in src) {
     if (safe && target[key]) target[key] = src[key];
@@ -2764,21 +2666,21 @@ module.exports = function (target, src, safe) {
 
 
 /***/ }),
-/* 63 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(64)('keys');
-var uid = __webpack_require__(45);
+var shared = __webpack_require__(70)('keys');
+var uid = __webpack_require__(51);
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
 
 /***/ }),
-/* 64 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(6);
+var global = __webpack_require__(8);
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
 module.exports = function (key) {
@@ -2787,7 +2689,7 @@ module.exports = function (key) {
 
 
 /***/ }),
-/* 65 */
+/* 71 */
 /***/ (function(module, exports) {
 
 // 7.1.4 ToInteger
@@ -2799,11 +2701,11 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 66 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(10);
+var isObject = __webpack_require__(12);
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
 // and the second argument - flag - preferred type is a string
 module.exports = function (it, S) {
@@ -2817,10 +2719,10 @@ module.exports = function (it, S) {
 
 
 /***/ }),
-/* 67 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(10);
+var isObject = __webpack_require__(12);
 module.exports = function (it, TYPE) {
   if (!isObject(it) || it._t !== TYPE) throw TypeError('Incompatible receiver, ' + TYPE + ' required!');
   return it;
@@ -2828,14 +2730,14 @@ module.exports = function (it, TYPE) {
 
 
 /***/ }),
-/* 68 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(6);
+var global = __webpack_require__(8);
 var core = __webpack_require__(0);
-var LIBRARY = __webpack_require__(42);
-var wksExt = __webpack_require__(69);
-var defineProperty = __webpack_require__(11).f;
+var LIBRARY = __webpack_require__(48);
+var wksExt = __webpack_require__(75);
+var defineProperty = __webpack_require__(13).f;
 module.exports = function (name) {
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -2843,19 +2745,19 @@ module.exports = function (name) {
 
 
 /***/ }),
-/* 69 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports.f = __webpack_require__(5);
+exports.f = __webpack_require__(7);
 
 
 /***/ }),
-/* 70 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(41);
-var ITERATOR = __webpack_require__(5)('iterator');
-var Iterators = __webpack_require__(27);
+var classof = __webpack_require__(47);
+var ITERATOR = __webpack_require__(7)('iterator');
+var Iterators = __webpack_require__(30);
 module.exports = __webpack_require__(0).getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR]
     || it['@@iterator']
@@ -2864,7 +2766,1350 @@ module.exports = __webpack_require__(0).getIteratorMethod = function (it) {
 
 
 /***/ }),
-/* 71 */
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _eventHandlers = (0, _symbol2.default)('eventHandlers'),
+    _collisionState = (0, _symbol2.default)('collisionState');
+
+var BaseNode = function () {
+  function BaseNode() {
+    (0, _classCallCheck3.default)(this, BaseNode);
+
+    this[_eventHandlers] = {};
+  }
+
+  (0, _createClass3.default)(BaseNode, [{
+    key: 'on',
+    value: function on(type, handler) {
+      var _this = this;
+
+      if (Array.isArray(type)) {
+        type.forEach(function (t) {
+          return _this.on(t, handler);
+        });
+      } else {
+        this[_eventHandlers][type] = this[_eventHandlers][type] || [];
+        this[_eventHandlers][type].push(handler);
+      }
+      return this;
+    }
+  }, {
+    key: 'off',
+    value: function off(type, handler) {
+      var _this2 = this;
+
+      if (Array.isArray(type)) {
+        type.forEach(function (t) {
+          return _this2.off(t, handler);
+        });
+      } else if (handler && this[_eventHandlers][type]) {
+        var idx = this[_eventHandlers][type].indexOf(handler);
+
+        if (idx >= 0) {
+          this[_eventHandlers][type].splice(idx, 1);
+        }
+      } else {
+        delete this[_eventHandlers][type];
+      }
+      return this;
+    }
+    // d3-friendly
+
+  }, {
+    key: 'addEventListener',
+    value: function addEventListener(type, handler) {
+      return this.on(type, handler);
+    }
+  }, {
+    key: 'removeEventListener',
+    value: function removeEventListener(type, handler) {
+      return this.off(type, handler);
+    }
+  }, {
+    key: 'pointCollision',
+    value: function pointCollision(evt) {
+      throw Error('you mast override this method');
+    }
+  }, {
+    key: 'dispatchEvent',
+    value: function dispatchEvent(type, evt) {
+      var _this3 = this;
+
+      var collisionState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (!evt.stopDispatch) {
+        evt.stopDispatch = function () {
+          _this3.terminated = true;
+        };
+      }
+      if (evt.type !== type) {
+        if (evt.type) {
+          evt.originalType = evt.type;
+        }
+        evt.type = type;
+      }
+
+      var isCollision = collisionState || this.pointCollision(evt);
+
+      if (!evt.terminated && isCollision) {
+        evt.target = this;
+
+        var handlers = this[_eventHandlers][type];
+        if (handlers) {
+          handlers.forEach(function (handler) {
+            return handler.call(_this3, evt);
+          });
+        }
+
+        if (type === 'mousemove') {
+          if (!this[_collisionState]) {
+            var _evt = (0, _assign2.default)({}, evt);
+            _evt.type = 'mouseenter';
+            _evt.terminated = false;
+
+            this.dispatchEvent('mouseenter', _evt, true);
+          }
+          this[_collisionState] = true;
+        }
+      } else if (type === 'mousemove') {
+        if (this[_collisionState]) {
+          var _evt2 = (0, _assign2.default)({}, evt);
+          _evt2.type = 'mouseleave';
+          _evt2.target = this;
+          _evt2.terminated = false;
+
+          this.dispatchEvent('mouseleave', _evt2, true);
+        }
+        this[_collisionState] = false;
+      }
+
+      return isCollision;
+    }
+    // called when layer appendChild
+
+  }, {
+    key: 'connect',
+    value: function connect(parent) {
+      var zOrder = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+      if (this.parent) {
+        // throw new Error('This node belongs to another parent node! Remove it first...')
+        this.disconnect(this.parent);
+      }
+
+      Object.defineProperty(this, 'zOrder', {
+        value: zOrder,
+        writable: false,
+        configurable: true
+      });
+
+      Object.defineProperty(this, 'parent', {
+        get: function get() {
+          return parent;
+        },
+        configurable: true
+      });
+
+      var handlers = this[_eventHandlers].append;
+      if (handlers && handlers.length) {
+        this.dispatchEvent('append', {
+          parent: parent,
+          zOrder: zOrder
+        }, true, true);
+      }
+
+      return this;
+    }
+
+    // override to recycling resources
+
+  }, {
+    key: 'disconnect',
+    value: function disconnect(parent) {
+      if (!this.parent || parent !== this.parent) {
+        throw new Error('Invalid node to disconnect');
+      }
+
+      var zOrder = this.zOrder;
+      delete this.zOrder;
+
+      var handlers = this[_eventHandlers].remove;
+      if (handlers && handlers.length) {
+        this.dispatchEvent('remove', {
+          parent: parent,
+          zOrder: zOrder
+        }, true, true);
+      }
+
+      delete this.parent;
+
+      return this;
+    }
+  }]);
+  return BaseNode;
+}();
+
+exports.default = BaseNode;
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _toArray2 = __webpack_require__(82);
+
+var _toArray3 = _interopRequireDefault(_toArray2);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _spriteMath = __webpack_require__(43);
+
+var _platform = __webpack_require__(217);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var parse = __webpack_require__(216);
+var abs = __webpack_require__(213);
+var normalize = __webpack_require__(215);
+var isSvgPath = __webpack_require__(214);
+
+
+var _path = (0, _symbol2.default)('path');
+var _bounds = (0, _symbol2.default)('bounds');
+var _savedPaths = (0, _symbol2.default)('savedPaths');
+var _renderProps = (0, _symbol2.default)('renderProps');
+var _beginPath = (0, _symbol2.default)('beginPath');
+
+var SvgPath = function () {
+  function SvgPath(d) {
+    (0, _classCallCheck3.default)(this, SvgPath);
+
+    if (!isSvgPath(d)) {
+      throw new Error('Not an SVG path!');
+    }
+
+    var path = normalize(abs(parse(d)));
+
+    this[_path] = path;
+
+    this[_bounds] = null;
+    this[_savedPaths] = [];
+    this[_renderProps] = {};
+    this[_beginPath] = false;
+  }
+
+  (0, _createClass3.default)(SvgPath, [{
+    key: 'save',
+    value: function save() {
+      this[_savedPaths].push({ path: this[_path],
+        bounds: this[_bounds],
+        renderProps: (0, _assign2.default)({}, this[_renderProps]) });
+      return this;
+    }
+  }, {
+    key: 'restore',
+    value: function restore() {
+      if (this[_savedPaths].length) {
+        var _savedPaths$pop = this[_savedPaths].pop(),
+            path = _savedPaths$pop.path,
+            bounds = _savedPaths$pop.bounds,
+            renderProps = _savedPaths$pop.renderProps;
+
+        this[_path] = path;
+        this[_bounds] = bounds;
+        this[_renderProps] = renderProps;
+      }
+      return this;
+    }
+  }, {
+    key: 'isPointInPath',
+    value: function isPointInPath(x, y) {
+      return (0, _platform.isPointInPath)(this, x, y);
+    }
+  }, {
+    key: 'getPointAtLength',
+    value: function getPointAtLength(len) {
+      return (0, _platform.getPointAtLength)(this.d, len);
+    }
+  }, {
+    key: 'getTotalLength',
+    value: function getTotalLength() {
+      return (0, _platform.getTotalLength)(this.d);
+    }
+  }, {
+    key: 'transform',
+    value: function transform() {
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      this[_bounds] = null;
+      var m = new _spriteMath.Matrix(args);
+      var commands = this[_path];
+      this[_path] = commands.map(function (c) {
+        var _c = (0, _toArray3.default)(c),
+            cmd = _c[0],
+            args = _c.slice(1);
+
+        var transformed = [cmd];
+        for (var i = 0; i < args.length; i += 2) {
+          var x0 = args[i],
+              y0 = args[i + 1];
+
+          var _m$transformPoint = m.transformPoint(x0, y0),
+              _m$transformPoint2 = (0, _slicedToArray3.default)(_m$transformPoint, 2),
+              x = _m$transformPoint2[0],
+              y = _m$transformPoint2[1];
+
+          transformed.push(x, y);
+        }
+        return transformed;
+      });
+      return this;
+    }
+  }, {
+    key: 'translate',
+    value: function translate(x, y) {
+      var m = new _spriteMath.Matrix().translate(x, y);
+      return this.transform.apply(this, (0, _toConsumableArray3.default)(m.m));
+    }
+  }, {
+    key: 'rotate',
+    value: function rotate(deg) {
+      var m = new _spriteMath.Matrix().rotate(deg);
+      return this.transform.apply(this, (0, _toConsumableArray3.default)(m.m));
+    }
+  }, {
+    key: 'scale',
+    value: function scale(sx, sy) {
+      if (sy == null) sy = sx;
+      var m = new _spriteMath.Matrix().scale(sx, sy);
+      return this.transform.apply(this, (0, _toConsumableArray3.default)(m.m));
+    }
+  }, {
+    key: 'skew',
+    value: function skew(degX, degY) {
+      var m = new _spriteMath.Matrix().skew(degX, degY);
+      return this.transform.apply(this, (0, _toConsumableArray3.default)(m.m));
+    }
+  }, {
+    key: 'trim',
+    value: function trim() {
+      var _bounds2 = (0, _slicedToArray3.default)(this.bounds, 2),
+          x = _bounds2[0],
+          y = _bounds2[1];
+
+      this.translate(-x, -y);
+      return this;
+    }
+  }, {
+    key: 'beginPath',
+    value: function beginPath() {
+      this[_beginPath] = true;
+      return this;
+    }
+  }, {
+    key: 'to',
+    value: function to(context) {
+      var commands = this[_path];
+      var renderProps = this[_renderProps];
+      if (commands.length) {
+        if (this[_beginPath]) {
+          context.beginPath();
+        }
+        commands.forEach(function (c) {
+          var _c2 = (0, _toArray3.default)(c),
+              cmd = _c2[0],
+              args = _c2.slice(1);
+
+          if (cmd === 'M') {
+            context.moveTo.apply(context, (0, _toConsumableArray3.default)(args));
+          } else {
+            context.bezierCurveTo.apply(context, (0, _toConsumableArray3.default)(args));
+          }
+        });
+      }
+      (0, _assign2.default)(context, renderProps);
+      return {
+        stroke: function stroke() {
+          context.stroke();
+          return this;
+        },
+        fill: function fill() {
+          context.fill();
+          return this;
+        }
+      };
+    }
+  }, {
+    key: 'strokeStyle',
+    value: function strokeStyle(value) {
+      this[_renderProps].strokeStyle = value;
+      return this;
+    }
+  }, {
+    key: 'fillStyle',
+    value: function fillStyle(value) {
+      this[_renderProps].fillStyle = value;
+      return this;
+    }
+  }, {
+    key: 'lineWidth',
+    value: function lineWidth(value) {
+      this[_renderProps].lineWidth = value;
+      return this;
+    }
+  }, {
+    key: 'lineCap',
+    value: function lineCap(value) {
+      this[_renderProps].lineCap = value;
+      return this;
+    }
+  }, {
+    key: 'lineJoin',
+    value: function lineJoin(value) {
+      this[_renderProps].lineJoin = value;
+      return this;
+    }
+  }, {
+    key: 'bounds',
+    get: function get() {
+      if (!this[_bounds]) {
+        var path = this[_path];
+        this[_bounds] = [0, 0, 0, 0];
+        if (path.length) {
+          var bounds = [Infinity, Infinity, -Infinity, -Infinity];
+
+          for (var i = 0, l = path.length; i < l; i++) {
+            var points = path[i].slice(1);
+
+            for (var j = 0; j < points.length; j += 2) {
+              if (points[j + 0] < bounds[0]) bounds[0] = points[j + 0];
+              if (points[j + 1] < bounds[1]) bounds[1] = points[j + 1];
+              if (points[j + 0] > bounds[2]) bounds[2] = points[j + 0];
+              if (points[j + 1] > bounds[3]) bounds[3] = points[j + 1];
+            }
+          }
+          this[_bounds] = bounds;
+        }
+      }
+      return this[_bounds];
+    }
+  }, {
+    key: 'size',
+    get: function get() {
+      var bounds = this.bounds;
+      return [bounds[2] - bounds[0], bounds[3] - bounds[1]];
+    }
+  }, {
+    key: 'center',
+    get: function get() {
+      var _bounds3 = (0, _slicedToArray3.default)(this.bounds, 4),
+          x0 = _bounds3[0],
+          y0 = _bounds3[1],
+          x1 = _bounds3[2],
+          y1 = _bounds3[3];
+
+      return [(x0 + x1) / 2, (y0 + y1) / 2];
+    }
+  }, {
+    key: 'd',
+    get: function get() {
+      return this[_path].map(function (p) {
+        var _p = (0, _toArray3.default)(p),
+            c = _p[0],
+            points = _p.slice(1);
+
+        return c + points.join();
+      }).join('');
+    }
+  }, {
+    key: 'path',
+    get: function get() {
+      return this[_path];
+    }
+  }]);
+  return SvgPath;
+}();
+
+module.exports = SvgPath;
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(16);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _get2 = __webpack_require__(18);
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _inherits2 = __webpack_require__(15);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _spriteCore = __webpack_require__(44);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ExLayer = function (_Layer) {
+  (0, _inherits3.default)(ExLayer, _Layer);
+
+  function ExLayer() {
+    (0, _classCallCheck3.default)(this, ExLayer);
+    return (0, _possibleConstructorReturn3.default)(this, (ExLayer.__proto__ || (0, _getPrototypeOf2.default)(ExLayer)).apply(this, arguments));
+  }
+
+  (0, _createClass3.default)(ExLayer, [{
+    key: 'toLocalPos',
+    value: function toLocalPos(x, y) {
+      return this.parent && this.parent.toLocalPos(x, y);
+    }
+  }, {
+    key: 'toGlobalPos',
+    value: function toGlobalPos(x, y) {
+      return this.parent && this.parent.toGlobalPos(x, y);
+    }
+  }, {
+    key: 'drawSprites',
+    value: function drawSprites(renderEls, t) {
+      var context = this.outputContext;
+      context.save();
+      context.scale(this.rpx, this.rpx);
+      (0, _get3.default)(ExLayer.prototype.__proto__ || (0, _getPrototypeOf2.default)(ExLayer.prototype), 'drawSprites', this).call(this, renderEls, t);
+      context.restore();
+      context.draw();
+    }
+  }, {
+    key: 'rpx',
+    get: function get() {
+      if (this.parent) return this.parent.rpx;
+      return 1;
+    }
+  }]);
+  return ExLayer;
+}(_spriteCore.Layer);
+
+exports.default = ExLayer;
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(129), __esModule: true };
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(131), __esModule: true };
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _from = __webpack_require__(55);
+
+var _from2 = _interopRequireDefault(_from);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (arr) {
+  return Array.isArray(arr) ? arr : (0, _from2.default)(arr);
+};
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var dP = __webpack_require__(13).f;
+var create = __webpack_require__(49);
+var redefineAll = __webpack_require__(68);
+var ctx = __webpack_require__(19);
+var anInstance = __webpack_require__(57);
+var forOf = __webpack_require__(37);
+var $iterDefine = __webpack_require__(62);
+var step = __webpack_require__(92);
+var setSpecies = __webpack_require__(102);
+var DESCRIPTORS = __webpack_require__(11);
+var fastKey = __webpack_require__(63).fastKey;
+var validate = __webpack_require__(73);
+var SIZE = DESCRIPTORS ? '_s' : 'size';
+
+var getEntry = function (that, key) {
+  // fast case
+  var index = fastKey(key);
+  var entry;
+  if (index !== 'F') return that._i[index];
+  // frozen object case
+  for (entry = that._f; entry; entry = entry.n) {
+    if (entry.k == key) return entry;
+  }
+};
+
+module.exports = {
+  getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
+    var C = wrapper(function (that, iterable) {
+      anInstance(that, C, NAME, '_i');
+      that._t = NAME;         // collection type
+      that._i = create(null); // index
+      that._f = undefined;    // first entry
+      that._l = undefined;    // last entry
+      that[SIZE] = 0;         // size
+      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
+    });
+    redefineAll(C.prototype, {
+      // 23.1.3.1 Map.prototype.clear()
+      // 23.2.3.2 Set.prototype.clear()
+      clear: function clear() {
+        for (var that = validate(this, NAME), data = that._i, entry = that._f; entry; entry = entry.n) {
+          entry.r = true;
+          if (entry.p) entry.p = entry.p.n = undefined;
+          delete data[entry.i];
+        }
+        that._f = that._l = undefined;
+        that[SIZE] = 0;
+      },
+      // 23.1.3.3 Map.prototype.delete(key)
+      // 23.2.3.4 Set.prototype.delete(value)
+      'delete': function (key) {
+        var that = validate(this, NAME);
+        var entry = getEntry(that, key);
+        if (entry) {
+          var next = entry.n;
+          var prev = entry.p;
+          delete that._i[entry.i];
+          entry.r = true;
+          if (prev) prev.n = next;
+          if (next) next.p = prev;
+          if (that._f == entry) that._f = next;
+          if (that._l == entry) that._l = prev;
+          that[SIZE]--;
+        } return !!entry;
+      },
+      // 23.2.3.6 Set.prototype.forEach(callbackfn, thisArg = undefined)
+      // 23.1.3.5 Map.prototype.forEach(callbackfn, thisArg = undefined)
+      forEach: function forEach(callbackfn /* , that = undefined */) {
+        validate(this, NAME);
+        var f = ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3);
+        var entry;
+        while (entry = entry ? entry.n : this._f) {
+          f(entry.v, entry.k, this);
+          // revert to the last existing entry
+          while (entry && entry.r) entry = entry.p;
+        }
+      },
+      // 23.1.3.7 Map.prototype.has(key)
+      // 23.2.3.7 Set.prototype.has(value)
+      has: function has(key) {
+        return !!getEntry(validate(this, NAME), key);
+      }
+    });
+    if (DESCRIPTORS) dP(C.prototype, 'size', {
+      get: function () {
+        return validate(this, NAME)[SIZE];
+      }
+    });
+    return C;
+  },
+  def: function (that, key, value) {
+    var entry = getEntry(that, key);
+    var prev, index;
+    // change existing entry
+    if (entry) {
+      entry.v = value;
+    // create new entry
+    } else {
+      that._l = entry = {
+        i: index = fastKey(key, true), // <- index
+        k: key,                        // <- key
+        v: value,                      // <- value
+        p: prev = that._l,             // <- previous entry
+        n: undefined,                  // <- next entry
+        r: false                       // <- removed
+      };
+      if (!that._f) that._f = entry;
+      if (prev) prev.n = entry;
+      that[SIZE]++;
+      // add to index
+      if (index !== 'F') that._i[index] = entry;
+    } return that;
+  },
+  getEntry: getEntry,
+  setStrong: function (C, NAME, IS_MAP) {
+    // add .keys, .values, .entries, [@@iterator]
+    // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
+    $iterDefine(C, NAME, function (iterated, kind) {
+      this._t = validate(iterated, NAME); // target
+      this._k = kind;                     // kind
+      this._l = undefined;                // previous
+    }, function () {
+      var that = this;
+      var kind = that._k;
+      var entry = that._l;
+      // revert to the last existing entry
+      while (entry && entry.r) entry = entry.p;
+      // get next entry
+      if (!that._t || !(that._l = entry = entry ? entry.n : that._t._f)) {
+        // or finish the iteration
+        that._t = undefined;
+        return step(1);
+      }
+      // return step by kind
+      if (kind == 'keys') return step(0, entry.k);
+      if (kind == 'values') return step(0, entry.v);
+      return step(0, [entry.k, entry.v]);
+    }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
+
+    // add [@@species], 23.1.2.2, 23.2.2.2
+    setSpecies(NAME);
+  }
+};
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
+var classof = __webpack_require__(47);
+var from = __webpack_require__(148);
+module.exports = function (NAME) {
+  return function toJSON() {
+    if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
+    return from(this);
+  };
+};
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var global = __webpack_require__(8);
+var $export = __webpack_require__(2);
+var meta = __webpack_require__(63);
+var fails = __webpack_require__(25);
+var hide = __webpack_require__(21);
+var redefineAll = __webpack_require__(68);
+var forOf = __webpack_require__(37);
+var anInstance = __webpack_require__(57);
+var isObject = __webpack_require__(12);
+var setToStringTag = __webpack_require__(40);
+var dP = __webpack_require__(13).f;
+var each = __webpack_require__(150)(0);
+var DESCRIPTORS = __webpack_require__(11);
+
+module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
+  var Base = global[NAME];
+  var C = Base;
+  var ADDER = IS_MAP ? 'set' : 'add';
+  var proto = C && C.prototype;
+  var O = {};
+  if (!DESCRIPTORS || typeof C != 'function' || !(IS_WEAK || proto.forEach && !fails(function () {
+    new C().entries().next();
+  }))) {
+    // create collection constructor
+    C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
+    redefineAll(C.prototype, methods);
+    meta.NEED = true;
+  } else {
+    C = wrapper(function (target, iterable) {
+      anInstance(target, C, NAME, '_c');
+      target._c = new Base();
+      if (iterable != undefined) forOf(iterable, IS_MAP, target[ADDER], target);
+    });
+    each('add,clear,delete,forEach,get,has,set,keys,values,entries,toJSON'.split(','), function (KEY) {
+      var IS_ADDER = KEY == 'add' || KEY == 'set';
+      if (KEY in proto && !(IS_WEAK && KEY == 'clear')) hide(C.prototype, KEY, function (a, b) {
+        anInstance(this, C, KEY);
+        if (!IS_ADDER && IS_WEAK && !isObject(a)) return KEY == 'get' ? undefined : false;
+        var result = this._c[KEY](a === 0 ? 0 : a, b);
+        return IS_ADDER ? this : result;
+      });
+    });
+    IS_WEAK || dP(C.prototype, 'size', {
+      get: function () {
+        return this._c.size;
+      }
+    });
+  }
+
+  setToStringTag(C, NAME);
+
+  O[NAME] = C;
+  $export($export.G + $export.W + $export.F, O);
+
+  if (!IS_WEAK) common.setStrong(C, NAME, IS_MAP);
+
+  return C;
+};
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var document = __webpack_require__(8).document;
+module.exports = document && document.documentElement;
+
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = !__webpack_require__(11) && !__webpack_require__(25)(function () {
+  return Object.defineProperty(__webpack_require__(59)('div'), 'a', { get: function () { return 7; } }).a != 7;
+});
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// check on default Array iterator
+var Iterators = __webpack_require__(30);
+var ITERATOR = __webpack_require__(7)('iterator');
+var ArrayProto = Array.prototype;
+
+module.exports = function (it) {
+  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+};
+
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.2.2 IsArray(argument)
+var cof = __webpack_require__(36);
+module.exports = Array.isArray || function isArray(arg) {
+  return cof(arg) == 'Array';
+};
+
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// call something on iterator step with safe closing on error
+var anObject = __webpack_require__(17);
+module.exports = function (iterator, fn, value, entries) {
+  try {
+    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+  // 7.4.6 IteratorClose(iterator, completion)
+  } catch (e) {
+    var ret = iterator['return'];
+    if (ret !== undefined) anObject(ret.call(iterator));
+    throw e;
+  }
+};
+
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ITERATOR = __webpack_require__(7)('iterator');
+var SAFE_CLOSING = false;
+
+try {
+  var riter = [7][ITERATOR]();
+  riter['return'] = function () { SAFE_CLOSING = true; };
+  // eslint-disable-next-line no-throw-literal
+  Array.from(riter, function () { throw 2; });
+} catch (e) { /* empty */ }
+
+module.exports = function (exec, skipClosing) {
+  if (!skipClosing && !SAFE_CLOSING) return false;
+  var safe = false;
+  try {
+    var arr = [7];
+    var iter = arr[ITERATOR]();
+    iter.next = function () { return { done: safe = true }; };
+    arr[ITERATOR] = function () { return iter; };
+    exec(arr);
+  } catch (e) { /* empty */ }
+  return safe;
+};
+
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports) {
+
+module.exports = function (done, value) {
+  return { value: value, done: !!done };
+};
+
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var dP = __webpack_require__(13);
+var anObject = __webpack_require__(17);
+var getKeys = __webpack_require__(31);
+
+module.exports = __webpack_require__(11) ? Object.defineProperties : function defineProperties(O, Properties) {
+  anObject(O);
+  var keys = getKeys(Properties);
+  var length = keys.length;
+  var i = 0;
+  var P;
+  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
+  return O;
+};
+
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
+var $keys = __webpack_require__(96);
+var hiddenKeys = __webpack_require__(60).concat('length', 'prototype');
+
+exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
+  return $keys(O, hiddenKeys);
+};
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+var has = __webpack_require__(26);
+var toObject = __webpack_require__(32);
+var IE_PROTO = __webpack_require__(69)('IE_PROTO');
+var ObjectProto = Object.prototype;
+
+module.exports = Object.getPrototypeOf || function (O) {
+  O = toObject(O);
+  if (has(O, IE_PROTO)) return O[IE_PROTO];
+  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
+    return O.constructor.prototype;
+  } return O instanceof Object ? ObjectProto : null;
+};
+
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var has = __webpack_require__(26);
+var toIObject = __webpack_require__(22);
+var arrayIndexOf = __webpack_require__(149)(false);
+var IE_PROTO = __webpack_require__(69)('IE_PROTO');
+
+module.exports = function (object, names) {
+  var O = toIObject(object);
+  var i = 0;
+  var result = [];
+  var key;
+  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
+  // Don't enum bug & hidden keys
+  while (names.length > i) if (has(O, key = names[i++])) {
+    ~arrayIndexOf(result, key) || result.push(key);
+  }
+  return result;
+};
+
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports) {
+
+module.exports = function (exec) {
+  try {
+    return { e: false, v: exec() };
+  } catch (e) {
+    return { e: true, v: e };
+  }
+};
+
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(17);
+var isObject = __webpack_require__(12);
+var newPromiseCapability = __webpack_require__(64);
+
+module.exports = function (C, x) {
+  anObject(C);
+  if (isObject(x) && x.constructor === C) return x;
+  var promiseCapability = newPromiseCapability.f(C);
+  var resolve = promiseCapability.resolve;
+  resolve(x);
+  return promiseCapability.promise;
+};
+
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(21);
+
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// https://tc39.github.io/proposal-setmap-offrom/
+var $export = __webpack_require__(2);
+var aFunction = __webpack_require__(35);
+var ctx = __webpack_require__(19);
+var forOf = __webpack_require__(37);
+
+module.exports = function (COLLECTION) {
+  $export($export.S, COLLECTION, { from: function from(source /* , mapFn, thisArg */) {
+    var mapFn = arguments[1];
+    var mapping, A, n, cb;
+    aFunction(this);
+    mapping = mapFn !== undefined;
+    if (mapping) aFunction(mapFn);
+    if (source == undefined) return new this();
+    A = [];
+    if (mapping) {
+      n = 0;
+      cb = ctx(mapFn, arguments[2], 2);
+      forOf(source, false, function (nextItem) {
+        A.push(cb(nextItem, n++));
+      });
+    } else {
+      forOf(source, false, A.push, A);
+    }
+    return new this(A);
+  } });
+};
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// https://tc39.github.io/proposal-setmap-offrom/
+var $export = __webpack_require__(2);
+
+module.exports = function (COLLECTION) {
+  $export($export.S, COLLECTION, { of: function of() {
+    var length = arguments.length;
+    var A = new Array(length);
+    while (length--) A[length] = arguments[length];
+    return new this(A);
+  } });
+};
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var global = __webpack_require__(8);
+var core = __webpack_require__(0);
+var dP = __webpack_require__(13);
+var DESCRIPTORS = __webpack_require__(11);
+var SPECIES = __webpack_require__(7)('species');
+
+module.exports = function (KEY) {
+  var C = typeof core[KEY] == 'function' ? core[KEY] : global[KEY];
+  if (DESCRIPTORS && C && !C[SPECIES]) dP.f(C, SPECIES, {
+    configurable: true,
+    get: function () { return this; }
+  });
+};
+
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// 7.3.20 SpeciesConstructor(O, defaultConstructor)
+var anObject = __webpack_require__(17);
+var aFunction = __webpack_require__(35);
+var SPECIES = __webpack_require__(7)('species');
+module.exports = function (O, D) {
+  var C = anObject(O).constructor;
+  var S;
+  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
+};
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ctx = __webpack_require__(19);
+var invoke = __webpack_require__(155);
+var html = __webpack_require__(86);
+var cel = __webpack_require__(59);
+var global = __webpack_require__(8);
+var process = global.process;
+var setTask = global.setImmediate;
+var clearTask = global.clearImmediate;
+var MessageChannel = global.MessageChannel;
+var Dispatch = global.Dispatch;
+var counter = 0;
+var queue = {};
+var ONREADYSTATECHANGE = 'onreadystatechange';
+var defer, channel, port;
+var run = function () {
+  var id = +this;
+  // eslint-disable-next-line no-prototype-builtins
+  if (queue.hasOwnProperty(id)) {
+    var fn = queue[id];
+    delete queue[id];
+    fn();
+  }
+};
+var listener = function (event) {
+  run.call(event.data);
+};
+// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
+if (!setTask || !clearTask) {
+  setTask = function setImmediate(fn) {
+    var args = [];
+    var i = 1;
+    while (arguments.length > i) args.push(arguments[i++]);
+    queue[++counter] = function () {
+      // eslint-disable-next-line no-new-func
+      invoke(typeof fn == 'function' ? fn : Function(fn), args);
+    };
+    defer(counter);
+    return counter;
+  };
+  clearTask = function clearImmediate(id) {
+    delete queue[id];
+  };
+  // Node.js 0.8-
+  if (__webpack_require__(36)(process) == 'process') {
+    defer = function (id) {
+      process.nextTick(ctx(run, id, 1));
+    };
+  // Sphere (JS game engine) Dispatch API
+  } else if (Dispatch && Dispatch.now) {
+    defer = function (id) {
+      Dispatch.now(ctx(run, id, 1));
+    };
+  // Browsers with MessageChannel, includes WebWorkers
+  } else if (MessageChannel) {
+    channel = new MessageChannel();
+    port = channel.port2;
+    channel.port1.onmessage = listener;
+    defer = ctx(port.postMessage, port, 1);
+  // Browsers with postMessage, skip WebWorkers
+  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
+  } else if (global.addEventListener && typeof postMessage == 'function' && !global.importScripts) {
+    defer = function (id) {
+      global.postMessage(id + '', '*');
+    };
+    global.addEventListener('message', listener, false);
+  // IE8-
+  } else if (ONREADYSTATECHANGE in cel('script')) {
+    defer = function (id) {
+      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function () {
+        html.removeChild(this);
+        run.call(id);
+      };
+    };
+  // Rest old browsers
+  } else {
+    defer = function (id) {
+      setTimeout(ctx(run, id, 1), 0);
+    };
+  }
+}
+module.exports = {
+  set: setTask,
+  clear: clearTask
+};
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _map = __webpack_require__(23);
+
+var _map2 = _interopRequireDefault(_map);
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/* eslint-disable no-undef */
+function nowtime() {
+  if (typeof performance !== 'undefined' && performance.now) {
+    return performance.now();
+  } else if (typeof process !== 'undefined' && process.hrtime) {
+    var _process$hrtime = process.hrtime(),
+        _process$hrtime2 = (0, _slicedToArray3.default)(_process$hrtime, 2),
+        s = _process$hrtime2[0],
+        ns = _process$hrtime2[1];
+
+    return s * 1e3 + ns * 1e-6;
+  }
+  return Date.now ? Date.now() : new Date().getTime();
+}
+/* eslint-enable no-undef */
+
+var _requestAnimationFrame = void 0,
+    _cancelAnimationFrame = void 0;
+
+if (typeof requestAnimationFrame === 'undefined') {
+  _requestAnimationFrame = function _requestAnimationFrame(fn) {
+    return setTimeout(function () {
+      fn(nowtime());
+    }, 16);
+  };
+  _cancelAnimationFrame = function _cancelAnimationFrame(id) {
+    return clearTimeout(id);
+  };
+} else {
+  _requestAnimationFrame = requestAnimationFrame;
+  _cancelAnimationFrame = cancelAnimationFrame;
+}
+
+var steps = new _map2.default();
+var timerId = void 0;
+
+var FastAnimationFrame = {
+  requestAnimationFrame: function requestAnimationFrame(step) {
+    var id = (0, _symbol2.default)('requestId');
+    steps.set(id, step);
+
+    if (timerId == null) {
+      timerId = _requestAnimationFrame(function (t) {
+        timerId = null;[].concat((0, _toConsumableArray3.default)(steps)).forEach(function (_ref) {
+          var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+              id = _ref2[0],
+              callback = _ref2[1];
+
+          callback(t);
+          steps.delete(id);
+        });
+      });
+    }
+    return id;
+  },
+  cancelAnimationFrame: function cancelAnimationFrame(id) {
+    steps.delete(id);
+    if (!steps.size && timerId) {
+      _cancelAnimationFrame(timerId);
+      timerId = null;
+    }
+  }
+};
+
+module.exports = FastAnimationFrame;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(106)))
+
+/***/ }),
+/* 106 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -3054,7 +4299,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 72 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3063,1811 +4308,23 @@ process.umask = function() { return 0; };
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _assign = __webpack_require__(16);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _symbol = __webpack_require__(12);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _eventHandlers = (0, _symbol2.default)('eventHandlers'),
-    _collisionState = (0, _symbol2.default)('collisionState');
-
-var BaseNode = function () {
-  function BaseNode() {
-    (0, _classCallCheck3.default)(this, BaseNode);
-
-    this[_eventHandlers] = {};
-  }
-
-  (0, _createClass3.default)(BaseNode, [{
-    key: 'on',
-    value: function on(type, handler) {
-      this[_eventHandlers][type] = this[_eventHandlers][type] || [];
-      this[_eventHandlers][type].push(handler);
-    }
-  }, {
-    key: 'off',
-    value: function off(type, handler) {
-      if (handler && this[_eventHandlers][type]) {
-        var idx = this[_eventHandlers][type].indexOf(handler);
-
-        if (idx >= 0) {
-          this[_eventHandlers][type].splice(idx, 1);
-        }
-      } else {
-        delete this[_eventHandlers][type];
-      }
-    }
-  }, {
-    key: 'getEventHandlers',
-    value: function getEventHandlers(type) {
-      return this[_eventHandlers][type] || [];
-    }
-    // d3-friendly
-
-  }, {
-    key: 'addEventListener',
-    value: function addEventListener(type, handler) {
-      return this.on(type, handler);
-    }
-  }, {
-    key: 'removeEventListener',
-    value: function removeEventListener(type, handler) {
-      return this.off(type, handler);
-    }
-  }, {
-    key: 'pointCollision',
-    value: function pointCollision(evt) {
-      throw Error('you mast override this method');
-    }
-  }, {
-    key: 'dispatchEvent',
-    value: function dispatchEvent(type, evt) {
-      var _this = this;
-
-      var forceTrigger = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-      if (!evt.terminated && (forceTrigger || this.pointCollision(evt))) {
-        evt.target = this;
-        if (evt.type !== type) {
-          if (evt.type) {
-            evt.originalType = evt.type;
-          }
-          evt.type = type;
-        }
-
-        var handlers = this[_eventHandlers][type];
-        if (handlers) {
-          handlers.forEach(function (handler) {
-            return handler.call(_this, evt);
-          });
-        }
-
-        if (type === 'mousemove') {
-          if (!this[_collisionState]) {
-            var _evt = (0, _assign2.default)({}, evt);
-            _evt.type = 'mouseenter';
-            _evt.terminated = false;
-
-            this.dispatchEvent('mouseenter', _evt);
-          }
-          this[_collisionState] = true;
-        }
-      } else if (type === 'mousemove') {
-        if (this[_collisionState]) {
-          var _evt2 = (0, _assign2.default)({}, evt);
-          _evt2.type = 'mouseleave';
-          _evt2.target = this;
-          _evt2.terminated = false;
-
-          this.dispatchEvent('mouseleave', _evt2, true);
-        }
-        this[_collisionState] = false;
-      }
-
-      return this[_collisionState];
-    }
-    // called when layer appendChild
-
-  }, {
-    key: 'connect',
-    value: function connect(parent) {
-      var zOrder = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-      if (this.parent) {
-        // throw new Error('This node belongs to another parent node! Remove it first...')
-        this.disconnect(this.parent);
-      }
-
-      Object.defineProperty(this, 'zOrder', {
-        value: zOrder,
-        writable: false,
-        configurable: true
-      });
-
-      Object.defineProperty(this, 'parent', {
-        get: function get() {
-          return parent;
-        },
-        configurable: true
-      });
-
-      var handlers = this[_eventHandlers].append;
-      if (handlers && handlers.length) {
-        this.dispatchEvent('append', {
-          parent: parent,
-          zOrder: zOrder
-        }, true);
-      }
-
-      return this;
-    }
-
-    // override to recycling resources
-
-  }, {
-    key: 'disconnect',
-    value: function disconnect(parent) {
-      if (!this.parent || parent !== this.parent) {
-        throw new Error('Invalid node to disconnect');
-      }
-
-      var zOrder = this.zOrder;
-      delete this.zOrder;
-
-      var handlers = this[_eventHandlers].remove;
-      if (handlers && handlers.length) {
-        this.dispatchEvent('remove', {
-          parent: parent,
-          zOrder: zOrder
-        }, true);
-      }
-
-      delete this.parent;
-
-      return this;
-    }
-  }]);
-  return BaseNode;
-}();
-
-exports.default = BaseNode;
-
-/***/ }),
-/* 73 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Vector = exports.Matrix = undefined;
-
-var _matrix = __webpack_require__(204);
-
-var _matrix2 = _interopRequireDefault(_matrix);
-
-var _vector = __webpack_require__(205);
-
-var _vector2 = _interopRequireDefault(_vector);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Matrix = _matrix2.default;
-exports.Vector = _vector2.default;
-
-/***/ }),
-/* 74 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
-
-var TAU = Math.PI * 2;
-
-var mapToEllipse = function mapToEllipse(_ref, rx, ry, cosphi, sinphi, centerx, centery) {
-  var x = _ref.x,
-      y = _ref.y;
-
-  x *= rx;
-  y *= ry;
-
-  var xp = cosphi * x - sinphi * y;
-  var yp = sinphi * x + cosphi * y;
-
-  return {
-    x: xp + centerx,
-    y: yp + centery
-  };
-};
-
-var approxUnitArc = function approxUnitArc(ang1, ang2) {
-  // See http://spencermortensen.com/articles/bezier-circle/ for the derivation
-  // of this constant.
-  var c = 0.551915024494;
-
-  var x1 = Math.cos(ang1);
-  var y1 = Math.sin(ang1);
-  var x2 = Math.cos(ang1 + ang2);
-  var y2 = Math.sin(ang1 + ang2);
-
-  return [{
-    x: x1 - y1 * c,
-    y: y1 + x1 * c
-  }, {
-    x: x2 + y2 * c,
-    y: y2 - x2 * c
-  }, {
-    x: x2,
-    y: y2
-  }];
-};
-
-var vectorAngle = function vectorAngle(ux, uy, vx, vy) {
-  var sign = ux * vy - uy * vx < 0 ? -1 : 1;
-  var umag = Math.sqrt(ux * ux + uy * uy);
-  var vmag = Math.sqrt(ux * ux + uy * uy);
-  var dot = ux * vx + uy * vy;
-
-  var div = dot / (umag * vmag);
-
-  if (div > 1) {
-    div = 1;
-  }
-
-  if (div < -1) {
-    div = -1;
-  }
-
-  return sign * Math.acos(div);
-};
-
-var getArcCenter = function getArcCenter(px, py, cx, cy, rx, ry, largeArcFlag, sweepFlag, sinphi, cosphi, pxp, pyp) {
-  var rxsq = Math.pow(rx, 2);
-  var rysq = Math.pow(ry, 2);
-  var pxpsq = Math.pow(pxp, 2);
-  var pypsq = Math.pow(pyp, 2);
-
-  var radicant = rxsq * rysq - rxsq * pypsq - rysq * pxpsq;
-
-  if (radicant < 0) {
-    radicant = 0;
-  }
-
-  radicant /= rxsq * pypsq + rysq * pxpsq;
-  radicant = Math.sqrt(radicant) * (largeArcFlag === sweepFlag ? -1 : 1);
-
-  var centerxp = radicant * rx / ry * pyp;
-  var centeryp = radicant * -ry / rx * pxp;
-
-  var centerx = cosphi * centerxp - sinphi * centeryp + (px + cx) / 2;
-  var centery = sinphi * centerxp + cosphi * centeryp + (py + cy) / 2;
-
-  var vx1 = (pxp - centerxp) / rx;
-  var vy1 = (pyp - centeryp) / ry;
-  var vx2 = (-pxp - centerxp) / rx;
-  var vy2 = (-pyp - centeryp) / ry;
-
-  var ang1 = vectorAngle(1, 0, vx1, vy1);
-  var ang2 = vectorAngle(vx1, vy1, vx2, vy2);
-
-  if (sweepFlag === 0 && ang2 > 0) {
-    ang2 -= TAU;
-  }
-
-  if (sweepFlag === 1 && ang2 < 0) {
-    ang2 += TAU;
-  }
-
-  return [centerx, centery, ang1, ang2];
-};
-
-var arcToBezier = function arcToBezier(_ref2) {
-  var px = _ref2.px,
-      py = _ref2.py,
-      cx = _ref2.cx,
-      cy = _ref2.cy,
-      rx = _ref2.rx,
-      ry = _ref2.ry,
-      _ref2$xAxisRotation = _ref2.xAxisRotation,
-      xAxisRotation = _ref2$xAxisRotation === undefined ? 0 : _ref2$xAxisRotation,
-      _ref2$largeArcFlag = _ref2.largeArcFlag,
-      largeArcFlag = _ref2$largeArcFlag === undefined ? 0 : _ref2$largeArcFlag,
-      _ref2$sweepFlag = _ref2.sweepFlag,
-      sweepFlag = _ref2$sweepFlag === undefined ? 0 : _ref2$sweepFlag;
-
-  var curves = [];
-
-  if (rx === 0 || ry === 0) {
-    return [];
-  }
-
-  var sinphi = Math.sin(xAxisRotation * TAU / 360);
-  var cosphi = Math.cos(xAxisRotation * TAU / 360);
-
-  var pxp = cosphi * (px - cx) / 2 + sinphi * (py - cy) / 2;
-  var pyp = -sinphi * (px - cx) / 2 + cosphi * (py - cy) / 2;
-
-  if (pxp === 0 && pyp === 0) {
-    return [];
-  }
-
-  rx = Math.abs(rx);
-  ry = Math.abs(ry);
-
-  var lambda = Math.pow(pxp, 2) / Math.pow(rx, 2) + Math.pow(pyp, 2) / Math.pow(ry, 2);
-
-  if (lambda > 1) {
-    rx *= Math.sqrt(lambda);
-    ry *= Math.sqrt(lambda);
-  }
-
-  var _getArcCenter = getArcCenter(px, py, cx, cy, rx, ry, largeArcFlag, sweepFlag, sinphi, cosphi, pxp, pyp),
-      _getArcCenter2 = _slicedToArray(_getArcCenter, 4),
-      centerx = _getArcCenter2[0],
-      centery = _getArcCenter2[1],
-      ang1 = _getArcCenter2[2],
-      ang2 = _getArcCenter2[3];
-
-  var segments = Math.max(Math.ceil(Math.abs(ang2) / (TAU / 4)), 1);
-
-  ang2 /= segments;
-
-  for (var i = 0; i < segments; i++) {
-    curves.push(approxUnitArc(ang1, ang2));
-    ang1 += ang2;
-  }
-
-  return curves.map(function (curve) {
-    var _mapToEllipse = mapToEllipse(curve[0], rx, ry, cosphi, sinphi, centerx, centery),
-        x1 = _mapToEllipse.x,
-        y1 = _mapToEllipse.y;
-
-    var _mapToEllipse2 = mapToEllipse(curve[1], rx, ry, cosphi, sinphi, centerx, centery),
-        x2 = _mapToEllipse2.x,
-        y2 = _mapToEllipse2.y;
-
-    var _mapToEllipse3 = mapToEllipse(curve[2], rx, ry, cosphi, sinphi, centerx, centery),
-        x = _mapToEllipse3.x,
-        y = _mapToEllipse3.y;
-
-    return { x1: x1, y1: y1, x2: x2, y2: y2, x: x, y: y };
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (arcToBezier);
-
-/***/ }),
-/* 75 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _get2 = __webpack_require__(17);
-
-var _get3 = _interopRequireDefault(_get2);
-
-var _inherits2 = __webpack_require__(13);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _spriteCore = __webpack_require__(39);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var ExLayer = function (_Layer) {
-  (0, _inherits3.default)(ExLayer, _Layer);
-
-  function ExLayer() {
-    (0, _classCallCheck3.default)(this, ExLayer);
-    return (0, _possibleConstructorReturn3.default)(this, (ExLayer.__proto__ || (0, _getPrototypeOf2.default)(ExLayer)).apply(this, arguments));
-  }
-
-  (0, _createClass3.default)(ExLayer, [{
-    key: 'drawSprites',
-    value: function drawSprites(renderEls, t) {
-      var context = this.outputContext;
-      context.save();
-      context.scale(this.rpx, this.rpx);
-      (0, _get3.default)(ExLayer.prototype.__proto__ || (0, _getPrototypeOf2.default)(ExLayer.prototype), 'drawSprites', this).call(this, renderEls, t);
-      context.restore();
-      context.draw();
-    }
-  }, {
-    key: 'rpx',
-    get: function get() {
-      if (this.parent) return this.parent.rpx;
-      return 1;
-    }
-  }]);
-  return ExLayer;
-}(_spriteCore.Layer);
-
-exports.default = ExLayer;
-
-/***/ }),
-/* 76 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
-
-// compare and isBuffer taken from https://github.com/feross/buffer/blob/680e9e5e488f22aac27599a57dc844a6315928dd/index.js
-// original notice:
-
-/*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
- * @license  MIT
- */
-function compare(a, b) {
-  if (a === b) {
-    return 0;
-  }
-
-  var x = a.length;
-  var y = b.length;
-
-  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
-    if (a[i] !== b[i]) {
-      x = a[i];
-      y = b[i];
-      break;
-    }
-  }
-
-  if (x < y) {
-    return -1;
-  }
-  if (y < x) {
-    return 1;
-  }
-  return 0;
-}
-function isBuffer(b) {
-  if (global.Buffer && typeof global.Buffer.isBuffer === 'function') {
-    return global.Buffer.isBuffer(b);
-  }
-  return !!(b != null && b._isBuffer);
-}
-
-// based on node assert, original notice:
-
-// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
-//
-// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
-//
-// Originally from narwhal.js (http://narwhaljs.org)
-// Copyright (c) 2009 Thomas Robinson <280north.com>
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the 'Software'), to
-// deal in the Software without restriction, including without limitation the
-// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-// sell copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-var util = __webpack_require__(223);
-var hasOwn = Object.prototype.hasOwnProperty;
-var pSlice = Array.prototype.slice;
-var functionsHaveNames = (function () {
-  return function foo() {}.name === 'foo';
-}());
-function pToString (obj) {
-  return Object.prototype.toString.call(obj);
-}
-function isView(arrbuf) {
-  if (isBuffer(arrbuf)) {
-    return false;
-  }
-  if (typeof global.ArrayBuffer !== 'function') {
-    return false;
-  }
-  if (typeof ArrayBuffer.isView === 'function') {
-    return ArrayBuffer.isView(arrbuf);
-  }
-  if (!arrbuf) {
-    return false;
-  }
-  if (arrbuf instanceof DataView) {
-    return true;
-  }
-  if (arrbuf.buffer && arrbuf.buffer instanceof ArrayBuffer) {
-    return true;
-  }
-  return false;
-}
-// 1. The assert module provides functions that throw
-// AssertionError's when particular conditions are not met. The
-// assert module must conform to the following interface.
-
-var assert = module.exports = ok;
-
-// 2. The AssertionError is defined in assert.
-// new assert.AssertionError({ message: message,
-//                             actual: actual,
-//                             expected: expected })
-
-var regex = /\s*function\s+([^\(\s]*)\s*/;
-// based on https://github.com/ljharb/function.prototype.name/blob/adeeeec8bfcc6068b187d7d9fb3d5bb1d3a30899/implementation.js
-function getName(func) {
-  if (!util.isFunction(func)) {
-    return;
-  }
-  if (functionsHaveNames) {
-    return func.name;
-  }
-  var str = func.toString();
-  var match = str.match(regex);
-  return match && match[1];
-}
-assert.AssertionError = function AssertionError(options) {
-  this.name = 'AssertionError';
-  this.actual = options.actual;
-  this.expected = options.expected;
-  this.operator = options.operator;
-  if (options.message) {
-    this.message = options.message;
-    this.generatedMessage = false;
-  } else {
-    this.message = getMessage(this);
-    this.generatedMessage = true;
-  }
-  var stackStartFunction = options.stackStartFunction || fail;
-  if (Error.captureStackTrace) {
-    Error.captureStackTrace(this, stackStartFunction);
-  } else {
-    // non v8 browsers so we can have a stacktrace
-    var err = new Error();
-    if (err.stack) {
-      var out = err.stack;
-
-      // try to strip useless frames
-      var fn_name = getName(stackStartFunction);
-      var idx = out.indexOf('\n' + fn_name);
-      if (idx >= 0) {
-        // once we have located the function frame
-        // we need to strip out everything before it (and its line)
-        var next_line = out.indexOf('\n', idx + 1);
-        out = out.substring(next_line + 1);
-      }
-
-      this.stack = out;
-    }
-  }
-};
-
-// assert.AssertionError instanceof Error
-util.inherits(assert.AssertionError, Error);
-
-function truncate(s, n) {
-  if (typeof s === 'string') {
-    return s.length < n ? s : s.slice(0, n);
-  } else {
-    return s;
-  }
-}
-function inspect(something) {
-  if (functionsHaveNames || !util.isFunction(something)) {
-    return util.inspect(something);
-  }
-  var rawname = getName(something);
-  var name = rawname ? ': ' + rawname : '';
-  return '[Function' +  name + ']';
-}
-function getMessage(self) {
-  return truncate(inspect(self.actual), 128) + ' ' +
-         self.operator + ' ' +
-         truncate(inspect(self.expected), 128);
-}
-
-// At present only the three keys mentioned above are used and
-// understood by the spec. Implementations or sub modules can pass
-// other keys to the AssertionError's constructor - they will be
-// ignored.
-
-// 3. All of the following functions must throw an AssertionError
-// when a corresponding condition is not met, with a message that
-// may be undefined if not provided.  All assertion methods provide
-// both the actual and expected values to the assertion error for
-// display purposes.
-
-function fail(actual, expected, message, operator, stackStartFunction) {
-  throw new assert.AssertionError({
-    message: message,
-    actual: actual,
-    expected: expected,
-    operator: operator,
-    stackStartFunction: stackStartFunction
-  });
-}
-
-// EXTENSION! allows for well behaved errors defined elsewhere.
-assert.fail = fail;
-
-// 4. Pure assertion tests whether a value is truthy, as determined
-// by !!guard.
-// assert.ok(guard, message_opt);
-// This statement is equivalent to assert.equal(true, !!guard,
-// message_opt);. To test strictly for the value true, use
-// assert.strictEqual(true, guard, message_opt);.
-
-function ok(value, message) {
-  if (!value) fail(value, true, message, '==', assert.ok);
-}
-assert.ok = ok;
-
-// 5. The equality assertion tests shallow, coercive equality with
-// ==.
-// assert.equal(actual, expected, message_opt);
-
-assert.equal = function equal(actual, expected, message) {
-  if (actual != expected) fail(actual, expected, message, '==', assert.equal);
-};
-
-// 6. The non-equality assertion tests for whether two objects are not equal
-// with != assert.notEqual(actual, expected, message_opt);
-
-assert.notEqual = function notEqual(actual, expected, message) {
-  if (actual == expected) {
-    fail(actual, expected, message, '!=', assert.notEqual);
-  }
-};
-
-// 7. The equivalence assertion tests a deep equality relation.
-// assert.deepEqual(actual, expected, message_opt);
-
-assert.deepEqual = function deepEqual(actual, expected, message) {
-  if (!_deepEqual(actual, expected, false)) {
-    fail(actual, expected, message, 'deepEqual', assert.deepEqual);
-  }
-};
-
-assert.deepStrictEqual = function deepStrictEqual(actual, expected, message) {
-  if (!_deepEqual(actual, expected, true)) {
-    fail(actual, expected, message, 'deepStrictEqual', assert.deepStrictEqual);
-  }
-};
-
-function _deepEqual(actual, expected, strict, memos) {
-  // 7.1. All identical values are equivalent, as determined by ===.
-  if (actual === expected) {
-    return true;
-  } else if (isBuffer(actual) && isBuffer(expected)) {
-    return compare(actual, expected) === 0;
-
-  // 7.2. If the expected value is a Date object, the actual value is
-  // equivalent if it is also a Date object that refers to the same time.
-  } else if (util.isDate(actual) && util.isDate(expected)) {
-    return actual.getTime() === expected.getTime();
-
-  // 7.3 If the expected value is a RegExp object, the actual value is
-  // equivalent if it is also a RegExp object with the same source and
-  // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
-  } else if (util.isRegExp(actual) && util.isRegExp(expected)) {
-    return actual.source === expected.source &&
-           actual.global === expected.global &&
-           actual.multiline === expected.multiline &&
-           actual.lastIndex === expected.lastIndex &&
-           actual.ignoreCase === expected.ignoreCase;
-
-  // 7.4. Other pairs that do not both pass typeof value == 'object',
-  // equivalence is determined by ==.
-  } else if ((actual === null || typeof actual !== 'object') &&
-             (expected === null || typeof expected !== 'object')) {
-    return strict ? actual === expected : actual == expected;
-
-  // If both values are instances of typed arrays, wrap their underlying
-  // ArrayBuffers in a Buffer each to increase performance
-  // This optimization requires the arrays to have the same type as checked by
-  // Object.prototype.toString (aka pToString). Never perform binary
-  // comparisons for Float*Arrays, though, since e.g. +0 === -0 but their
-  // bit patterns are not identical.
-  } else if (isView(actual) && isView(expected) &&
-             pToString(actual) === pToString(expected) &&
-             !(actual instanceof Float32Array ||
-               actual instanceof Float64Array)) {
-    return compare(new Uint8Array(actual.buffer),
-                   new Uint8Array(expected.buffer)) === 0;
-
-  // 7.5 For all other Object pairs, including Array objects, equivalence is
-  // determined by having the same number of owned properties (as verified
-  // with Object.prototype.hasOwnProperty.call), the same set of keys
-  // (although not necessarily the same order), equivalent values for every
-  // corresponding key, and an identical 'prototype' property. Note: this
-  // accounts for both named and indexed properties on Arrays.
-  } else if (isBuffer(actual) !== isBuffer(expected)) {
-    return false;
-  } else {
-    memos = memos || {actual: [], expected: []};
-
-    var actualIndex = memos.actual.indexOf(actual);
-    if (actualIndex !== -1) {
-      if (actualIndex === memos.expected.indexOf(expected)) {
-        return true;
-      }
-    }
-
-    memos.actual.push(actual);
-    memos.expected.push(expected);
-
-    return objEquiv(actual, expected, strict, memos);
-  }
-}
-
-function isArguments(object) {
-  return Object.prototype.toString.call(object) == '[object Arguments]';
-}
-
-function objEquiv(a, b, strict, actualVisitedObjects) {
-  if (a === null || a === undefined || b === null || b === undefined)
-    return false;
-  // if one is a primitive, the other must be same
-  if (util.isPrimitive(a) || util.isPrimitive(b))
-    return a === b;
-  if (strict && Object.getPrototypeOf(a) !== Object.getPrototypeOf(b))
-    return false;
-  var aIsArgs = isArguments(a);
-  var bIsArgs = isArguments(b);
-  if ((aIsArgs && !bIsArgs) || (!aIsArgs && bIsArgs))
-    return false;
-  if (aIsArgs) {
-    a = pSlice.call(a);
-    b = pSlice.call(b);
-    return _deepEqual(a, b, strict);
-  }
-  var ka = objectKeys(a);
-  var kb = objectKeys(b);
-  var key, i;
-  // having the same number of owned properties (keys incorporates
-  // hasOwnProperty)
-  if (ka.length !== kb.length)
-    return false;
-  //the same set of keys (although not necessarily the same order),
-  ka.sort();
-  kb.sort();
-  //~~~cheap key test
-  for (i = ka.length - 1; i >= 0; i--) {
-    if (ka[i] !== kb[i])
-      return false;
-  }
-  //equivalent values for every corresponding key, and
-  //~~~possibly expensive deep test
-  for (i = ka.length - 1; i >= 0; i--) {
-    key = ka[i];
-    if (!_deepEqual(a[key], b[key], strict, actualVisitedObjects))
-      return false;
-  }
-  return true;
-}
-
-// 8. The non-equivalence assertion tests for any deep inequality.
-// assert.notDeepEqual(actual, expected, message_opt);
-
-assert.notDeepEqual = function notDeepEqual(actual, expected, message) {
-  if (_deepEqual(actual, expected, false)) {
-    fail(actual, expected, message, 'notDeepEqual', assert.notDeepEqual);
-  }
-};
-
-assert.notDeepStrictEqual = notDeepStrictEqual;
-function notDeepStrictEqual(actual, expected, message) {
-  if (_deepEqual(actual, expected, true)) {
-    fail(actual, expected, message, 'notDeepStrictEqual', notDeepStrictEqual);
-  }
-}
-
-
-// 9. The strict equality assertion tests strict equality, as determined by ===.
-// assert.strictEqual(actual, expected, message_opt);
-
-assert.strictEqual = function strictEqual(actual, expected, message) {
-  if (actual !== expected) {
-    fail(actual, expected, message, '===', assert.strictEqual);
-  }
-};
-
-// 10. The strict non-equality assertion tests for strict inequality, as
-// determined by !==.  assert.notStrictEqual(actual, expected, message_opt);
-
-assert.notStrictEqual = function notStrictEqual(actual, expected, message) {
-  if (actual === expected) {
-    fail(actual, expected, message, '!==', assert.notStrictEqual);
-  }
-};
-
-function expectedException(actual, expected) {
-  if (!actual || !expected) {
-    return false;
-  }
-
-  if (Object.prototype.toString.call(expected) == '[object RegExp]') {
-    return expected.test(actual);
-  }
-
-  try {
-    if (actual instanceof expected) {
-      return true;
-    }
-  } catch (e) {
-    // Ignore.  The instanceof check doesn't work for arrow functions.
-  }
-
-  if (Error.isPrototypeOf(expected)) {
-    return false;
-  }
-
-  return expected.call({}, actual) === true;
-}
-
-function _tryBlock(block) {
-  var error;
-  try {
-    block();
-  } catch (e) {
-    error = e;
-  }
-  return error;
-}
-
-function _throws(shouldThrow, block, expected, message) {
-  var actual;
-
-  if (typeof block !== 'function') {
-    throw new TypeError('"block" argument must be a function');
-  }
-
-  if (typeof expected === 'string') {
-    message = expected;
-    expected = null;
-  }
-
-  actual = _tryBlock(block);
-
-  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') +
-            (message ? ' ' + message : '.');
-
-  if (shouldThrow && !actual) {
-    fail(actual, expected, 'Missing expected exception' + message);
-  }
-
-  var userProvidedMessage = typeof message === 'string';
-  var isUnwantedException = !shouldThrow && util.isError(actual);
-  var isUnexpectedException = !shouldThrow && actual && !expected;
-
-  if ((isUnwantedException &&
-      userProvidedMessage &&
-      expectedException(actual, expected)) ||
-      isUnexpectedException) {
-    fail(actual, expected, 'Got unwanted exception' + message);
-  }
-
-  if ((shouldThrow && actual && expected &&
-      !expectedException(actual, expected)) || (!shouldThrow && actual)) {
-    throw actual;
-  }
-}
-
-// 11. Expected to throw an error:
-// assert.throws(block, Error_opt, message_opt);
-
-assert.throws = function(block, /*optional*/error, /*optional*/message) {
-  _throws(true, block, error, message);
-};
-
-// EXTENSION! This is annoying to write outside this module.
-assert.doesNotThrow = function(block, /*optional*/error, /*optional*/message) {
-  _throws(false, block, error, message);
-};
-
-assert.ifError = function(err) { if (err) throw err; };
-
-var objectKeys = Object.keys || function (obj) {
-  var keys = [];
-  for (var key in obj) {
-    if (hasOwn.call(obj, key)) keys.push(key);
-  }
-  return keys;
-};
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(108)))
-
-/***/ }),
-/* 77 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _assign = __webpack_require__(16);
-
-var _assign2 = _interopRequireDefault(_assign);
+exports.parseEasing = exports.Easings = undefined;
 
 var _slicedToArray2 = __webpack_require__(1);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-var _entries = __webpack_require__(26);
-
-var _entries2 = _interopRequireDefault(_entries);
-
-var _map = __webpack_require__(31);
-
-var _map2 = _interopRequireDefault(_map);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var loadedResources = new _map2.default();
-
-var Resource = {
-  // {id, src, [srcRect]}
-  loadTexture: function loadTexture(texture) {
-    if (typeof texture === 'string') {
-      texture = { id: texture, src: texture };
-    }
-    if (!texture.id) texture.src = texture.id;
-    loadedResources.set(texture.id, texture);
-    return texture;
-  },
-  loadFrames: function loadFrames(imgSrc, frameData) {
-    return (0, _entries2.default)(frameData.frames).map(function (_ref) {
-      var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
-          id = _ref2[0],
-          frame = _ref2[1];
-
-      var _frame$frame = frame.frame,
-          x = _frame$frame.x,
-          y = _frame$frame.y,
-          w = _frame$frame.w,
-          h = _frame$frame.h;
-      var rotated = frame.rotated,
-          trimmed = frame.trimmed;
-
-      if (rotated || trimmed) throw new Error('目前不支持对精灵图片的rotate和trim！');
-
-      var texture = { id: id, src: imgSrc, srcRect: [x, y, w, h] };
-      loadedResources.set(texture.id, texture);
-      return texture;
-    });
-  },
-  getTexture: function getTexture(texture) {
-    var loaded = loadedResources.get(texture.id);
-    if (!loaded) {
-      loaded = this.loadTexture(texture);
-    }
-    return (0, _assign2.default)(texture, loaded);
-  }
-};
-
-exports.default = Resource;
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(124), __esModule: true };
-
-/***/ }),
-/* 79 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(125), __esModule: true };
-
-/***/ }),
-/* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(127), __esModule: true };
-
-/***/ }),
-/* 81 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(133), __esModule: true };
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var dP = __webpack_require__(11).f;
-var create = __webpack_require__(43);
-var redefineAll = __webpack_require__(62);
-var ctx = __webpack_require__(18);
-var anInstance = __webpack_require__(51);
-var forOf = __webpack_require__(34);
-var $iterDefine = __webpack_require__(56);
-var step = __webpack_require__(91);
-var setSpecies = __webpack_require__(101);
-var DESCRIPTORS = __webpack_require__(9);
-var fastKey = __webpack_require__(57).fastKey;
-var validate = __webpack_require__(67);
-var SIZE = DESCRIPTORS ? '_s' : 'size';
-
-var getEntry = function (that, key) {
-  // fast case
-  var index = fastKey(key);
-  var entry;
-  if (index !== 'F') return that._i[index];
-  // frozen object case
-  for (entry = that._f; entry; entry = entry.n) {
-    if (entry.k == key) return entry;
-  }
-};
-
-module.exports = {
-  getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
-    var C = wrapper(function (that, iterable) {
-      anInstance(that, C, NAME, '_i');
-      that._t = NAME;         // collection type
-      that._i = create(null); // index
-      that._f = undefined;    // first entry
-      that._l = undefined;    // last entry
-      that[SIZE] = 0;         // size
-      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
-    });
-    redefineAll(C.prototype, {
-      // 23.1.3.1 Map.prototype.clear()
-      // 23.2.3.2 Set.prototype.clear()
-      clear: function clear() {
-        for (var that = validate(this, NAME), data = that._i, entry = that._f; entry; entry = entry.n) {
-          entry.r = true;
-          if (entry.p) entry.p = entry.p.n = undefined;
-          delete data[entry.i];
-        }
-        that._f = that._l = undefined;
-        that[SIZE] = 0;
-      },
-      // 23.1.3.3 Map.prototype.delete(key)
-      // 23.2.3.4 Set.prototype.delete(value)
-      'delete': function (key) {
-        var that = validate(this, NAME);
-        var entry = getEntry(that, key);
-        if (entry) {
-          var next = entry.n;
-          var prev = entry.p;
-          delete that._i[entry.i];
-          entry.r = true;
-          if (prev) prev.n = next;
-          if (next) next.p = prev;
-          if (that._f == entry) that._f = next;
-          if (that._l == entry) that._l = prev;
-          that[SIZE]--;
-        } return !!entry;
-      },
-      // 23.2.3.6 Set.prototype.forEach(callbackfn, thisArg = undefined)
-      // 23.1.3.5 Map.prototype.forEach(callbackfn, thisArg = undefined)
-      forEach: function forEach(callbackfn /* , that = undefined */) {
-        validate(this, NAME);
-        var f = ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3);
-        var entry;
-        while (entry = entry ? entry.n : this._f) {
-          f(entry.v, entry.k, this);
-          // revert to the last existing entry
-          while (entry && entry.r) entry = entry.p;
-        }
-      },
-      // 23.1.3.7 Map.prototype.has(key)
-      // 23.2.3.7 Set.prototype.has(value)
-      has: function has(key) {
-        return !!getEntry(validate(this, NAME), key);
-      }
-    });
-    if (DESCRIPTORS) dP(C.prototype, 'size', {
-      get: function () {
-        return validate(this, NAME)[SIZE];
-      }
-    });
-    return C;
-  },
-  def: function (that, key, value) {
-    var entry = getEntry(that, key);
-    var prev, index;
-    // change existing entry
-    if (entry) {
-      entry.v = value;
-    // create new entry
-    } else {
-      that._l = entry = {
-        i: index = fastKey(key, true), // <- index
-        k: key,                        // <- key
-        v: value,                      // <- value
-        p: prev = that._l,             // <- previous entry
-        n: undefined,                  // <- next entry
-        r: false                       // <- removed
-      };
-      if (!that._f) that._f = entry;
-      if (prev) prev.n = entry;
-      that[SIZE]++;
-      // add to index
-      if (index !== 'F') that._i[index] = entry;
-    } return that;
-  },
-  getEntry: getEntry,
-  setStrong: function (C, NAME, IS_MAP) {
-    // add .keys, .values, .entries, [@@iterator]
-    // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
-    $iterDefine(C, NAME, function (iterated, kind) {
-      this._t = validate(iterated, NAME); // target
-      this._k = kind;                     // kind
-      this._l = undefined;                // previous
-    }, function () {
-      var that = this;
-      var kind = that._k;
-      var entry = that._l;
-      // revert to the last existing entry
-      while (entry && entry.r) entry = entry.p;
-      // get next entry
-      if (!that._t || !(that._l = entry = entry ? entry.n : that._t._f)) {
-        // or finish the iteration
-        that._t = undefined;
-        return step(1);
-      }
-      // return step by kind
-      if (kind == 'keys') return step(0, entry.k);
-      if (kind == 'values') return step(0, entry.v);
-      return step(0, [entry.k, entry.v]);
-    }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
-
-    // add [@@species], 23.1.2.2, 23.2.2.2
-    setSpecies(NAME);
-  }
-};
-
-
-/***/ }),
-/* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var classof = __webpack_require__(41);
-var from = __webpack_require__(144);
-module.exports = function (NAME) {
-  return function toJSON() {
-    if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
-    return from(this);
-  };
-};
-
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var global = __webpack_require__(6);
-var $export = __webpack_require__(2);
-var meta = __webpack_require__(57);
-var fails = __webpack_require__(23);
-var hide = __webpack_require__(20);
-var redefineAll = __webpack_require__(62);
-var forOf = __webpack_require__(34);
-var anInstance = __webpack_require__(51);
-var isObject = __webpack_require__(10);
-var setToStringTag = __webpack_require__(37);
-var dP = __webpack_require__(11).f;
-var each = __webpack_require__(146)(0);
-var DESCRIPTORS = __webpack_require__(9);
-
-module.exports = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
-  var Base = global[NAME];
-  var C = Base;
-  var ADDER = IS_MAP ? 'set' : 'add';
-  var proto = C && C.prototype;
-  var O = {};
-  if (!DESCRIPTORS || typeof C != 'function' || !(IS_WEAK || proto.forEach && !fails(function () {
-    new C().entries().next();
-  }))) {
-    // create collection constructor
-    C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
-    redefineAll(C.prototype, methods);
-    meta.NEED = true;
-  } else {
-    C = wrapper(function (target, iterable) {
-      anInstance(target, C, NAME, '_c');
-      target._c = new Base();
-      if (iterable != undefined) forOf(iterable, IS_MAP, target[ADDER], target);
-    });
-    each('add,clear,delete,forEach,get,has,set,keys,values,entries,toJSON'.split(','), function (KEY) {
-      var IS_ADDER = KEY == 'add' || KEY == 'set';
-      if (KEY in proto && !(IS_WEAK && KEY == 'clear')) hide(C.prototype, KEY, function (a, b) {
-        anInstance(this, C, KEY);
-        if (!IS_ADDER && IS_WEAK && !isObject(a)) return KEY == 'get' ? undefined : false;
-        var result = this._c[KEY](a === 0 ? 0 : a, b);
-        return IS_ADDER ? this : result;
-      });
-    });
-    IS_WEAK || dP(C.prototype, 'size', {
-      get: function () {
-        return this._c.size;
-      }
-    });
-  }
-
-  setToStringTag(C, NAME);
-
-  O[NAME] = C;
-  $export($export.G + $export.W + $export.F, O);
-
-  if (!IS_WEAK) common.setStrong(C, NAME, IS_MAP);
-
-  return C;
-};
-
-
-/***/ }),
-/* 85 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var document = __webpack_require__(6).document;
-module.exports = document && document.documentElement;
-
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = !__webpack_require__(9) && !__webpack_require__(23)(function () {
-  return Object.defineProperty(__webpack_require__(53)('div'), 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-/***/ }),
-/* 87 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// check on default Array iterator
-var Iterators = __webpack_require__(27);
-var ITERATOR = __webpack_require__(5)('iterator');
-var ArrayProto = Array.prototype;
-
-module.exports = function (it) {
-  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
-};
-
-
-/***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.2.2 IsArray(argument)
-var cof = __webpack_require__(33);
-module.exports = Array.isArray || function isArray(arg) {
-  return cof(arg) == 'Array';
-};
-
-
-/***/ }),
-/* 89 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// call something on iterator step with safe closing on error
-var anObject = __webpack_require__(15);
-module.exports = function (iterator, fn, value, entries) {
-  try {
-    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-  // 7.4.6 IteratorClose(iterator, completion)
-  } catch (e) {
-    var ret = iterator['return'];
-    if (ret !== undefined) anObject(ret.call(iterator));
-    throw e;
-  }
-};
-
-
-/***/ }),
-/* 90 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var ITERATOR = __webpack_require__(5)('iterator');
-var SAFE_CLOSING = false;
-
-try {
-  var riter = [7][ITERATOR]();
-  riter['return'] = function () { SAFE_CLOSING = true; };
-  // eslint-disable-next-line no-throw-literal
-  Array.from(riter, function () { throw 2; });
-} catch (e) { /* empty */ }
-
-module.exports = function (exec, skipClosing) {
-  if (!skipClosing && !SAFE_CLOSING) return false;
-  var safe = false;
-  try {
-    var arr = [7];
-    var iter = arr[ITERATOR]();
-    iter.next = function () { return { done: safe = true }; };
-    arr[ITERATOR] = function () { return iter; };
-    exec(arr);
-  } catch (e) { /* empty */ }
-  return safe;
-};
-
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports) {
-
-module.exports = function (done, value) {
-  return { value: value, done: !!done };
-};
-
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var dP = __webpack_require__(11);
-var anObject = __webpack_require__(15);
-var getKeys = __webpack_require__(28);
-
-module.exports = __webpack_require__(9) ? Object.defineProperties : function defineProperties(O, Properties) {
-  anObject(O);
-  var keys = getKeys(Properties);
-  var length = keys.length;
-  var i = 0;
-  var P;
-  while (length > i) dP.f(O, P = keys[i++], Properties[P]);
-  return O;
-};
-
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys = __webpack_require__(95);
-var hiddenKeys = __webpack_require__(54).concat('length', 'prototype');
-
-exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
-  return $keys(O, hiddenKeys);
-};
-
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-var has = __webpack_require__(24);
-var toObject = __webpack_require__(29);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
-var ObjectProto = Object.prototype;
-
-module.exports = Object.getPrototypeOf || function (O) {
-  O = toObject(O);
-  if (has(O, IE_PROTO)) return O[IE_PROTO];
-  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
-    return O.constructor.prototype;
-  } return O instanceof Object ? ObjectProto : null;
-};
-
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var has = __webpack_require__(24);
-var toIObject = __webpack_require__(21);
-var arrayIndexOf = __webpack_require__(145)(false);
-var IE_PROTO = __webpack_require__(63)('IE_PROTO');
-
-module.exports = function (object, names) {
-  var O = toIObject(object);
-  var i = 0;
-  var result = [];
-  var key;
-  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
-  // Don't enum bug & hidden keys
-  while (names.length > i) if (has(O, key = names[i++])) {
-    ~arrayIndexOf(result, key) || result.push(key);
-  }
-  return result;
-};
-
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports) {
-
-module.exports = function (exec) {
-  try {
-    return { e: false, v: exec() };
-  } catch (e) {
-    return { e: true, v: e };
-  }
-};
-
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(15);
-var isObject = __webpack_require__(10);
-var newPromiseCapability = __webpack_require__(58);
-
-module.exports = function (C, x) {
-  anObject(C);
-  if (isObject(x) && x.constructor === C) return x;
-  var promiseCapability = newPromiseCapability.f(C);
-  var resolve = promiseCapability.resolve;
-  resolve(x);
-  return promiseCapability.promise;
-};
-
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(20);
-
-
-/***/ }),
-/* 99 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// https://tc39.github.io/proposal-setmap-offrom/
-var $export = __webpack_require__(2);
-var aFunction = __webpack_require__(32);
-var ctx = __webpack_require__(18);
-var forOf = __webpack_require__(34);
-
-module.exports = function (COLLECTION) {
-  $export($export.S, COLLECTION, { from: function from(source /* , mapFn, thisArg */) {
-    var mapFn = arguments[1];
-    var mapping, A, n, cb;
-    aFunction(this);
-    mapping = mapFn !== undefined;
-    if (mapping) aFunction(mapFn);
-    if (source == undefined) return new this();
-    A = [];
-    if (mapping) {
-      n = 0;
-      cb = ctx(mapFn, arguments[2], 2);
-      forOf(source, false, function (nextItem) {
-        A.push(cb(nextItem, n++));
-      });
-    } else {
-      forOf(source, false, A.push, A);
-    }
-    return new this(A);
-  } });
-};
-
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// https://tc39.github.io/proposal-setmap-offrom/
-var $export = __webpack_require__(2);
-
-module.exports = function (COLLECTION) {
-  $export($export.S, COLLECTION, { of: function of() {
-    var length = arguments.length;
-    var A = new Array(length);
-    while (length--) A[length] = arguments[length];
-    return new this(A);
-  } });
-};
-
-
-/***/ }),
-/* 101 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var global = __webpack_require__(6);
-var core = __webpack_require__(0);
-var dP = __webpack_require__(11);
-var DESCRIPTORS = __webpack_require__(9);
-var SPECIES = __webpack_require__(5)('species');
-
-module.exports = function (KEY) {
-  var C = typeof core[KEY] == 'function' ? core[KEY] : global[KEY];
-  if (DESCRIPTORS && C && !C[SPECIES]) dP.f(C, SPECIES, {
-    configurable: true,
-    get: function () { return this; }
-  });
-};
-
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.3.20 SpeciesConstructor(O, defaultConstructor)
-var anObject = __webpack_require__(15);
-var aFunction = __webpack_require__(32);
-var SPECIES = __webpack_require__(5)('species');
-module.exports = function (O, D) {
-  var C = anObject(O).constructor;
-  var S;
-  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
-};
-
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var ctx = __webpack_require__(18);
-var invoke = __webpack_require__(151);
-var html = __webpack_require__(85);
-var cel = __webpack_require__(53);
-var global = __webpack_require__(6);
-var process = global.process;
-var setTask = global.setImmediate;
-var clearTask = global.clearImmediate;
-var MessageChannel = global.MessageChannel;
-var Dispatch = global.Dispatch;
-var counter = 0;
-var queue = {};
-var ONREADYSTATECHANGE = 'onreadystatechange';
-var defer, channel, port;
-var run = function () {
-  var id = +this;
-  // eslint-disable-next-line no-prototype-builtins
-  if (queue.hasOwnProperty(id)) {
-    var fn = queue[id];
-    delete queue[id];
-    fn();
-  }
-};
-var listener = function (event) {
-  run.call(event.data);
-};
-// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
-if (!setTask || !clearTask) {
-  setTask = function setImmediate(fn) {
-    var args = [];
-    var i = 1;
-    while (arguments.length > i) args.push(arguments[i++]);
-    queue[++counter] = function () {
-      // eslint-disable-next-line no-new-func
-      invoke(typeof fn == 'function' ? fn : Function(fn), args);
-    };
-    defer(counter);
-    return counter;
-  };
-  clearTask = function clearImmediate(id) {
-    delete queue[id];
-  };
-  // Node.js 0.8-
-  if (__webpack_require__(33)(process) == 'process') {
-    defer = function (id) {
-      process.nextTick(ctx(run, id, 1));
-    };
-  // Sphere (JS game engine) Dispatch API
-  } else if (Dispatch && Dispatch.now) {
-    defer = function (id) {
-      Dispatch.now(ctx(run, id, 1));
-    };
-  // Browsers with MessageChannel, includes WebWorkers
-  } else if (MessageChannel) {
-    channel = new MessageChannel();
-    port = channel.port2;
-    channel.port1.onmessage = listener;
-    defer = ctx(port.postMessage, port, 1);
-  // Browsers with postMessage, skip WebWorkers
-  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
-  } else if (global.addEventListener && typeof postMessage == 'function' && !global.importScripts) {
-    defer = function (id) {
-      global.postMessage(id + '', '*');
-    };
-    global.addEventListener('message', listener, false);
-  // IE8-
-  } else if (ONREADYSTATECHANGE in cel('script')) {
-    defer = function (id) {
-      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function () {
-        html.removeChild(this);
-        run.call(id);
-      };
-    };
-  // Rest old browsers
-  } else {
-    defer = function (id) {
-      setTimeout(ctx(run, id, 1), 0);
-    };
-  }
-}
-module.exports = {
-  set: setTask,
-  clear: clearTask
-};
-
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-var _entries = __webpack_require__(26);
-
-var _entries2 = _interopRequireDefault(_entries);
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* eslint-disable no-undef */
-function nowtime() {
-  if (typeof performance !== 'undefined' && performance.now) {
-    return performance.now();
-  } else if (typeof process !== 'undefined' && process.hrtime) {
-    var _process$hrtime = process.hrtime(),
-        _process$hrtime2 = (0, _slicedToArray3.default)(_process$hrtime, 2),
-        s = _process$hrtime2[0],
-        ns = _process$hrtime2[1];
-
-    return s * 1e3 + ns * 1e-6;
-  }
-  return Date.now ? Date.now() : new Date().getTime();
-}
-/* eslint-enable no-undef */
-
-var _requestAnimationFrame = void 0;
-
-if (typeof requestAnimationFrame === 'undefined') {
-  _requestAnimationFrame = function _requestAnimationFrame(fn) {
-    return setTimeout(function () {
-      fn(nowtime());
-    }, 16);
-  };
-} else {
-  _requestAnimationFrame = requestAnimationFrame;
-}
-
-var steps = [];
-var timerId = void 0,
-    id = 0;
-
-var FastAnimationFrame = {
-  requestAnimationFrame: function requestAnimationFrame(step) {
-    steps[++id] = step;
-
-    if (timerId == null) {
-      timerId = _requestAnimationFrame(function (t) {
-        timerId = null;
-        (0, _entries2.default)(steps).forEach(function (_ref) {
-          var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
-              id = _ref2[0],
-              callback = _ref2[1];
-
-          callback(t);
-          delete steps[id];
-        });
-      });
-    }
-    return id;
-  },
-  cancelAnimationFrame: function cancelAnimationFrame(id) {
-    delete steps[id];
-  }
-};
-
-module.exports = FastAnimationFrame;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(71)))
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _toConsumableArray2 = __webpack_require__(7);
+var _toConsumableArray2 = __webpack_require__(5);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
-var _map = __webpack_require__(31);
+var _map = __webpack_require__(23);
 
 var _map2 = _interopRequireDefault(_map);
 
-var _promise = __webpack_require__(49);
-
-var _promise2 = _interopRequireDefault(_promise);
-
-exports.defer = defer;
-exports.periodicity = periodicity;
-exports.getBezierEasing = getBezierEasing;
-exports.getStepsEasing = getStepsEasing;
-exports.parseEasingStr = parseEasingStr;
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function defer() {
-  var ret = {};
-  ret.promise = new _promise2.default(function (resolve, reject) {
-    ret.resolve = resolve;
-    ret.reject = reject;
-  });
-  return ret;
-}
-
-function periodicity(val, dur) {
-  var t = Math.floor(val / dur);
-  if (t) {
-    val -= t * dur;
-    return val || dur; // 周期值，0 的时候是 0，dur 的时候是 1，所以要分 t 是否为 0
-  }
-  return val;
-}
-
-var BezierEasing = __webpack_require__(121);
+var BezierEasing = __webpack_require__(125);
 var bezierFuncCache = new _map2.default();
 
 function getBezierEasing() {
@@ -4916,311 +4373,109 @@ function parseEasingStr(easingStr) {
       matched = easingStr.match(pattern);
 
   if (matched) {
-    var _value = matched[1].trim();
-    _value = _value.split(',').map(function (v) {
+    var value = matched[1].trim();
+    value = value.split(',').map(function (v) {
       return parseFloat(v.trim());
     });
-    return getBezierEasing.apply(undefined, (0, _toConsumableArray3.default)(_value));
+    return getBezierEasing.apply(undefined, (0, _toConsumableArray3.default)(value));
   }
 
   pattern = /^steps\((.*)\)/;
   matched = easingStr.match(pattern);
 
   if (matched) {
-    var _value2 = matched[1].trim();
-    _value2 = _value2.split(',').map(function (v) {
+    var _value = matched[1].trim();
+    _value = _value.split(',').map(function (v) {
       return v.trim();
     });
 
-    var _value3 = _value2,
-        _value4 = (0, _slicedToArray3.default)(_value3, 2),
-        step = _value4[0],
-        pos = _value4[1];
+    var _value2 = _value,
+        _value3 = (0, _slicedToArray3.default)(_value2, 2),
+        step = _value3[0],
+        pos = _value3[1];
 
     return getStepsEasing(parseInt(step, 10), pos);
   }
   return easingStr;
 }
 
-/***/ }),
-/* 106 */
-/***/ (function(module, exports, __webpack_require__) {
+var Easings = {
+  linear: function linear(p) {
+    return p;
+  },
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _assign = __webpack_require__(16);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _get2 = __webpack_require__(17);
-
-var _get3 = _interopRequireDefault(_get2);
-
-var _inherits2 = __webpack_require__(13);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _symbol = __webpack_require__(12);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _basesprite = __webpack_require__(38);
-
-var _basesprite2 = _interopRequireDefault(_basesprite);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _children = (0, _symbol2.default)('children'),
-    _zOrder = (0, _symbol2.default)('zOrder');
-
-function sortChildren(children) {
-  children.sort(function (a, b) {
-    var a_zidx = a.attr('zIndex'),
-        b_zidx = b.attr('zIndex');
-    if (a_zidx === b_zidx) {
-      return a.zOrder - b.zOrder;
-    }
-    return a_zidx - b_zidx;
-  });
-}
-
-var Group = function (_BaseSprite) {
-  (0, _inherits3.default)(Group, _BaseSprite);
-
-  function Group(attr) {
-    (0, _classCallCheck3.default)(this, Group);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Group.__proto__ || (0, _getPrototypeOf2.default)(Group)).call(this, attr));
-
-    _this[_children] = [];
-    _this[_zOrder] = 0;
-    return _this;
-  }
-
-  (0, _createClass3.default)(Group, [{
-    key: 'appendChild',
-    value: function appendChild(sprite) {
-      var sort = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
-      this[_children].push(sprite);
-      sprite.connect(this, this[_zOrder]++);
-      if (sort) sortChildren(this[_children]);
-    }
-  }, {
-    key: 'append',
-    value: function append() {
-      var _this2 = this;
-
-      for (var _len = arguments.length, sprites = Array(_len), _key = 0; _key < _len; _key++) {
-        sprites[_key] = arguments[_key];
-      }
-
-      sprites.forEach(function (sprite) {
-        return _this2.appendChild(sprite, false);
-      });
-      sortChildren(this[_children]);
-    }
-  }, {
-    key: 'removeChild',
-    value: function removeChild(sprite) {
-      var idx = this[_children].indexOf(sprite);
-      if (idx === -1) {
-        return null;
-      }
-      this[_children].splice(idx, 1);
-      sprite.disconnect(this);
-      return sprite;
-    }
-  }, {
-    key: 'remove',
-    value: function remove() {
-      var _this3 = this;
-
-      for (var _len2 = arguments.length, sprites = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        sprites[_key2] = arguments[_key2];
-      }
-
-      if (sprites.length === 0) {
-        sprites = this[_children].slice(0);
-      }
-      sprites.forEach(function (sprite) {
-        return _this3.removeChild(sprite);
-      });
-    }
-  }, {
-    key: 'dispatchEvent',
-    value: function dispatchEvent(type, evt) {
-      var forceTrigger = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-      if (!evt.terminated && (forceTrigger || this.pointCollision(evt))) {
-        var parentX = evt.offsetX - this.originRect[0];
-        var parentY = evt.offsetY - this.originRect[1];
-        // console.log(evt.parentX, evt.parentY)
-
-        var _evt = (0, _assign2.default)({}, evt);
-        _evt.parentX = parentX;
-        _evt.parentY = parentY;
-
-        var targetSprites = [];
-        this[_children].forEach(function (sprite) {
-          var hit = sprite.dispatchEvent(type, _evt, forceTrigger);
-          if (hit) {
-            targetSprites.push(sprite);
-          }
-        });
-
-        evt.targetSprites = targetSprites;
-        (0, _get3.default)(Group.prototype.__proto__ || (0, _getPrototypeOf2.default)(Group.prototype), 'dispatchEvent', this).call(this, type, evt, forceTrigger);
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render(t, drawingContext) {
-      var context = (0, _get3.default)(Group.prototype.__proto__ || (0, _getPrototypeOf2.default)(Group.prototype), 'render', this).call(this, t, drawingContext);
-
-      var children = this[_children];
-
-      /* eslint-disable no-await-in-loop */
-      for (var i = 0; i < children.length; i++) {
-        var child = children[i];
-        child.draw(t);
-      }
-      /* eslint-enable no-await-in-loop */
-
-      return context;
-    }
-  }, {
-    key: 'contentSize',
-    get: function get() {
-      var _attr = this.attr('size'),
-          _attr2 = (0, _slicedToArray3.default)(_attr, 2),
-          width = _attr2[0],
-          height = _attr2[1];
-
-      if (width === '' || height === '') {
-        var right = void 0,
-            bottom = void 0;
-
-        right = 0;
-        bottom = 0;
-        this[_children].forEach(function (sprite) {
-          var renderBox = sprite.renderBox;
-          right = Math.max(right, renderBox[2]);
-          bottom = Math.max(bottom, renderBox[3]);
-        });
-        width = right;
-        height = bottom;
-      }
-      return [width, height];
-    }
-  }]);
-  return Group;
-}(_basesprite2.default);
-
-exports.default = Group;
-
-/***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.pointInPath = exports.platform = undefined;
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-exports.getSvgPath = getSvgPath;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var getPoints = __webpack_require__(189);
-
-var platform = exports.platform = {
-  isBrowser: false
+  ease: getBezierEasing(0.25, 0.1, 0.25, 1),
+  'ease-in': getBezierEasing(0.42, 0, 1, 1),
+  'ease-out': getBezierEasing(0, 0, 0.58, 1),
+  'ease-in-out': getBezierEasing(0.42, 0, 0.58, 1),
+  // 'step-start': function(p, frames){
+  //   let ret = 0
+  //   for(let i = 0; i < frames.length; i++){
+  //     const {offset} = frames[i]
+  //     ret = offset
+  //     if(p < offset){
+  //       break
+  //     }
+  //   }
+  //   return ret
+  // },
+  // 'step-end': function(p, frames){
+  //   let ret = 0
+  //   for(let i = 0; i < frames.length; i++){
+  //     const {offset} = frames[i]
+  //     if(p < offset){
+  //       break
+  //     }
+  //     ret = offset
+  //   }
+  //   return ret
+  // }
+  'step-start': getStepsEasing(1, 'start'),
+  'step-end': getStepsEasing(1, 'end')
 };
 
-function getSvgPath(d) {
-  var points = getPoints(d);
-  return {
-    getPointAtLength: function getPointAtLength(len) {
-      var _points$at = points.at(len),
-          _points$at2 = (0, _slicedToArray3.default)(_points$at, 2),
-          x = _points$at2[0],
-          y = _points$at2[1];
-
-      return { x: x, y: y };
-    },
-    getTotalLength: function getTotalLength() {
-      return points.length();
-    },
-    getAttribute: function getAttribute(val) {
-      if (val === 'd') return d;
-      return null;
+function parseEasing(easing) {
+  if (typeof easing === 'string') {
+    if (!Easings[easing]) {
+      easing = parseEasingStr(easing);
+    } else {
+      // load default Easing
+      easing = Easings[easing];
     }
-  };
+  } else if (easing.type === 'cubic-bezier') {
+    easing = getBezierEasing.apply(undefined, (0, _toConsumableArray3.default)(easing.value));
+  } else if (easing.type === 'steps') {
+    easing = getStepsEasing(easing.step, easing.pos);
+  }
+  return easing;
 }
 
-var pointInPath = __webpack_require__(202);
-exports.pointInPath = pointInPath;
+exports.Easings = Easings;
+exports.parseEasing = parseEasing;
 
 /***/ }),
 /* 108 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var g;
+"use strict";
 
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
 
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  // s - startFrame, e - endFrame
+  default: function _default(from, to, p, s, e) {
+    if (typeof from === 'number' && typeof to === 'number') {
+      return from + (p - s) / (e - s) * (to - from);
+    }
 
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
+    if (p - s > e - p) {
+      return to;
+    }
+    return from;
+  }
+};
 
 /***/ }),
 /* 109 */
@@ -5234,11 +4489,146 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _toConsumableArray2 = __webpack_require__(7);
+var _toConsumableArray2 = __webpack_require__(5);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
-var _getPrototypeOf = __webpack_require__(8);
+var _set = __webpack_require__(46);
+
+var _set2 = _interopRequireDefault(_set);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _batch = (0, _symbol2.default)('batch');
+
+var Batch = function () {
+  function Batch(layer) {
+    (0, _classCallCheck3.default)(this, Batch);
+
+    this.layer = layer;
+    this[_batch] = new _set2.default();
+    this.cache = null;
+  }
+
+  (0, _createClass3.default)(Batch, [{
+    key: 'add',
+    value: function add() {
+      var _this = this;
+
+      for (var _len = arguments.length, nodes = Array(_len), _key = 0; _key < _len; _key++) {
+        nodes[_key] = arguments[_key];
+      }
+
+      nodes.forEach(function (node) {
+        if (!node.layer || node.layer !== _this.layer) {
+          throw new Error('Batch node must append to this layer first!');
+        }
+        if (node[_batch]) {
+          throw new Error('Node already batched!');
+        }
+        var that = _this;
+        Object.defineProperty(node, 'cache', {
+          configurable: true,
+          get: function get() {
+            return that.cache;
+          },
+          set: function set(context) {
+            if (that.baseNode === this) {
+              that.cache = context;
+            } else if (context == null) {
+              throw new Error('Cannot set non-cachable attributes to batch members.Use batch.baseNode.attr(...)');
+            }
+          }
+        });
+        node[_batch] = _this;
+        _this[_batch].add(node);
+      });
+    }
+  }, {
+    key: 'remove',
+    value: function remove() {
+      var _this2 = this;
+
+      for (var _len2 = arguments.length, nodes = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        nodes[_key2] = arguments[_key2];
+      }
+
+      nodes.forEach(function (node) {
+        if (_this2[_batch].has(node)) {
+          delete node[_batch];
+          delete node.cache;
+          _this2[_batch].delete(node);
+        }
+      });
+    }
+  }, {
+    key: 'baseNode',
+    get: function get() {
+      var batchNodes = [].concat((0, _toConsumableArray3.default)(this[_batch]));
+      var baseNode = batchNodes[0],
+          zOrder = Infinity,
+          zIndex = Infinity;
+
+      for (var i = 1; i < batchNodes.length; i++) {
+        var node = batchNodes[i];
+        if (zIndex > node.zIndex) {
+          zIndex = node.zIndex;
+          zOrder = node.zOrder;
+          baseNode = node;
+        } else if (zIndex === node.zIndex && zOrder > node.zOrder) {
+          zOrder = node.zOrder;
+          baseNode = node;
+        }
+      }
+      return baseNode;
+    }
+  }]);
+  return Batch;
+}();
+
+exports.default = Batch;
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _get2 = __webpack_require__(18);
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _getOwnPropertyDescriptor = __webpack_require__(24);
+
+var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
+
+var _getPrototypeOf = __webpack_require__(10);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
@@ -5250,27 +4640,1049 @@ var _createClass2 = __webpack_require__(4);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(14);
+var _possibleConstructorReturn2 = __webpack_require__(16);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = __webpack_require__(13);
+var _inherits2 = __webpack_require__(15);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _symbol = __webpack_require__(12);
+var _symbol = __webpack_require__(6);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
-var _layer = __webpack_require__(75);
+var _desc, _value, _class, _class2, _temp;
+
+var _basesprite = __webpack_require__(41);
+
+var _basesprite2 = _interopRequireDefault(_basesprite);
+
+var _nodetype = __webpack_require__(28);
+
+var _spriteUtils = __webpack_require__(14);
+
+var _path = __webpack_require__(112);
+
+var _render = __webpack_require__(42);
+
+var _group = __webpack_require__(111);
+
+var _group2 = _interopRequireDefault(_group);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _applyDecoratedDescriptor = __webpack_require__(29);
+
+var _children = (0, _symbol2.default)('children'),
+    _zOrder = (0, _symbol2.default)('zOrder');
+
+var GroupAttr = (_class = function (_BaseSprite$Attr) {
+  (0, _inherits3.default)(GroupAttr, _BaseSprite$Attr);
+
+  function GroupAttr(subject) {
+    (0, _classCallCheck3.default)(this, GroupAttr);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (GroupAttr.__proto__ || (0, _getPrototypeOf2.default)(GroupAttr)).call(this, subject));
+
+    _this.setDefault({
+      clip: null
+    });
+    return _this;
+  }
+
+  (0, _createClass3.default)(GroupAttr, [{
+    key: 'clip',
+    set: function set(val) {
+      this.clearCache();
+      if (val) {
+        val = typeof val === 'string' ? { d: val } : val;
+        this.subject.svg = (0, _path.createSvgPath)(val);
+        this.set('clip', val);
+      } else {
+        this.subject.svg = null;
+        this.set('clip', null);
+      }
+    }
+  }]);
+  return GroupAttr;
+}(_basesprite2.default.Attr), (_applyDecoratedDescriptor(_class.prototype, 'clip', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'clip'), _class.prototype)), _class);
+var Group = (_temp = _class2 = function (_BaseSprite) {
+  (0, _inherits3.default)(Group, _BaseSprite);
+
+  function Group(attr) {
+    (0, _classCallCheck3.default)(this, Group);
+
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Group.__proto__ || (0, _getPrototypeOf2.default)(Group)).call(this, attr));
+
+    _this2[_children] = [];
+    _this2[_zOrder] = 0;
+    return _this2;
+  }
+
+  (0, _createClass3.default)(Group, [{
+    key: 'cloneNode',
+    value: function cloneNode(deepCopy) {
+      var node = (0, _get3.default)(Group.prototype.__proto__ || (0, _getPrototypeOf2.default)(Group.prototype), 'cloneNode', this).call(this);
+      if (deepCopy) {
+        var children = this.children;
+        children.forEach(function (child) {
+          var subNode = child.cloneNode(deepCopy);
+          node.append(subNode);
+        });
+      }
+      return node;
+    }
+  }, {
+    key: 'pointCollision',
+    value: function pointCollision(evt) {
+      if ((0, _get3.default)(Group.prototype.__proto__ || (0, _getPrototypeOf2.default)(Group.prototype), 'pointCollision', this).call(this, evt)) {
+        if (this.svg) {
+          var offsetX = evt.offsetX,
+              offsetY = evt.offsetY;
+
+          var rect = this.originalRect;
+          evt.isInClip = this.svg.isPointInPath(offsetX - rect[0], offsetY - rect[1]);
+        }
+        return true;
+      }
+      return false;
+    }
+  }, {
+    key: 'dispatchEvent',
+    value: function dispatchEvent(type, evt) {
+      var collisionState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var swallow = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+      var isCollision = collisionState || this.pointCollision(evt);
+      if (!evt.terminated && isCollision) {
+        var parentX = evt.offsetX - this.originalRect[0];
+        var parentY = evt.offsetY - this.originalRect[1];
+        // console.log(evt.parentX, evt.parentY)
+
+        var _evt = (0, _assign2.default)({}, evt);
+        _evt.parentX = parentX;
+        _evt.parentY = parentY;
+
+        var sprites = this[_children].slice(0);
+        (0, _spriteUtils.sortOrderedSprites)(sprites, true);
+
+        var targetSprites = [];
+
+        if (!swallow && type !== 'mouseenter' && type !== 'mouseleave') {
+          for (var i = 0; i < sprites.length && evt.isInClip !== false; i++) {
+            var sprite = sprites[i];
+            var hit = sprite.dispatchEvent(type, _evt, collisionState, swallow);
+            if (hit) {
+              targetSprites.push(sprite);
+            }
+            if (evt.terminated && !evt.type.startsWith('mouse')) {
+              break;
+            }
+          }
+        }
+
+        evt.targetSprites = targetSprites;
+      }
+
+      // stopDispatch can only terminate event in the same level
+      evt.terminated = false;
+      return (0, _get3.default)(Group.prototype.__proto__ || (0, _getPrototypeOf2.default)(Group.prototype), 'dispatchEvent', this).call(this, type, evt, collisionState);
+    }
+  }, {
+    key: 'isNodeVisible',
+    value: function isNodeVisible(sprite) {
+      if (!sprite.isVisible()) return false;
+
+      var _outerSize = (0, _slicedToArray3.default)(this.outerSize, 2),
+          w = _outerSize[0],
+          h = _outerSize[1];
+
+      var box1 = sprite.renderBox,
+          box2 = [0, 0, w, h];
+      if ((0, _spriteUtils.boxIntersect)(box1, box2)) {
+        return true;
+      }
+      return false;
+    }
+  }, {
+    key: 'clearCache',
+    value: function clearCache() {
+      (0, _get3.default)(Group.prototype.__proto__ || (0, _getPrototypeOf2.default)(Group.prototype), 'clearCache', this).call(this);
+      this.baseCache = null;
+    }
+  }, {
+    key: 'render',
+    value: function render(t, drawingContext) {
+      if (this.baseCache && drawingContext.canvas.width === this.baseCache.canvas.width && drawingContext.canvas.height === this.baseCache.canvas.height) {
+        var _attr = this.attr('border'),
+            borderWidth = _attr.width,
+            padding = this.attr('padding');
+
+        drawingContext.drawImage(this.baseCache.canvas, -1, -1);
+        drawingContext.translate(borderWidth + padding[3], borderWidth + padding[0]);
+      } else {
+        (0, _get3.default)(Group.prototype.__proto__ || (0, _getPrototypeOf2.default)(Group.prototype), 'render', this).call(this, t, drawingContext);
+        this.baseCache = (0, _render.copyContext)(drawingContext);
+        this.baseCache.drawImage(drawingContext.canvas, 0, 0);
+      }
+
+      var clipPath = this.attr('clip');
+      if (clipPath) {
+        drawingContext.save();
+        this.svg.beginPath().to(drawingContext);
+        drawingContext.restore();
+        drawingContext.clip();
+        drawingContext.clearRect(0, 0, this.originalRect[2], this.originalRect[3]);
+      }
+
+      var sprites = this[_children].slice(0);
+      (0, _spriteUtils.sortOrderedSprites)(sprites);
+
+      for (var i = 0; i < sprites.length; i++) {
+        var child = sprites[i];
+        if (this.isNodeVisible(child)) {
+          child.draw(t);
+        }
+      }
+    }
+  }, {
+    key: 'children',
+    get: function get() {
+      return this[_children];
+    }
+  }, {
+    key: 'contentSize',
+    get: function get() {
+      var _attr2 = this.attr('size'),
+          _attr3 = (0, _slicedToArray3.default)(_attr2, 2),
+          width = _attr3[0],
+          height = _attr3[1];
+
+      if (width === '' || height === '') {
+        if (this.attr('clip')) {
+          var svg = this.svg;
+          var bounds = svg.bounds;
+          width = bounds[2];
+          height = bounds[3];
+        } else {
+          var right = void 0,
+              bottom = void 0;
+
+          right = 0;
+          bottom = 0;
+          this[_children].forEach(function (sprite) {
+            var renderBox = sprite.renderBox;
+            right = Math.max(right, renderBox[2]);
+            bottom = Math.max(bottom, renderBox[3]);
+          });
+          width = right;
+          height = bottom;
+        }
+      }
+      return [width, height];
+    }
+  }]);
+  return Group;
+}(_basesprite2.default), _class2.Attr = GroupAttr, _temp);
+exports.default = Group;
+
+(0, _assign2.default)(Group.prototype, _group2.default);
+
+(0, _nodetype.registerNodeType)('group', Group, true);
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _zOrder = (0, _symbol2.default)('zOrder');
+
+exports.default = {
+  appendChild: function appendChild(sprite) {
+    var update = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+    this.removeChild(sprite);
+    this.children.push(sprite);
+    this[_zOrder] = this[_zOrder] || 0;
+    sprite.connect(this, this[_zOrder]++);
+    if (update) {
+      sprite.forceUpdate();
+    }
+    return sprite;
+  },
+  append: function append() {
+    var _this = this;
+
+    for (var _len = arguments.length, sprites = Array(_len), _key = 0; _key < _len; _key++) {
+      sprites[_key] = arguments[_key];
+    }
+
+    sprites.forEach(function (sprite) {
+      return _this.appendChild(sprite);
+    });
+  },
+  removeChild: function removeChild(sprite) {
+    var idx = this.children.indexOf(sprite);
+    if (idx === -1) {
+      return null;
+    }
+    this.children.splice(idx, 1);
+    if (this.isVisible(sprite) || sprite.lastRenderBox) {
+      sprite.forceUpdate();
+    }
+    sprite.disconnect(this);
+    return sprite;
+  },
+  remove: function remove() {
+    var _this2 = this;
+
+    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    if (args.length === 0) {
+      args = this.children.slice(0);
+    }
+    return args.map(function (child) {
+      return _this2.removeChild(child);
+    });
+  },
+  insertBefore: function insertBefore(newchild, refchild) {
+    var idx = this.children.indexOf(refchild);
+    if (idx >= 0) {
+      this.removeChild(newchild);
+      this.children.splice(idx, 0, newchild);
+      newchild.connect(this, refchild.zOrder);
+      newchild.forceUpdate();
+
+      for (var i = idx + 1; i < this.children.length; i++) {
+        var child = this.children[i],
+            zOrder = child.zOrder + 1;
+
+        delete child.zOrder;
+        Object.defineProperty(child, 'zOrder', {
+          value: zOrder,
+          writable: false,
+          configurable: true
+        });
+      }
+
+      this[_zOrder] = this[_zOrder] || 0;
+      this[_zOrder]++;
+    }
+
+    return newchild;
+  }
+};
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _entries = __webpack_require__(20);
+
+var _entries2 = _interopRequireDefault(_entries);
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _toArray2 = __webpack_require__(82);
+
+var _toArray3 = _interopRequireDefault(_toArray2);
+
+exports.pathEffect = pathEffect;
+exports.createSvgPath = createSvgPath;
+
+var _sort = __webpack_require__(201);
+
+var _svgPathToCanvas = __webpack_require__(78);
+
+var _svgPathToCanvas2 = _interopRequireDefault(_svgPathToCanvas);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _subShapes(shapes, count) {
+  var _loop = function _loop(i) {
+    var shape = shapes[shapes.length - 1];
+    var newShape = [];
+    var x = shape[0][0],
+        y = shape[0][1];
+    shape.forEach(function () {
+      newShape.push([x, y, x, y, x, y, x, y]);
+    });
+
+    shapes.push(newShape);
+  };
+
+  for (var i = 0; i < count; i++) {
+    _loop(i);
+  }
+} // https://github.com/AlloyTeam/pasition
+
+function _upShapes(shapes, count) {
+  var _loop2 = function _loop2(i) {
+    var shape = shapes[shapes.length - 1];
+    var newShape = [];
+
+    shape.forEach(function (curve) {
+      newShape.push(curve.slice(0));
+    });
+    shapes.push(newShape);
+  };
+
+  for (var i = 0; i < count; i++) {
+    _loop2(i);
+  }
+}
+
+function split(x1, y1, x2, y2, x3, y3, x4, y4, t) {
+  return {
+    left: _split(x1, y1, x2, y2, x3, y3, x4, y4, t),
+    right: _split(x4, y4, x3, y3, x2, y2, x1, y1, 1 - t, true)
+  };
+}
+
+function _split(x1, y1, x2, y2, x3, y3, x4, y4, t, reverse) {
+  var x12 = (x2 - x1) * t + x1;
+  var y12 = (y2 - y1) * t + y1;
+
+  var x23 = (x3 - x2) * t + x2;
+  var y23 = (y3 - y2) * t + y2;
+
+  var x34 = (x4 - x3) * t + x3;
+  var y34 = (y4 - y3) * t + y3;
+
+  var x123 = (x23 - x12) * t + x12;
+  var y123 = (y23 - y12) * t + y12;
+
+  var x234 = (x34 - x23) * t + x23;
+  var y234 = (y34 - y23) * t + y23;
+
+  var x1234 = (x234 - x123) * t + x123;
+  var y1234 = (y234 - y123) * t + y123;
+
+  if (reverse) {
+    return [x1234, y1234, x123, y123, x12, y12, x1, y1];
+  }
+  return [x1, y1, x12, y12, x123, y123, x1234, y1234];
+}
+
+function _splitCurves(curves, count) {
+  var i = 0,
+      index = 0;
+
+  for (; i < count; i++) {
+    var curve = curves[index];
+    var cs = split(curve[0], curve[1], curve[2], curve[3], curve[4], curve[5], curve[6], curve[7], 0.5);
+    curves.splice(index, 1);
+    curves.splice(index, 0, cs.left, cs.right);
+
+    index += 2;
+    if (index >= curves.length - 1) {
+      index = 0;
+    }
+  }
+}
+
+function pathToShapes(path) {
+  var x = 0,
+      y = 0;
+  var shapes = [];
+  path.forEach(function (p) {
+    var _p = (0, _toArray3.default)(p),
+        cmd = _p[0],
+        points = _p.slice(1);
+
+    if (cmd === 'M') {
+      x = points[0];
+      y = points[1];
+    } else {
+      shapes.push([x, y].concat((0, _toConsumableArray3.default)(points)));
+      x = points[4];
+      y = points[5];
+    }
+  });
+  return [shapes];
+}
+
+// match two path
+function match(pathA, pathB) {
+  var minCurves = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
+
+  var shapesA = pathToShapes(pathA.path);
+  var shapesB = pathToShapes(pathB.path);
+
+  var lenA = shapesA.length,
+      lenB = shapesB.length;
+
+  if (lenA > lenB) {
+    _subShapes(shapesB, lenA - lenB);
+  } else if (lenA < lenB) {
+    _upShapes(shapesA, lenB - lenA);
+  }
+
+  shapesA = (0, _sort.sort)(shapesA, shapesB);
+
+  shapesA.forEach(function (curves, index) {
+    var lenA = curves.length,
+        lenB = shapesB[index].length;
+
+    if (lenA > lenB) {
+      if (lenA < minCurves) {
+        _splitCurves(curves, minCurves - lenA);
+        _splitCurves(shapesB[index], minCurves - lenB);
+      } else {
+        _splitCurves(shapesB[index], lenA - lenB);
+      }
+    } else if (lenA < lenB) {
+      if (lenB < minCurves) {
+        _splitCurves(curves, minCurves - lenA);
+        _splitCurves(shapesB[index], minCurves - lenB);
+      } else {
+        _splitCurves(curves, lenB - lenA);
+      }
+    }
+  });
+
+  shapesA.forEach(function (curves, index) {
+    shapesA[index] = (0, _sort.sortCurves)(curves, shapesB[index]);
+  });
+
+  return [shapesA, shapesB];
+}
+
+function lerpPoints(x1, y1, x2, y2, t) {
+  return [x1 + (x2 - x1) * t, y1 + (y2 - y1) * t];
+}
+
+function lerpCurve(curveA, curveB, t) {
+  return lerpPoints(curveA[0], curveA[1], curveB[0], curveB[1], t).concat(lerpPoints(curveA[2], curveA[3], curveB[2], curveB[3], t)).concat(lerpPoints(curveA[4], curveA[5], curveB[4], curveB[5], t)).concat(lerpPoints(curveA[6], curveA[7], curveB[6], curveB[7], t));
+}
+
+function lerp(pathA, pathB, t) {
+  var _match = match(pathA, pathB),
+      _match2 = (0, _slicedToArray3.default)(_match, 2),
+      shapesA = _match2[0],
+      shapesB = _match2[1];
+
+  return shapesA.map(function (shapeA, i) {
+    var shapeB = shapesB[i];
+    return shapeA.map(function (curveA, i) {
+      var curveB = shapeB[i];
+      var curve = lerpCurve(curveA, curveB, t);
+      if (i === 0) {
+        return 'M' + curve[0] + ' ' + curve[1] + ' C' + curve[2] + ' ' + curve[3] + ', ' + curve[4] + ' ' + curve[5] + ', ' + curve[6] + ' ' + curve[7];
+      }
+      return curve[2] + ' ' + curve[3] + ', ' + curve[4] + ' ' + curve[5] + ', ' + curve[6] + ' ' + curve[7];
+    });
+  }).join(' ') + 'z';
+}
+
+function pathEffect(pathA, pathB, p, s, e) {
+  var ep = (p - s) / (e - s);
+  if (ep <= 0) return pathA;
+  if (ep >= 1) return pathB;
+  pathA = new _svgPathToCanvas2.default(pathA);
+  pathB = new _svgPathToCanvas2.default(pathB);
+  return lerp(pathA, pathB, ep);
+}
+
+function createSvgPath(path) {
+  if (typeof path === 'string') path = { d: path };
+  var p = new _svgPathToCanvas2.default(path.d);
+  if (path.transform || path.trim) {
+    if (path.transform) {
+      (0, _entries2.default)(path.transform).forEach(function (_ref) {
+        var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+            key = _ref2[0],
+            value = _ref2[1];
+
+        if (!Array.isArray(value)) value = [value];
+        p[key].apply(p, (0, _toConsumableArray3.default)(value));
+      });
+    }
+    if (path.trim) {
+      p.trim();
+    }
+  }
+  return p;
+}
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _map = __webpack_require__(23);
+
+var _map2 = _interopRequireDefault(_map);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _utils = __webpack_require__(209);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var defaultOptions = {
+  originTime: 0,
+  playbackRate: 1.0
+};
+
+var _timeMark = (0, _symbol2.default)('timeMark'),
+    _playbackRate = (0, _symbol2.default)('playbackRate'),
+    _timers = (0, _symbol2.default)('timers'),
+    _originTime = (0, _symbol2.default)('originTime'),
+    _setTimer = (0, _symbol2.default)('setTimer'),
+    _parent = (0, _symbol2.default)('parent');
+
+var Timeline = function () {
+  function Timeline(options, parent) {
+    (0, _classCallCheck3.default)(this, Timeline);
+
+    if (options instanceof Timeline) {
+      parent = options;
+      options = {};
+    }
+
+    options = (0, _assign2.default)({}, defaultOptions, options);
+
+    if (parent) {
+      this[_parent] = parent;
+    }
+
+    // timeMark records the reference points on timeline
+    // Each time we change the playbackRate or currentTime or entropy
+    // A new timeMark will be generated
+    // timeMark sorted by entropy
+    // If you reset entropy, all the timeMarks behind the new entropy
+    // should be dropped
+    this[_timeMark] = [{
+      globalTime: this.globalTime,
+      localTime: -options.originTime,
+      entropy: -options.originTime,
+      playbackRate: options.playbackRate,
+      globalEntropy: 0
+    }];
+
+    if (this[_parent]) {
+      this[_timeMark][0].globalEntropy = this[_parent].entropy;
+    }
+
+    this[_originTime] = options.originTime;
+    this[_playbackRate] = options.playbackRate;
+    this[_timers] = new _map2.default();
+  }
+
+  (0, _createClass3.default)(Timeline, [{
+    key: 'fork',
+    value: function fork(options) {
+      return new Timeline(options, this);
+    }
+  }, {
+    key: 'seekGlobalTime',
+    value: function seekGlobalTime(seekEntropy) {
+      var idx = this.seekTimeMark(seekEntropy),
+          timeMark = this[_timeMark][idx];
+
+      var entropy = timeMark.entropy,
+          playbackRate = timeMark.playbackRate,
+          globalTime = timeMark.globalTime;
+
+
+      return globalTime + (seekEntropy - entropy) / Math.abs(playbackRate);
+    }
+  }, {
+    key: 'seekLocalTime',
+    value: function seekLocalTime(seekEntropy) {
+      var idx = this.seekTimeMark(seekEntropy),
+          timeMark = this[_timeMark][idx];
+
+      var localTime = timeMark.localTime,
+          entropy = timeMark.entropy,
+          playbackRate = timeMark.playbackRate;
+
+
+      if (playbackRate > 0) {
+        return localTime + (seekEntropy - entropy);
+      }
+      return localTime - (seekEntropy - entropy);
+    }
+  }, {
+    key: 'seekTimeMark',
+    value: function seekTimeMark(entropy) {
+      var timeMark = this[_timeMark];
+
+      var l = 0,
+          r = timeMark.length - 1;
+
+      if (entropy <= timeMark[l].entropy) {
+        return l;
+      }
+      if (entropy >= timeMark[r].entropy) {
+        return r;
+      }
+
+      var m = Math.floor((l + r) / 2); // binary search
+
+      while (m > l && m < r) {
+        if (entropy === timeMark[m].entropy) {
+          return m;
+        } else if (entropy < timeMark[m].entropy) {
+          r = m;
+        } else if (entropy > timeMark[m].entropy) {
+          l = m;
+        }
+        m = Math.floor((l + r) / 2);
+      }
+
+      return l;
+    }
+  }, {
+    key: 'clearTimeout',
+    value: function (_clearTimeout) {
+      function clearTimeout(_x) {
+        return _clearTimeout.apply(this, arguments);
+      }
+
+      clearTimeout.toString = function () {
+        return _clearTimeout.toString();
+      };
+
+      return clearTimeout;
+    }(function (id) {
+      var timer = this[_timers].get(id);
+
+      if (timer && timer.timerID != null) {
+        if (this[_parent]) {
+          this[_parent].clearTimeout(timer.timerID);
+        } else {
+          clearTimeout(timer.timerID);
+        }
+      }
+      this[_timers].delete(id);
+    })
+  }, {
+    key: 'clearInterval',
+    value: function clearInterval(id) {
+      return this.clearTimeout(id);
+    }
+  }, {
+    key: 'clear',
+    value: function clear() {
+      var _this = this;
+
+      // clear all running timers
+      var timers = this[_timers];[].concat((0, _toConsumableArray3.default)(timers.keys())).forEach(function (id) {
+        _this.clearTimeout(id);
+      });
+    }
+    /*
+      setTimeout(func, {delay: 100, isEntropy: true})
+      setTimeout(func, {entropy: 100})
+      setTimeout(func, 100})
+     */
+
+  }, {
+    key: 'setTimeout',
+    value: function setTimeout(handler) {
+      var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { delay: 0 };
+
+      return this[_setTimer](handler, time);
+    }
+  }, {
+    key: 'setInterval',
+    value: function setInterval(handler) {
+      var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { delay: 0 };
+
+      var that = this;
+      var id = this[_setTimer](function step() {
+        // reset timer before handler cause we may clearTimeout in handler()
+        that[_setTimer](step, time, id);
+        handler();
+      }, time);
+
+      return id;
+    }
+  }, {
+    key: _setTimer,
+    value: function value(handler, time) {
+      var _this2 = this;
+
+      var id = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (0, _symbol2.default)('timerID');
+
+      time = (0, _utils.formatDelay)(time);
+
+      var timer = this[_timers].get(id);
+      var delay = void 0,
+          timerID = null,
+          startTime = void 0,
+          startEntropy = void 0;
+
+      if (timer) {
+        this.clearTimeout(id);
+        if (time.isEntropy) {
+          delay = (time.delay - (this.entropy - timer.startEntropy)) / Math.abs(this.playbackRate);
+        } else {
+          delay = (time.delay - (this.currentTime - timer.startTime)) / this.playbackRate;
+        }
+        startTime = timer.startTime;
+        startEntropy = timer.startEntropy;
+      } else {
+        delay = time.delay / (time.isEntropy ? Math.abs(this.playbackRate) : this.playbackRate);
+        startTime = this.currentTime;
+        startEntropy = this.entropy;
+      }
+
+      var parent = this[_parent],
+          globalTimeout = parent ? parent.setTimeout.bind(parent) : setTimeout;
+
+      var heading = time.heading;
+      // console.log(heading, parent, delay)
+      if (!parent && heading === false && delay < 0) {
+        delay = Infinity;
+      }
+
+      // if playbackRate is zero, delay will be infinity.
+      // For wxapp bugs, cannot use Number.isFinite yet.
+      if (isFinite(delay) || parent) {
+        // eslint-disable-line no-restricted-globals
+        delay = Math.ceil(delay);
+        if (globalTimeout !== setTimeout) {
+          delay = { delay: delay, heading: heading };
+        }
+        timerID = globalTimeout(function () {
+          _this2[_timers].delete(id);
+          handler();
+        }, delay);
+      }
+
+      this[_timers].set(id, {
+        timerID: timerID,
+        handler: handler,
+        time: time,
+        startTime: startTime,
+        startEntropy: startEntropy
+      });
+
+      return id;
+    }
+  }, {
+    key: 'parent',
+    get: function get() {
+      return this[_parent];
+    }
+  }, {
+    key: 'lastTimeMark',
+    get: function get() {
+      return this[_timeMark][this[_timeMark].length - 1];
+    }
+  }, {
+    key: 'currentTime',
+    get: function get() {
+      var _lastTimeMark = this.lastTimeMark,
+          localTime = _lastTimeMark.localTime,
+          globalTime = _lastTimeMark.globalTime;
+
+      return localTime + (this.globalTime - globalTime) * this.playbackRate;
+    },
+    set: function set(time) {
+      var timeMark = {
+        globalTime: this.globalTime,
+        localTime: time,
+        entropy: this.entropy,
+        playbackRate: this.playbackRate
+      };
+      if (this[_parent]) {
+        timeMark.globalEntropy = this[_parent].entropy;
+      }
+      this[_timeMark].push(timeMark);
+    }
+    // Both currentTime and entropy should be influenced by playbackRate.
+    // If current playbackRate is negative, the currentTime should go backwards
+    // while the entropy remain to go forwards.
+    // Both of the initial values is set to -originTime
+
+  }, {
+    key: 'entropy',
+    get: function get() {
+      var _lastTimeMark2 = this.lastTimeMark,
+          globalTime = _lastTimeMark2.globalTime,
+          entropy = _lastTimeMark2.entropy,
+          globalEntropy = _lastTimeMark2.globalEntropy;
+
+      if (this[_parent]) {
+        return entropy + Math.abs((this[_parent].entropy - globalEntropy) * this.playbackRate);
+      }
+      return entropy + Math.abs((this.globalTime - globalTime) * this.playbackRate);
+    },
+
+    // change entropy will NOT cause currentTime changing but may influence the pass
+    // and the future of the timeline. (It may change the result of seek***Time)
+    // While entropy is set, all the marks behind will be droped
+    set: function set(entropy) {
+      var idx = this.seekTimeMark(entropy);
+      this[_timeMark].length = idx + 1;
+      var timeMark = {
+        globalTime: this.globalTime,
+        localTime: this.currentTime,
+        entropy: entropy,
+        playbackRate: this.playbackRate
+      };
+      if (this[_parent]) {
+        timeMark.globalEntropy = this[_parent].entropy;
+      }
+      this[_timeMark].push(timeMark);
+    }
+  }, {
+    key: 'globalTime',
+    get: function get() {
+      if (this[_parent]) {
+        return this[_parent].currentTime;
+      }
+
+      return (0, _utils.nowtime)();
+    }
+  }, {
+    key: 'playbackRate',
+    get: function get() {
+      return this[_playbackRate];
+    },
+    set: function set(rate) {
+      var _this3 = this;
+
+      if (rate !== this.playbackRate) {
+        var currentTime = this.currentTime;
+        // force currentTime updating
+        this.currentTime = currentTime;
+        this[_playbackRate] = rate;
+        // set new playbackRate in new time mark
+        this.lastTimeMark.playbackRate = rate;
+
+        var timers = [].concat((0, _toConsumableArray3.default)(this[_timers]));
+        timers.forEach(function (_ref) {
+          var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+              id = _ref2[0],
+              timer = _ref2[1];
+
+          _this3[_setTimer](timer.handler, timer.time, id);
+        });
+      }
+    }
+  }, {
+    key: 'paused',
+    get: function get() {
+      if (this.playbackRate === 0) return true;
+      var parent = this.parent;
+      while (parent) {
+        if (parent.playbackRate === 0) return true;
+        parent = parent.parent;
+      }
+      return false;
+    }
+  }]);
+  return Timeline;
+}();
+
+module.exports = Timeline;
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(16);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(15);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _layer = __webpack_require__(79);
 
 var _layer2 = _interopRequireDefault(_layer);
 
-var _resource = __webpack_require__(77);
+var _resource = __webpack_require__(54);
 
 var _resource2 = _interopRequireDefault(_resource);
 
-var _spriteCore = __webpack_require__(39);
+var _spriteCore = __webpack_require__(44);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5357,7 +5769,7 @@ var _default = function (_BaseNode) {
 exports.default = _default;
 
 /***/ }),
-/* 110 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5367,11 +5779,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getOwnPropertyDescriptor = __webpack_require__(22);
+var _getOwnPropertyDescriptor = __webpack_require__(24);
 
 var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
 
-var _getPrototypeOf = __webpack_require__(8);
+var _getPrototypeOf = __webpack_require__(10);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
@@ -5383,58 +5795,31 @@ var _createClass2 = __webpack_require__(4);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(14);
+var _possibleConstructorReturn2 = __webpack_require__(16);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _get2 = __webpack_require__(17);
+var _get2 = __webpack_require__(18);
 
 var _get3 = _interopRequireDefault(_get2);
 
-var _inherits2 = __webpack_require__(13);
+var _inherits2 = __webpack_require__(15);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _desc, _value, _class, _class2, _temp;
 
-var _spriteCore = __webpack_require__(39);
+var _spriteCore = __webpack_require__(44);
 
-var _spriteUtils = __webpack_require__(19);
-
-var _resource = __webpack_require__(77);
+var _resource = __webpack_require__(54);
 
 var _resource2 = _interopRequireDefault(_resource);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
+var _applyDecoratedDescriptor = __webpack_require__(29);
 
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['define' + 'Property'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
+var attr = _spriteCore.utils.attr;
 
 var ResAttr = (_class = function (_Sprite$Attr) {
   (0, _inherits3.default)(ResAttr, _Sprite$Attr);
@@ -5453,7 +5838,6 @@ var ResAttr = (_class = function (_Sprite$Attr) {
         if (!texture.image) texture.image = texture.src;
         return texture;
       });
-      this.set('textures', textures);
       (0, _get3.default)(ResAttr.prototype.__proto__ || (0, _getPrototypeOf2.default)(ResAttr.prototype), 'loadTextures', this).call(this, textures);
     }
   }, {
@@ -5472,10 +5856,11 @@ var ResAttr = (_class = function (_Sprite$Attr) {
       });
 
       this.loadTextures(textures);
+      this.set('textures', textures);
     }
   }]);
   return ResAttr;
-}(_spriteCore.Sprite.Attr), (_applyDecoratedDescriptor(_class.prototype, 'textures', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'textures'), _class.prototype)), _class);
+}(_spriteCore.Sprite.Attr), (_applyDecoratedDescriptor(_class.prototype, 'textures', [attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'textures'), _class.prototype)), _class);
 var ResSprite = (_temp = _class2 = function (_Sprite) {
   (0, _inherits3.default)(ResSprite, _Sprite);
 
@@ -5489,80 +5874,7 @@ var ResSprite = (_temp = _class2 = function (_Sprite) {
 exports.default = ResSprite;
 
 /***/ }),
-/* 111 */
-/***/ (function(module, exports) {
-
-
-module.exports = absolutize
-
-/**
- * redefine `path` with absolute coordinates
- *
- * @param {Array} path
- * @return {Array}
- */
-
-function absolutize(path){
-	var startX = 0
-	var startY = 0
-	var x = 0
-	var y = 0
-
-	return path.map(function(seg){
-		seg = seg.slice()
-		var type = seg[0]
-		var command = type.toUpperCase()
-
-		// is relative
-		if (type != command) {
-			seg[0] = command
-			switch (type) {
-				case 'a':
-					seg[6] += x
-					seg[7] += y
-					break
-				case 'v':
-					seg[1] += y
-					break
-				case 'h':
-					seg[1] += x
-					break
-				default:
-					for (var i = 1; i < seg.length;) {
-						seg[i++] += x
-						seg[i++] += y
-					}
-			}
-		}
-
-		// update cursor state
-		switch (command) {
-			case 'Z':
-				x = startX
-				y = startY
-				break
-			case 'H':
-				x = seg[1]
-				break
-			case 'V':
-				y = seg[1]
-				break
-			case 'M':
-				x = startX = seg[1]
-				y = startY = seg[2]
-				break
-			default:
-				x = seg[seg.length - 2]
-				y = seg[seg.length - 1]
-		}
-
-		return seg
-	})
-}
-
-
-/***/ }),
-/* 112 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5571,79 +5883,94 @@ function absolutize(path){
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Effects = exports.Group = exports.Layer = exports.Label = exports.Sprite = exports.BaseSprite = exports.BaseNode = exports.createGradients = exports.Scene = exports.Path = undefined;
+exports.Effects = exports.Resource = exports.Color = exports.createNode = exports.registerNodeType = exports.Scene = exports.Layer = exports.Group = exports.Path = exports.Label = exports.Sprite = exports.BaseSprite = exports.BaseNode = exports.utils = exports.math = exports.version = undefined;
 
-var _layer = __webpack_require__(75);
+var _layer = __webpack_require__(79);
 
 var _layer2 = _interopRequireDefault(_layer);
 
-var _sprite = __webpack_require__(110);
+var _sprite = __webpack_require__(115);
 
 var _sprite2 = _interopRequireDefault(_sprite);
 
-var _scene = __webpack_require__(109);
+var _scene = __webpack_require__(114);
 
 var _scene2 = _interopRequireDefault(_scene);
 
-var _spriteCore = __webpack_require__(39);
+var _resource = __webpack_require__(54);
+
+var _resource2 = _interopRequireDefault(_resource);
+
+var _spriteCore = __webpack_require__(44);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.Path = _spriteCore.Path;
-exports.Scene = _scene2.default;
-exports.createGradients = _spriteCore.createGradients;
+(0, _spriteCore.registerNodeType)('layer', _layer2.default, true);
+(0, _spriteCore.registerNodeType)('sprite', _sprite2.default);
+
+var version = '1.3.0';
+
+exports.version = version;
+exports.math = _spriteCore.math;
+exports.utils = _spriteCore.utils;
 exports.BaseNode = _spriteCore.BaseNode;
 exports.BaseSprite = _spriteCore.BaseSprite;
 exports.Sprite = _sprite2.default;
 exports.Label = _spriteCore.Label;
-exports.Layer = _layer2.default;
+exports.Path = _spriteCore.Path;
 exports.Group = _spriteCore.Group;
+exports.Layer = _layer2.default;
+exports.Scene = _scene2.default;
+exports.registerNodeType = _spriteCore.registerNodeType;
+exports.createNode = _spriteCore.createNode;
+exports.Color = _spriteCore.Color;
+exports.Resource = _resource2.default;
 exports.Effects = _spriteCore.Effects;
-
-/***/ }),
-/* 113 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(126), __esModule: true };
-
-/***/ }),
-/* 114 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(129), __esModule: true };
-
-/***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(131), __esModule: true };
-
-/***/ }),
-/* 116 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = { "default": __webpack_require__(132), __esModule: true };
 
 /***/ }),
 /* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(137), __esModule: true };
+module.exports = { "default": __webpack_require__(130), __esModule: true };
 
 /***/ }),
 /* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(138), __esModule: true };
+module.exports = { "default": __webpack_require__(133), __esModule: true };
 
 /***/ }),
 /* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(142), __esModule: true };
+module.exports = { "default": __webpack_require__(135), __esModule: true };
 
 /***/ }),
 /* 120 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(136), __esModule: true };
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(141), __esModule: true };
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(142), __esModule: true };
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = { "default": __webpack_require__(146), __esModule: true };
+
+/***/ }),
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5651,7 +5978,7 @@ module.exports = { "default": __webpack_require__(142), __esModule: true };
 
 exports.__esModule = true;
 
-var _defineProperty = __webpack_require__(81);
+var _defineProperty = __webpack_require__(45);
 
 var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -5673,7 +6000,7 @@ exports.default = function (obj, key, value) {
 };
 
 /***/ }),
-/* 121 */
+/* 125 */
 /***/ (function(module, exports) {
 
 /**
@@ -5783,7 +6110,7 @@ module.exports = function bezier (mX1, mY1, mX2, mY2) {
 
 
 /***/ }),
-/* 122 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5942,12 +6269,12 @@ module.exports = {
 
 
 /***/ }),
-/* 123 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* MIT license */
-var colorNames = __webpack_require__(122);
-var swizzle = __webpack_require__(191);
+var colorNames = __webpack_require__(126);
+var swizzle = __webpack_require__(192);
 
 var reverseNames = {};
 
@@ -6181,34 +6508,34 @@ function hexDouble(num) {
 
 
 /***/ }),
-/* 124 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(25);
-__webpack_require__(162);
+__webpack_require__(27);
+__webpack_require__(166);
 module.exports = __webpack_require__(0).Array.from;
 
 
 /***/ }),
-/* 125 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(30);
-__webpack_require__(25);
-module.exports = __webpack_require__(160);
+__webpack_require__(33);
+__webpack_require__(27);
+module.exports = __webpack_require__(164);
 
 
 /***/ }),
-/* 126 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(30);
-__webpack_require__(25);
-module.exports = __webpack_require__(161);
+__webpack_require__(33);
+__webpack_require__(27);
+module.exports = __webpack_require__(165);
 
 
 /***/ }),
-/* 127 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var core = __webpack_require__(0);
@@ -6219,55 +6546,17 @@ module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
 
 
 /***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(46);
-__webpack_require__(25);
-__webpack_require__(30);
-__webpack_require__(164);
-__webpack_require__(179);
-__webpack_require__(178);
-__webpack_require__(177);
-module.exports = __webpack_require__(0).Map;
-
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(165);
-module.exports = __webpack_require__(0).Number.isNaN;
-
-
-/***/ }),
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(166);
-module.exports = __webpack_require__(0).Object.assign;
-
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(167);
-var $Object = __webpack_require__(0).Object;
-module.exports = function create(P, D) {
-  return $Object.create(P, D);
-};
-
-
-/***/ }),
 /* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(52);
+__webpack_require__(27);
+__webpack_require__(33);
 __webpack_require__(168);
-var $Object = __webpack_require__(0).Object;
-module.exports = function defineProperties(T, D) {
-  return $Object.defineProperties(T, D);
-};
+__webpack_require__(183);
+__webpack_require__(182);
+__webpack_require__(181);
+module.exports = __webpack_require__(0).Map;
 
 
 /***/ }),
@@ -6275,28 +6564,25 @@ module.exports = function defineProperties(T, D) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(169);
-var $Object = __webpack_require__(0).Object;
-module.exports = function defineProperty(it, key, desc) {
-  return $Object.defineProperty(it, key, desc);
-};
+module.exports = __webpack_require__(0).Number.isNaN;
 
 
 /***/ }),
 /* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(180);
-module.exports = __webpack_require__(0).Object.entries;
+__webpack_require__(170);
+module.exports = __webpack_require__(0).Object.assign;
 
 
 /***/ }),
 /* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(170);
+__webpack_require__(171);
 var $Object = __webpack_require__(0).Object;
-module.exports = function getOwnPropertyDescriptor(it, key) {
-  return $Object.getOwnPropertyDescriptor(it, key);
+module.exports = function create(P, D) {
+  return $Object.create(P, D);
 };
 
 
@@ -6304,51 +6590,49 @@ module.exports = function getOwnPropertyDescriptor(it, key) {
 /* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(171);
-module.exports = __webpack_require__(0).Object.getPrototypeOf;
+__webpack_require__(172);
+var $Object = __webpack_require__(0).Object;
+module.exports = function defineProperties(T, D) {
+  return $Object.defineProperties(T, D);
+};
 
 
 /***/ }),
 /* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(172);
-module.exports = __webpack_require__(0).Object.keys;
+__webpack_require__(173);
+var $Object = __webpack_require__(0).Object;
+module.exports = function defineProperty(it, key, desc) {
+  return $Object.defineProperty(it, key, desc);
+};
 
 
 /***/ }),
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(173);
-module.exports = __webpack_require__(0).Object.setPrototypeOf;
+__webpack_require__(184);
+module.exports = __webpack_require__(0).Object.entries;
 
 
 /***/ }),
 /* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(46);
-__webpack_require__(25);
-__webpack_require__(30);
 __webpack_require__(174);
-__webpack_require__(181);
-__webpack_require__(182);
-module.exports = __webpack_require__(0).Promise;
+var $Object = __webpack_require__(0).Object;
+module.exports = function getOwnPropertyDescriptor(it, key) {
+  return $Object.getOwnPropertyDescriptor(it, key);
+};
 
 
 /***/ }),
 /* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(46);
-__webpack_require__(25);
-__webpack_require__(30);
 __webpack_require__(175);
-__webpack_require__(185);
-__webpack_require__(184);
-__webpack_require__(183);
-module.exports = __webpack_require__(0).Set;
+module.exports = __webpack_require__(0).Object.getPrototypeOf;
 
 
 /***/ }),
@@ -6356,33 +6640,76 @@ module.exports = __webpack_require__(0).Set;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(176);
-__webpack_require__(46);
-__webpack_require__(186);
-__webpack_require__(187);
-module.exports = __webpack_require__(0).Symbol;
+module.exports = __webpack_require__(0).Object.keys;
 
 
 /***/ }),
 /* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(25);
-__webpack_require__(30);
-module.exports = __webpack_require__(69).f('iterator');
+__webpack_require__(177);
+module.exports = __webpack_require__(0).Object.setPrototypeOf;
 
 
 /***/ }),
 /* 143 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = function () { /* empty */ };
+__webpack_require__(52);
+__webpack_require__(27);
+__webpack_require__(33);
+__webpack_require__(178);
+__webpack_require__(185);
+__webpack_require__(186);
+module.exports = __webpack_require__(0).Promise;
 
 
 /***/ }),
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var forOf = __webpack_require__(34);
+__webpack_require__(52);
+__webpack_require__(27);
+__webpack_require__(33);
+__webpack_require__(179);
+__webpack_require__(189);
+__webpack_require__(188);
+__webpack_require__(187);
+module.exports = __webpack_require__(0).Set;
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(180);
+__webpack_require__(52);
+__webpack_require__(190);
+__webpack_require__(191);
+module.exports = __webpack_require__(0).Symbol;
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(27);
+__webpack_require__(33);
+module.exports = __webpack_require__(75).f('iterator');
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports) {
+
+module.exports = function () { /* empty */ };
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var forOf = __webpack_require__(37);
 
 module.exports = function (iter, ITERATOR) {
   var result = [];
@@ -6392,14 +6719,14 @@ module.exports = function (iter, ITERATOR) {
 
 
 /***/ }),
-/* 145 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
-var toIObject = __webpack_require__(21);
-var toLength = __webpack_require__(44);
-var toAbsoluteIndex = __webpack_require__(159);
+var toIObject = __webpack_require__(22);
+var toLength = __webpack_require__(50);
+var toAbsoluteIndex = __webpack_require__(163);
 module.exports = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
     var O = toIObject($this);
@@ -6421,7 +6748,7 @@ module.exports = function (IS_INCLUDES) {
 
 
 /***/ }),
-/* 146 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 0 -> Array#forEach
@@ -6431,11 +6758,11 @@ module.exports = function (IS_INCLUDES) {
 // 4 -> Array#every
 // 5 -> Array#find
 // 6 -> Array#findIndex
-var ctx = __webpack_require__(18);
-var IObject = __webpack_require__(55);
-var toObject = __webpack_require__(29);
-var toLength = __webpack_require__(44);
-var asc = __webpack_require__(148);
+var ctx = __webpack_require__(19);
+var IObject = __webpack_require__(61);
+var toObject = __webpack_require__(32);
+var toLength = __webpack_require__(50);
+var asc = __webpack_require__(152);
 module.exports = function (TYPE, $create) {
   var IS_MAP = TYPE == 1;
   var IS_FILTER = TYPE == 2;
@@ -6471,12 +6798,12 @@ module.exports = function (TYPE, $create) {
 
 
 /***/ }),
-/* 147 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(10);
-var isArray = __webpack_require__(88);
-var SPECIES = __webpack_require__(5)('species');
+var isObject = __webpack_require__(12);
+var isArray = __webpack_require__(89);
+var SPECIES = __webpack_require__(7)('species');
 
 module.exports = function (original) {
   var C;
@@ -6493,11 +6820,11 @@ module.exports = function (original) {
 
 
 /***/ }),
-/* 148 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(147);
+var speciesConstructor = __webpack_require__(151);
 
 module.exports = function (original, length) {
   return new (speciesConstructor(original))(length);
@@ -6505,13 +6832,13 @@ module.exports = function (original, length) {
 
 
 /***/ }),
-/* 149 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $defineProperty = __webpack_require__(11);
-var createDesc = __webpack_require__(36);
+var $defineProperty = __webpack_require__(13);
+var createDesc = __webpack_require__(39);
 
 module.exports = function (object, index, value) {
   if (index in object) $defineProperty.f(object, index, createDesc(0, value));
@@ -6520,13 +6847,13 @@ module.exports = function (object, index, value) {
 
 
 /***/ }),
-/* 150 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
-var getKeys = __webpack_require__(28);
-var gOPS = __webpack_require__(60);
-var pIE = __webpack_require__(35);
+var getKeys = __webpack_require__(31);
+var gOPS = __webpack_require__(66);
+var pIE = __webpack_require__(38);
 module.exports = function (it) {
   var result = getKeys(it);
   var getSymbols = gOPS.f;
@@ -6541,7 +6868,7 @@ module.exports = function (it) {
 
 
 /***/ }),
-/* 151 */
+/* 155 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -6563,18 +6890,18 @@ module.exports = function (fn, args, that) {
 
 
 /***/ }),
-/* 152 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create = __webpack_require__(43);
-var descriptor = __webpack_require__(36);
-var setToStringTag = __webpack_require__(37);
+var create = __webpack_require__(49);
+var descriptor = __webpack_require__(39);
+var setToStringTag = __webpack_require__(40);
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-__webpack_require__(20)(IteratorPrototype, __webpack_require__(5)('iterator'), function () { return this; });
+__webpack_require__(21)(IteratorPrototype, __webpack_require__(7)('iterator'), function () { return this; });
 
 module.exports = function (Constructor, NAME, next) {
   Constructor.prototype = create(IteratorPrototype, { next: descriptor(1, next) });
@@ -6583,15 +6910,15 @@ module.exports = function (Constructor, NAME, next) {
 
 
 /***/ }),
-/* 153 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var global = __webpack_require__(6);
-var macrotask = __webpack_require__(103).set;
+var global = __webpack_require__(8);
+var macrotask = __webpack_require__(104).set;
 var Observer = global.MutationObserver || global.WebKitMutationObserver;
 var process = global.process;
 var Promise = global.Promise;
-var isNode = __webpack_require__(33)(process) == 'process';
+var isNode = __webpack_require__(36)(process) == 'process';
 
 module.exports = function () {
   var head, last, notify;
@@ -6657,21 +6984,21 @@ module.exports = function () {
 
 
 /***/ }),
-/* 154 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
-var getKeys = __webpack_require__(28);
-var gOPS = __webpack_require__(60);
-var pIE = __webpack_require__(35);
-var toObject = __webpack_require__(29);
-var IObject = __webpack_require__(55);
+var getKeys = __webpack_require__(31);
+var gOPS = __webpack_require__(66);
+var pIE = __webpack_require__(38);
+var toObject = __webpack_require__(32);
+var IObject = __webpack_require__(61);
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-module.exports = !$assign || __webpack_require__(23)(function () {
+module.exports = !$assign || __webpack_require__(25)(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -6698,12 +7025,12 @@ module.exports = !$assign || __webpack_require__(23)(function () {
 
 
 /***/ }),
-/* 155 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-var toIObject = __webpack_require__(21);
-var gOPN = __webpack_require__(93).f;
+var toIObject = __webpack_require__(22);
+var gOPN = __webpack_require__(94).f;
 var toString = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -6723,12 +7050,12 @@ module.exports.f = function getOwnPropertyNames(it) {
 
 
 /***/ }),
-/* 156 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getKeys = __webpack_require__(28);
-var toIObject = __webpack_require__(21);
-var isEnum = __webpack_require__(35).f;
+var getKeys = __webpack_require__(31);
+var toIObject = __webpack_require__(22);
+var isEnum = __webpack_require__(38).f;
 module.exports = function (isEntries) {
   return function (it) {
     var O = toIObject(it);
@@ -6745,13 +7072,13 @@ module.exports = function (isEntries) {
 
 
 /***/ }),
-/* 157 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
 /* eslint-disable no-proto */
-var isObject = __webpack_require__(10);
-var anObject = __webpack_require__(15);
+var isObject = __webpack_require__(12);
+var anObject = __webpack_require__(17);
 var check = function (O, proto) {
   anObject(O);
   if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
@@ -6760,7 +7087,7 @@ module.exports = {
   set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
     function (test, buggy, set) {
       try {
-        set = __webpack_require__(18)(Function.call, __webpack_require__(59).f(Object.prototype, '__proto__').set, 2);
+        set = __webpack_require__(19)(Function.call, __webpack_require__(65).f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch (e) { buggy = true; }
@@ -6776,11 +7103,11 @@ module.exports = {
 
 
 /***/ }),
-/* 158 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(65);
-var defined = __webpack_require__(52);
+var toInteger = __webpack_require__(71);
+var defined = __webpack_require__(58);
 // true  -> String#at
 // false -> String#codePointAt
 module.exports = function (TO_STRING) {
@@ -6799,10 +7126,10 @@ module.exports = function (TO_STRING) {
 
 
 /***/ }),
-/* 159 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var toInteger = __webpack_require__(65);
+var toInteger = __webpack_require__(71);
 var max = Math.max;
 var min = Math.min;
 module.exports = function (index, length) {
@@ -6812,11 +7139,11 @@ module.exports = function (index, length) {
 
 
 /***/ }),
-/* 160 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var anObject = __webpack_require__(15);
-var get = __webpack_require__(70);
+var anObject = __webpack_require__(17);
+var get = __webpack_require__(76);
 module.exports = __webpack_require__(0).getIterator = function (it) {
   var iterFn = get(it);
   if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
@@ -6825,12 +7152,12 @@ module.exports = __webpack_require__(0).getIterator = function (it) {
 
 
 /***/ }),
-/* 161 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof = __webpack_require__(41);
-var ITERATOR = __webpack_require__(5)('iterator');
-var Iterators = __webpack_require__(27);
+var classof = __webpack_require__(47);
+var ITERATOR = __webpack_require__(7)('iterator');
+var Iterators = __webpack_require__(30);
 module.exports = __webpack_require__(0).isIterable = function (it) {
   var O = Object(it);
   return O[ITERATOR] !== undefined
@@ -6841,21 +7168,21 @@ module.exports = __webpack_require__(0).isIterable = function (it) {
 
 
 /***/ }),
-/* 162 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ctx = __webpack_require__(18);
+var ctx = __webpack_require__(19);
 var $export = __webpack_require__(2);
-var toObject = __webpack_require__(29);
-var call = __webpack_require__(89);
-var isArrayIter = __webpack_require__(87);
-var toLength = __webpack_require__(44);
-var createProperty = __webpack_require__(149);
-var getIterFn = __webpack_require__(70);
+var toObject = __webpack_require__(32);
+var call = __webpack_require__(90);
+var isArrayIter = __webpack_require__(88);
+var toLength = __webpack_require__(50);
+var createProperty = __webpack_require__(153);
+var getIterFn = __webpack_require__(76);
 
-$export($export.S + $export.F * !__webpack_require__(90)(function (iter) { Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(91)(function (iter) { Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
     var O = toObject(arrayLike);
@@ -6885,21 +7212,21 @@ $export($export.S + $export.F * !__webpack_require__(90)(function (iter) { Array
 
 
 /***/ }),
-/* 163 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(143);
-var step = __webpack_require__(91);
-var Iterators = __webpack_require__(27);
-var toIObject = __webpack_require__(21);
+var addToUnscopables = __webpack_require__(147);
+var step = __webpack_require__(92);
+var Iterators = __webpack_require__(30);
+var toIObject = __webpack_require__(22);
 
 // 22.1.3.4 Array.prototype.entries()
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(56)(Array, 'Array', function (iterated, kind) {
+module.exports = __webpack_require__(62)(Array, 'Array', function (iterated, kind) {
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -6926,17 +7253,17 @@ addToUnscopables('entries');
 
 
 /***/ }),
-/* 164 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(82);
-var validate = __webpack_require__(67);
+var strong = __webpack_require__(83);
+var validate = __webpack_require__(73);
 var MAP = 'Map';
 
 // 23.1 Map Objects
-module.exports = __webpack_require__(84)(MAP, function (get) {
+module.exports = __webpack_require__(85)(MAP, function (get) {
   return function Map() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.1.3.6 Map.prototype.get(key)
@@ -6952,7 +7279,7 @@ module.exports = __webpack_require__(84)(MAP, function (get) {
 
 
 /***/ }),
-/* 165 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -6967,51 +7294,51 @@ $export($export.S, 'Number', {
 
 
 /***/ }),
-/* 166 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(2);
 
-$export($export.S + $export.F, 'Object', { assign: __webpack_require__(154) });
+$export($export.S + $export.F, 'Object', { assign: __webpack_require__(158) });
 
 
 /***/ }),
-/* 167 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2);
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-$export($export.S, 'Object', { create: __webpack_require__(43) });
+$export($export.S, 'Object', { create: __webpack_require__(49) });
 
 
 /***/ }),
-/* 168 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(9), 'Object', { defineProperties: __webpack_require__(92) });
+$export($export.S + $export.F * !__webpack_require__(11), 'Object', { defineProperties: __webpack_require__(93) });
 
 
 /***/ }),
-/* 169 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(2);
 // 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-$export($export.S + $export.F * !__webpack_require__(9), 'Object', { defineProperty: __webpack_require__(11).f });
+$export($export.S + $export.F * !__webpack_require__(11), 'Object', { defineProperty: __webpack_require__(13).f });
 
 
 /***/ }),
-/* 170 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-var toIObject = __webpack_require__(21);
-var $getOwnPropertyDescriptor = __webpack_require__(59).f;
+var toIObject = __webpack_require__(22);
+var $getOwnPropertyDescriptor = __webpack_require__(65).f;
 
-__webpack_require__(61)('getOwnPropertyDescriptor', function () {
+__webpack_require__(67)('getOwnPropertyDescriptor', function () {
   return function getOwnPropertyDescriptor(it, key) {
     return $getOwnPropertyDescriptor(toIObject(it), key);
   };
@@ -7019,14 +7346,14 @@ __webpack_require__(61)('getOwnPropertyDescriptor', function () {
 
 
 /***/ }),
-/* 171 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
-var toObject = __webpack_require__(29);
-var $getPrototypeOf = __webpack_require__(94);
+var toObject = __webpack_require__(32);
+var $getPrototypeOf = __webpack_require__(95);
 
-__webpack_require__(61)('getPrototypeOf', function () {
+__webpack_require__(67)('getPrototypeOf', function () {
   return function getPrototypeOf(it) {
     return $getPrototypeOf(toObject(it));
   };
@@ -7034,14 +7361,14 @@ __webpack_require__(61)('getPrototypeOf', function () {
 
 
 /***/ }),
-/* 172 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(29);
-var $keys = __webpack_require__(28);
+var toObject = __webpack_require__(32);
+var $keys = __webpack_require__(31);
 
-__webpack_require__(61)('keys', function () {
+__webpack_require__(67)('keys', function () {
   return function keys(it) {
     return $keys(toObject(it));
   };
@@ -7049,35 +7376,35 @@ __webpack_require__(61)('keys', function () {
 
 
 /***/ }),
-/* 173 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = __webpack_require__(2);
-$export($export.S, 'Object', { setPrototypeOf: __webpack_require__(157).set });
+$export($export.S, 'Object', { setPrototypeOf: __webpack_require__(161).set });
 
 
 /***/ }),
-/* 174 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY = __webpack_require__(42);
-var global = __webpack_require__(6);
-var ctx = __webpack_require__(18);
-var classof = __webpack_require__(41);
+var LIBRARY = __webpack_require__(48);
+var global = __webpack_require__(8);
+var ctx = __webpack_require__(19);
+var classof = __webpack_require__(47);
 var $export = __webpack_require__(2);
-var isObject = __webpack_require__(10);
-var aFunction = __webpack_require__(32);
-var anInstance = __webpack_require__(51);
-var forOf = __webpack_require__(34);
-var speciesConstructor = __webpack_require__(102);
-var task = __webpack_require__(103).set;
-var microtask = __webpack_require__(153)();
-var newPromiseCapabilityModule = __webpack_require__(58);
-var perform = __webpack_require__(96);
-var promiseResolve = __webpack_require__(97);
+var isObject = __webpack_require__(12);
+var aFunction = __webpack_require__(35);
+var anInstance = __webpack_require__(57);
+var forOf = __webpack_require__(37);
+var speciesConstructor = __webpack_require__(103);
+var task = __webpack_require__(104).set;
+var microtask = __webpack_require__(157)();
+var newPromiseCapabilityModule = __webpack_require__(64);
+var perform = __webpack_require__(97);
+var promiseResolve = __webpack_require__(98);
 var PROMISE = 'Promise';
 var TypeError = global.TypeError;
 var process = global.process;
@@ -7091,7 +7418,7 @@ var USE_NATIVE = !!function () {
   try {
     // correct subclassing with @@species support
     var promise = $Promise.resolve(1);
-    var FakePromise = (promise.constructor = {})[__webpack_require__(5)('species')] = function (exec) {
+    var FakePromise = (promise.constructor = {})[__webpack_require__(7)('species')] = function (exec) {
       exec(empty, empty);
     };
     // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
@@ -7240,7 +7567,7 @@ if (!USE_NATIVE) {
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
-  Internal.prototype = __webpack_require__(62)($Promise.prototype, {
+  Internal.prototype = __webpack_require__(68)($Promise.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected) {
       var reaction = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -7271,8 +7598,8 @@ if (!USE_NATIVE) {
 }
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, { Promise: $Promise });
-__webpack_require__(37)($Promise, PROMISE);
-__webpack_require__(101)(PROMISE);
+__webpack_require__(40)($Promise, PROMISE);
+__webpack_require__(102)(PROMISE);
 Wrapper = __webpack_require__(0)[PROMISE];
 
 // statics
@@ -7291,7 +7618,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return promiseResolve(LIBRARY && this === Wrapper ? $Promise : this, x);
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(90)(function (iter) {
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(91)(function (iter) {
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -7338,17 +7665,17 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(90)(function
 
 
 /***/ }),
-/* 175 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(82);
-var validate = __webpack_require__(67);
+var strong = __webpack_require__(83);
+var validate = __webpack_require__(73);
 var SET = 'Set';
 
 // 23.2 Set Objects
-module.exports = __webpack_require__(84)(SET, function (get) {
+module.exports = __webpack_require__(85)(SET, function (get) {
   return function Set() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.2.3.1 Set.prototype.add(value)
@@ -7359,37 +7686,37 @@ module.exports = __webpack_require__(84)(SET, function (get) {
 
 
 /***/ }),
-/* 176 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // ECMAScript 6 symbols shim
-var global = __webpack_require__(6);
-var has = __webpack_require__(24);
-var DESCRIPTORS = __webpack_require__(9);
+var global = __webpack_require__(8);
+var has = __webpack_require__(26);
+var DESCRIPTORS = __webpack_require__(11);
 var $export = __webpack_require__(2);
-var redefine = __webpack_require__(98);
-var META = __webpack_require__(57).KEY;
-var $fails = __webpack_require__(23);
-var shared = __webpack_require__(64);
-var setToStringTag = __webpack_require__(37);
-var uid = __webpack_require__(45);
-var wks = __webpack_require__(5);
-var wksExt = __webpack_require__(69);
-var wksDefine = __webpack_require__(68);
-var enumKeys = __webpack_require__(150);
-var isArray = __webpack_require__(88);
-var anObject = __webpack_require__(15);
-var isObject = __webpack_require__(10);
-var toIObject = __webpack_require__(21);
-var toPrimitive = __webpack_require__(66);
-var createDesc = __webpack_require__(36);
-var _create = __webpack_require__(43);
-var gOPNExt = __webpack_require__(155);
-var $GOPD = __webpack_require__(59);
-var $DP = __webpack_require__(11);
-var $keys = __webpack_require__(28);
+var redefine = __webpack_require__(99);
+var META = __webpack_require__(63).KEY;
+var $fails = __webpack_require__(25);
+var shared = __webpack_require__(70);
+var setToStringTag = __webpack_require__(40);
+var uid = __webpack_require__(51);
+var wks = __webpack_require__(7);
+var wksExt = __webpack_require__(75);
+var wksDefine = __webpack_require__(74);
+var enumKeys = __webpack_require__(154);
+var isArray = __webpack_require__(89);
+var anObject = __webpack_require__(17);
+var isObject = __webpack_require__(12);
+var toIObject = __webpack_require__(22);
+var toPrimitive = __webpack_require__(72);
+var createDesc = __webpack_require__(39);
+var _create = __webpack_require__(49);
+var gOPNExt = __webpack_require__(159);
+var $GOPD = __webpack_require__(65);
+var $DP = __webpack_require__(13);
+var $keys = __webpack_require__(31);
 var gOPD = $GOPD.f;
 var dP = $DP.f;
 var gOPN = gOPNExt.f;
@@ -7512,11 +7839,11 @@ if (!USE_NATIVE) {
 
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f = $defineProperty;
-  __webpack_require__(93).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(35).f = $propertyIsEnumerable;
-  __webpack_require__(60).f = $getOwnPropertySymbols;
+  __webpack_require__(94).f = gOPNExt.f = $getOwnPropertyNames;
+  __webpack_require__(38).f = $propertyIsEnumerable;
+  __webpack_require__(66).f = $getOwnPropertySymbols;
 
-  if (DESCRIPTORS && !__webpack_require__(42)) {
+  if (DESCRIPTORS && !__webpack_require__(48)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
@@ -7590,7 +7917,7 @@ $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function () {
 });
 
 // 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(20)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(21)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 // 19.4.3.5 Symbol.prototype[@@toStringTag]
 setToStringTag($Symbol, 'Symbol');
 // 20.2.1.9 Math[@@toStringTag]
@@ -7600,38 +7927,38 @@ setToStringTag(global.JSON, 'JSON', true);
 
 
 /***/ }),
-/* 177 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
-__webpack_require__(99)('Map');
-
-
-/***/ }),
-/* 178 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
 __webpack_require__(100)('Map');
 
 
 /***/ }),
-/* 179 */
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
+__webpack_require__(101)('Map');
+
+
+/***/ }),
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export = __webpack_require__(2);
 
-$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(83)('Map') });
+$export($export.P + $export.R, 'Map', { toJSON: __webpack_require__(84)('Map') });
 
 
 /***/ }),
-/* 180 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(2);
-var $entries = __webpack_require__(156)(true);
+var $entries = __webpack_require__(160)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it) {
@@ -7641,7 +7968,7 @@ $export($export.S, 'Object', {
 
 
 /***/ }),
-/* 181 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7649,9 +7976,9 @@ $export($export.S, 'Object', {
 
 var $export = __webpack_require__(2);
 var core = __webpack_require__(0);
-var global = __webpack_require__(6);
-var speciesConstructor = __webpack_require__(102);
-var promiseResolve = __webpack_require__(97);
+var global = __webpack_require__(8);
+var speciesConstructor = __webpack_require__(103);
+var promiseResolve = __webpack_require__(98);
 
 $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
   var C = speciesConstructor(this, core.Promise || global.Promise);
@@ -7668,15 +7995,15 @@ $export($export.P + $export.R, 'Promise', { 'finally': function (onFinally) {
 
 
 /***/ }),
-/* 182 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-promise-try
 var $export = __webpack_require__(2);
-var newPromiseCapability = __webpack_require__(58);
-var perform = __webpack_require__(96);
+var newPromiseCapability = __webpack_require__(64);
+var perform = __webpack_require__(97);
 
 $export($export.S, 'Promise', { 'try': function (callbackfn) {
   var promiseCapability = newPromiseCapability.f(this);
@@ -7687,342 +8014,53 @@ $export($export.S, 'Promise', { 'try': function (callbackfn) {
 
 
 /***/ }),
-/* 183 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
-__webpack_require__(99)('Set');
-
-
-/***/ }),
-/* 184 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
 __webpack_require__(100)('Set');
 
 
 /***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var $export = __webpack_require__(2);
-
-$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(83)('Set') });
-
-
-/***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(68)('asyncIterator');
-
-
-/***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(68)('observable');
-
-
-/***/ }),
 /* 188 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-
-module.exports = parse
-
-/**
- * expected argument lengths
- * @type {Object}
- */
-
-var length = {a: 7, c: 6, h: 1, l: 2, m: 2, q: 4, s: 4, t: 2, v: 1, z: 0}
-
-/**
- * segment pattern
- * @type {RegExp}
- */
-
-var segment = /([astvzqmhlc])([^astvzqmhlc]*)/ig
-
-/**
- * parse an svg path data string. Generates an Array
- * of commands where each command is an Array of the
- * form `[command, arg1, arg2, ...]`
- *
- * @param {String} path
- * @return {Array}
- */
-
-function parse(path) {
-	var data = []
-	path.replace(segment, function(_, command, args){
-		var type = command.toLowerCase()
-		args = parseValues(args)
-
-		// overloaded moveTo
-		if (type == 'm' && args.length > 2) {
-			data.push([command].concat(args.splice(0, 2)))
-			type = 'l'
-			command = command == 'm' ? 'l' : 'L'
-		}
-
-		while (true) {
-			if (args.length == length[type]) {
-				args.unshift(command)
-				return data.push(args)
-			}
-			if (args.length < length[type]) throw new Error('malformed path data')
-			data.push([command].concat(args.splice(0, length[type])))
-		}
-	})
-	return data
-}
-
-var number = /-?[0-9]*\.?[0-9]+(?:e[-+]?\d+)?/ig
-
-function parseValues(args) {
-	var numbers = args.match(number)
-	return numbers ? numbers.map(Number) : []
-}
+// https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
+__webpack_require__(101)('Set');
 
 
 /***/ }),
 /* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var parse = __webpack_require__(188);
-var isarray = __webpack_require__(190);
-var abs = __webpack_require__(111);
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
+var $export = __webpack_require__(2);
 
-module.exports = Points;
-
-function Points (path) {
-    if (!(this instanceof Points)) return new Points(path);
-    this._path = isarray(path) ? path : parse(path);
-    this._path = abs(this._path);
-    this._path = zvhToL(this._path);
-    this._path = longhand(this._path);
-}
-
-Points.prototype.at = function (pos, opts) {
-    return this._walk(pos, opts).pos;
-};
-
-Points.prototype.length = function () {
-    return this._walk(null).length;
-};
-
-Points.prototype._walk = function (pos, opts) {
-    var cur = [ 0, 0 ];
-    var prev = [ 0, 0, 0 ];
-    var p0 = [ 0, 0 ];
-    var len = 0;
-
-    for (var i = 0; i < this._path.length; i++) {
-        var p = this._path[i];
-        if (p[0] === 'M') {
-            cur[0] = p[1];
-            cur[1] = p[2];
-            if (pos === 0) {
-                return { length: len, pos: cur };
-            }
-        }
-        else if (p[0] === 'C') {
-            prev[0] = p0[0] = cur[0];
-            prev[1] = p0[1] = cur[1];
-            prev[2] = len;
-
-            var n = 100;
-            for (var j = 0; j <= n; j++) {
-                var t = j / n;
-                var x = xof_C(p, t);
-                var y = yof_C(p, t);
-                len += dist(cur[0], cur[1], x, y);
-
-                cur[0] = x;
-                cur[1] = y;
-
-                if (typeof pos === 'number' && len >= pos) {
-                    var dv = (len - pos) / (len - prev[2]);
-
-                    var npos = [
-                        cur[0] * (1 - dv) + prev[0] * dv,
-                        cur[1] * (1 - dv) + prev[1] * dv
-                    ];
-                    return { length: len, pos: npos };
-                }
-                prev[0] = cur[0];
-                prev[1] = cur[1];
-                prev[2] = len;
-            }
-        }
-        else if (p[0] === 'Q') {
-            prev[0] = p0[0] = cur[0];
-            prev[1] = p0[1] = cur[1];
-            prev[2] = len;
-
-            var n = 100;
-            for (var j = 0; j <= n; j++) {
-                var t = j / n;
-                var x = xof_Q(p, t);
-                var y = yof_Q(p, t);
-                len += dist(cur[0], cur[1], x, y);
-
-                cur[0] = x;
-                cur[1] = y;
-
-                if (typeof pos === 'number' && len >= pos) {
-                    var dv = (len - pos) / (len - prev[2]);
-
-                    var npos = [
-                        cur[0] * (1 - dv) + prev[0] * dv,
-                        cur[1] * (1 - dv) + prev[1] * dv
-                    ];
-                    return { length: len, pos: npos };
-                }
-                prev[0] = cur[0];
-                prev[1] = cur[1];
-                prev[2] = len;
-            }
-        }
-        else if (p[0] === 'L') {
-            prev[0] = cur[0];
-            prev[1] = cur[1];
-            prev[2] = len;
-
-            len   += dist(cur[0], cur[1], p[1], p[2]);
-            cur[0] = p[1];
-            cur[1] = p[2];
-
-            if (typeof pos === 'number' && len >= pos) {
-                var dv = (len - pos) / (len - prev[2]);
-                var npos = [
-                    cur[0] * (1 - dv) + prev[0] * dv,
-                    cur[1] * (1 - dv) + prev[1] * dv
-                ];
-                return { length: len, pos: npos };
-            }
-            prev[0] = cur[0];
-            prev[1] = cur[1];
-            prev[2] = len;
-        }
-    }
-
-    return { length: len, pos: cur };
-    function xof_C (p, t) {
-        return Math.pow((1-t), 3) * p0[0]
-            + 3 * Math.pow((1-t), 2) * t * p[1]
-            + 3 * (1-t) * Math.pow(t, 2) * p[3]
-            + Math.pow(t, 3) * p[5]
-        ;
-    }
-    function yof_C (p, t) {
-        return Math.pow((1-t), 3) * p0[1]
-            + 3 * Math.pow((1-t), 2) * t * p[2]
-            + 3 * (1-t) * Math.pow(t, 2) * p[4]
-            + Math.pow(t, 3) * p[6]
-        ;
-    }
-
-    function xof_Q (p, t) {
-        return Math.pow((1-t), 2) * p0[0]
-            + 2 * (1-t) * t * p[1]
-            + Math.pow(t, 2) * p[3]
-        ;
-    }
-    function yof_Q (p, t) {
-        return Math.pow((1-t), 2) * p0[1]
-            + 2 * (1-t) * t * p[2]
-            + Math.pow(t, 2) * p[4]
-        ;
-    }
-};
-
-function dist (ax, ay, bx, by) {
-    var x = ax - bx;
-    var y = ay - by;
-    return Math.sqrt(x*x + y*y);
-}
-
-// Expand shorthand curve commands to full versions; mutates the path in place for efficiency
-// Requires commands have already been converted to absolute versions
-function longhand(path){
-    var prev,x1=0,y1=0;
-    var conversion = { S:{to:'C',x:3}, T:{to:'Q',x:1} };
-    for(var i=0, len=path.length; i<len; i++){
-        var cmd = path[i];
-        var convert = conversion[cmd[0]];
-
-        if (convert) {
-            cmd[0] = convert.to;
-            if (prev) {
-                if (prev[0] === convert.to) {
-                    x1 = 2*prev[convert.x+2]-prev[convert.x  ];
-                    y1 = 2*prev[convert.x+3]-prev[convert.x+1];
-                } else {
-                    x1 = prev[prev.length-2];
-                    y1 = prev[prev.length-1];
-                }
-            }
-            cmd.splice(1,0,x1,y1);
-        }
-        prev=cmd;
-    }
-    return path;
-}
-
-// Convert 'Z', 'V' and 'H' segments to 'L' segments
-function zvhToL(path){
-    var ret = [];
-    var startPoint = ['L',0,0];
-    var last_point;
-
-    for(var i=0, len=path.length; i<len; i++){
-        var pt = path[i];
-        switch(pt[0]){
-            case 'M':
-                startPoint = ['L', pt[1], pt[2]];
-                ret.push(pt);
-                break;
-            case 'Z':
-                ret.push(startPoint);
-                break;
-            case 'H':
-                last_point = ret[ret.length - 1] || ['L',0,0];
-                ret.push( ['L', pt[1], last_point[last_point.length - 1]] );
-                break;
-            case 'V':
-                last_point = ret[ret.length - 1] || ['L',0,0];
-                ret.push( ['L', last_point[last_point.length - 2], pt[1]] );
-                break;
-            default:
-                ret.push(pt);
-        }
-    }
-    return ret;
-}
+$export($export.P + $export.R, 'Set', { toJSON: __webpack_require__(84)('Set') });
 
 
 /***/ }),
 /* 190 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
+__webpack_require__(74)('asyncIterator');
 
 
 /***/ }),
 /* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(74)('observable');
+
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
-var isArrayish = __webpack_require__(192);
+var isArrayish = __webpack_require__(193);
 
 var concat = Array.prototype.concat;
 var slice = Array.prototype.slice;
@@ -8052,7 +8090,7 @@ swizzle.wrap = function (fn) {
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8070,54 +8108,6 @@ module.exports = function isArrayish(obj) {
 
 
 /***/ }),
-/* 193 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _utils = __webpack_require__(105);
-
-exports.default = {
-  linear: function linear(p) {
-    return p;
-  },
-
-  ease: (0, _utils.getBezierEasing)(0.25, 0.1, 0.25, 1),
-  'ease-in': (0, _utils.getBezierEasing)(0.42, 0, 1, 1),
-  'ease-out': (0, _utils.getBezierEasing)(0, 0, 0.58, 1),
-  'ease-in-out': (0, _utils.getBezierEasing)(0.42, 0, 0.58, 1),
-  // 'step-start': function(p, frames){
-  //   let ret = 0
-  //   for(let i = 0; i < frames.length; i++){
-  //     const {offset} = frames[i]
-  //     ret = offset
-  //     if(p < offset){
-  //       break
-  //     }
-  //   }
-  //   return ret
-  // },
-  // 'step-end': function(p, frames){
-  //   let ret = 0
-  //   for(let i = 0; i < frames.length; i++){
-  //     const {offset} = frames[i]
-  //     if(p < offset){
-  //       break
-  //     }
-  //     ret = offset
-  //   }
-  //   return ret
-  // }
-  'step-start': (0, _utils.getStepsEasing)(1, 'start'),
-  'step-end': (0, _utils.getStepsEasing)(1, 'end')
-};
-
-/***/ }),
 /* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8127,19 +8117,377 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
-  // s - startFrame, e - endFrame
-  default: function _default(from, to, p, s, e) {
-    if (typeof from === 'number' && typeof to === 'number') {
-      return from + (p - s) / (e - s) * (to - from);
+
+var _promise = __webpack_require__(56);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _keys = __webpack_require__(121);
+
+var _keys2 = _interopRequireDefault(_keys);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _utils = __webpack_require__(195);
+
+var _spriteTimeline = __webpack_require__(113);
+
+var _spriteTimeline2 = _interopRequireDefault(_spriteTimeline);
+
+var _easing = __webpack_require__(107);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _timing = (0, _symbol2.default)('timing'),
+    _keyframes = (0, _symbol2.default)('keyframes'),
+    _initState = (0, _symbol2.default)('initState'),
+    _readyDefer = (0, _symbol2.default)('readyDefer'),
+    _finishedDefer = (0, _symbol2.default)('finishedDefer'),
+    _effects = (0, _symbol2.default)('effects'),
+    _activeReadyTimer = (0, _symbol2.default)('activeReadyTimer'),
+    _activeFinishTimer = (0, _symbol2.default)('activeFinishTimer'),
+    _removeDefer = (0, _symbol2.default)('removeDefer');
+
+/**
+  easing: {
+    type: 'cubic-bezier',
+    value: [...]
+  }
+  easing: {
+    type: 'steps',
+    step: 1,
+    pos: 'end'
+  }
+ */
+var defaultTiming = {
+  delay: 0,
+  endDelay: 0,
+  fill: 'auto',
+  iterations: 1.0,
+  playbackRate: 1.0,
+  direction: 'normal',
+  easing: 'linear',
+  effect: null
+
+  /**
+    animation: play --> delay --> effect --> endDelay
+    playState: idle --> pending --> running --> pending --> finished
+   */
+};
+var _class = function () {
+  function _class(initState, keyframes, timing) {
+    var _this = this;
+
+    (0, _classCallCheck3.default)(this, _class);
+
+    if (Array.isArray(initState)) {
+      var _ref = [initState[0], initState, keyframes];
+      // 如果 initState 缺省，默认 keyframes 的第一帧为 initState
+
+      initState = _ref[0];
+      keyframes = _ref[1];
+      timing = _ref[2];
     }
 
-    if (p - s > e - p) {
-      return to;
+    if (typeof timing === 'number') {
+      timing = { duration: timing };
     }
-    return from;
+
+    this[_timing] = (0, _assign2.default)({}, defaultTiming, timing);
+    this[_timing].easing = (0, _easing.parseEasing)(this[_timing].easing);
+    this[_keyframes] = (0, _utils.calculateFramesOffset)(keyframes);
+
+    var lastFrame = this[_keyframes][this[_keyframes].length - 1];
+
+    this[_initState] = {}; // 初始状态
+
+    (0, _keys2.default)(lastFrame).forEach(function (key) {
+      if (Object.prototype.hasOwnProperty.call(initState, key)) {
+        _this[_initState][key] = initState[key];
+      }
+    });
+
+    if (this[_keyframes][0].offset !== 0) {
+      // 要补第一帧
+      this[_keyframes].unshift((0, _assign2.default)({}, this[_initState], { offset: 0 }));
+    }
+    if (lastFrame.offset < 1) {
+      // 要补最后一帧
+      this[_keyframes].push((0, _assign2.default)({}, lastFrame, { offset: 1 }));
+    }
+
+    this[_effects] = {};
+    this.timeline = null; // idle, no effect
   }
-};
+
+  (0, _createClass3.default)(_class, [{
+    key: 'pause',
+    value: function pause() {
+      this.timeline.playbackRate = 0;
+    }
+  }, {
+    key: _activeReadyTimer,
+    value: function value() {
+      var _this2 = this;
+
+      if (this[_readyDefer] && !this[_readyDefer].timerID) {
+        this[_readyDefer].timerID = this.timeline.setTimeout(function () {
+          _this2[_readyDefer].resolve();
+          delete _this2[_readyDefer];
+        }, { delay: Math.max(-this.timeline.currentTime, 0), heading: this.timeline.paused });
+      }
+    }
+  }, {
+    key: _activeFinishTimer,
+    value: function value() {
+      var _this3 = this;
+
+      var _timing2 = this[_timing],
+          duration = _timing2.duration,
+          iterations = _timing2.iterations,
+          endDelay = _timing2.endDelay;
+
+      var delay = duration * iterations + endDelay;
+      if (this[_finishedDefer] && !this[_finishedDefer].timerID) {
+        this[_finishedDefer].timerID = this.timeline.setTimeout(function () {
+          _this3[_finishedDefer].resolve();
+        }, { delay: delay - this.timeline.currentTime, heading: false });
+      }
+    }
+  }, {
+    key: 'play',
+    value: function play() {
+      if (this.playState === 'finished') {
+        this.cancel();
+      }
+
+      if (this.playState === 'idle') {
+        if (this.playbackRate <= 0) {
+          return;
+        }
+        var _timing3 = this[_timing],
+            delay = _timing3.delay,
+            playbackRate = _timing3.playbackRate,
+            timeline = _timing3.timeline;
+
+        this.timeline = new _spriteTimeline2.default({
+          originTime: delay,
+          playbackRate: playbackRate
+        }, timeline);
+        this[_activeReadyTimer]();
+        this[_activeFinishTimer]();
+      } else if (this.playState === 'paused') {
+        this.timeline.playbackRate = this.playbackRate;
+        this[_activeReadyTimer]();
+      }
+    }
+  }, {
+    key: _removeDefer,
+    value: function value(deferID) {
+      var complete = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      var defered = this[deferID],
+          timeline = this.timeline;
+
+
+      if (defered && timeline) {
+        timeline.clearTimeout(defered.timerID);
+        if (complete) {
+          defered.resolve();
+        }
+      }
+      delete this[deferID];
+    }
+  }, {
+    key: 'cancel',
+    value: function cancel() {
+      this[_removeDefer](_readyDefer);
+      this[_removeDefer](_finishedDefer);
+      this.timeline = null;
+    }
+  }, {
+    key: 'finish',
+    value: function finish() {
+      this.timeline.entropy = Infinity;
+      this.timeline.currentTime = Infinity;
+      this[_removeDefer](_readyDefer);
+      this[_removeDefer](_finishedDefer, true);
+    }
+  }, {
+    key: 'applyEffects',
+    value: function applyEffects(effects) {
+      return (0, _assign2.default)(this[_effects], effects);
+    }
+  }, {
+    key: 'playbackRate',
+    get: function get() {
+      return this[_timing].playbackRate;
+    },
+    set: function set(rate) {
+      if (this.timeline) {
+        this.timeline.playbackRate = rate;
+      }
+      this[_timing].playbackRate = rate;
+    }
+  }, {
+    key: 'playState',
+    get: function get() {
+      var timeline = this.timeline,
+          _timing4 = this[_timing],
+          iterations = _timing4.iterations,
+          duration = _timing4.duration,
+          endDelay = _timing4.endDelay;
+
+      var state = 'running';
+
+      if (timeline == null) {
+        state = 'idle';
+      } else if (timeline.paused) {
+        state = 'paused';
+      } else if (timeline.currentTime < 0) {
+        // 开始 pending
+        state = 'pending';
+      } else {
+        var ed = timeline.currentTime - iterations * duration;
+        if (ed > 0 && ed < endDelay) {
+          // 结束 pending
+          state = 'pending';
+        } else if (ed >= endDelay) {
+          state = 'finished';
+        }
+      }
+      return state;
+    }
+  }, {
+    key: 'progress',
+    get: function get() {
+      var _timing5 = this[_timing],
+          duration = _timing5.duration,
+          iterations = _timing5.iterations;
+
+      var timeline = this.timeline,
+          entropy = timeline ? timeline.entropy : 0,
+          playState = this.playState;
+
+      var p = void 0;
+
+      if (playState === 'idle') {
+        p = 0;
+      } else if (playState === 'paused' && entropy < 0) {
+        p = 0;
+      } else if (playState === 'pending') {
+        if (entropy < 0) {
+          p = 0;
+        } else {
+          var time = timeline.seekLocalTime(iterations * duration);
+          p = (0, _utils.periodicity)(time, duration)[1] / duration;
+        }
+      } else if (playState === 'running' || playState === 'paused') {
+        p = (0, _utils.periodicity)(timeline.currentTime, duration)[1] / duration;
+      }
+
+      if (playState === 'finished') {
+        p = (0, _utils.periodicity)(iterations, 1)[1];
+      }
+
+      return p;
+    }
+  }, {
+    key: 'frame',
+    get: function get() {
+      var playState = this.playState,
+          initState = this[_initState],
+          fill = this[_timing].fill;
+
+
+      if (playState === 'idle') {
+        return initState;
+      }
+
+      var currentTime = this.timeline.currentTime,
+          keyframes = this[_keyframes].slice(0);
+
+      var _getProgress = (0, _utils.getProgress)(this.timeline, this[_timing], this.progress),
+          p = _getProgress.p,
+          inverted = _getProgress.inverted;
+
+      var frameState = initState;
+      if (currentTime < 0 && playState === 'pending') {
+        // 在开始前 delay 阶段
+        if (fill === 'backwards' || fill === 'both') {
+          frameState = inverted ? keyframes[keyframes.length - 1] : keyframes[0];
+        }
+      } else if (playState !== 'pending' && playState !== 'finished' || fill === 'forwards' || fill === 'both') {
+        // 不在 endDelay 或结束状态，或 forwards
+        frameState = (0, _utils.getCurrentFrame)(this[_timing], keyframes, this[_effects], p);
+      }
+      return frameState;
+    }
+  }, {
+    key: 'baseTimeline',
+    set: function set(timeline) {
+      this[_timing].timeline = timeline;
+    },
+    get: function get() {
+      return this[_timing].timeline;
+    }
+  }, {
+    key: 'ready',
+    get: function get() {
+      if (this[_readyDefer]) {
+        return this[_readyDefer].promise;
+      }
+
+      if (this.timeline && this.timeline.currentTime >= 0) {
+        if (this.playState !== 'paused') {
+          return _promise2.default.resolve();
+        }
+      }
+
+      this[_readyDefer] = (0, _utils.defer)();
+      if (this.timeline) {
+        // 已经在 pending 状态
+        this[_activeReadyTimer]();
+      }
+      if (this[_readyDefer]) {
+        return this[_readyDefer].promise;
+      }
+      return _promise2.default.resolve();
+    }
+  }, {
+    key: 'finished',
+    get: function get() {
+      if (this.playState === 'finished') {
+        return _promise2.default.resolve();
+      }
+      if (!this[_finishedDefer]) {
+        this[_finishedDefer] = (0, _utils.defer)();
+
+        if (this.timeline) {
+          this[_activeFinishTimer]();
+        }
+      }
+
+      return this[_finishedDefer].promise;
+    }
+  }]);
+  return _class;
+}();
+
+exports.default = _class;
 
 /***/ }),
 /* 195 */
@@ -8151,9 +8499,205 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+var _entries = __webpack_require__(20);
+
+var _entries2 = _interopRequireDefault(_entries);
+
+var _getIterator2 = __webpack_require__(80);
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _promise = __webpack_require__(56);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+exports.defer = defer;
+exports.periodicity = periodicity;
+exports.calculateFramesOffset = calculateFramesOffset;
+exports.getProgress = getProgress;
+exports.getCurrentFrame = getCurrentFrame;
+
+var _effect = __webpack_require__(108);
+
+var _effect2 = _interopRequireDefault(_effect);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function defer() {
+  var ret = {};
+  ret.promise = new _promise2.default(function (resolve, reject) {
+    ret.resolve = resolve;
+    ret.reject = reject;
+  });
+  return ret;
+}
+
+function periodicity(val, dur) {
+  var t = Math.floor(val / dur);
+  var v = val - t * dur;
+  if (v === 0 && t > 0) {
+    v = dur;
+    t--;
+  }
+  return [t, v];
+}
+
+function calculateFramesOffset(keyframes) {
+  keyframes = keyframes.slice(0);
+
+  var firstFrame = keyframes[0],
+      lastFrame = keyframes[keyframes.length - 1];
+
+  lastFrame.offset = lastFrame.offset || 1;
+  firstFrame.offset = firstFrame.offset || 0;
+
+  var offset = 0,
+      offsetFrom = -1;
+
+  for (var i = 0; i < keyframes.length; i++) {
+    var frame = keyframes[i];
+    if (frame.offset != null) {
+      var dis = i - offsetFrom;
+      if (dis > 1) {
+        var delta = (frame.offset - offset) / dis;
+        for (var j = 0; j < dis - 1; j++) {
+          keyframes[offsetFrom + j + 1].offset = offset + delta * (j + 1);
+        }
+      }
+      offset = frame.offset;
+      offsetFrom = i;
+    }
+    if (i > 0) {
+      // 如果中间某个属性没有了，需要从前一帧复制过来
+      keyframes[i] = (0, _assign2.default)({}, keyframes[i - 1], keyframes[i]);
+    }
+  }
+
+  return keyframes;
+}
+
+function getProgress(timeline, timing, p) {
+  var currentTime = timeline.currentTime,
+      direction = timing.direction,
+      duration = timing.duration;
+
+  var inverted = false;
+  if (direction === 'reverse') {
+    p = 1 - p;
+    inverted = true;
+  } else if (direction === 'alternate' || direction === 'alternate-reverse') {
+    var period = Math.floor(currentTime / duration);
+
+    if (p === 1) period--;
+    // period = Math.max(0, period)
+
+    if (period % 2 ^ direction === 'alternate-reverse') {
+      p = 1 - p;
+      inverted = true;
+    }
+  }
+  return { p: p, inverted: inverted };
+}
+
+function calculateFrame(previousFrame, nextFrame, effects, p) {
+  var ret = {};
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = (0, _getIterator3.default)((0, _entries2.default)(nextFrame)), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var _ref = _step.value;
+
+      var _ref2 = (0, _slicedToArray3.default)(_ref, 2);
+
+      var key = _ref2[0];
+      var value = _ref2[1];
+
+      if (key !== 'offset') {
+        var effect = effects[key] || effects.default;
+
+        var v = effect(previousFrame[key], value, p, previousFrame.offset, nextFrame.offset);
+
+        if (v != null) {
+          ret[key] = v;
+        }
+      }
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return ret;
+}
+
+function getCurrentFrame(timing, keyframes, effects, p) {
+  var easing = timing.easing,
+      effect = timing.effect;
+
+
+  if (!effect) {
+    // timing.effect 会覆盖掉 Effects 和 animator.applyEffects 中定义的 effects
+    effects = (0, _assign2.default)({}, effects, _effect2.default);
+  }
+
+  var ret = {};
+
+  p = easing(p, keyframes);
+
+  for (var i = 1; i < keyframes.length; i++) {
+    var frame = keyframes[i],
+        offset = frame.offset;
+
+    if (offset >= p || i === keyframes.length - 1) {
+      var previousFrame = keyframes[i - 1],
+          previousOffset = previousFrame.offset;
+
+      if (effect) {
+        ret = effect(previousFrame, frame, p, previousOffset, offset);
+      } else {
+        ret = calculateFrame(previousFrame, frame, effects, p);
+      }
+      break;
+    }
+  }
+
+  return ret;
+}
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = undefined;
 
-var _getPrototypeOf = __webpack_require__(8);
+var _getPrototypeOf = __webpack_require__(10);
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
@@ -8165,23 +8709,23 @@ var _createClass2 = __webpack_require__(4);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = __webpack_require__(14);
+var _possibleConstructorReturn2 = __webpack_require__(16);
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _get2 = __webpack_require__(17);
+var _get2 = __webpack_require__(18);
 
 var _get3 = _interopRequireDefault(_get2);
 
-var _inherits2 = __webpack_require__(13);
+var _inherits2 = __webpack_require__(15);
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
-var _assign = __webpack_require__(16);
+var _assign = __webpack_require__(9);
 
 var _assign2 = _interopRequireDefault(_assign);
 
-var _toConsumableArray2 = __webpack_require__(7);
+var _toConsumableArray2 = __webpack_require__(5);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -8189,17 +8733,17 @@ var _slicedToArray2 = __webpack_require__(1);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-var _entries = __webpack_require__(26);
+var _entries = __webpack_require__(20);
 
 var _entries2 = _interopRequireDefault(_entries);
 
-var _spriteAnimator = __webpack_require__(47);
+var _spriteAnimator = __webpack_require__(53);
 
-var _fastAnimationFrame = __webpack_require__(104);
+var _fastAnimationFrame = __webpack_require__(105);
 
-var _spriteMath = __webpack_require__(73);
+var _spriteMath = __webpack_require__(43);
 
-var _spriteUtils = __webpack_require__(19);
+var _spriteUtils = __webpack_require__(14);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -8263,17 +8807,21 @@ function transformEffect(trans1, trans2, p, start, end) {
 }
 
 function colorEffect(color1, color2, p, start, end) {
-  color1 = (0, _spriteUtils.parseColor)(color1);
-  color2 = (0, _spriteUtils.parseColor)(color2);
-
-  if (color1.model === color2.model) {
-    color1.value = arrayEffect(color1.value, color2.value, p, start, end).map(function (c) {
-      return Math.round(c);
-    });
-    return color1;
+  if (typeof color1 !== 'string' || typeof color2 !== 'string') {
+    return defaultEffect(color1, color2, p, start, end);
   }
 
-  return color2;
+  var c1 = (0, _spriteUtils.parseColor)(color1);
+  var c2 = (0, _spriteUtils.parseColor)(color2);
+
+  if (c1.model === c2.model) {
+    c1.value = arrayEffect(c1.value, c2.value, p, start, end).map(function (c) {
+      return Math.round(c);
+    });
+    return c1.str;
+  }
+
+  return defaultEffect(color1, color2, p, start, end);
 }
 
 (0, _assign2.default)(_spriteAnimator.Effects, {
@@ -8282,7 +8830,11 @@ function colorEffect(color1, color2, p, start, end) {
   transform: transformEffect,
   bgcolor: colorEffect,
   border: function border(v1, v2, p, start, end) {
-    return [defaultEffect(v1[0], v2[0], p, start, end), colorEffect(v1[1], v2[1], p, start, end)];
+    return {
+      width: defaultEffect(v1.width, v2.width, p, start, end),
+      color: colorEffect(v1[1], v2[1], p, start, end),
+      style: defaultEffect(v1.style, v2.style, p, start, end)
+    };
   },
 
   scale: arrayEffect,
@@ -8329,27 +8881,41 @@ var _default = function (_Animator) {
 
       var that = this;
       this.ready.then(function () {
-        (0, _fastAnimationFrame.requestAnimationFrame)(function update() {
-          if (that.playState === 'idle') return;
+        that.requestId = (0, _fastAnimationFrame.requestAnimationFrame)(function update() {
+          var target = that.target;
+          if (typeof document !== 'undefined' && document.contains && target.layer && target.layer.canvas && !document.documentElement.contains(target.layer.canvas)) {
+            // if dom element has been removed stop animation.
+            // it usually occurs in single page applications.
+            that.cancel();
+            return;
+          }
+          var playState = that.playState;
           sprite.attr(that.frame);
-          if (that.playState === 'running') {
-            (0, _fastAnimationFrame.requestAnimationFrame)(update);
-          } else if (that.playState === 'paused') {
+          if (playState === 'idle') return;
+          if (playState === 'running') {
+            that.requestId = (0, _fastAnimationFrame.requestAnimationFrame)(update);
+          } else if (playState === 'paused' || playState === 'pending' && that.timeline.currentTime < 0) {
+            // playbackRate < 0 will cause playState reset to pending...
             that.ready.then(function () {
-              (0, _fastAnimationFrame.requestAnimationFrame)(update);
+              that.requestId = (0, _fastAnimationFrame.requestAnimationFrame)(update);
             });
           }
         });
       });
     }
-
-    // 防止异步设置了不该设置的属性
-
   }, {
     key: 'cancel',
     value: function cancel() {
-      (0, _get3.default)(_default.prototype.__proto__ || (0, _getPrototypeOf2.default)(_default.prototype), 'cancel', this).call(this);
-      this.target.attr(this.frame);
+      var preserveState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+      (0, _fastAnimationFrame.cancelAnimationFrame)(this.requestId);
+      if (preserveState) {
+        this.target.attr(this.frame);
+        (0, _get3.default)(_default.prototype.__proto__ || (0, _getPrototypeOf2.default)(_default.prototype), 'cancel', this).call(this);
+      } else {
+        (0, _get3.default)(_default.prototype.__proto__ || (0, _getPrototypeOf2.default)(_default.prototype), 'cancel', this).call(this);
+        this.target.attr(this.frame);
+      }
     }
   }, {
     key: 'playState',
@@ -8359,6 +8925,21 @@ var _default = function (_Animator) {
       }
       return (0, _get3.default)(_default.prototype.__proto__ || (0, _getPrototypeOf2.default)(_default.prototype), 'playState', this);
     }
+  }, {
+    key: 'finished',
+    get: function get() {
+      var _this2 = this;
+
+      // set last frame when finished
+      // because while the web page is not focused
+      // requestAnimationFrame will not trigger while deferTime of
+      // the animator is still running
+      var sprite = this.target;
+      return (0, _get3.default)(_default.prototype.__proto__ || (0, _getPrototypeOf2.default)(_default.prototype), 'finished', this).then(function () {
+        sprite.attr(_this2.frame);
+        (0, _fastAnimationFrame.cancelAnimationFrame)(_this2.requestId);
+      });
+    }
   }]);
   return _default;
 }(_spriteAnimator.Animator);
@@ -8366,7 +8947,7 @@ var _default = function (_Animator) {
 exports.default = _default;
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8376,35 +8957,43 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getOwnPropertyDescriptor = __webpack_require__(22);
+var _getOwnPropertyDescriptor = __webpack_require__(24);
 
 var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
 
-var _toConsumableArray2 = __webpack_require__(7);
+var _toConsumableArray2 = __webpack_require__(5);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
-var _entries = __webpack_require__(26);
+var _defineProperty = __webpack_require__(45);
 
-var _entries2 = _interopRequireDefault(_entries);
+var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+var _defineProperties = __webpack_require__(120);
+
+var _defineProperties2 = _interopRequireDefault(_defineProperties);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _stringify = __webpack_require__(81);
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+var _typeof2 = __webpack_require__(34);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
 
 var _slicedToArray2 = __webpack_require__(1);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-var _stringify = __webpack_require__(80);
+var _entries = __webpack_require__(20);
 
-var _stringify2 = _interopRequireDefault(_stringify);
+var _entries2 = _interopRequireDefault(_entries);
 
-var _defineProperties = __webpack_require__(116);
-
-var _defineProperties2 = _interopRequireDefault(_defineProperties);
-
-var _assign = __webpack_require__(16);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-var _map = __webpack_require__(31);
+var _map = __webpack_require__(23);
 
 var _map2 = _interopRequireDefault(_map);
 
@@ -8416,61 +9005,39 @@ var _createClass2 = __webpack_require__(4);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _symbol = __webpack_require__(12);
+var _symbol = __webpack_require__(6);
 
 var _symbol2 = _interopRequireDefault(_symbol);
 
-var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _desc, _value, _class;
+var _dec, _dec2, _dec3, _dec4, _dec5, _dec6, _dec7, _dec8, _dec9, _dec10, _dec11, _dec12, _dec13, _dec14, _dec15, _dec16, _desc, _value, _class;
 
-var _spriteMath = __webpack_require__(73);
+var _spriteMath = __webpack_require__(43);
 
-var _spriteUtils = __webpack_require__(19);
+var _spriteUtils = __webpack_require__(14);
 
-var _platform = __webpack_require__(107);
+var _svgPathToCanvas = __webpack_require__(78);
+
+var _svgPathToCanvas2 = _interopRequireDefault(_svgPathToCanvas);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
-
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['define' + 'Property'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
+var _applyDecoratedDescriptor = __webpack_require__(29);
 
 var _attr = (0, _symbol2.default)('attr'),
     _temp = (0, _symbol2.default)('store'),
     _subject = (0, _symbol2.default)('subject'),
-    _default = (0, _symbol2.default)('default');
+    _default = (0, _symbol2.default)('default'),
+    _props = (0, _symbol2.default)('props');
 
-var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFloat, _spriteUtils.oneOrTwoValues), _dec2 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringInt), _dec3 = (0, _spriteUtils.parseValue)(_spriteUtils.parseColorString), _dec4 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringInt), _dec5 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringInt, _spriteUtils.fourValuesShortCut), _dec6 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringTransform), _dec7 = (0, _spriteUtils.deprecate)('Instead use attr.gradients.'), (_class = function () {
+var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFloat, _spriteUtils.oneOrTwoValues), _dec2 = (0, _spriteUtils.parseValue)(parseFloat), _dec3 = (0, _spriteUtils.parseValue)(parseFloat), _dec4 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringInt), _dec5 = (0, _spriteUtils.parseValue)(_spriteUtils.parseColorString), _dec6 = (0, _spriteUtils.parseValue)(parseFloat), _dec7 = (0, _spriteUtils.parseValue)(parseFloat), _dec8 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringInt), _dec9 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringInt, _spriteUtils.fourValuesShortCut), _dec10 = (0, _spriteUtils.parseValue)(parseFloat), _dec11 = (0, _spriteUtils.parseValue)(parseFloat), _dec12 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringTransform), _dec13 = (0, _spriteUtils.parseValue)(parseFloat), _dec14 = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFloat, _spriteUtils.oneOrTwoValues), _dec15 = (0, _spriteUtils.deprecate)('Instead use attr.gradients.'), _dec16 = (0, _spriteUtils.parseValue)(parseFloat), (_class = function () {
   function SpriteAttr(subject) {
     (0, _classCallCheck3.default)(this, SpriteAttr);
 
     this[_subject] = subject;
     this[_default] = {};
     this[_attr] = {};
+    this[_props] = {};
+
     this.setDefault({
       anchor: [0, 0],
       x: 0,
@@ -8484,29 +9051,30 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
       translate: [0, 0],
       skew: [0, 0],
       transform: 'matrix(1,0,0,1,0,0)',
+      transformOrigin: '',
       transformMatrix: [1, 0, 0, 1, 0, 0],
-      border: [0, 'rgba(0,0,0,0)'],
+      border: {
+        width: 0,
+        color: 'rgba(0,0,0,0)',
+        style: 'solid'
+      },
+      // border: [0, 'rgba(0,0,0,0)'],
       borderRadius: 0,
+      dashOffset: 0,
       padding: [0, 0, 0, 0],
       zIndex: 0,
       offsetRotate: 'auto',
-      linearGradients: {},
+      gradients: {},
       offsetDistance: 0
     }, {
-      pos: {
-        get: function get() {
-          return [this.x, this.y];
-        }
+      pos: function pos() {
+        return [this.x, this.y];
       },
-      size: {
-        get: function get() {
-          return [this.width, this.height];
-        }
+      size: function size() {
+        return [this.width, this.height];
       },
-      linearGradients: {
-        get: function get() {
-          return this.gradients;
-        }
+      linearGradients: function linearGradients() {
+        return this.gradients;
       }
     });
     this[_temp] = new _map2.default(); // save non-serialized values
@@ -8515,21 +9083,41 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   (0, _createClass3.default)(SpriteAttr, [{
     key: 'setDefault',
     value: function setDefault(attrs) {
+      var _this = this;
+
       var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      (0, _assign2.default)(this[_default], attrs);
-      (0, _assign2.default)(this[_attr], attrs);
-      (0, _defineProperties2.default)(this[_attr], props);
-    }
-  }, {
-    key: 'getAttrState',
-    value: function getAttrState() {
-      return this[_attr];
+      var _attrs = {};
+      (0, _entries2.default)(attrs).forEach(function (_ref) {
+        var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
+            attr = _ref2[0],
+            val = _ref2[1];
+
+        if (val != null && (typeof val === 'undefined' ? 'undefined' : (0, _typeof3.default)(val)) === 'object') {
+          val = (0, _stringify2.default)(val);
+        }
+        _attrs[attr] = val;
+      });
+      (0, _assign2.default)(this[_default], _attrs);
+      (0, _assign2.default)(this[_attr], _attrs);
+      var _p = {};
+      (0, _entries2.default)(props).forEach(function (_ref3) {
+        var _ref4 = (0, _slicedToArray3.default)(_ref3, 2),
+            prop = _ref4[0],
+            getter = _ref4[1];
+
+        _p[prop] = {
+          get: getter.bind(_this)
+        };
+      });
+      (0, _defineProperties2.default)(this[_attr], _p);
+      (0, _assign2.default)(this[_props], _p);
     }
   }, {
     key: 'saveObj',
     value: function saveObj(key, val) {
       this[_temp].set(key, val);
+      this.__updateTag = true;
     }
   }, {
     key: 'loadObj',
@@ -8539,6 +9127,9 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   }, {
     key: 'quietSet',
     value: function quietSet(key, val) {
+      if (val != null && (typeof val === 'undefined' ? 'undefined' : (0, _typeof3.default)(val)) === 'object') {
+        val = (0, _stringify2.default)(val);
+      }
       this[_attr][key] = val;
     }
   }, {
@@ -8546,46 +9137,55 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
     value: function set(key, val) {
       if (val == null) {
         val = this[_default][key];
+      } else if ((typeof val === 'undefined' ? 'undefined' : (0, _typeof3.default)(val)) === 'object') {
+        val = (0, _stringify2.default)(val);
       }
-      this[_attr][key] = val;
-      this.forceUpdate();
+      if (this[_attr][key] !== val) {
+        this[_attr][key] = val;
+        this.__updateTag = true;
+      }
     }
   }, {
     key: 'get',
     value: function get(key) {
-      return this[_attr][key];
+      var val = this[_attr][key];
+      if (typeof val === 'string' && (val.startsWith('{') || val.startsWith('['))) {
+        val = JSON.parse(val);
+      }
+      return val;
     }
   }, {
     key: 'clearCache',
     value: function clearCache() {
-      if (this.subject) {
-        this.subject.cache = null;
-      }
-      return this;
-    }
-  }, {
-    key: 'forceUpdate',
-    value: function forceUpdate(clearCache) {
-      if (this.subject) {
-        this.subject.forceUpdate(clearCache);
-      }
+      this.__clearCacheTag = true;
       return this;
     }
   }, {
     key: 'merge',
     value: function merge(attrs) {
+      var _this2 = this;
+
       if (typeof attrs === 'string') {
         attrs = JSON.parse(attrs);
       }
+      (0, _entries2.default)(attrs).forEach(function (_ref5) {
+        var _ref6 = (0, _slicedToArray3.default)(_ref5, 2),
+            key = _ref6[0],
+            value = _ref6[1];
 
-      (0, _assign2.default)(this[_attr], attrs);
+        if (_this2[_default][key] !== value && key in _this2) {
+          _this2[key] = value;
+        }
+      });
 
       return this;
     }
   }, {
     key: 'serialize',
     value: function serialize() {
-      return (0, _stringify2.default)(this[_attr]);
+      var attrs = this.attrs;
+      delete attrs.id;
+      return (0, _stringify2.default)(attrs);
     }
   }, {
     key: 'resetOffset',
@@ -8598,7 +9198,7 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
         if (pathObj) {
           offsetPath = pathObj;
         } else {
-          offsetPath = (0, _platform.getSvgPath)(offsetPath);
+          offsetPath = new _svgPathToCanvas2.default(offsetPath);
           this.saveObj('offsetPath', offsetPath);
         }
       }
@@ -8606,15 +9206,18 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
       if (offsetPath != null) {
         var len = dis * offsetPath.getTotalLength(),
             _offsetPath$getPointA = offsetPath.getPointAtLength(len),
-            x = _offsetPath$getPointA.x,
-            y = _offsetPath$getPointA.y;
+            _offsetPath$getPointA2 = (0, _slicedToArray3.default)(_offsetPath$getPointA, 2),
+            x = _offsetPath$getPointA2[0],
+            y = _offsetPath$getPointA2[1];
 
 
         var angle = this.offsetRotate;
+
         if (angle === 'auto' || angle === 'reverse') {
-          var delta = offsetPath.getPointAtLength(angle === 'auto' ? len + 1 : len - 1);
-          var x1 = delta.x,
-              y1 = delta.y;
+          var _offsetPath$getPointA3 = offsetPath.getPointAtLength(angle === 'auto' ? len + 1 : len - 1),
+              _offsetPath$getPointA4 = (0, _slicedToArray3.default)(_offsetPath$getPointA3, 2),
+              x1 = _offsetPath$getPointA4[0],
+              y1 = _offsetPath$getPointA4[1];
 
           if (x1 === x && y1 === y) {
             // last point
@@ -8649,7 +9252,17 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   }, {
     key: 'attrs',
     get: function get() {
-      return this[_attr];
+      var _this3 = this;
+
+      var ret = {};
+      this.__attributeNames.forEach(function (key) {
+        if (key in _this3[_props]) {
+          (0, _defineProperty2.default)(ret, key, _this3[_props][key]);
+        } else {
+          ret[key] = _this3[key];
+        }
+      });
+      return ret;
     }
   }, {
     key: 'subject',
@@ -8677,12 +9290,12 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   }, {
     key: 'x',
     set: function set(val) {
-      this.set('x', Math.round(val));
+      this.set('x', val);
     }
   }, {
     key: 'y',
     set: function set(val) {
-      this.set('y', Math.round(val));
+      this.set('y', val);
     }
   }, {
     key: 'pos',
@@ -8714,13 +9327,13 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
     key: 'width',
     set: function set(val) {
       this.clearCache();
-      this.set('width', Math.round(val));
+      this.set('width', val);
     }
   }, {
     key: 'height',
     set: function set(val) {
       this.clearCache();
-      this.set('height', Math.round(val));
+      this.set('height', val);
     }
   }, {
     key: 'size',
@@ -8741,12 +9354,24 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
     key: 'border',
     set: function set(val) {
       this.clearCache();
-
-      var _val5 = (0, _slicedToArray3.default)(val, 2),
-          width = _val5[0],
-          color = _val5[1];
-
-      this.set('border', [width, (0, _spriteUtils.parseColorString)(color)]);
+      if (typeof val === 'number' || typeof val === 'string') {
+        val = {
+          width: parseFloat(val)
+        };
+      } else if (Array.isArray(val)) {
+        val = {
+          width: parseFloat(val[0]),
+          color: (0, _spriteUtils.parseColorString)(val[1] || '#000')
+        };
+      } else {
+        val.color = (0, _spriteUtils.parseColorString)(val.color || '#000');
+      }
+      val = (0, _assign2.default)({
+        width: 1,
+        color: (0, _spriteUtils.parseColorString)('#000'),
+        style: 'solid'
+      }, val);
+      this.set('border', val);
     }
   }, {
     key: 'padding',
@@ -8760,13 +9385,19 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
       this.clearCache();
       this.set('borderRadius', val);
     }
+  }, {
+    key: 'dashOffset',
+    set: function set(val) {
+      this.clearCache();
+      this.set('dashOffset', val);
+    }
 
     // transform attributes
 
   }, {
     key: 'transform',
     set: function set(val) {
-      var _this = this;
+      var _this4 = this;
 
       /*
         rotate: 0,
@@ -8775,11 +9406,11 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
         skew: [0, 0],
         matrix: [1,0,0,1,0,0],
        */
-      this.merge({
+      (0, _assign2.default)(this[_attr], {
         rotate: 0,
-        scale: [1, 1],
-        translate: [0, 0],
-        skew: [0, 0]
+        scale: '[1, 1]',
+        translate: '[0, 0]',
+        skew: '[0, 0]'
       });
 
       if (Array.isArray(val)) {
@@ -8789,21 +9420,26 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
         this.set('transformMatrix', [1, 0, 0, 1, 0, 0]);
         var transformStr = [];
 
-        (0, _entries2.default)(val).forEach(function (_ref) {
-          var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
-              key = _ref2[0],
-              value = _ref2[1];
+        (0, _entries2.default)(val).forEach(function (_ref7) {
+          var _ref8 = (0, _slicedToArray3.default)(_ref7, 2),
+              key = _ref8[0],
+              value = _ref8[1];
 
           if (key === 'matrix' && Array.isArray(value)) {
-            _this.set('transformMatrix', new _spriteMath.Matrix(value).m);
+            _this4.set('transformMatrix', new _spriteMath.Matrix(value).m);
           } else {
-            _this[key] = value;
+            _this4[key] = value;
           }
           transformStr.push(key + '(' + value + ')');
         });
 
         this.set('transform', transformStr.join(' '));
       }
+    }
+  }, {
+    key: 'transformOrigin',
+    set: function set(val) {
+      this.set('transformOrigin', val);
     }
   }, {
     key: 'rotate',
@@ -8817,7 +9453,7 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
     key: 'scale',
     set: function set(val) {
       val = (0, _spriteUtils.oneOrTwoValues)(val);
-      var oldVal = this.get('scale');
+      var oldVal = this.get('scale') || [1, 1];
       var delta = [val[0] / oldVal[0], val[1] / oldVal[1]];
       this.set('scale', val);
 
@@ -8837,7 +9473,7 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   }, {
     key: 'translate',
     set: function set(val) {
-      var oldVal = this.get('translate');
+      var oldVal = this.get('translate') || [0, 0];
       var delta = [val[0] - oldVal[0], val[1] - oldVal[1]];
       this.set('translate', val);
       var transform = new _spriteMath.Matrix(this.get('transformMatrix'));
@@ -8847,10 +9483,10 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   }, {
     key: 'skew',
     set: function set(val) {
-      var _ref3, _transform$multiply;
+      var _ref9, _transform$multiply;
 
-      var oldVal = this.get('skew');
-      var invm = (_ref3 = new _spriteMath.Matrix()).skew.apply(_ref3, (0, _toConsumableArray3.default)(oldVal)).inverse();
+      var oldVal = this.get('skew') || [0, 0];
+      var invm = (_ref9 = new _spriteMath.Matrix()).skew.apply(_ref9, (0, _toConsumableArray3.default)(oldVal)).inverse();
       this.set('skew', val);
       var transform = new _spriteMath.Matrix(this.get('transformMatrix'));
       (_transform$multiply = transform.multiply(invm)).skew.apply(_transform$multiply, (0, _toConsumableArray3.default)(val));
@@ -8905,9 +9541,9 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   }, {
     key: 'offsetPath',
     set: function set(val) {
-      var offsetPath = (0, _platform.getSvgPath)(val);
+      var offsetPath = new _svgPathToCanvas2.default(val);
 
-      this.set('offsetPath', offsetPath.getAttribute('d'));
+      this.set('offsetPath', offsetPath.d);
       this.saveObj('offsetPath', offsetPath);
       this.resetOffset();
     }
@@ -8920,16 +9556,19 @@ var SpriteAttr = (_dec = (0, _spriteUtils.parseValue)(_spriteUtils.parseStringFl
   }, {
     key: 'offsetRotate',
     set: function set(val) {
+      if (typeof val === 'string' && val !== 'auto' && val !== 'reverse') {
+        val = parseFloat(val);
+      }
       this.set('offsetRotate', val);
       this.resetOffset();
     }
   }]);
   return SpriteAttr;
-}(), (_applyDecoratedDescriptor(_class.prototype, 'id', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'id'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'name', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'name'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'anchor', [_spriteUtils.attr, _dec], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'anchor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'x', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'x'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'y', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'y'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'pos', [_spriteUtils.attr, _dec2], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'pos'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'bgcolor', [_spriteUtils.attr, _dec3], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'bgcolor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'opacity', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'opacity'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'width', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'width'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'height', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'height'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'size', [_spriteUtils.attr, _dec4], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'size'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'border', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'border'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'padding', [_spriteUtils.attr, _dec5], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'padding'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'borderRadius', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'borderRadius'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'transform', [_spriteUtils.attr, _dec6], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'transform'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'rotate', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'rotate'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'scale', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'scale'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'translate', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'translate'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'skew', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'skew'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'zIndex', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'zIndex'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'linearGradients', [_spriteUtils.attr, _dec7], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'linearGradients'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'gradients', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'gradients'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'offsetPath', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'offsetPath'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'offsetDistance', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'offsetDistance'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'offsetRotate', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'offsetRotate'), _class.prototype)), _class));
+}(), (_applyDecoratedDescriptor(_class.prototype, 'id', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'id'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'name', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'name'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'anchor', [_dec, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'anchor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'x', [_dec2, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'x'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'y', [_dec3, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'y'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'pos', [_dec4, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'pos'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'bgcolor', [_dec5, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'bgcolor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'opacity', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'opacity'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'width', [_dec6, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'width'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'height', [_dec7, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'height'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'size', [_dec8, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'size'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'border', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'border'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'padding', [_dec9, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'padding'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'borderRadius', [_dec10, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'borderRadius'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'dashOffset', [_dec11, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'dashOffset'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'transform', [_dec12, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'transform'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'transformOrigin', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'transformOrigin'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'rotate', [_dec13, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'rotate'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'scale', [_dec14, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'scale'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'translate', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'translate'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'skew', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'skew'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'zIndex', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'zIndex'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'linearGradients', [_dec15, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'linearGradients'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'gradients', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'gradients'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'offsetPath', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'offsetPath'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'offsetDistance', [_dec16, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'offsetDistance'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'offsetRotate', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'offsetRotate'), _class.prototype)), _class));
 exports.default = SpriteAttr;
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8939,7 +9578,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _entries = __webpack_require__(26);
+var _entries = __webpack_require__(20);
 
 var _entries2 = _interopRequireDefault(_entries);
 
@@ -8947,7 +9586,7 @@ var _slicedToArray2 = __webpack_require__(1);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
-var _spriteUtils = __webpack_require__(19);
+var _spriteUtils = __webpack_require__(14);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9003,7 +9642,83 @@ exports.default = {
 }; // http://www.runoob.com/cssref/css3-pr-filter.html
 
 /***/ }),
-/* 198 */
+/* 199 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+exports.isSpriteDirty = isSpriteDirty;
+exports.clearDirtyRects = clearDirtyRects;
+
+var _spriteUtils = __webpack_require__(14);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function isSpriteDirty(sprite, dirtyEls) {
+  var isUpdateEl = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+  for (var i = 0; i < dirtyEls.length; i++) {
+    var dirtyEl = dirtyEls[i];
+    var box1 = dirtyEl.renderBox,
+        box2 = sprite.renderBox,
+        box3 = dirtyEl.lastRenderBox;
+
+    if ((0, _spriteUtils.boxIntersect)(box1, box2) || isUpdateEl && box3 && (0, _spriteUtils.boxIntersect)(box3, box2)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function clearDirtyRect(_ref, box, width, height) {
+  var shadowContext = _ref.shadowContext,
+      outputContext = _ref.outputContext;
+
+  var dirtyBox = (0, _spriteUtils.boxIntersect)(box, [0, 0, width, height]);
+
+  if (dirtyBox) {
+    var dirtyRect = (0, _spriteUtils.boxToRect)(dirtyBox);
+
+    if (shadowContext) shadowContext.rect.apply(shadowContext, (0, _toConsumableArray3.default)(dirtyRect));
+    outputContext.rect.apply(outputContext, (0, _toConsumableArray3.default)(dirtyRect));
+  }
+}
+
+function clearDirtyRects(_ref2, dirtyEls) {
+  var shadowContext = _ref2.shadowContext,
+      outputContext = _ref2.outputContext;
+  var isUpdateEl = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+  var _outputContext$canvas = outputContext.canvas,
+      width = _outputContext$canvas.width,
+      height = _outputContext$canvas.height;
+
+
+  for (var i = 0; i < dirtyEls.length; i++) {
+    var dirtyEl = dirtyEls[i];
+    var box = dirtyEl.renderBox;
+
+    clearDirtyRect({ shadowContext: shadowContext, outputContext: outputContext }, box, width, height);
+
+    if (isUpdateEl) {
+      var lastRenderBox = dirtyEl.lastRenderBox;
+      if (lastRenderBox && !(0, _spriteUtils.boxEqual)(lastRenderBox, box)) {
+        clearDirtyRect({ shadowContext: shadowContext, outputContext: outputContext }, lastRenderBox, width, height);
+      }
+    }
+  }
+}
+
+/***/ }),
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9117,3501 +9832,7 @@ module.exports = function (str) {
 /* eslint-enable */
 
 /***/ }),
-/* 199 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _get2 = __webpack_require__(17);
-
-var _get3 = _interopRequireDefault(_get2);
-
-var _getOwnPropertyDescriptor = __webpack_require__(22);
-
-var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(13);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _dec, _desc, _value, _class, _class2, _temp;
-
-var _basesprite = __webpack_require__(38);
-
-var _basesprite2 = _interopRequireDefault(_basesprite);
-
-var _spriteUtils = __webpack_require__(19);
-
-var _gradient = __webpack_require__(48);
-
-var _gradient2 = _interopRequireDefault(_gradient);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
-
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['define' + 'Property'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
-
-var parseFont = __webpack_require__(198);
-
-var measureText = function measureText(node, text, font) {
-  var lineHeight = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-
-  var ctx = node.context;
-  if (!ctx) {
-    return [0, 0];
-  }
-  ctx.save();
-  ctx.font = font;
-
-  var _ctx$measureText = ctx.measureText(text),
-      width = _ctx$measureText.width;
-
-  var height = parseFont(font).size * 1.2;
-  ctx.restore();
-  return [width, Math.max(height, lineHeight)];
-};
-
-function calculTextboxSize(node, text, font, lineHeight) {
-  var lines = text.split(/\n/);
-  var width = 0,
-      height = 0;
-
-  lines.forEach(function (line) {
-    var _measureText = measureText(node, line, font, lineHeight),
-        _measureText2 = (0, _slicedToArray3.default)(_measureText, 2),
-        w = _measureText2[0],
-        h = _measureText2[1];
-
-    width = Math.max(width, w);
-    height += h;
-  });
-  if (width === 0 && height === 0) {
-    return '';
-  }
-  return [width, height];
-}
-
-var LabelSpriteAttr = (_dec = (0, _spriteUtils.deprecate)('Instead use fillColor.'), (_class = function (_BaseSprite$Attr) {
-  (0, _inherits3.default)(LabelSpriteAttr, _BaseSprite$Attr);
-
-  function LabelSpriteAttr(subject) {
-    (0, _classCallCheck3.default)(this, LabelSpriteAttr);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (LabelSpriteAttr.__proto__ || (0, _getPrototypeOf2.default)(LabelSpriteAttr)).call(this, subject));
-
-    _this.setDefault({
-      font: '16px Arial',
-      textAlign: 'left',
-      strokeColor: '',
-      fillColor: '',
-      lineHeight: '',
-      text: '',
-      textboxSize: ''
-    }, {
-      color: {
-        get: function get() {
-          return this.fillColor;
-        }
-      }
-    });
-    return _this;
-  }
-
-  (0, _createClass3.default)(LabelSpriteAttr, [{
-    key: 'text',
-    set: function set(val) {
-      val = String(val);
-      this.clearCache();
-      this.set('textboxSize', '');
-      this.set('text', val);
-    }
-  }, {
-    key: 'textboxSize',
-    set: function set(val) {
-      this.set('textboxSize', val);
-    }
-  }, {
-    key: 'font',
-    set: function set(val) {
-      this.clearCache();
-      this.set('textboxSize', '');
-      this.set('font', val);
-    }
-  }, {
-    key: 'lineHeight',
-    set: function set(val) {
-      this.clearCache();
-      this.set('textboxSize', '');
-      this.set('lineHeight', val);
-    }
-  }, {
-    key: 'textAlign',
-    set: function set(val) {
-      this.clearCache();
-      this.set('textAlign', val);
-    }
-  }, {
-    key: 'color',
-    set: function set(val) {
-      this.fillColor = val;
-    }
-  }, {
-    key: 'strokeColor',
-    set: function set(val) {
-      this.clearCache();
-      this.set('strokeColor', (0, _spriteUtils.parseColorString)(val));
-    }
-  }, {
-    key: 'fillColor',
-    set: function set(val) {
-      this.clearCache();
-      this.set('fillColor', (0, _spriteUtils.parseColorString)(val));
-    }
-  }]);
-  return LabelSpriteAttr;
-}(_basesprite2.default.Attr), (_applyDecoratedDescriptor(_class.prototype, 'text', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'text'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'textboxSize', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'textboxSize'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'font', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'font'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineHeight', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineHeight'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'textAlign', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'textAlign'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'color', [_spriteUtils.attr, _dec], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'color'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'strokeColor', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'strokeColor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'fillColor', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'fillColor'), _class.prototype)), _class));
-var Label = (_temp = _class2 = function (_BaseSprite) {
-  (0, _inherits3.default)(Label, _BaseSprite);
-
-  function Label(text, attr) {
-    (0, _classCallCheck3.default)(this, Label);
-
-    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Label.__proto__ || (0, _getPrototypeOf2.default)(Label)).call(this, attr));
-
-    _this2.text = String(text);
-    return _this2;
-  }
-
-  (0, _createClass3.default)(Label, [{
-    key: 'render',
-    value: function render(t, drawingContext) {
-      var _this3 = this;
-
-      var context = (0, _get3.default)(Label.prototype.__proto__ || (0, _getPrototypeOf2.default)(Label.prototype), 'render', this).call(this, t, drawingContext),
-          attr = this.attr(),
-          text = this.text,
-          font = attr.font;
-
-      if (text) {
-        context.font = attr.font;
-        var lines = this.text.split(/\n/);
-        var strokeColor = attr.strokeColor,
-            fillColor = attr.fillColor;
-
-
-        context.textBaseline = 'top';
-
-        var align = attr.textAlign,
-            _contentSize = (0, _slicedToArray3.default)(this.contentSize, 2),
-            width = _contentSize[0],
-            height = _contentSize[1];
-
-
-        context.textBaseline = 'middle';
-
-        var _attr = this.attr('border'),
-            _attr2 = (0, _slicedToArray3.default)(_attr, 1),
-            borderWidth = _attr2[0];
-
-        var gradients = attr.gradients;
-
-        if (gradients && gradients.strokeColor) {
-          var rect = gradients.strokeColor.rect || [borderWidth, borderWidth, width, height];
-
-          strokeColor = (0, _gradient2.default)(context, rect, gradients.strokeColor);
-        }
-        if (strokeColor) {
-          context.strokeStyle = strokeColor;
-        }
-
-        if (gradients && gradients.fillColor) {
-          var _rect = gradients.fillColor.rect || [borderWidth, borderWidth, width, height];
-
-          fillColor = (0, _gradient2.default)(context, _rect, gradients.fillColor);
-        }
-        if (fillColor) {
-          context.fillStyle = fillColor;
-        }
-
-        if (!strokeColor && !fillColor) {
-          fillColor = (0, _spriteUtils.parseColorString)('black');
-        }
-
-        var top = borderWidth;
-
-        lines.forEach(function (line) {
-          var left = borderWidth;
-
-          var _measureText3 = measureText(_this3, line, font, attr.lineHeight),
-              _measureText4 = (0, _slicedToArray3.default)(_measureText3, 2),
-              w = _measureText4[0],
-              h = _measureText4[1];
-
-          if (align === 'center') {
-            left += (width - w) / 2;
-          } else if (align === 'right') {
-            left += width - w;
-          }
-
-          if (fillColor) {
-            context.fillText(line, left, top + h / 2);
-          }
-          if (strokeColor) {
-            context.strokeText(line, left, top + h / 2);
-          }
-
-          top += h;
-        });
-      }
-
-      return context;
-    }
-  }, {
-    key: 'text',
-    set: function set(val) {
-      this.attr('text', val);
-    },
-    get: function get() {
-      return this.attr('text');
-    }
-
-    // override to adapt content size
-
-  }, {
-    key: 'contentSize',
-    get: function get() {
-      var _attr3 = this.attr('size'),
-          _attr4 = (0, _slicedToArray3.default)(_attr3, 2),
-          width = _attr4[0],
-          height = _attr4[1];
-
-      var boxSize = this.attr('textboxSize');
-
-      if (boxSize) {
-        return boxSize;
-      }
-      if (width === '' || height === '') {
-        var size = calculTextboxSize(this, this.text, this.attr('font'), this.attr('lineHeight'));
-        this.attr('textboxSize', size);
-        return size || [0, 0];
-      }
-
-      return [width, height];
-    }
-  }]);
-  return Label;
-}(_basesprite2.default), _class2.Attr = LabelSpriteAttr, _temp);
-exports.default = Label;
-
-/***/ }),
-/* 200 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _toConsumableArray2 = __webpack_require__(7);
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _from = __webpack_require__(78);
-
-var _from2 = _interopRequireDefault(_from);
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _promise = __webpack_require__(49);
-
-var _promise2 = _interopRequireDefault(_promise);
-
-var _set = __webpack_require__(50);
-
-var _set2 = _interopRequireDefault(_set);
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _get2 = __webpack_require__(17);
-
-var _get3 = _interopRequireDefault(_get2);
-
-var _inherits2 = __webpack_require__(13);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _symbol = __webpack_require__(12);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _basenode = __webpack_require__(72);
-
-var _basenode2 = _interopRequireDefault(_basenode);
-
-var _group = __webpack_require__(106);
-
-var _group2 = _interopRequireDefault(_group);
-
-var _spriteUtils = __webpack_require__(19);
-
-var _spriteAnimator = __webpack_require__(47);
-
-var _fastAnimationFrame = __webpack_require__(104);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _children = (0, _symbol2.default)('children'),
-    _updateSet = (0, _symbol2.default)('updateSet'),
-    _zOrder = (0, _symbol2.default)('zOrder'),
-    _state = (0, _symbol2.default)('state'),
-    _tRecord = (0, _symbol2.default)('tRecord'),
-    _timeline = (0, _symbol2.default)('timeline'),
-    _renderPromise = (0, _symbol2.default)('renderPromise');
-
-var Layer = function (_BaseNode) {
-  (0, _inherits3.default)(Layer, _BaseNode);
-
-  function Layer() {
-    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-        context = _ref.context,
-        handleEvent = _ref.handleEvent,
-        evaluateFPS = _ref.evaluateFPS,
-        renderMode = _ref.renderMode;
-
-    (0, _classCallCheck3.default)(this, Layer);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (Layer.__proto__ || (0, _getPrototypeOf2.default)(Layer)).call(this));
-
-    _this.handleEvent = handleEvent !== false;
-    _this.evaluateFPS = !!evaluateFPS;
-
-    // renderMode: repaintAll | repaintDirty
-    _this.renderMode = renderMode || 'repaintAll';
-
-    _this.outputContext = context;
-
-    if (context.canvas && context.canvas.cloneNode) {
-      var shadowCanvas = context.canvas.cloneNode(true);
-      _this.shadowContext = shadowCanvas.getContext('2d');
-    }
-
-    _this[_children] = [];
-    _this[_updateSet] = new _set2.default();
-    _this[_zOrder] = 0;
-    _this[_tRecord] = []; // calculate FPS
-    _this[_state] = {};
-    _this[_timeline] = new _spriteAnimator.Timeline();
-    return _this;
-  }
-
-  (0, _createClass3.default)(Layer, [{
-    key: 'insertBefore',
-    value: function insertBefore(newchild, refchild) {
-      var idx = this[_children].indexOf(refchild);
-      if (idx >= 0) {
-        this.removeChild(newchild);
-        this[_children].splice(idx, 0, newchild);
-        newchild.connect(this, refchild.zOrder);
-        this.update(newchild);
-
-        for (var i = idx + 1; i < this[_children].length; i++) {
-          var child = this[_children][i],
-              zOrder = child.zOrder + 1;
-
-          delete child.zOrder;
-          Object.defineProperty(this, 'zOrder', {
-            value: zOrder,
-            writable: false,
-            configurable: true
-          });
-
-          this.update(child);
-        }
-
-        this[_zOrder]++;
-      }
-
-      return newchild;
-    }
-  }, {
-    key: 'prepareRender',
-    value: function prepareRender() {
-      if (!this[_state].prepareRender) {
-        this[_state].prepareRender = true;
-
-        var that = this,
-            _dispatchEvent = (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'dispatchEvent', this);
-
-        this[_renderPromise] = new _promise2.default(function (resolve, reject) {
-          (0, _fastAnimationFrame.requestAnimationFrame)(function step(t) {
-            var renderer = void 0;
-            if (that.renderMode === 'repaintDirty') {
-              renderer = that.renderRepaintDirty.bind(that);
-            } else if (that.renderMode === 'repaintAll') {
-              renderer = that.renderRepaintAll.bind(that);
-            } else {
-              throw new Error('unknown render mode!');
-            }
-
-            if (that[_updateSet].size) {
-              renderer(t);
-
-              _dispatchEvent.call(that, 'update', { target: that, timeline: that.timeline, currentTime: that.timeline.currentTime }, true);
-            }
-
-            if (that[_updateSet].size) {
-              (0, _fastAnimationFrame.requestAnimationFrame)(step);
-            } else {
-              that[_state].prepareRender = false;
-              resolve();
-            }
-          });
-        });
-        // .catch(ex => console.error(ex.message))
-      }
-
-      return this[_renderPromise];
-    }
-  }, {
-    key: 'update',
-    value: function update(target) {
-      if (target && this[_updateSet].has(target)) return;
-
-      // invisible... return
-      if (target && !target.lastRenderBox && !this.isVisible(target)) return;
-
-      if (target) this[_updateSet].add(target);
-
-      this.prepareRender();
-    }
-  }, {
-    key: 'isVisible',
-    value: function isVisible(sprite) {
-      if (sprite.isVisible) {
-        return sprite.isVisible();
-      }
-
-      var opacity = sprite.attr('opacity');
-      if (opacity <= 0) {
-        return false;
-      }
-
-      var _sprite$offsetSize = (0, _slicedToArray3.default)(sprite.offsetSize, 2),
-          width = _sprite$offsetSize[0],
-          height = _sprite$offsetSize[1];
-
-      if (width <= 0 || height <= 0) {
-        return false;
-      }
-
-      return true;
-    }
-  }, {
-    key: 'sortChildren',
-    value: function sortChildren(children) {
-      children.sort(function (a, b) {
-        var a_zidx = a.attr('zIndex'),
-            b_zidx = b.attr('zIndex');
-        if (a_zidx === b_zidx) {
-          return a.zOrder - b.zOrder;
-        }
-        return a_zidx - b_zidx;
-      });
-    }
-  }, {
-    key: 'drawSprites',
-    value: function drawSprites(renderEls, t) {
-      if (this.evaluateFPS) {
-        this[_tRecord].push(t);
-        this[_tRecord] = this[_tRecord].slice(-10);
-      }
-
-      for (var i = 0; i < renderEls.length; i++) {
-        var child = renderEls[i];
-        if (child.parent === this) {
-          if (this.isVisible(child)) {
-            child.draw(t);
-          } else {
-            // invisible, only need to remove lastRenderBox
-            delete child.lastRenderBox;
-          }
-        }
-      }
-    }
-  }, {
-    key: 'renderRepaintAll',
-    value: function renderRepaintAll(t) {
-      var _this2 = this;
-
-      var renderEls = this[_children].filter(function (e) {
-        return _this2.isVisible(e);
-      });
-      this.sortChildren(renderEls);
-
-      var outputContext = this.outputContext;
-      if (outputContext.canvas) {
-        var _outputContext$canvas = outputContext.canvas,
-            width = _outputContext$canvas.width,
-            height = _outputContext$canvas.height;
-
-        outputContext.clearRect(0, 0, width, height);
-      }
-
-      var shadowContext = this.shadowContext;
-
-      if (shadowContext) {
-        if (shadowContext.canvas) {
-          var _outputContext$canvas2 = outputContext.canvas,
-              _width = _outputContext$canvas2.width,
-              _height = _outputContext$canvas2.height;
-
-          shadowContext.clearRect(0, 0, _width, _height);
-        }
-        this.drawSprites(renderEls, t);
-        outputContext.drawImage(shadowContext.canvas, 0, 0);
-      } else {
-        this.drawSprites(renderEls, t);
-      }
-
-      this[_updateSet].clear();
-    }
-  }, {
-    key: 'renderRepaintDirty',
-    value: function renderRepaintDirty(t) {
-      var _this3 = this;
-
-      if (!this.outputContext.canvas) {
-        console.warn('Cannot use repaintDirty, fallback to repaintAll!');
-        return this.renderRepaintAll(t);
-      }
-      var _outputContext$canvas3 = this.outputContext.canvas,
-          width = _outputContext$canvas3.width,
-          height = _outputContext$canvas3.height;
-
-
-      var updateSet = this[_updateSet];
-      var children = this[_children].filter(function (e) {
-        return _this3.isVisible(e);
-      });
-      var restEls = children.filter(function (el) {
-        return !updateSet.has(el);
-      });
-      var affectedSet = new _set2.default(),
-          unaffectedSet = new _set2.default();
-
-      var updateEls = (0, _from2.default)(updateSet);
-
-      for (var i = 0; i < restEls.length; i++) {
-        var unaffectedEl = restEls[i];
-        var affected = false;
-
-        for (var j = 0; j < updateEls.length; j++) {
-          var affectedEl = updateEls[j];
-          var box1 = affectedEl.renderBox,
-              box2 = unaffectedEl.renderBox,
-              box3 = affectedEl.lastRenderBox;
-
-          if ((0, _spriteUtils.boxIntersect)(box1, box2) || box3 && (0, _spriteUtils.boxIntersect)(box3, box2)) {
-            affected = true;
-            break;
-          }
-        }
-        if (affected) affectedSet.add(unaffectedEl);else unaffectedSet.add(unaffectedEl);
-      }
-
-      if (affectedSet.size > 0 && unaffectedSet.size > 0) {
-        var changed = void 0;
-        do {
-          changed = false;
-          var _affectedEls = (0, _from2.default)(affectedSet),
-              unaffectedEls = (0, _from2.default)(unaffectedSet);
-
-          for (var _i = 0; _i < _affectedEls.length; _i++) {
-            var _affectedEl = _affectedEls[_i];
-            for (var _j = 0; _j < unaffectedEls.length; _j++) {
-              var _unaffectedEl = unaffectedEls[_j];
-              var _box = _affectedEl.renderBox,
-                  _box2 = _unaffectedEl.renderBox;
-
-              if ((0, _spriteUtils.boxIntersect)(_box, _box2)) {
-                affectedSet.add(_unaffectedEl);
-                unaffectedSet.delete(_unaffectedEl);
-                changed = true;
-                break;
-              }
-            }
-            if (changed) break;
-          }
-        } while (changed);
-      }
-
-      var shadowContext = this.shadowContext;
-      var outputContext = this.outputContext;
-
-      if (shadowContext) {
-        shadowContext.save();
-        shadowContext.beginPath();
-      }
-      outputContext.save();
-      outputContext.beginPath();
-
-      for (var _i2 = 0; _i2 < updateEls.length; _i2++) {
-        var updateEl = updateEls[_i2];
-        var box = updateEl.renderBox;
-
-        var dirtyBox = (0, _spriteUtils.boxIntersect)(box, [0, 0, width, height]);
-
-        if (dirtyBox) {
-          var dirtyRect = (0, _spriteUtils.boxToRect)(dirtyBox);
-
-          if (shadowContext) shadowContext.rect.apply(shadowContext, (0, _toConsumableArray3.default)(dirtyRect));
-          outputContext.rect.apply(outputContext, (0, _toConsumableArray3.default)(dirtyRect));
-        }
-
-        var lastRenderBox = updateEl.lastRenderBox;
-        if (lastRenderBox && !(0, _spriteUtils.boxEqual)(lastRenderBox, box)) {
-          dirtyBox = (0, _spriteUtils.boxIntersect)(lastRenderBox, [0, 0, width, height]);
-
-          if (dirtyBox) {
-            var _dirtyRect = (0, _spriteUtils.boxToRect)(dirtyBox);
-
-            if (shadowContext) shadowContext.rect.apply(shadowContext, (0, _toConsumableArray3.default)(_dirtyRect));
-            outputContext.rect.apply(outputContext, (0, _toConsumableArray3.default)(_dirtyRect));
-          }
-        }
-      }
-
-      var affectedEls = (0, _from2.default)(affectedSet);
-      for (var _i3 = 0; _i3 < affectedEls.length; _i3++) {
-        var _affectedEl2 = affectedEls[_i3];
-        var _box3 = _affectedEl2.renderBox;
-        var _dirtyBox = (0, _spriteUtils.boxIntersect)(_box3, [0, 0, width, height]);
-
-        if (_dirtyBox) {
-          var _dirtyRect2 = (0, _spriteUtils.boxToRect)(_dirtyBox);
-
-          if (shadowContext) shadowContext.rect.apply(shadowContext, (0, _toConsumableArray3.default)(_dirtyRect2));
-          outputContext.rect.apply(outputContext, (0, _toConsumableArray3.default)(_dirtyRect2));
-        }
-      }
-
-      if (shadowContext) {
-        shadowContext.clip();
-        shadowContext.clearRect(0, 0, width, height);
-      }
-
-      outputContext.clip();
-      outputContext.clearRect(0, 0, width, height);
-
-      var renderEls = [].concat((0, _toConsumableArray3.default)(updateSet), (0, _toConsumableArray3.default)(affectedSet));
-      this.sortChildren(renderEls);
-
-      if (shadowContext) {
-        this.drawSprites(renderEls, t);
-        outputContext.drawImage(shadowContext.canvas, 0, 0);
-        shadowContext.restore();
-      } else {
-        this.drawSprites(renderEls, t);
-      }
-
-      outputContext.restore();
-      this[_updateSet].clear();
-    }
-  }, {
-    key: 'appendChild',
-    value: function appendChild(sprite) {
-      var update = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
-      this.removeChild(sprite);
-      this[_children].push(sprite);
-      sprite.connect(this, this[_zOrder]++);
-      if (update) this.update(sprite);
-      return sprite;
-    }
-  }, {
-    key: 'append',
-    value: function append() {
-      var _this4 = this;
-
-      for (var _len = arguments.length, sprites = Array(_len), _key = 0; _key < _len; _key++) {
-        sprites[_key] = arguments[_key];
-      }
-
-      sprites.forEach(function (sprite) {
-        return _this4.appendChild(sprite);
-      });
-    }
-  }, {
-    key: 'removeChild',
-    value: function removeChild(sprite) {
-      var idx = this[_children].indexOf(sprite);
-      if (idx === -1) {
-        return null;
-      }
-      this[_children].splice(idx, 1);
-      if (this.isVisible(sprite) || sprite.lastRenderBox) {
-        sprite.forceUpdate();
-      }
-      sprite.disconnect(this);
-      return sprite;
-    }
-  }, {
-    key: 'remove',
-    value: function remove() {
-      var _this5 = this;
-
-      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      if (args.length === 0) {
-        args = this[_children].slice(0);
-      }
-      return args.map(function (child) {
-        return _this5.removeChild(child);
-      });
-    }
-  }, {
-    key: 'pointCollision',
-    value: function pointCollision(evt) {
-      if (this.outputContext.canvas) {
-        var layerX = evt.layerX,
-            layerY = evt.layerY;
-        var _outputContext$canvas4 = this.outputContext.canvas,
-            width = _outputContext$canvas4.width,
-            height = _outputContext$canvas4.height;
-
-
-        if (layerX >= 0 && layerY >= 0 && layerX < width && layerY < height) {
-          return true;
-        }
-        return false;
-      }
-      return true;
-    }
-  }, {
-    key: 'dispatchEvent',
-    value: function dispatchEvent(type, evt) {
-      evt.layer = this;
-      var sprites = this[_children].slice(0);
-      sprites.sort(function (a, b) {
-        var a_zidx = a.attr('zIndex'),
-            b_zidx = b.attr('zIndex');
-
-        if (a_zidx === b_zidx) {
-          return b.zOrder - a.zOrder;
-        }
-        return b_zidx - a_zidx;
-      });
-
-      var targetSprites = [];
-      for (var i = 0; i < sprites.length; i++) {
-        var sprite = sprites[i];
-        var hit = sprite.dispatchEvent(type, evt);
-        if (hit) {
-          // detect mouseenter/mouseleave
-          targetSprites.push(sprite);
-        }
-      }
-
-      evt.targetSprites = targetSprites;
-      (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'dispatchEvent', this).call(this, type, evt);
-    }
-  }, {
-    key: 'connect',
-    value: function connect(parent, zOrder, zIndex) {
-      (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'connect', this).call(this, parent, zOrder);
-      this.zIndex = zIndex;
-      if (parent && parent.container) {
-        parent.container.appendChild(this.outputContext.canvas);
-      }
-      return this;
-    }
-  }, {
-    key: 'disconnect',
-    value: function disconnect(parent) {
-      if (this.canvas && this.canvas.remove) {
-        this.canvas.remove();
-      }
-      return (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'disconnect', this).call(this, parent);
-    }
-  }, {
-    key: 'group',
-    value: function group() {
-      var group = new _group2.default();
-      group.append.apply(group, arguments);
-      this.appendChild(group);
-      return group;
-    }
-  }, {
-    key: 'adjust',
-    value: function adjust(handler) {
-      var update = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-
-      var outputContext = this.outputContext,
-          shadowContext = this.shadowContext;
-      if (!shadowContext) {
-        throw new Error('No shadowContext.');
-      }
-      if (outputContext.canvas) {
-        var _outputContext$canvas5 = outputContext.canvas,
-            width = _outputContext$canvas5.width,
-            height = _outputContext$canvas5.height;
-
-        outputContext.clearRect(0, 0, width, height);
-      }
-
-      handler.call(this, outputContext);
-
-      if (update) {
-        outputContext.drawImage(shadowContext.canvas, 0, 0);
-      }
-    }
-  }, {
-    key: 'clearUpdate',
-    value: function clearUpdate() {
-      this[_updateSet].clear();
-    }
-  }, {
-    key: 'children',
-    get: function get() {
-      return this[_children];
-    }
-  }, {
-    key: 'timeline',
-    get: function get() {
-      return this[_timeline];
-    }
-  }, {
-    key: 'context',
-    get: function get() {
-      return this.shadowContext ? this.shadowContext : this.outputContext;
-    }
-  }, {
-    key: 'fps',
-    get: function get() {
-      if (!this.evaluateFPS) {
-        return NaN;
-      }
-      var sum = 0;
-      var tr = this[_tRecord].slice(-10);
-      var len = tr.length;
-
-      if (len <= 5) {
-        return NaN;
-      }
-      tr.reduceRight(function (a, b, i) {
-        sum += a - b;return b;
-      });
-
-      return Math.round(1000 * (len - 1) / sum);
-    }
-  }]);
-  return Layer;
-}(_basenode2.default);
-
-exports.default = Layer;
-
-/***/ }),
 /* 201 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _toConsumableArray2 = __webpack_require__(7);
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _get2 = __webpack_require__(17);
-
-var _get3 = _interopRequireDefault(_get2);
-
-var _getOwnPropertyDescriptor = __webpack_require__(22);
-
-var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(13);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _dec, _desc, _value, _class, _class2, _temp;
-
-var _basesprite = __webpack_require__(38);
-
-var _basesprite2 = _interopRequireDefault(_basesprite);
-
-var _gradient = __webpack_require__(48);
-
-var _gradient2 = _interopRequireDefault(_gradient);
-
-var _spriteAnimator = __webpack_require__(47);
-
-var _spriteUtils = __webpack_require__(19);
-
-var _svgPathToCanvas = __webpack_require__(215);
-
-var _spritePathEffect = __webpack_require__(206);
-
-var _spritePathEffect2 = _interopRequireDefault(_spritePathEffect);
-
-var _platform = __webpack_require__(107);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
-
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['define' + 'Property'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
-
-_spriteAnimator.Effects.d = _spritePathEffect2.default;
-
-var PathSpriteAttr = (_dec = (0, _spriteUtils.deprecate)('Instead use strokeColor.'), (_class = function (_BaseSprite$Attr) {
-  (0, _inherits3.default)(PathSpriteAttr, _BaseSprite$Attr);
-
-  function PathSpriteAttr(subject) {
-    (0, _classCallCheck3.default)(this, PathSpriteAttr);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (PathSpriteAttr.__proto__ || (0, _getPrototypeOf2.default)(PathSpriteAttr)).call(this, subject));
-
-    _this.setDefault({
-      lineWidth: 1,
-      lineCap: 'butt',
-      lineJoin: 'miter',
-      strokeColor: '',
-      fillColor: '',
-      // d: path2d,
-      boxSize: [0, 0],
-      pathRect: [0, 0, 0, 0],
-      pathBounds: [0, 0, 0, 0],
-      trim: false
-    }, {
-      color: {
-        get: function get() {
-          return this.strokeColor;
-        }
-      }
-    });
-    return _this;
-  }
-
-  (0, _createClass3.default)(PathSpriteAttr, [{
-    key: 'd',
-    set: function set(val) {
-      this.clearCache();
-      this.set('d', val);
-      var commands = void 0;
-      if (val) {
-        commands = (0, _svgPathToCanvas.pathToCanvas)(val);
-        this.set('pathCommands', commands);
-        this.set('pathBounds', (0, _svgPathToCanvas.getBounds)(val));
-        this.subject.svg = (0, _platform.getSvgPath)(val);
-      } else {
-        this.set('pathCommands', null);
-        this.set('pathBounds', null);
-        this.subject.svg = null;
-      }
-    }
-  }, {
-    key: 'lineWidth',
-    set: function set(val) {
-      this.clearCache();
-      this.set('lineWidth', Math.round(val));
-    }
-
-    /**
-      lineCap: butt|round|square
-     */
-
-  }, {
-    key: 'lineCap',
-    set: function set(val) {
-      this.clearCache();
-      this.set('lineCap', val);
-    }
-
-    /**
-      lineJoin: miter|round|bevel
-     */
-
-  }, {
-    key: 'lineJoin',
-    set: function set(val) {
-      this.clearCache();
-      this.set('lineJoin', val);
-    }
-  }, {
-    key: 'strokeColor',
-    set: function set(val) {
-      this.clearCache();
-      this.set('strokeColor', (0, _spriteUtils.parseColorString)(val));
-    }
-  }, {
-    key: 'fillColor',
-    set: function set(val) {
-      this.clearCache();
-      this.set('fillColor', (0, _spriteUtils.parseColorString)(val));
-    }
-  }, {
-    key: 'color',
-    set: function set(val) {
-      this.strokeColor = val;
-    }
-  }, {
-    key: 'trim',
-    set: function set(val) {
-      this.set('trim', val);
-    }
-  }]);
-  return PathSpriteAttr;
-}(_basesprite2.default.Attr), (_applyDecoratedDescriptor(_class.prototype, 'd', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'd'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineWidth', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineWidth'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineCap', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineCap'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineJoin', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineJoin'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'strokeColor', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'strokeColor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'fillColor', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'fillColor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'color', [_spriteUtils.attr, _dec], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'color'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'trim', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'trim'), _class.prototype)), _class));
-var Path = (_temp = _class2 = function (_BaseSprite) {
-  (0, _inherits3.default)(Path, _BaseSprite);
-
-  function Path(attr) {
-    (0, _classCallCheck3.default)(this, Path);
-
-    if (typeof attr === 'string') {
-      attr = { d: attr };
-    }
-    return (0, _possibleConstructorReturn3.default)(this, (Path.__proto__ || (0, _getPrototypeOf2.default)(Path)).call(this, attr));
-  }
-
-  (0, _createClass3.default)(Path, [{
-    key: 'getPointAtLength',
-    value: function getPointAtLength(length) {
-      if (this.svg) {
-        var _svg$getPointAtLength = this.svg.getPointAtLength(length),
-            x = _svg$getPointAtLength.x,
-            y = _svg$getPointAtLength.y;
-
-        return [x, y];
-      }
-      return [0, 0];
-    }
-  }, {
-    key: 'getPathLength',
-    value: function getPathLength() {
-      if (this.svg) {
-        return this.svg.getTotalLength();
-      }
-      return 0;
-    }
-  }, {
-    key: 'findPath',
-    value: function findPath(offsetX, offsetY) {
-      var context = this.context,
-          path = this.path,
-          d = this.attr('d');
-
-      if (this.attr('trim')) {
-        var _pathOffset = (0, _slicedToArray3.default)(this.pathOffset, 2),
-            x = _pathOffset[0],
-            y = _pathOffset[1];
-
-        offsetX -= x;
-        offsetY -= y;
-      }
-
-      if (_platform.platform.isBrowser && path) {
-        if (context.isPointInPath(path, offsetX, offsetY)) {
-          return [path];
-        }
-      } else if (!_platform.platform.isBrowser && d) {
-        if ((0, _platform.pointInPath)(d, offsetX, offsetY)) {
-          return [{ d: d }];
-        }
-      }
-      return [];
-    }
-  }, {
-    key: 'pointCollision',
-    value: function pointCollision(evt) {
-      if ((0, _get3.default)(Path.prototype.__proto__ || (0, _getPrototypeOf2.default)(Path.prototype), 'pointCollision', this).call(this, evt)) {
-        var offsetX = evt.offsetX,
-            offsetY = evt.offsetY;
-
-        evt.targetPaths = this.findPath(offsetX, offsetY);
-        return true;
-      }
-      return false;
-    }
-  }, {
-    key: 'render',
-    value: function render(t, drawingContext) {
-      var context = (0, _get3.default)(Path.prototype.__proto__ || (0, _getPrototypeOf2.default)(Path.prototype), 'render', this).call(this, t, drawingContext),
-          attr = this.attr();
-
-      if (attr.d) {
-        var strokeColor = attr.strokeColor,
-            fillColor = attr.fillColor;
-
-
-        context.translate.apply(context, (0, _toConsumableArray3.default)(this.pathOffset));
-
-        var p = null;
-        if (_platform.platform.isBrowser) {
-          // only browser can use Path2D to create d attr
-          p = new Path2D(attr.d);
-          this.path = p;
-        } else {
-          context.save();
-          context.beginPath();
-
-          var _attr = this.attr('pathCommands'),
-              commands = _attr.commands;
-
-          commands.forEach(function (_ref) {
-            var cmd = _ref.cmd,
-                args = _ref.args;
-
-            context[cmd].apply(context, (0, _toConsumableArray3.default)(args));
-          });
-          context.restore();
-        }
-
-        context.lineWidth = attr.lineWidth;
-        context.lineCap = attr.lineCap;
-        context.lineJoin = attr.lineJoin;
-
-        var _contentSize = (0, _slicedToArray3.default)(this.contentSize, 2),
-            width = _contentSize[0],
-            height = _contentSize[1],
-            _attr$border = (0, _slicedToArray3.default)(attr.border, 1),
-            borderWidth = _attr$border[0];
-
-        var gradients = attr.gradients;
-        if (gradients && gradients.fillColor) {
-          var rect = gradients.fillColor.rect || [borderWidth, borderWidth, width, height];
-
-          fillColor = (0, _gradient2.default)(context, rect, gradients.fillColor);
-        }
-        if (fillColor) {
-          context.fillStyle = fillColor;
-        }
-
-        if (gradients && gradients.strokeColor) {
-          var _rect = gradients.strokeColor.rect || [borderWidth, borderWidth, width, height];
-
-          strokeColor = (0, _gradient2.default)(context, _rect, gradients.strokeColor);
-        }
-        if (strokeColor) {
-          context.strokeStyle = strokeColor;
-        }
-
-        if (!strokeColor && !fillColor) {
-          strokeColor = (0, _spriteUtils.parseColorString)('black');
-        }
-
-        if (strokeColor) {
-          if (p) {
-            context.stroke(p);
-          } else {
-            context.stroke();
-          }
-        }
-        if (fillColor) {
-          if (p) {
-            context.fill(p);
-          } else {
-            context.fill();
-          }
-        }
-      }
-
-      return context;
-    }
-  }, {
-    key: 'contentSize',
-    get: function get() {
-      var _attr2 = this.attr('size'),
-          _attr3 = (0, _slicedToArray3.default)(_attr2, 2),
-          width = _attr3[0],
-          height = _attr3[1];
-
-      var bounds = this.attr('pathBounds');
-      var lineWidth = this.attr('lineWidth');
-
-      var _attr4 = this.attr('border'),
-          _attr5 = (0, _slicedToArray3.default)(_attr4, 1),
-          borderWidth = _attr5[0];
-
-      var padding = this.attr('padding');
-      var padLeft = borderWidth + padding[3],
-          padTop = borderWidth + padding[0];
-
-      if (width === '') {
-        width = bounds[2] + 1.414 * lineWidth | 0;
-      }
-      if (height === '') {
-        height = bounds[3] + 1.414 * lineWidth | 0;
-      }
-      if (this.attr('trim')) {
-        var _pathOffset2 = (0, _slicedToArray3.default)(this.pathOffset, 2),
-            x = _pathOffset2[0],
-            y = _pathOffset2[1];
-
-        width += x - padLeft;
-        height += y - padTop;
-      }
-
-      return [width, height];
-    }
-  }, {
-    key: 'pathOffset',
-    get: function get() {
-      var trim = this.attr('trim'),
-          bounds = this.attr('pathBounds');
-
-      var lineWidth = this.attr('lineWidth');
-
-      var _attr6 = this.attr('border'),
-          _attr7 = (0, _slicedToArray3.default)(_attr6, 1),
-          borderWidth = _attr7[0];
-
-      var padding = this.attr('padding');
-      var padLeft = borderWidth + padding[3],
-          padTop = borderWidth + padding[0];
-
-      if (trim) {
-        return [-bounds[0] + padLeft + lineWidth * 1.414, -bounds[1] + padTop + lineWidth * 1.414];
-      }
-      return [padLeft, padTop];
-    }
-  }]);
-  return Path;
-}(_basesprite2.default), _class2.Attr = PathSpriteAttr, _temp);
-exports.default = Path;
-
-/***/ }),
-/* 202 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof2 = __webpack_require__(40);
-
-var _typeof3 = _interopRequireDefault(_typeof2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* eslint-disable */
-var clone = function clone(obj) {
-  if (typeof obj === 'function' || Object(obj) !== obj) {
-    return obj;
-  }
-
-  var res = new obj.constructor();
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      res[key] = clone(obj[key]);
-    }
-  }
-  return res;
-};
-
-function repush(array, item) {
-  for (var i = 0, c = array.length; i < c; i++) {
-    if (array[i] === item) {
-      return array.push(array.splice(i, 1)[0]);
-    }
-  }
-}
-
-function cacher(f, scope, postprocessor) {
-  function newf() {
-    var arg = Array.prototype.slice.call(arguments, 0),
-        args = arg.join('\u2400'),
-        cache = newf.cache = newf.cache || {},
-        count = newf.count = newf.count || [];
-    if (cache.hasOwnProperty(args)) {
-      repush(count, args);
-      return postprocessor ? postprocessor(cache[args]) : cache[args];
-    }
-    count.length >= 1e3 && delete cache[count.shift()];
-    count.push(args);
-    cache[args] = f.apply(scope, arg);
-    return postprocessor ? postprocessor(cache[args]) : cache[args];
-  }
-
-  return newf;
-}
-
-function paths(ps) {
-  var p = paths.ps = paths.ps || {};
-  if (p[ps]) {
-    p[ps].sleep = 100;
-  } else {
-    p[ps] = {
-      sleep: 100
-    };
-  }
-  setTimeout(function () {
-    for (var key in p) {
-      if (p.hasOwnProperty(key) && key != ps) {
-        p[key].sleep--;
-        !p[key].sleep && delete p[key];
-      }
-    }
-  });
-  return p[ps];
-}
-
-function box(x, y, width, height) {
-  if (x == null) {
-    x = y = width = height = 0;
-  }
-  if (y == null) {
-    y = x.y;
-    width = x.width;
-    height = x.height;
-    x = x.x;
-  }
-  return {
-    x: x,
-    y: y,
-    width: width,
-    w: width,
-    height: height,
-    h: height,
-    x2: x + width,
-    y2: y + height,
-    cx: x + width / 2,
-    cy: y + height / 2,
-    r1: Math.min(width, height) / 2,
-    r2: Math.max(width, height) / 2,
-    r0: Math.sqrt(width * width + height * height) / 2,
-    path: rectPath(x, y, width, height),
-    vb: [x, y, width, height].join(' ')
-  };
-}
-
-function pathClone(pathArray) {
-  var res = clone(pathArray);
-  //res.toString = toString;
-  return res;
-}
-
-function findDotsAtSegment(p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y, t) {
-  var t1 = 1 - t,
-      t13 = Math.pow(t1, 3),
-      t12 = Math.pow(t1, 2),
-      t2 = t * t,
-      t3 = t2 * t,
-      x = t13 * p1x + t12 * 3 * t * c1x + t1 * 3 * t * t * c2x + t3 * p2x,
-      y = t13 * p1y + t12 * 3 * t * c1y + t1 * 3 * t * t * c2y + t3 * p2y,
-      mx = p1x + 2 * t * (c1x - p1x) + t2 * (c2x - 2 * c1x + p1x),
-      my = p1y + 2 * t * (c1y - p1y) + t2 * (c2y - 2 * c1y + p1y),
-      nx = c1x + 2 * t * (c2x - c1x) + t2 * (p2x - 2 * c2x + c1x),
-      ny = c1y + 2 * t * (c2y - c1y) + t2 * (p2y - 2 * c2y + c1y),
-      ax = t1 * p1x + t * c1x,
-      ay = t1 * p1y + t * c1y,
-      cx = t1 * c2x + t * p2x,
-      cy = t1 * c2y + t * p2y,
-      alpha = 90 - Math.atan2(mx - nx, my - ny) * 180 / Math.PI;
-  // (mx > nx || my < ny) && (alpha += 180);
-  return {
-    x: x,
-    y: y,
-    m: { x: mx, y: my },
-    n: { x: nx, y: ny },
-    start: { x: ax, y: ay },
-    end: { x: cx, y: cy },
-    alpha: alpha
-  };
-}
-
-function is(o, type) {
-  type = String.prototype.toLowerCase.call(type);
-  if (type == 'finite') {
-    return isFinite(o);
-  }
-  if (type == 'array' && (o instanceof Array || Array.isArray && Array.isArray(o))) {
-    return true;
-  }
-  return type == 'null' && o === null || type == (typeof o === 'undefined' ? 'undefined' : (0, _typeof3.default)(o)) && o !== null || type == 'object' && o === Object(o) || Object.prototype.toString.call(o).slice(8, -1).toLowerCase() == type;
-}
-
-function bezierBBox(p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y) {
-  if (!is(p1x, 'array')) {
-    p1x = [p1x, p1y, c1x, c1y, c2x, c2y, p2x, p2y];
-  }
-  var bbox = curveDim.apply(null, p1x);
-  return box(bbox.min.x, bbox.min.y, bbox.max.x - bbox.min.x, bbox.max.y - bbox.min.y);
-}
-
-function isPointInsideBBox(bbox, x, y) {
-  return x >= bbox.x && x <= bbox.x + bbox.width && y >= bbox.y && y <= bbox.y + bbox.height;
-}
-
-function isBBoxIntersect(bbox1, bbox2) {
-  bbox1 = box(bbox1);
-  bbox2 = box(bbox2);
-  return isPointInsideBBox(bbox2, bbox1.x, bbox1.y) || isPointInsideBBox(bbox2, bbox1.x2, bbox1.y) || isPointInsideBBox(bbox2, bbox1.x, bbox1.y2) || isPointInsideBBox(bbox2, bbox1.x2, bbox1.y2) || isPointInsideBBox(bbox1, bbox2.x, bbox2.y) || isPointInsideBBox(bbox1, bbox2.x2, bbox2.y) || isPointInsideBBox(bbox1, bbox2.x, bbox2.y2) || isPointInsideBBox(bbox1, bbox2.x2, bbox2.y2) || (bbox1.x < bbox2.x2 && bbox1.x > bbox2.x || bbox2.x < bbox1.x2 && bbox2.x > bbox1.x) && (bbox1.y < bbox2.y2 && bbox1.y > bbox2.y || bbox2.y < bbox1.y2 && bbox2.y > bbox1.y);
-}
-
-function base3(t, p1, p2, p3, p4) {
-  var t1 = -3 * p1 + 9 * p2 - 9 * p3 + 3 * p4,
-      t2 = t * t1 + 6 * p1 - 12 * p2 + 6 * p3;
-  return t * t2 - 3 * p1 + 3 * p2;
-}
-
-function bezlen(x1, y1, x2, y2, x3, y3, x4, y4, z) {
-  if (z == null) {
-    z = 1;
-  }
-  z = z > 1 ? 1 : z < 0 ? 0 : z;
-  var z2 = z / 2,
-      n = 12,
-      Tvalues = [-.1252, .1252, -.3678, .3678, -.5873, .5873, -.7699, .7699, -.9041, .9041, -.9816, .9816],
-      Cvalues = [0.2491, 0.2491, 0.2335, 0.2335, 0.2032, 0.2032, 0.1601, 0.1601, 0.1069, 0.1069, 0.0472, 0.0472],
-      sum = 0;
-  for (var i = 0; i < n; i++) {
-    var ct = z2 * Tvalues[i] + z2,
-        xbase = base3(ct, x1, x2, x3, x4),
-        ybase = base3(ct, y1, y2, y3, y4),
-        comb = xbase * xbase + ybase * ybase;
-    sum += Cvalues[i] * Math.sqrt(comb);
-  }
-  return z2 * sum;
-}
-
-function intersect(x1, y1, x2, y2, x3, y3, x4, y4) {
-  if (Math.max(x1, x2) < Math.min(x3, x4) || Math.min(x1, x2) > Math.max(x3, x4) || Math.max(y1, y2) < Math.min(y3, y4) || Math.min(y1, y2) > Math.max(y3, y4)) {
-    return;
-  }
-  var nx = (x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4),
-      ny = (x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4),
-      denominator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
-
-  if (!denominator) {
-    return;
-  }
-  var px = nx / denominator,
-      py = ny / denominator,
-      px2 = +px.toFixed(2),
-      py2 = +py.toFixed(2);
-  if (px2 < +Math.min(x1, x2).toFixed(2) || px2 > +Math.max(x1, x2).toFixed(2) || px2 < +Math.min(x3, x4).toFixed(2) || px2 > +Math.max(x3, x4).toFixed(2) || py2 < +Math.min(y1, y2).toFixed(2) || py2 > +Math.max(y1, y2).toFixed(2) || py2 < +Math.min(y3, y4).toFixed(2) || py2 > +Math.max(y3, y4).toFixed(2)) {
-    return;
-  }
-  return { x: px, y: py };
-}
-
-function interHelper(bez1, bez2, justCount) {
-  var bbox1 = bezierBBox(bez1),
-      bbox2 = bezierBBox(bez2);
-  if (!isBBoxIntersect(bbox1, bbox2)) {
-    return justCount ? 0 : [];
-  }
-  var l1 = bezlen.apply(0, bez1),
-      l2 = bezlen.apply(0, bez2),
-      n1 = Math.ceil(l1 / 8),
-      n2 = Math.ceil(l2 / 8),
-      dots1 = [],
-      dots2 = [],
-      xy = {},
-      res = justCount ? 0 : [];
-  for (var i = 0; i < n1 + 1; i++) {
-    var p = findDotsAtSegment.apply(0, bez1.concat(i / n1));
-    dots1.push({ x: p.x, y: p.y, t: i / n1 });
-  }
-  for (i = 0; i < n2 + 1; i++) {
-    p = findDotsAtSegment.apply(0, bez2.concat(i / n2));
-    dots2.push({ x: p.x, y: p.y, t: i / n2 });
-  }
-  for (i = 0; i < n1; i++) {
-    for (var j = 0; j < n2; j++) {
-      var di = dots1[i],
-          di1 = dots1[i + 1],
-          dj = dots2[j],
-          dj1 = dots2[j + 1],
-          ci = Math.abs(di1.x - di.x) < .001 ? 'y' : 'x',
-          cj = Math.abs(dj1.x - dj.x) < .001 ? 'y' : 'x',
-          is = intersect(di.x, di.y, di1.x, di1.y, dj.x, dj.y, dj1.x, dj1.y);
-      if (is) {
-        if (xy[is.x.toFixed(4)] == is.y.toFixed(4)) {
-          continue;
-        }
-        xy[is.x.toFixed(4)] = is.y.toFixed(4);
-        var t1 = di.t + Math.abs((is[ci] - di[ci]) / (di1[ci] - di[ci])) * (di1.t - di.t),
-            t2 = dj.t + Math.abs((is[cj] - dj[cj]) / (dj1[cj] - dj[cj])) * (dj1.t - dj.t);
-        if (t1 >= 0 && t1 <= 1 && t2 >= 0 && t2 <= 1) {
-          if (justCount) {
-            res++;
-          } else {
-            res.push({
-              x: is.x,
-              y: is.y,
-              t1: t1,
-              t2: t2
-            });
-          }
-        }
-      }
-    }
-  }
-  return res;
-}
-
-function interPathHelper(path1, path2, justCount) {
-  path1 = path2curve(path1);
-  path2 = path2curve(path2);
-  var x1,
-      y1,
-      x2,
-      y2,
-      x1m,
-      y1m,
-      x2m,
-      y2m,
-      bez1,
-      bez2,
-      res = justCount ? 0 : [];
-  for (var i = 0, ii = path1.length; i < ii; i++) {
-    var pi = path1[i];
-    if (pi[0] == 'M') {
-      x1 = x1m = pi[1];
-      y1 = y1m = pi[2];
-    } else {
-      if (pi[0] == 'C') {
-        bez1 = [x1, y1].concat(pi.slice(1));
-        x1 = bez1[6];
-        y1 = bez1[7];
-      } else {
-        bez1 = [x1, y1, x1, y1, x1m, y1m, x1m, y1m];
-        x1 = x1m;
-        y1 = y1m;
-      }
-      for (var j = 0, jj = path2.length; j < jj; j++) {
-        var pj = path2[j];
-        if (pj[0] == 'M') {
-          x2 = x2m = pj[1];
-          y2 = y2m = pj[2];
-        } else {
-          if (pj[0] == 'C') {
-            bez2 = [x2, y2].concat(pj.slice(1));
-            x2 = bez2[6];
-            y2 = bez2[7];
-          } else {
-            bez2 = [x2, y2, x2, y2, x2m, y2m, x2m, y2m];
-            x2 = x2m;
-            y2 = y2m;
-          }
-          var intr = interHelper(bez1, bez2, justCount);
-          if (justCount) {
-            res += intr;
-          } else {
-            for (var k = 0, kk = intr.length; k < kk; k++) {
-              intr[k].segment1 = i;
-              intr[k].segment2 = j;
-              intr[k].bez1 = bez1;
-              intr[k].bez2 = bez2;
-            }
-            res = res.concat(intr);
-          }
-        }
-      }
-    }
-  }
-  return res;
-}
-
-function pathBBox(path) {
-  var pth = paths(path);
-
-  if (pth.bbox) {
-    return clone(pth.bbox);
-  }
-
-  if (!path) {
-    return box();
-  }
-
-  var pathLocal = path2curve(path);
-  var x = 0;
-  var y = 0;
-  var X = [];
-  var Y = [];
-  var p = [];
-
-  for (var i = 0, c = pathLocal.length; i < c; i++) {
-    p = pathLocal[i];
-    if (p[0] == 'M') {
-      x = p[1];
-      y = p[2];
-      X.push(x);
-      Y.push(y);
-      continue;
-    }
-
-    var dim = curveDim(x, y, p[1], p[2], p[3], p[4], p[5], p[6]);
-    X = X.concat(dim.min.x, dim.max.x);
-    Y = Y.concat(dim.min.y, dim.max.y);
-    x = p[5];
-    y = p[6];
-  }
-
-  var xmin = Math.min.apply(0, X);
-  var ymin = Math.min.apply(0, Y);
-  var xmax = Math.max.apply(0, X);
-  var ymax = Math.max.apply(0, Y);
-  var bb = box(xmin, ymin, xmax - xmin, ymax - ymin);
-
-  pth.bbox = clone(bb);
-  return bb;
-}
-
-function rectPath(x, y, w, h, r) {
-  if (r) {
-    return [['M', +x + +r, y], ['l', w - r * 2, 0], ['a', r, r, 0, 0, 1, r, r], ['l', 0, h - r * 2], ['a', r, r, 0, 0, 1, -r, r], ['l', r * 2 - w, 0], ['a', r, r, 0, 0, 1, -r, -r], ['l', 0, r * 2 - h], ['a', r, r, 0, 0, 1, r, -r], ['z']];
-  }
-  var res = [['M', x, y], ['l', w, 0], ['l', 0, h], ['l', -w, 0], ['z']];
-  //res.toString = toString;
-  return res;
-}
-
-function ellipsePath(x, y, rx, ry, a) {
-  if (a == null && ry == null) {
-    ry = rx;
-  }
-  x = +x;
-  y = +y;
-  rx = +rx;
-  ry = +ry;
-  if (a != null) {
-    var rad = Math.PI / 180,
-        x1 = x + rx * Math.cos(-ry * rad),
-        x2 = x + rx * Math.cos(-a * rad),
-        y1 = y + rx * Math.sin(-ry * rad),
-        y2 = y + rx * Math.sin(-a * rad),
-        res = [['M', x1, y1], ['A', rx, rx, 0, +(a - ry > 180), 0, x2, y2]];
-  } else {
-    res = [['M', x, y], ['m', 0, -ry], ['a', rx, ry, 0, 1, 1, 0, 2 * ry], ['a', rx, ry, 0, 1, 1, 0, -2 * ry], ['z']];
-  }
-  //res.toString = toString;
-  return res;
-}
-
-var pathCommand = /([a-z])[\s,]*((-?\d*\.?\d*(?:e[\-+]?\d+)?[\s]*,?[\s]*)+)/ig;
-var pathValues = /(-?\d*\.?\d*(?:e[\-+]?\d+)?)[\s]*,?[\s]*/ig;
-
-function parsePathString(pathString) {
-  if (!pathString) {
-    return null;
-  }
-  var pth = paths(pathString);
-  if (pth.arr) {
-    return clone(pth.arr);
-  }
-
-  var paramCounts = {
-    a: 7,
-    c: 6,
-    o: 2,
-    h: 1,
-    l: 2,
-    m: 2,
-    r: 4,
-    q: 4,
-    s: 4,
-    t: 2,
-    v: 1,
-    u: 3,
-    z: 0
-  },
-      data = [];
-  if (is(pathString, 'array') && is(pathString[0], 'array')) {
-    // rough assumption
-    data = Snap.path.clone(pathString);
-  }
-  if (!data.length) {
-    String(pathString).replace(pathCommand, function (a, b, c) {
-      var params = [],
-          name = b.toLowerCase();
-      c.replace(pathValues, function (a, b) {
-        b && params.push(+b);
-      });
-      if (name == 'm' && params.length > 2) {
-        data.push([b].concat(params.splice(0, 2)));
-        name = 'l';
-        b = b == 'm' ? 'l' : 'L';
-      }
-      if (name == 'o' && params.length == 1) {
-        data.push([b, params[0]]);
-      }
-      if (name == 'r') {
-        data.push([b].concat(params));
-      } else while (params.length >= paramCounts[name]) {
-        data.push([b].concat(params.splice(0, paramCounts[name])));
-        if (!paramCounts[name]) {
-          break;
-        }
-      }
-    });
-  }
-  //data.toString = pth.toString;
-  pth.arr = clone(data);
-  return data;
-}
-
-function pathToAbsolute(pathArray) {
-  var pth = paths(pathArray);
-  if (pth.abs) {
-    return pathClone(pth.abs);
-  }
-  if (!is(pathArray, 'array') || !is(pathArray && pathArray[0], 'array')) {
-    // rough assumption
-    pathArray = parsePathString(pathArray);
-  }
-  if (!pathArray || !pathArray.length) {
-    return [['M', 0, 0]];
-  }
-  var res = [],
-      x = 0,
-      y = 0,
-      mx = 0,
-      my = 0,
-      start = 0,
-      pa0;
-  if (pathArray[0][0] == 'M') {
-    x = +pathArray[0][1];
-    y = +pathArray[0][2];
-    mx = x;
-    my = y;
-    start++;
-    res[0] = ['M', x, y];
-  }
-  var crz = pathArray.length == 3 && pathArray[0][0] == 'M' && pathArray[1][0].toUpperCase() == 'R' && pathArray[2][0].toUpperCase() == 'Z';
-  for (var r, pa, i = start, ii = pathArray.length; i < ii; i++) {
-    res.push(r = []);
-    pa = pathArray[i];
-    pa0 = pa[0];
-    if (pa0 != pa0.toUpperCase()) {
-      r[0] = pa0.toUpperCase();
-      switch (r[0]) {
-        case 'A':
-          r[1] = pa[1];
-          r[2] = pa[2];
-          r[3] = pa[3];
-          r[4] = pa[4];
-          r[5] = pa[5];
-          r[6] = +pa[6] + x;
-          r[7] = +pa[7] + y;
-          break;
-        case 'V':
-          r[1] = +pa[1] + y;
-          break;
-        case 'H':
-          r[1] = +pa[1] + x;
-          break;
-        case 'R':
-          var dots = [x, y].concat(pa.slice(1));
-          for (var j = 2, jj = dots.length; j < jj; j++) {
-            dots[j] = +dots[j] + x;
-            dots[++j] = +dots[j] + y;
-          }
-          res.pop();
-          res = res.concat(catmullRom2bezier(dots, crz));
-          break;
-        case 'O':
-          res.pop();
-          dots = ellipsePath(x, y, pa[1], pa[2]);
-          dots.push(dots[0]);
-          res = res.concat(dots);
-          break;
-        case 'U':
-          res.pop();
-          res = res.concat(ellipsePath(x, y, pa[1], pa[2], pa[3]));
-          r = ['U'].concat(res[res.length - 1].slice(-2));
-          break;
-        case 'M':
-          mx = +pa[1] + x;
-          my = +pa[2] + y;
-        default:
-          for (j = 1, jj = pa.length; j < jj; j++) {
-            r[j] = +pa[j] + (j % 2 ? x : y);
-          }
-      }
-    } else if (pa0 == 'R') {
-      dots = [x, y].concat(pa.slice(1));
-      res.pop();
-      res = res.concat(catmullRom2bezier(dots, crz));
-      r = ['R'].concat(pa.slice(-2));
-    } else if (pa0 == 'O') {
-      res.pop();
-      dots = ellipsePath(x, y, pa[1], pa[2]);
-      dots.push(dots[0]);
-      res = res.concat(dots);
-    } else if (pa0 == 'U') {
-      res.pop();
-      res = res.concat(ellipsePath(x, y, pa[1], pa[2], pa[3]));
-      r = ['U'].concat(res[res.length - 1].slice(-2));
-    } else {
-      for (var k = 0, kk = pa.length; k < kk; k++) {
-        r[k] = pa[k];
-      }
-    }
-    pa0 = pa0.toUpperCase();
-    if (pa0 != 'O') {
-      switch (r[0]) {
-        case 'Z':
-          x = +mx;
-          y = +my;
-          break;
-        case 'H':
-          x = r[1];
-          break;
-        case 'V':
-          y = r[1];
-          break;
-        case 'M':
-          mx = r[r.length - 2];
-          my = r[r.length - 1];
-        default:
-          x = r[r.length - 2];
-          y = r[r.length - 1];
-      }
-    }
-  }
-  //res.toString = toString;
-  pth.abs = pathClone(res);
-  return res;
-}
-
-function l2c(x1, y1, x2, y2) {
-  return [x1, y1, x2, y2, x2, y2];
-}
-
-function q2c(x1, y1, ax, ay, x2, y2) {
-  var _13 = 1 / 3,
-      _23 = 2 / 3;
-  return [_13 * x1 + _23 * ax, _13 * y1 + _23 * ay, _13 * x2 + _23 * ax, _13 * y2 + _23 * ay, x2, y2];
-}
-
-// Returns bounding box of cubic bezier curve.
-// Source: http://blog.hackers-cafe.net/2009/06/how-to-calculate-bezier-curves-bounding.html
-// Original version: NISHIO Hirokazu
-// Modifications: https://github.com/timo22345
-function curveDim(x0, y0, x1, y1, x2, y2, x3, y3) {
-  var tvalues = [],
-      bounds = [[], []],
-      a,
-      b,
-      c,
-      t,
-      t1,
-      t2,
-      b2ac,
-      sqrtb2ac;
-  for (var i = 0; i < 2; ++i) {
-    if (i == 0) {
-      b = 6 * x0 - 12 * x1 + 6 * x2;
-      a = -3 * x0 + 9 * x1 - 9 * x2 + 3 * x3;
-      c = 3 * x1 - 3 * x0;
-    } else {
-      b = 6 * y0 - 12 * y1 + 6 * y2;
-      a = -3 * y0 + 9 * y1 - 9 * y2 + 3 * y3;
-      c = 3 * y1 - 3 * y0;
-    }
-    if (Math.abs(a) < 1e-12) {
-      if (Math.abs(b) < 1e-12) {
-        continue;
-      }
-      t = -c / b;
-      if (0 < t && t < 1) {
-        tvalues.push(t);
-      }
-      continue;
-    }
-    b2ac = b * b - 4 * c * a;
-    sqrtb2ac = Math.sqrt(b2ac);
-    if (b2ac < 0) {
-      continue;
-    }
-    t1 = (-b + sqrtb2ac) / (2 * a);
-    if (0 < t1 && t1 < 1) {
-      tvalues.push(t1);
-    }
-    t2 = (-b - sqrtb2ac) / (2 * a);
-    if (0 < t2 && t2 < 1) {
-      tvalues.push(t2);
-    }
-  }
-
-  var x,
-      y,
-      j = tvalues.length,
-      jlen = j,
-      mt;
-  while (j--) {
-    t = tvalues[j];
-    mt = 1 - t;
-    bounds[0][j] = mt * mt * mt * x0 + 3 * mt * mt * t * x1 + 3 * mt * t * t * x2 + t * t * t * x3;
-    bounds[1][j] = mt * mt * mt * y0 + 3 * mt * mt * t * y1 + 3 * mt * t * t * y2 + t * t * t * y3;
-  }
-
-  bounds[0][jlen] = x0;
-  bounds[1][jlen] = y0;
-  bounds[0][jlen + 1] = x3;
-  bounds[1][jlen + 1] = y3;
-  bounds[0].length = bounds[1].length = jlen + 2;
-
-  return {
-    min: { x: Math.min.apply(0, bounds[0]), y: Math.min.apply(0, bounds[1]) },
-    max: { x: Math.max.apply(0, bounds[0]), y: Math.max.apply(0, bounds[1]) }
-  };
-}
-
-function a2c(x1, y1, rx, ry, angle, large_arc_flag, sweep_flag, x2, y2, recursive) {
-  // for more information of where this math came from visit:
-  // http://www.w3.org/TR/SVG11/implnote.html#ArcImplementationNotes
-  var _120 = Math.PI * 120 / 180,
-      rad = Math.PI / 180 * (+angle || 0),
-      res = [],
-      xy,
-      rotate = cacher(function (x, y, rad) {
-    var X = x * Math.cos(rad) - y * Math.sin(rad),
-        Y = x * Math.sin(rad) + y * Math.cos(rad);
-    return { x: X, y: Y };
-  });
-  if (!rx || !ry) {
-    return [x1, y1, x2, y2, x2, y2];
-  }
-  if (!recursive) {
-    xy = rotate(x1, y1, -rad);
-    x1 = xy.x;
-    y1 = xy.y;
-    xy = rotate(x2, y2, -rad);
-    x2 = xy.x;
-    y2 = xy.y;
-    var cos = Math.cos(Math.PI / 180 * angle),
-        sin = Math.sin(Math.PI / 180 * angle),
-        x = (x1 - x2) / 2,
-        y = (y1 - y2) / 2;
-    var h = x * x / (rx * rx) + y * y / (ry * ry);
-    if (h > 1) {
-      h = Math.sqrt(h);
-      rx = h * rx;
-      ry = h * ry;
-    }
-    var rx2 = rx * rx,
-        ry2 = ry * ry,
-        k = (large_arc_flag == sweep_flag ? -1 : 1) * Math.sqrt(Math.abs((rx2 * ry2 - rx2 * y * y - ry2 * x * x) / (rx2 * y * y + ry2 * x * x))),
-        cx = k * rx * y / ry + (x1 + x2) / 2,
-        cy = k * -ry * x / rx + (y1 + y2) / 2,
-        f1 = Math.asin(((y1 - cy) / ry).toFixed(9)),
-        f2 = Math.asin(((y2 - cy) / ry).toFixed(9));
-
-    f1 = x1 < cx ? Math.PI - f1 : f1;
-    f2 = x2 < cx ? Math.PI - f2 : f2;
-    f1 < 0 && (f1 = Math.PI * 2 + f1);
-    f2 < 0 && (f2 = Math.PI * 2 + f2);
-    if (sweep_flag && f1 > f2) {
-      f1 = f1 - Math.PI * 2;
-    }
-    if (!sweep_flag && f2 > f1) {
-      f2 = f2 - Math.PI * 2;
-    }
-  } else {
-    f1 = recursive[0];
-    f2 = recursive[1];
-    cx = recursive[2];
-    cy = recursive[3];
-  }
-  var df = f2 - f1;
-  if (Math.abs(df) > _120) {
-    var f2old = f2,
-        x2old = x2,
-        y2old = y2;
-    f2 = f1 + _120 * (sweep_flag && f2 > f1 ? 1 : -1);
-    x2 = cx + rx * Math.cos(f2);
-    y2 = cy + ry * Math.sin(f2);
-    res = a2c(x2, y2, rx, ry, angle, 0, sweep_flag, x2old, y2old, [f2, f2old, cx, cy]);
-  }
-  df = f2 - f1;
-  var c1 = Math.cos(f1),
-      s1 = Math.sin(f1),
-      c2 = Math.cos(f2),
-      s2 = Math.sin(f2),
-      t = Math.tan(df / 4),
-      hx = 4 / 3 * rx * t,
-      hy = 4 / 3 * ry * t,
-      m1 = [x1, y1],
-      m2 = [x1 + hx * s1, y1 - hy * c1],
-      m3 = [x2 + hx * s2, y2 - hy * c2],
-      m4 = [x2, y2];
-  m2[0] = 2 * m1[0] - m2[0];
-  m2[1] = 2 * m1[1] - m2[1];
-  if (recursive) {
-    return [m2, m3, m4].concat(res);
-  } else {
-    res = [m2, m3, m4].concat(res).join().split(',');
-    var newres = [];
-    for (var i = 0, ii = res.length; i < ii; i++) {
-      newres[i] = i % 2 ? rotate(res[i - 1], res[i], rad).y : rotate(res[i], res[i + 1], rad).x;
-    }
-    return newres;
-  }
-}
-
-function path2curve(path, path2) {
-  var pth = !path2 && paths(path);
-
-  if (!path2 && pth.curve) {
-    return pathClone(pth.curve);
-  }
-
-  var p = pathToAbsolute(path);
-  var p2 = path2 && pathToAbsolute(path2);
-  var attrs = { x: 0, y: 0, bx: 0, by: 0, X: 0, Y: 0, qx: null, qy: null };
-  var attrs2 = { x: 0, y: 0, bx: 0, by: 0, X: 0, Y: 0, qx: null, qy: null };
-
-  var processPath = function processPath(path, d, pcom) {
-    var nx, ny;
-    if (!path) {
-      return ['C', d.x, d.y, d.x, d.y, d.x, d.y];
-    }
-    !(path[0] in { T: 1, Q: 1 }) && (d.qx = d.qy = null);
-    switch (path[0]) {
-      case 'M':
-        d.X = path[1];
-        d.Y = path[2];
-        break;
-      case 'A':
-        path = ['C'].concat(a2c.apply(0, [d.x, d.y].concat(path.slice(1))));
-        break;
-      case 'S':
-        if (pcom == 'C' || pcom == 'S') {
-          // In "S" case we have to take into account, if the previous command is C/S.
-          nx = d.x * 2 - d.bx; // And reflect the previous
-          ny = d.y * 2 - d.by; // command's control point relative to the current point.
-        } else {
-          // or some else or nothing
-          nx = d.x;
-          ny = d.y;
-        }
-        path = ['C', nx, ny].concat(path.slice(1));
-        break;
-      case 'T':
-        if (pcom == 'Q' || pcom == 'T') {
-          // In "T" case we have to take into account, if the previous command is Q/T.
-          d.qx = d.x * 2 - d.qx; // And make a reflection similar
-          d.qy = d.y * 2 - d.qy; // to case "S".
-        } else {
-          // or something else or nothing
-          d.qx = d.x;
-          d.qy = d.y;
-        }
-        path = ['C'].concat(q2c(d.x, d.y, d.qx, d.qy, path[1], path[2]));
-        break;
-      case 'Q':
-        d.qx = path[1];
-        d.qy = path[2];
-        path = ['C'].concat(q2c(d.x, d.y, path[1], path[2], path[3], path[4]));
-        break;
-      case 'L':
-        path = ['C'].concat(l2c(d.x, d.y, path[1], path[2]));
-        break;
-      case 'H':
-        path = ['C'].concat(l2c(d.x, d.y, path[1], d.y));
-        break;
-      case 'V':
-        path = ['C'].concat(l2c(d.x, d.y, d.x, path[1]));
-        break;
-      case 'Z':
-        path = ['C'].concat(l2c(d.x, d.y, d.X, d.Y));
-        break;
-    }
-    return path;
-  };
-
-  var fixArc = function fixArc(pp, i) {
-    if (pp[i].length > 7) {
-      pp[i].shift();
-      var pi = pp[i];
-      while (pi.length) {
-        pcoms1[i] = 'A'; // if created multiple C:s, their original seg is saved
-        p2 && (pcoms2[i] = 'A'); // the same as above
-        pp.splice(i++, 0, ['C'].concat(pi.splice(0, 6)));
-      }
-      pp.splice(i, 1);
-      ii = Math.max(p.length, p2 && p2.length || 0);
-    }
-  };
-
-  var fixM = function fixM(path1, path2, a1, a2, i) {
-    if (path1 && path2 && path1[i][0] == 'M' && path2[i][0] != 'M') {
-      path2.splice(i, 0, ['M', a2.x, a2.y]);
-      a1.bx = 0;
-      a1.by = 0;
-      a1.x = path1[i][1];
-      a1.y = path1[i][2];
-      ii = Math.max(p.length, p2 && p2.length || 0);
-    }
-  };
-
-  var pcoms1 = []; // path commands of original path p
-  var pcoms2 = []; // path commands of original path p2
-  var pfirst = ''; // temporary holder for original path command
-  var pcom = ''; // holder for previous path command of original path
-
-  for (var i = 0, ii = Math.max(p.length, p2 && p2.length || 0); i < ii; i++) {
-    p[i] && (pfirst = p[i][0]); // save current path command
-
-    if (pfirst != 'C') {
-      // C is not saved yet, because it may be result of conversion
-      pcoms1[i] = pfirst; // Save current path command
-      i && (pcom = pcoms1[i - 1]); // Get previous path command pcom
-    }
-    p[i] = processPath(p[i], attrs, pcom); // Previous path command is inputted to processPath
-
-    if (pcoms1[i] != 'A' && pfirst == 'C') pcoms1[i] = 'C'; // A is the only command
-    // which may produce multiple C:s
-    // so we have to make sure that C is also C in original path
-
-    fixArc(p, i); // fixArc adds also the right amount of A:s to pcoms1
-
-    if (p2) {
-      // the same procedures is done to p2
-      p2[i] && (pfirst = p2[i][0]);
-      if (pfirst != 'C') {
-        pcoms2[i] = pfirst;
-        i && (pcom = pcoms2[i - 1]);
-      }
-      p2[i] = processPath(p2[i], attrs2, pcom);
-
-      if (pcoms2[i] != 'A' && pfirst == 'C') {
-        pcoms2[i] = 'C';
-      }
-
-      fixArc(p2, i);
-    }
-
-    fixM(p, p2, attrs, attrs2, i);
-    fixM(p2, p, attrs2, attrs, i);
-
-    var seg = p[i];
-    var seg2 = p2 && p2[i];
-    var seglen = seg.length;
-    var seg2len = p2 && seg2.length;
-
-    attrs.x = seg[seglen - 2];
-    attrs.y = seg[seglen - 1];
-    attrs.bx = parseFloat(seg[seglen - 4]) || attrs.x;
-    attrs.by = parseFloat(seg[seglen - 3]) || attrs.y;
-    attrs2.bx = p2 && (parseFloat(seg2[seg2len - 4]) || attrs2.x);
-    attrs2.by = p2 && (parseFloat(seg2[seg2len - 3]) || attrs2.y);
-    attrs2.x = p2 && seg2[seg2len - 2];
-    attrs2.y = p2 && seg2[seg2len - 1];
-  }
-
-  if (!p2) {
-    pth.curve = pathClone(p);
-  }
-  return p2 ? [p, p2] : p;
-}
-
-// http://schepers.cc/getting-to-the-point
-function catmullRom2bezier(crp, z) {
-  var d = [];
-
-  for (var i = 0, c = crp.length; c - 2 * !z > i; i += 2) {
-    var p = [{ x: +crp[i - 2], y: +crp[i - 1] }, { x: +crp[i], y: +crp[i + 1] }, { x: +crp[i + 2], y: +crp[i + 3] }, { x: +crp[i + 4], y: +crp[i + 5] }];
-
-    if (z) {
-      if (!i) {
-        p[0] = { x: +crp[c - 2], y: +crp[c - 1] };
-      } else if (c - 4 == i) {
-        p[3] = { x: +crp[0], y: +crp[1] };
-      } else if (c - 2 == i) {
-        p[2] = { x: +crp[0], y: +crp[1] };
-        p[3] = { x: +crp[2], y: +crp[3] };
-      }
-    } else {
-      if (c - 4 == i) {
-        p[3] = p[2];
-      } else if (!i) {
-        p[0] = { x: +crp[i], y: +crp[i + 1] };
-      }
-    }
-
-    d.push(['C', (-p[0].x + 6 * p[1].x + p[2].x) / 6, (-p[0].y + 6 * p[1].y + p[2].y) / 6, (p[1].x + 6 * p[2].x - p[3].x) / 6, (p[1].y + 6 * p[2].y - p[3].y) / 6, p[2].x, p[2].y]);
-  }
-
-  return d;
-}
-
-module.exports = function (path, x, y) {
-  var bbox = pathBBox(path);
-
-  if (!isPointInsideBBox(bbox, x, y)) {
-    return false;
-  }
-
-  if (interPathHelper(path, [['M', x, y], ['H', bbox.x2 + 10]], 1) % 2 !== 1) {
-    return false;
-  }
-
-  return true;
-};
-/* eslint-enable */
-
-/***/ }),
-/* 203 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = undefined;
-
-var _stringify = __webpack_require__(80);
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-var _toConsumableArray2 = __webpack_require__(7);
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _map = __webpack_require__(31);
-
-var _map2 = _interopRequireDefault(_map);
-
-var _get2 = __webpack_require__(17);
-
-var _get3 = _interopRequireDefault(_get2);
-
-var _getOwnPropertyDescriptor = __webpack_require__(22);
-
-var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
-
-var _getPrototypeOf = __webpack_require__(8);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(14);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(13);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _symbol = __webpack_require__(12);
-
-var _symbol2 = _interopRequireDefault(_symbol);
-
-var _desc, _value, _class, _class2, _temp;
-
-var _basesprite = __webpack_require__(38);
-
-var _basesprite2 = _interopRequireDefault(_basesprite);
-
-var _filters = __webpack_require__(197);
-
-var _filters2 = _interopRequireDefault(_filters);
-
-var _spriteUtils = __webpack_require__(19);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
-
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['define' + 'Property'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
-
-var _texturesCache = (0, _symbol2.default)('_texturesCache');
-var _images = (0, _symbol2.default)('_images');
-
-var TextureAttr = (_class = function (_BaseSprite$Attr) {
-  (0, _inherits3.default)(TextureAttr, _BaseSprite$Attr);
-
-  function TextureAttr(subject) {
-    (0, _classCallCheck3.default)(this, TextureAttr);
-
-    var _this = (0, _possibleConstructorReturn3.default)(this, (TextureAttr.__proto__ || (0, _getPrototypeOf2.default)(TextureAttr)).call(this, subject));
-
-    _this.setDefault({
-      texturesSize: [0, 0],
-      textures: []
-    });
-    return _this;
-  }
-  /*
-    {
-      image: ...,  //texture resource
-      srcRect: ..., //texture clip
-      rect: ....,  //texture in sprite offset
-      filter: ...  //texture filters
-    }
-   */
-
-
-  (0, _createClass3.default)(TextureAttr, [{
-    key: 'loadTextures',
-    value: function loadTextures(textures) {
-      var subject = this.subject;
-
-      // adaptive textures
-      var width = 0,
-          height = 0;
-
-      subject.images = textures.map(function (_ref) {
-        var image = _ref.image,
-            rect = _ref.rect,
-            srcRect = _ref.srcRect;
-
-        var w = void 0,
-            h = void 0;
-        if (rect) {
-          w = rect[2] + rect[0];
-          h = rect[3] + rect[1];
-        } else if (srcRect) {
-          w = srcRect[2];
-          h = srcRect[3];
-        } else {
-          w = image.width;
-          h = image.height;
-        }
-        if (width < w) {
-          width = w;
-        }
-        if (height < h) {
-          height = h;
-        }
-        return image;
-      });
-      this.set('texturesSize', [width, height]);
-    }
-  }, {
-    key: 'textures',
-    set: function set(textures) {
-      if (!Array.isArray(textures)) {
-        textures = [textures];
-      }
-
-      textures = textures.map(function (texture) {
-        if (!texture.image) {
-          texture = { image: texture };
-        }
-        return texture;
-      });
-
-      this.set('textures', textures);
-      this.loadTextures(textures);
-    }
-  }, {
-    key: 'texturesSize',
-    get: function get() {
-      return this.get('texturesSize');
-    }
-  }]);
-  return TextureAttr;
-}(_basesprite2.default.Attr), (_applyDecoratedDescriptor(_class.prototype, 'textures', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'textures'), _class.prototype)), _class);
-var Sprite = (_temp = _class2 = function (_BaseSprite) {
-  (0, _inherits3.default)(Sprite, _BaseSprite);
-
-  /**
-    new Sprite({
-      attr: {
-        ...
-      },
-      attributeChangedCallback: function(prop, oldValue, newValue){
-       }
-    })
-   */
-  function Sprite(attr) {
-    (0, _classCallCheck3.default)(this, Sprite);
-
-    if (typeof attr === 'string') {
-      attr = { textures: [attr] };
-    }
-
-    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Sprite.__proto__ || (0, _getPrototypeOf2.default)(Sprite)).call(this));
-
-    _this2[_texturesCache] = new _map2.default();
-    if (attr) {
-      _this2.attr(attr);
-    }
-    return _this2;
-  }
-
-  (0, _createClass3.default)(Sprite, [{
-    key: 'cloneNode',
-    value: function cloneNode(copyContent) {
-      var node = (0, _get3.default)(Sprite.prototype.__proto__ || (0, _getPrototypeOf2.default)(Sprite.prototype), 'cloneNode', this).call(this, copyContent);
-      if (copyContent) {
-        node.textures = this.textures;
-      }
-      return node;
-    }
-  }, {
-    key: 'pointCollision',
-    value: function pointCollision(evt) {
-      var _this3 = this;
-
-      if ((0, _get3.default)(Sprite.prototype.__proto__ || (0, _getPrototypeOf2.default)(Sprite.prototype), 'pointCollision', this).call(this, evt)) {
-        var textures = this.textures;
-
-        if (textures) {
-          var offsetX = evt.offsetX,
-              offsetY = evt.offsetY;
-
-          evt.targetTextures = [];
-
-          var _attr = this.attr('anchor'),
-              _attr2 = (0, _slicedToArray3.default)(_attr, 2),
-              anchorX = _attr2[0],
-              anchorY = _attr2[1],
-              _contentSize = (0, _slicedToArray3.default)(this.contentSize, 2),
-              width = _contentSize[0],
-              height = _contentSize[1];
-
-          offsetX += width * anchorX;
-          offsetY += height * anchorY;
-
-          textures.forEach(function (texture) {
-            var _ref2 = texture.rect || [0, 0].concat((0, _toConsumableArray3.default)(_this3.innerSize)),
-                _ref3 = (0, _slicedToArray3.default)(_ref2, 4),
-                x = _ref3[0],
-                y = _ref3[1],
-                w = _ref3[2],
-                h = _ref3[3];
-
-            if (offsetX >= x && offsetX - x < w && offsetY >= y && offsetY - y < h) {
-              // touched textures
-              evt.targetTextures.push(texture);
-            }
-          });
-        }
-        return true;
-      }
-    }
-  }, {
-    key: 'render',
-    value: function render(t, drawingContext) {
-      var _this4 = this;
-
-      var context = (0, _get3.default)(Sprite.prototype.__proto__ || (0, _getPrototypeOf2.default)(Sprite.prototype), 'render', this).call(this, t, drawingContext);
-      var textures = this.textures;
-
-      if (this.images) {
-        var _attr3 = this.attr(),
-            borderWidth = _attr3.border[0];
-
-        textures.forEach(function (texture, i) {
-          var img = _this4.images[i];
-          var rect = (texture.rect || [0, 0].concat((0, _toConsumableArray3.default)(_this4.innerSize))).slice(0);
-          var srcRect = texture.srcRect;
-          rect[0] += borderWidth;
-          rect[1] += borderWidth;
-
-          context.save();
-
-          if (texture.filter) {
-            var outterRect = void 0;
-            var imgRect = srcRect ? [0, 0, srcRect[2], srcRect[3]] : [0, 0, img.width, img.height];
-
-            if (texture.filter.dropShadow) {
-              var dsArr = texture.filter.dropShadow;
-              var shadowRect = [dsArr[0] - 2 * dsArr[2], dsArr[1] - 2 * dsArr[2], imgRect[2] + 4 * dsArr[2], imgRect[3] + 4 * dsArr[2]].map(function (val) {
-                return Math.round(val);
-              });
-
-              outterRect = (0, _spriteUtils.boxToRect)((0, _spriteUtils.boxUnion)((0, _spriteUtils.rectToBox)(shadowRect), (0, _spriteUtils.rectToBox)(imgRect))).map(function (val) {
-                return Math.abs(val);
-              });
-            } else {
-              outterRect = imgRect;
-            }
-
-            var sx = rect[2] / outterRect[2],
-                sy = rect[3] / outterRect[3];
-
-            context.filter = _filters2.default.compile(texture.filter);
-
-            if (srcRect) {
-              context.drawImage.apply(context, [img].concat((0, _toConsumableArray3.default)(srcRect), [sx * outterRect[0] + rect[0], sy * outterRect[1] + rect[1], sx * srcRect[2], sy * srcRect[3]]));
-            } else {
-              context.drawImage(img, sx * outterRect[0] + rect[0], sy * outterRect[1] + rect[1], sx * img.width, sy * img.height);
-            }
-          } else if (srcRect) {
-            context.drawImage.apply(context, [img].concat((0, _toConsumableArray3.default)(srcRect), (0, _toConsumableArray3.default)(rect)));
-          } else {
-            context.drawImage.apply(context, [img].concat((0, _toConsumableArray3.default)(rect)));
-          }
-
-          context.restore();
-        });
-      }
-
-      return context;
-    }
-  }, {
-    key: 'images',
-    set: function set(images) {
-      this[_images] = images;
-    },
-    get: function get() {
-      return this[_images];
-    }
-  }, {
-    key: 'textures',
-    set: function set(textures) {
-      this.attr('textures', textures);
-    },
-    get: function get() {
-      return this.attr('textures');
-    }
-
-    // override to adapt textures' size
-
-  }, {
-    key: 'contentSize',
-    get: function get() {
-      var _attr4 = this.attr('size'),
-          _attr5 = (0, _slicedToArray3.default)(_attr4, 2),
-          width = _attr5[0],
-          height = _attr5[1];
-
-      var boxSize = this.attr('texturesSize');
-
-      if (width === '') {
-        width = boxSize[0] | 0;
-      }
-      if (height === '') {
-        height = boxSize[1] | 0;
-      }
-
-      return [width, height];
-    }
-  }, {
-    key: 'cache',
-    set: function set(context) {
-      if (context == null) {
-        this[_texturesCache].clear();
-        return;
-      }
-      var key = (0, _stringify2.default)(this.textures),
-          cacheMap = this[_texturesCache];
-
-      if (!cacheMap.has(key)) {
-        cacheMap.set(key, context);
-      }
-    },
-    get: function get() {
-      var key = (0, _stringify2.default)(this.textures),
-          cacheMap = this[_texturesCache];
-      if (cacheMap.has(key)) {
-        return cacheMap.get(key);
-      }
-      return null;
-    }
-  }]);
-  return Sprite;
-}(_basesprite2.default), _class2.Attr = TextureAttr, _temp);
-exports.default = Sprite;
-
-/***/ }),
-/* 204 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-// from https://github.com/chrisaljoudi/transformatrix.js
-/**
-  default:
-          (1, 0, 0)
-          (0, 1, 0)
- */
-var Matrix = function Matrix(m) {
-  m = m || [1, 0, 0, 1, 0, 0];
-  this.m = m.slice(0);
-};
-
-Matrix.prototype.unit = function () {
-  this.m = [1, 0, 0, 1, 0, 0];
-  return this;
-};
-
-Matrix.prototype.multiply = function (m) {
-  var m1 = this.m;
-  var m2 = void 0;
-
-  if (m instanceof Matrix) {
-    m2 = m.m;
-  } else {
-    m2 = m;
-  }
-
-  var m11 = m1[0] * m2[0] + m1[2] * m2[1],
-      m12 = m1[1] * m2[0] + m1[3] * m2[1],
-      m21 = m1[0] * m2[2] + m1[2] * m2[3],
-      m22 = m1[1] * m2[2] + m1[3] * m2[3];
-
-  var dx = m1[0] * m2[4] + m1[2] * m2[5] + m1[4],
-      dy = m1[1] * m2[4] + m1[3] * m2[5] + m1[5];
-
-  m1[0] = m11;
-  m1[1] = m12;
-  m1[2] = m21;
-  m1[3] = m22;
-  m1[4] = dx;
-  m1[5] = dy;
-
-  return this;
-};
-
-Matrix.prototype.inverse = function () {
-  var inv = new Matrix(this.m),
-      invm = inv.m;
-
-  var d = 1 / (invm[0] * invm[3] - invm[1] * invm[2]),
-      m0 = invm[3] * d,
-      m1 = -invm[1] * d,
-      m2 = -invm[2] * d,
-      m3 = invm[0] * d,
-      m4 = d * (invm[2] * invm[5] - invm[3] * invm[4]),
-      m5 = d * (invm[1] * invm[4] - invm[0] * invm[5]);
-
-  invm[0] = m0;
-  invm[1] = m1;
-  invm[2] = m2;
-  invm[3] = m3;
-  invm[4] = m4;
-  invm[5] = m5;
-
-  return inv;
-};
-
-/**
-  (1, 0, sx)
-  (0, 1, sy)
- * */
-Matrix.prototype.translate = function (x, y) {
-  return this.multiply([1, 0, 0, 1, x, y]);
-};
-
-/**
-    (cos, -sin, 0)
-    (sin, cos, 0)
- */
-Matrix.prototype.rotate = function (deg) {
-  var rad = deg * Math.PI / 180,
-      c = Math.cos(rad),
-      s = Math.sin(rad);
-
-  return this.multiply([c, s, -s, c, 0, 0]);
-};
-
-/**
-    (1, tx, 0)
-    (ty, 1, 0)
- */
-Matrix.prototype.skew = function (degX, degY) {
-  degY |= 0;
-  var radX = degX * Math.PI / 180,
-      radY = degY * Math.PI / 180;
-  var tx = Math.tan(radX),
-      ty = Math.tan(radY);
-
-  return this.multiply([1, ty, tx, 1, 0, 0]);
-};
-
-/**
-  (sx, 0, 0)
-  (0, sy, 0)
- */
-Matrix.prototype.scale = function (sx, sy) {
-  return this.multiply([sx, 0, 0, sy, 0, 0]);
-};
-
-Matrix.prototype.transformPoint = function (px, py) {
-  var x = px,
-      y = py;
-  px = x * this.m[0] + y * this.m[2] + this.m[4];
-  py = x * this.m[1] + y * this.m[3] + this.m[5];
-
-  return [px, py];
-};
-
-Matrix.prototype.transformVector = function (px, py) {
-  var x = px,
-      y = py;
-  px = x * this.m[0] + y * this.m[2];
-  py = x * this.m[1] + y * this.m[3];
-
-  return [px, py];
-};
-
-exports.default = Matrix;
-
-/***/ }),
-/* 205 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-var _classCallCheck2 = __webpack_require__(3);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(4);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Vector = function () {
-  function Vector(p1) {
-    var p2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [0, 0, 0];
-    (0, _classCallCheck3.default)(this, Vector);
-
-    var _p = (0, _slicedToArray3.default)(p1, 3),
-        x1 = _p[0],
-        y1 = _p[1],
-        z1 = _p[2],
-        _p2 = (0, _slicedToArray3.default)(p2, 3),
-        x2 = _p2[0],
-        y2 = _p2[1],
-        z2 = _p2[2];
-
-    z1 = z1 || 0;
-    z2 = z2 || 0;
-
-    this.x = x1 - x2;
-    this.y = y1 - y2;
-    this.z = z1 - z2;
-  }
-
-  (0, _createClass3.default)(Vector, [{
-    key: "unit",
-    value: function unit() {
-      var length = this.length;
-      return new Vector([this.x / length, this.y / length, this.z / length]);
-    }
-  }, {
-    key: "dot",
-    value: function dot(v) {
-      return this.x * v.x + this.y * v.y + this.z * v.z;
-    }
-  }, {
-    key: "cross",
-    value: function cross(v) {
-      var x1 = this.x,
-          y1 = this.y,
-          z1 = this.z,
-          x2 = v.x,
-          y2 = v.y,
-          z2 = v.z;
-
-      return new Vector([y1 * z2 - z1 * y2, z1 * x2 - x1 * z2, x1 * y2 - x2 * y1]);
-    }
-  }, {
-    key: "length",
-    get: function get() {
-      var x = this.x,
-          y = this.y,
-          z = this.z;
-
-      return Math.sqrt(x * x + y * y + z * z);
-    }
-  }]);
-  return Vector;
-}();
-
-exports.default = Vector;
-
-/***/ }),
-/* 206 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _slicedToArray2 = __webpack_require__(1);
-
-var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
-exports.default = function (pathA, pathB, p, s, e) {
-  var ep = (p - s) / (e - s);
-  if (ep <= 0) return pathA;
-  if (ep >= 1) return pathB;
-  return lerp(pathA, pathB, ep);
-};
-
-var _path2shapes = __webpack_require__(208);
-
-var _path2shapes2 = _interopRequireDefault(_path2shapes);
-
-var _sort = __webpack_require__(209);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// https://github.com/AlloyTeam/pasition
-
-function _subShapes(shapes, count) {
-  var _loop = function _loop(i) {
-    var shape = shapes[shapes.length - 1];
-    var newShape = [];
-    var x = shape[0][0],
-        y = shape[0][1];
-    shape.forEach(function () {
-      newShape.push([x, y, x, y, x, y, x, y]);
-    });
-
-    shapes.push(newShape);
-  };
-
-  for (var i = 0; i < count; i++) {
-    _loop(i);
-  }
-}
-
-function _upShapes(shapes, count) {
-  var _loop2 = function _loop2(i) {
-    var shape = shapes[shapes.length - 1];
-    var newShape = [];
-
-    shape.forEach(function (curve) {
-      newShape.push(curve.slice(0));
-    });
-    shapes.push(newShape);
-  };
-
-  for (var i = 0; i < count; i++) {
-    _loop2(i);
-  }
-}
-
-function split(x1, y1, x2, y2, x3, y3, x4, y4, t) {
-  return {
-    left: _split(x1, y1, x2, y2, x3, y3, x4, y4, t),
-    right: _split(x4, y4, x3, y3, x2, y2, x1, y1, 1 - t, true)
-  };
-}
-
-function _split(x1, y1, x2, y2, x3, y3, x4, y4, t, reverse) {
-  var x12 = (x2 - x1) * t + x1;
-  var y12 = (y2 - y1) * t + y1;
-
-  var x23 = (x3 - x2) * t + x2;
-  var y23 = (y3 - y2) * t + y2;
-
-  var x34 = (x4 - x3) * t + x3;
-  var y34 = (y4 - y3) * t + y3;
-
-  var x123 = (x23 - x12) * t + x12;
-  var y123 = (y23 - y12) * t + y12;
-
-  var x234 = (x34 - x23) * t + x23;
-  var y234 = (y34 - y23) * t + y23;
-
-  var x1234 = (x234 - x123) * t + x123;
-  var y1234 = (y234 - y123) * t + y123;
-
-  if (reverse) {
-    return [x1234, y1234, x123, y123, x12, y12, x1, y1];
-  }
-  return [x1, y1, x12, y12, x123, y123, x1234, y1234];
-}
-
-function _splitCurves(curves, count) {
-  var i = 0,
-      index = 0;
-
-  for (; i < count; i++) {
-    var curve = curves[index];
-    var cs = split(curve[0], curve[1], curve[2], curve[3], curve[4], curve[5], curve[6], curve[7], 0.5);
-    curves.splice(index, 1);
-    curves.splice(index, 0, cs.left, cs.right);
-
-    index += 2;
-    if (index >= curves.length - 1) {
-      index = 0;
-    }
-  }
-}
-
-// 将两段 path 对齐
-function match(pathA, pathB) {
-  var minCurves = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
-
-  var shapesA = (0, _path2shapes2.default)(pathA);
-  var shapesB = (0, _path2shapes2.default)(pathB);
-
-  var lenA = shapesA.length,
-      lenB = shapesB.length;
-
-  if (lenA > lenB) {
-    _subShapes(shapesB, lenA - lenB);
-  } else if (lenA < lenB) {
-    _upShapes(shapesA, lenB - lenA);
-  }
-
-  shapesA = (0, _sort.sort)(shapesA, shapesB);
-
-  shapesA.forEach(function (curves, index) {
-    var lenA = curves.length,
-        lenB = shapesB[index].length;
-
-    if (lenA > lenB) {
-      if (lenA < minCurves) {
-        _splitCurves(curves, minCurves - lenA);
-        _splitCurves(shapesB[index], minCurves - lenB);
-      } else {
-        _splitCurves(shapesB[index], lenA - lenB);
-      }
-    } else if (lenA < lenB) {
-      if (lenB < minCurves) {
-        _splitCurves(curves, minCurves - lenA);
-        _splitCurves(shapesB[index], minCurves - lenB);
-      } else {
-        _splitCurves(curves, lenB - lenA);
-      }
-    }
-  });
-
-  shapesA.forEach(function (curves, index) {
-    shapesA[index] = (0, _sort.sortCurves)(curves, shapesB[index]);
-  });
-
-  return [shapesA, shapesB];
-}
-
-function lerpPoints(x1, y1, x2, y2, t) {
-  return [x1 + (x2 - x1) * t, y1 + (y2 - y1) * t];
-}
-
-function lerpCurve(curveA, curveB, t) {
-  return lerpPoints(curveA[0], curveA[1], curveB[0], curveB[1], t).concat(lerpPoints(curveA[2], curveA[3], curveB[2], curveB[3], t)).concat(lerpPoints(curveA[4], curveA[5], curveB[4], curveB[5], t)).concat(lerpPoints(curveA[6], curveA[7], curveB[6], curveB[7], t));
-}
-
-function lerp(pathA, pathB, t) {
-  var _match = match(pathA, pathB),
-      _match2 = (0, _slicedToArray3.default)(_match, 2),
-      shapesA = _match2[0],
-      shapesB = _match2[1];
-
-  return shapesA.map(function (shapeA, i) {
-    var shapeB = shapesB[i];
-    return shapeA.map(function (curveA, i) {
-      var curveB = shapeB[i];
-      var curve = lerpCurve(curveA, curveB, t);
-      if (i === 0) {
-        return 'M' + curve[0] + ' ' + curve[1] + ' C' + curve[2] + ' ' + curve[3] + ', ' + curve[4] + ' ' + curve[5] + ', ' + curve[6] + ' ' + curve[7];
-      }
-      return curve[2] + ' ' + curve[3] + ', ' + curve[4] + ' ' + curve[5] + ', ' + curve[6] + ' ' + curve[7];
-    });
-  }).join(' ') + 'z';
-}
-
-/***/ }),
-/* 207 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-// https://github.com/jkroso/parse-svg-path/blob/master/index.js
-/**
- * expected argument lengths
- * @type {Object}
- */
-
-var length = {
-  a: 7, c: 6, h: 1, l: 2, m: 2, q: 4, s: 4, t: 2, v: 1, z: 0
-
-  /**
-   * segment pattern
-   * @type {RegExp}
-   */
-
-};var segment = /([astvzqmhlc])([^astvzqmhlc]*)/ig;
-
-/**
- * parse an svg path data string. Generates an Array
- * of commands where each command is an Array of the
- * form `[command, arg1, arg2, ...]`
- *
- * @param {String} path
- * @return {Array}
- */
-
-function parse(path) {
-  var data = [];
-  path.replace(segment, function (_, command, args) {
-    var type = command.toLowerCase();
-    args = parseValues(args);
-
-    // overloaded moveTo
-    if (type === 'm' && args.length > 2) {
-      data.push([command].concat(args.splice(0, 2)));
-      type = 'l';
-      command = command === 'm' ? 'l' : 'L';
-    }
-
-    while (true) {
-      if (args.length === length[type]) {
-        args.unshift(command);
-        return data.push(args);
-      }
-      if (args.length < length[type]) throw new Error('malformed path data');
-      data.push([command].concat(args.splice(0, length[type])));
-    }
-  });
-  return data;
-}
-
-var number = /-?[0-9]*\.?[0-9]+(?:e[-+]?\d+)?/ig;
-
-function parseValues(args) {
-  var numbers = args.match(number);
-  return numbers ? numbers.map(Number) : [];
-}
-
-exports.default = parse;
-
-/***/ }),
-/* 208 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function (path) {
-  // https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths
-  // M = moveto
-  // L = lineto
-  // H = horizontal lineto
-  // V = vertical lineto
-  // C = curveto
-  // S = smooth curveto
-  // Q = quadratic Belzier curve
-  // T = smooth quadratic Belzier curveto
-  // A = elliptical Arc
-  // Z = closepath
-  // 以上所有命令均允许小写字母。大写表示绝对定位，小写表示相对定位(从上一个点开始)。
-  var cmds = (0, _parser2.default)(path),
-      len = cmds.length,
-      shapes = [];
-
-  var preX = 0,
-      preY = 0,
-      j = 0,
-      current = null,
-      closeX = void 0,
-      closeY = void 0,
-      preCX = void 0,
-      preCY = void 0,
-      sLen = void 0,
-      curves = void 0,
-      lastCurve = void 0;
-
-  for (; j < len; j++) {
-    var item = cmds[j];
-    var action = item[0];
-    var preItem = cmds[j - 1];
-
-    switch (action) {
-      case 'm':
-        sLen = shapes.length;
-        shapes[sLen] = [];
-        current = shapes[sLen];
-        preX += item[1];
-        preY += item[2];
-        break;
-      case 'M':
-
-        sLen = shapes.length;
-        shapes[sLen] = [];
-        current = shapes[sLen];
-        preX = item[1];
-        preY = item[2];
-        break;
-
-      case 'l':
-        current.push([preX, preY, preX, preY, preX, preY, preX + item[1], preY + item[2]]);
-        preX += item[1];
-        preY += item[2];
-        break;
-
-      case 'L':
-
-        current.push([preX, preY, item[1], item[2], item[1], item[2], item[1], item[2]]);
-        preX = item[1];
-        preY = item[2];
-
-        break;
-
-      case 'h':
-
-        current.push([preX, preY, preX, preY, preX, preY, preX + item[1], preY]);
-        preX += item[1];
-        break;
-
-      case 'H':
-        current.push([preX, preY, item[1], preY, item[1], preY, item[1], preY]);
-        preX = item[1];
-        break;
-
-      case 'v':
-        current.push([preX, preY, preX, preY, preX, preY, preX, preY + item[1]]);
-        preY += item[1];
-        break;
-
-      case 'V':
-        current.push([preX, preY, preX, item[1], preX, item[1], preX, item[1]]);
-        preY = item[1];
-        break;
-
-      case 'C':
-
-        current.push([preX, preY, item[1], item[2], item[3], item[4], item[5], item[6]]);
-        preX = item[5];
-        preY = item[6];
-        break;
-      case 'S':
-        if (preItem[0] === 'C' || preItem[0] === 'c') {
-          current.push([preX, preY, preX + preItem[5] - preItem[3], preY + preItem[6] - preItem[4], item[1], item[2], item[3], item[4]]);
-        } else if (preItem[0] === 'S' || preItem[0] === 's') {
-          current.push([preX, preY, preX + preItem[3] - preItem[1], preY + preItem[4] - preItem[2], item[1], item[2], item[3], item[4]]);
-        }
-        preX = item[3];
-        preY = item[4];
-        break;
-
-      case 'c':
-        current.push([preX, preY, preX + item[1], preY + item[2], preX + item[3], preY + item[4], preX + item[5], preY + item[6]]);
-        preX += item[5];
-        preY += item[6];
-        break;
-      case 's':
-        if (preItem[0] === 'C' || preItem[0] === 'c') {
-          current.push([preX, preY, preX + preItem[5] - preItem[3], preY + preItem[6] - preItem[4], preX + item[1], preY + item[2], preX + item[3], preY + item[4]]);
-        } else if (preItem[0] === 'S' || preItem[0] === 's') {
-          current.push([preX, preY, preX + preItem[3] - preItem[1], preY + preItem[4] - preItem[2], preX + item[1], preY + item[2], preX + item[3], preY + item[4]]);
-        }
-
-        preX += item[3];
-        preY += item[4];
-
-        break;
-      case 'a':
-        curves = (0, _svgArcToCubicBezier2.default)({
-          rx: item[1],
-          ry: item[2],
-          px: preX,
-          py: preY,
-          xAxisRotation: item[3],
-          largeArcFlag: item[4],
-          sweepFlag: item[5],
-          cx: preX + item[6],
-          cy: preX + item[7]
-        });
-        lastCurve = curves[curves.length - 1];
-
-        curves.forEach(function (curve, index) {
-          if (index === 0) {
-            current.push([preX, preY, curve.x1, curve.y1, curve.x2, curve.y2, curve.x, curve.y]);
-          } else {
-            current.push([curves[index - 1].x, curves[index - 1].y, curve.x1, curve.y1, curve.x2, curve.y2, curve.x, curve.y]);
-          }
-        });
-
-        preX = lastCurve.x;
-        preY = lastCurve.y;
-
-        break;
-
-      case 'A':
-
-        curves = (0, _svgArcToCubicBezier2.default)({
-          rx: item[1],
-          ry: item[2],
-          px: preX,
-          py: preY,
-          xAxisRotation: item[3],
-          largeArcFlag: item[4],
-          sweepFlag: item[5],
-          cx: item[6],
-          cy: item[7]
-        });
-        lastCurve = curves[curves.length - 1];
-
-        curves.forEach(function (curve, index) {
-          if (index === 0) {
-            current.push([preX, preY, curve.x1, curve.y1, curve.x2, curve.y2, curve.x, curve.y]);
-          } else {
-            current.push([curves[index - 1].x, curves[index - 1].y, curve.x1, curve.y1, curve.x2, curve.y2, curve.x, curve.y]);
-          }
-        });
-
-        preX = lastCurve.x;
-        preY = lastCurve.y;
-
-        break;
-      case 'Q':
-        current.push(q2b(preX, preY, item[1], item[2], item[3], item[4]));
-        preX = item[3];
-        preY = item[4];
-
-        break;
-      case 'q':
-        current.push(q2b(preX, preY, preX + item[1], preY + item[2], item[3] + preX, item[4] + preY));
-        preX += item[3];
-        preY += item[4];
-        break;
-
-      case 'T':
-
-        if (preItem[0] === 'Q' || preItem[0] === 'q') {
-          preCX = preX + preItem[3] - preItem[1];
-          preCY = preY + preItem[4] - preItem[2];
-          current.push(q2b(preX, preY, preCX, preCY, item[1], item[2]));
-        } else if (preItem[0] === 'T' || preItem[0] === 't') {
-          current.push(q2b(preX, preY, preX + preX - preCX, preY + preY - preCY, item[1], item[2]));
-          preCX = preX + preX - preCX;
-          preCY = preY + preY - preCY;
-        }
-
-        preX = item[1];
-        preY = item[2];
-        break;
-
-      case 't':
-        if (preItem[0] === 'Q' || preItem[0] === 'q') {
-          preCX = preX + preItem[3] - preItem[1];
-          preCY = preY + preItem[4] - preItem[2];
-          current.push(q2b(preX, preY, preCX, preCY, preX + item[1], preY + item[2]));
-        } else if (preItem[0] === 'T' || preItem[0] === 't') {
-          current.push(q2b(preX, preY, preX + preX - preCX, preY + preY - preCY, preX + item[1], preY + item[2]));
-          preCX = preX + preX - preCX;
-          preCY = preY + preY - preCY;
-        }
-
-        preX += item[1];
-        preY += item[2];
-        break;
-
-      case 'Z':
-        closeX = current[0][0];
-        closeY = current[0][1];
-        current.push([preX, preY, closeX, closeY, closeX, closeY, closeX, closeY]);
-        break;
-      case 'z':
-        closeX = current[0][0];
-        closeY = current[0][1];
-        current.push([preX, preY, closeX, closeY, closeX, closeY, closeX, closeY]);
-        break;
-
-      default:
-        throw new Error('unknown action');
-    }
-  }
-
-  return shapes;
-};
-
-var _svgArcToCubicBezier = __webpack_require__(74);
-
-var _svgArcToCubicBezier2 = _interopRequireDefault(_svgArcToCubicBezier);
-
-var _parser = __webpack_require__(207);
-
-var _parser2 = _interopRequireDefault(_parser);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// https://github.com/AlloyTeam/pasition
-
-function q2b(x1, y1, x2, y2, x3, y3) {
-  return [x1, y1, (x1 + 2 * x2) / 3, (y1 + 2 * y2) / 3, (x3 + 2 * x2) / 3, (y3 + 2 * y2) / 3, x3, y3];
-}
-
-/***/ }),
-/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12773,23 +9994,55 @@ exports.sort = sort;
 exports.sortCurves = sortCurves;
 
 /***/ }),
-/* 210 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
 
-var _toConsumableArray2 = __webpack_require__(7);
 
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = querySelectorLimits;
+function querySelectorLimits(elements, functor) {
+  var limits = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : Infinity;
 
-var _map = __webpack_require__(31);
+  var nodeList = [];
+  for (var i = 0; i < elements.length; i++) {
+    var node = elements[i];
+    if (functor(node)) {
+      nodeList.push(node);
+      if (limits === nodeList.length) {
+        break;
+      }
+    }
+  }
+  return nodeList;
+}
 
-var _map2 = _interopRequireDefault(_map);
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
 
-var _assign = __webpack_require__(16);
+"use strict";
 
-var _assign2 = _interopRequireDefault(_assign);
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _get2 = __webpack_require__(18);
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _getOwnPropertyDescriptor = __webpack_require__(24);
+
+var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
 var _classCallCheck2 = __webpack_require__(3);
 
@@ -12799,13 +10052,1775 @@ var _createClass2 = __webpack_require__(4);
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _symbol = __webpack_require__(12);
+var _possibleConstructorReturn2 = __webpack_require__(16);
 
-var _symbol2 = _interopRequireDefault(_symbol);
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(15);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
 
 var _slicedToArray2 = __webpack_require__(1);
 
 var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _dec, _dec2, _dec3, _desc, _value, _class, _class2, _temp;
+
+var _basesprite = __webpack_require__(41);
+
+var _basesprite2 = _interopRequireDefault(_basesprite);
+
+var _spriteUtils = __webpack_require__(14);
+
+var _nodetype = __webpack_require__(28);
+
+var _render = __webpack_require__(42);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _applyDecoratedDescriptor = __webpack_require__(29);
+
+var parseFont = __webpack_require__(200);
+var _boxSize = (0, _symbol2.default)('boxSize');
+
+var measureText = function measureText(node, text, font) {
+  var lineHeight = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+  var ctx = node.context;
+  if (!ctx) {
+    return [0, 0];
+  }
+  ctx.save();
+  ctx.font = font;
+
+  var _ctx$measureText = ctx.measureText(text),
+      width = _ctx$measureText.width;
+
+  ctx.restore();
+
+  var height = lineHeight || parseFont(font).size * 1.2;
+  return [width, height].map(Math.round);
+};
+
+function calculTextboxSize(node, text, font, lineHeight) {
+  var lines = text.split(/\n/);
+  var width = 0,
+      height = 0;
+
+  lines.forEach(function (line) {
+    var _measureText = measureText(node, line, font, lineHeight),
+        _measureText2 = (0, _slicedToArray3.default)(_measureText, 2),
+        w = _measureText2[0],
+        h = _measureText2[1];
+
+    width = Math.max(width, w);
+    height += h;
+  });
+  if (width === 0 && height === 0) {
+    return '';
+  }
+  return [width, height];
+}
+
+var LabelSpriteAttr = (_dec = (0, _spriteUtils.parseValue)(parseFloat), _dec2 = (0, _spriteUtils.parseValue)(_spriteUtils.parseColorString), _dec3 = (0, _spriteUtils.parseValue)(_spriteUtils.parseColorString), (_class = function (_BaseSprite$Attr) {
+  (0, _inherits3.default)(LabelSpriteAttr, _BaseSprite$Attr);
+
+  function LabelSpriteAttr(subject) {
+    (0, _classCallCheck3.default)(this, LabelSpriteAttr);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (LabelSpriteAttr.__proto__ || (0, _getPrototypeOf2.default)(LabelSpriteAttr)).call(this, subject));
+
+    _this.setDefault({
+      font: '16px Arial',
+      textAlign: 'left',
+      strokeColor: '',
+      fillColor: '',
+      lineHeight: '',
+      text: ''
+    }, {
+      color: function color() {
+        return this.fillColor;
+      }
+    });
+    return _this;
+  }
+
+  (0, _createClass3.default)(LabelSpriteAttr, [{
+    key: 'text',
+    set: function set(val) {
+      this.clearCache();
+      val = String(val);
+      delete this.subject[_boxSize];
+      this.set('text', val);
+    }
+  }, {
+    key: 'font',
+    set: function set(val) {
+      this.clearCache();
+      delete this.subject[_boxSize];
+      this.set('font', val);
+    }
+  }, {
+    key: 'lineHeight',
+    set: function set(val) {
+      this.clearCache();
+      delete this.subject[_boxSize];
+      this.set('lineHeight', val);
+    }
+  }, {
+    key: 'textAlign',
+    set: function set(val) {
+      this.clearCache();
+      this.set('textAlign', val);
+    }
+  }, {
+    key: 'color',
+    set: function set(val) {
+      this.fillColor = val;
+    }
+  }, {
+    key: 'strokeColor',
+    set: function set(val) {
+      this.clearCache();
+      this.set('strokeColor', val);
+    }
+  }, {
+    key: 'fillColor',
+    set: function set(val) {
+      this.clearCache();
+      this.set('fillColor', val);
+    }
+  }]);
+  return LabelSpriteAttr;
+}(_basesprite2.default.Attr), (_applyDecoratedDescriptor(_class.prototype, 'text', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'text'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'font', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'font'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineHeight', [_dec, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineHeight'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'textAlign', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'textAlign'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'color', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'color'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'strokeColor', [_dec2, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'strokeColor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'fillColor', [_dec3, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'fillColor'), _class.prototype)), _class));
+var Label = (_temp = _class2 = function (_BaseSprite) {
+  (0, _inherits3.default)(Label, _BaseSprite);
+
+  function Label(attr) {
+    (0, _classCallCheck3.default)(this, Label);
+
+    if (typeof attr === 'string') {
+      attr = { text: attr };
+    }
+    return (0, _possibleConstructorReturn3.default)(this, (Label.__proto__ || (0, _getPrototypeOf2.default)(Label)).call(this, attr));
+  }
+
+  (0, _createClass3.default)(Label, [{
+    key: 'render',
+    value: function render(t, drawingContext) {
+      var _this3 = this;
+
+      (0, _get3.default)(Label.prototype.__proto__ || (0, _getPrototypeOf2.default)(Label.prototype), 'render', this).call(this, t, drawingContext);
+
+      var textAlign = this.attr('textAlign'),
+          font = this.attr('font'),
+          lineHeight = this.attr('lineHeight'),
+          text = this.text;
+
+      if (text) {
+        drawingContext.font = font;
+        var lines = this.text.split(/\n/);
+
+        drawingContext.textBaseline = 'top';
+
+        var align = textAlign;
+
+        drawingContext.textBaseline = 'middle';
+
+        var strokeColor = (0, _render.findColor)(drawingContext, this, 'strokeColor');
+        if (strokeColor) {
+          drawingContext.strokeStyle = strokeColor;
+        }
+
+        var fillColor = (0, _render.findColor)(drawingContext, this, 'fillColor');
+
+        if (!strokeColor && !fillColor) {
+          fillColor = (0, _spriteUtils.parseColorString)('black');
+        }
+        if (fillColor) {
+          drawingContext.fillStyle = fillColor;
+        }
+
+        var top = 0,
+            left = 0;
+        var width = this.contentSize[0];
+
+        lines.forEach(function (line) {
+          var _measureText3 = measureText(_this3, line, font, lineHeight),
+              _measureText4 = (0, _slicedToArray3.default)(_measureText3, 2),
+              w = _measureText4[0],
+              h = _measureText4[1];
+
+          if (align === 'center') {
+            left += (width - w) / 2;
+          } else if (align === 'right') {
+            left += width - w;
+          }
+
+          if (fillColor) {
+            drawingContext.fillText(line, left, top + h / 2);
+          }
+          if (strokeColor) {
+            drawingContext.strokeText(line, left, top + h / 2);
+          }
+
+          top += h;
+        });
+      }
+    }
+  }, {
+    key: 'text',
+    set: function set(val) {
+      this.attr('text', val);
+    },
+    get: function get() {
+      return this.attr('text');
+    }
+
+    // override to adapt content size
+
+  }, {
+    key: 'contentSize',
+    get: function get() {
+      var _attr = this.attr('size'),
+          _attr2 = (0, _slicedToArray3.default)(_attr, 2),
+          width = _attr2[0],
+          height = _attr2[1];
+
+      if (this[_boxSize]) {
+        return this[_boxSize];
+      }
+      if (width === '' || height === '') {
+        var size = calculTextboxSize(this, this.text, this.attr('font'), this.attr('lineHeight'));
+        this[_boxSize] = size;
+        return size || [0, 0];
+      }
+
+      return [width, height];
+    }
+  }]);
+  return Label;
+}(_basesprite2.default), _class2.Attr = LabelSpriteAttr, _temp);
+exports.default = Label;
+
+
+(0, _nodetype.registerNodeType)('label', Label);
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _from = __webpack_require__(55);
+
+var _from2 = _interopRequireDefault(_from);
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _promise = __webpack_require__(56);
+
+var _promise2 = _interopRequireDefault(_promise);
+
+var _set = __webpack_require__(46);
+
+var _set2 = _interopRequireDefault(_set);
+
+var _typeof2 = __webpack_require__(34);
+
+var _typeof3 = _interopRequireDefault(_typeof2);
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(16);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _get2 = __webpack_require__(18);
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _inherits2 = __webpack_require__(15);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _basenode = __webpack_require__(77);
+
+var _basenode2 = _interopRequireDefault(_basenode);
+
+var _batch = __webpack_require__(109);
+
+var _batch2 = _interopRequireDefault(_batch);
+
+var _group = __webpack_require__(110);
+
+var _group2 = _interopRequireDefault(_group);
+
+var _spriteAnimator = __webpack_require__(53);
+
+var _fastAnimationFrame = __webpack_require__(105);
+
+var _nodetype = __webpack_require__(28);
+
+var _render = __webpack_require__(42);
+
+var _dirtyCheck = __webpack_require__(199);
+
+var _spriteUtils = __webpack_require__(14);
+
+var _group3 = __webpack_require__(111);
+
+var _group4 = _interopRequireDefault(_group3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _children = (0, _symbol2.default)('children'),
+    _updateSet = (0, _symbol2.default)('updateSet'),
+    _zOrder = (0, _symbol2.default)('zOrder'),
+    _tRecord = (0, _symbol2.default)('tRecord'),
+    _timeline = (0, _symbol2.default)('timeline'),
+    _renderDeferer = (0, _symbol2.default)('renderDeferrer');
+
+var Layer = function (_BaseNode) {
+  (0, _inherits3.default)(Layer, _BaseNode);
+
+  function Layer() {
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        context = _ref.context,
+        handleEvent = _ref.handleEvent,
+        evaluateFPS = _ref.evaluateFPS,
+        renderMode = _ref.renderMode,
+        shadowContext = _ref.shadowContext;
+
+    (0, _classCallCheck3.default)(this, Layer);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (Layer.__proto__ || (0, _getPrototypeOf2.default)(Layer)).call(this));
+
+    _this.handleEvent = handleEvent !== false;
+    _this.evaluateFPS = !!evaluateFPS;
+
+    // renderMode: repaintAll | repaintDirty
+    _this.renderMode = renderMode || 'repaintAll';
+
+    _this.outputContext = context;
+
+    if (shadowContext !== false) {
+      if ((typeof shadowContext === 'undefined' ? 'undefined' : (0, _typeof3.default)(shadowContext)) === 'object') {
+        _this.shadowContext = shadowContext;
+      } else if (context.canvas && context.canvas.cloneNode) {
+        var shadowCanvas = context.canvas.cloneNode();
+        _this.shadowContext = shadowCanvas.getContext('2d');
+      }
+    }
+
+    // auto release
+    if (context.canvas && context.canvas.addEventListener) {
+      context.canvas.addEventListener('DOMNodeRemovedFromDocument', function () {
+        _this.timeline.clear();
+        _this.remove();
+      });
+    }
+
+    _this[_children] = [];
+    _this[_updateSet] = new _set2.default();
+    _this[_zOrder] = 0;
+    _this[_tRecord] = []; // calculate FPS
+    _this[_timeline] = new _spriteAnimator.Timeline();
+    _this[_renderDeferer] = null;
+    return _this;
+  }
+
+  (0, _createClass3.default)(Layer, [{
+    key: 'prepareRender',
+    value: function prepareRender() {
+      var _this2 = this;
+
+      if (!this[_renderDeferer]) {
+        this[_renderDeferer] = {};
+        this[_renderDeferer].promise = new _promise2.default(function (resolve, reject) {
+          (0, _assign2.default)(_this2[_renderDeferer], { resolve: resolve, reject: reject });
+          (0, _fastAnimationFrame.requestAnimationFrame)(_this2.draw.bind(_this2));
+        });
+        // .catch(ex => console.error(ex.message))
+      }
+      return this[_renderDeferer] ? this[_renderDeferer].promise : _promise2.default.resolve();
+    }
+  }, {
+    key: 'draw',
+    value: function draw(t) {
+      if (t && this.evaluateFPS) {
+        this[_tRecord].push(t);
+        this[_tRecord] = this[_tRecord].slice(-10);
+      }
+
+      var updateSet = this[_updateSet];
+      if (updateSet.size) {
+        var renderer = void 0;
+        if (this.renderMode === 'repaintDirty') {
+          renderer = this.renderRepaintDirty.bind(this);
+        } else if (this.renderMode === 'repaintAll') {
+          renderer = this.renderRepaintAll.bind(this);
+        } else {
+          throw new Error('unknown render mode!');
+        }
+        var currentTime = this.timeline.currentTime;
+        renderer(currentTime);
+
+        (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'dispatchEvent', this).call(this, 'update', { target: this, timeline: this.timeline, renderTime: currentTime }, true);
+      }
+      if (this[_renderDeferer]) {
+        this[_renderDeferer].resolve();
+        this[_renderDeferer] = null;
+      }
+    }
+  }, {
+    key: 'update',
+    value: function update(target) {
+      if (target && this[_updateSet].has(target)) return;
+      if (target) this[_updateSet].add(target);
+      this.prepareRender();
+    }
+  }, {
+    key: 'isVisible',
+    value: function isVisible(sprite) {
+      if (!sprite.isVisible()) {
+        return false;
+      }
+      if (sprite.parent !== this) {
+        return false;
+      }
+      return true;
+    }
+  }, {
+    key: 'drawSprites',
+    value: function drawSprites(renderEls, t) {
+      for (var i = 0; i < renderEls.length; i++) {
+        var child = renderEls[i];
+        if (child.parent === this) {
+          var isVisible = this.isVisible(child);
+          if (isVisible) {
+            child.draw(t);
+          } else {
+            // invisible, only need to remove lastRenderBox
+            delete child.lastRenderBox;
+          }
+          if (this[_updateSet].has(child)) {
+            child.dispatchEvent('update', { target: child, renderTime: t, isVisible: isVisible }, true, true);
+          }
+        }
+      }
+    }
+  }, {
+    key: 'renderRepaintAll',
+    value: function renderRepaintAll(t) {
+      var renderEls = this[_children];
+      (0, _spriteUtils.sortOrderedSprites)(renderEls);
+
+      var outputContext = this.outputContext;
+      (0, _render.clearContext)(outputContext);
+
+      var shadowContext = this.shadowContext;
+
+      if (shadowContext) {
+        (0, _render.clearContext)(shadowContext);
+        this.drawSprites(renderEls, t);
+        outputContext.drawImage(shadowContext.canvas, 0, 0);
+      } else {
+        this.drawSprites(renderEls, t);
+      }
+
+      this[_updateSet].clear();
+    }
+  }, {
+    key: 'renderRepaintDirty',
+    value: function renderRepaintDirty(t) {
+      var _this3 = this;
+
+      if (!this.outputContext.canvas) {
+        console.warn('Cannot use repaintDirty, fallback to repaintAll!');
+        return this.renderRepaintAll(t);
+      }
+      var _outputContext$canvas = this.outputContext.canvas,
+          width = _outputContext$canvas.width,
+          height = _outputContext$canvas.height;
+
+
+      var updateSet = this[_updateSet];
+      var children = this[_children].filter(function (e) {
+        return _this3.isVisible(e);
+      });
+      var restEls = children.filter(function (el) {
+        return !updateSet.has(el);
+      });
+      var affectedSet = new _set2.default(),
+          unaffectedSet = new _set2.default();
+
+      var updateEls = [].concat((0, _toConsumableArray3.default)(updateSet)).filter(function (e) {
+        return _this3.isVisible(e);
+      });
+
+      for (var i = 0; i < restEls.length; i++) {
+        var unaffectedEl = restEls[i];
+        if ((0, _dirtyCheck.isSpriteDirty)(unaffectedEl, updateEls, true)) {
+          affectedSet.add(unaffectedEl);
+        } else {
+          unaffectedSet.add(unaffectedEl);
+        }
+      }
+
+      if (affectedSet.size > 0 && unaffectedSet.size > 0) {
+        var changed = void 0;
+        do {
+          changed = false;
+          var _affectedEls = (0, _from2.default)(affectedSet),
+              unaffectedEls = (0, _from2.default)(unaffectedSet);
+
+          for (var _i = 0; _i < unaffectedEls.length; _i++) {
+            var _unaffectedEl = unaffectedEls[_i];
+            if ((0, _dirtyCheck.isSpriteDirty)(_unaffectedEl, _affectedEls)) {
+              affectedSet.add(_unaffectedEl);
+              unaffectedSet.delete(_unaffectedEl);
+              changed = true;
+              break;
+            }
+          }
+        } while (changed);
+      }
+
+      var shadowContext = this.shadowContext;
+      var outputContext = this.outputContext;
+
+      if (shadowContext) {
+        shadowContext.save();
+        shadowContext.beginPath();
+      } else {
+        outputContext.save();
+        outputContext.beginPath();
+      }
+
+      (0, _dirtyCheck.clearDirtyRects)({ shadowContext: shadowContext, outputContext: outputContext }, updateEls, true);
+
+      var affectedEls = (0, _from2.default)(affectedSet);
+      (0, _dirtyCheck.clearDirtyRects)({ shadowContext: shadowContext, outputContext: outputContext }, affectedEls, false);
+
+      if (shadowContext) {
+        shadowContext.clip();
+        shadowContext.clearRect(0, 0, width, height);
+      } else {
+        outputContext.clip();
+        outputContext.clearRect(0, 0, width, height);
+      }
+
+      var renderEls = [].concat((0, _toConsumableArray3.default)(updateSet), (0, _toConsumableArray3.default)(affectedSet));
+      (0, _spriteUtils.sortOrderedSprites)(renderEls);
+
+      this.drawSprites(renderEls, t);
+      if (shadowContext) {
+        outputContext.clearRect(0, 0, width, height);
+        outputContext.drawImage(shadowContext.canvas, 0, 0);
+        shadowContext.restore();
+      }
+
+      outputContext.restore();
+      this[_updateSet].clear();
+    }
+  }, {
+    key: 'pointCollision',
+    value: function pointCollision(evt) {
+      if (this.outputContext.canvas) {
+        var layerX = evt.layerX,
+            layerY = evt.layerY;
+        var _outputContext$canvas2 = this.outputContext.canvas,
+            width = _outputContext$canvas2.width,
+            height = _outputContext$canvas2.height;
+
+
+        if (layerX >= 0 && layerY >= 0 && layerX < width && layerY < height) {
+          return true;
+        }
+        return false;
+      }
+      return true;
+    }
+  }, {
+    key: 'dispatchEvent',
+    value: function dispatchEvent(type, evt) {
+      var collisionState = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      var swallow = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+      var isCollision = collisionState || this.pointCollision(evt);
+      if (!evt.terminated && isCollision) {
+        evt.layer = this;
+
+        var sprites = this[_children].slice(0);
+        (0, _spriteUtils.sortOrderedSprites)(sprites, true);
+
+        var targetSprites = [];
+
+        if (!swallow && type !== 'mouseenter' && type !== 'mouseleave') {
+          for (var i = 0; i < sprites.length; i++) {
+            var sprite = sprites[i];
+            var hit = sprite.dispatchEvent(type, evt, collisionState, swallow);
+            if (hit) {
+              // detect mouseenter/mouseleave
+              targetSprites.push(sprite);
+            }
+            if (evt.terminated && !evt.type.startsWith('mouse')) {
+              break;
+            }
+          }
+        }
+
+        evt.targetSprites = targetSprites;
+      }
+
+      // stopDispatch can only terminate event in the same level
+      evt.terminated = false;
+      return (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'dispatchEvent', this).call(this, type, evt, collisionState);
+    }
+  }, {
+    key: 'connect',
+    value: function connect(parent, zOrder, zIndex) {
+      (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'connect', this).call(this, parent, zOrder);
+      this.zIndex = zIndex;
+      if (parent && parent.container) {
+        parent.container.appendChild(this.outputContext.canvas);
+      }
+      return this;
+    }
+  }, {
+    key: 'disconnect',
+    value: function disconnect(parent) {
+      if (this.canvas && this.canvas.remove) {
+        this.canvas.remove();
+      }
+      return (0, _get3.default)(Layer.prototype.__proto__ || (0, _getPrototypeOf2.default)(Layer.prototype), 'disconnect', this).call(this, parent);
+    }
+  }, {
+    key: 'group',
+    value: function group() {
+      var group = new _group2.default();
+      group.append.apply(group, arguments);
+      this.appendChild(group);
+      return group;
+    }
+  }, {
+    key: 'batch',
+    value: function batch() {
+      var _this4 = this;
+
+      for (var _len = arguments.length, sprites = Array(_len), _key = 0; _key < _len; _key++) {
+        sprites[_key] = arguments[_key];
+      }
+
+      sprites.forEach(function (sprite) {
+        if (sprite.layer !== _this4) {
+          _this4.appendChild(sprite);
+        }
+      });
+      var batch = new _batch2.default(this);
+      batch.add.apply(batch, sprites);
+      return batch;
+    }
+  }, {
+    key: 'adjust',
+    value: function adjust(handler) {
+      var update = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+      var outputContext = this.outputContext,
+          shadowContext = this.shadowContext;
+      if (!shadowContext) {
+        throw new Error('No shadowContext.');
+      }
+      (0, _render.clearContext)(outputContext);
+
+      handler.call(this, outputContext);
+
+      if (update) {
+        outputContext.drawImage(shadowContext.canvas, 0, 0);
+      }
+    }
+  }, {
+    key: 'clearUpdate',
+    value: function clearUpdate() {
+      this[_updateSet].clear();
+    }
+  }, {
+    key: 'layer',
+    get: function get() {
+      return this;
+    }
+  }, {
+    key: 'children',
+    get: function get() {
+      return this[_children];
+    }
+  }, {
+    key: 'timeline',
+    get: function get() {
+      return this[_timeline];
+    }
+  }, {
+    key: 'context',
+    get: function get() {
+      return this.shadowContext ? this.shadowContext : this.outputContext;
+    }
+  }, {
+    key: 'canvas',
+    get: function get() {
+      return this.outputContext.canvas;
+    }
+  }, {
+    key: 'fps',
+    get: function get() {
+      if (!this.evaluateFPS) {
+        return NaN;
+      }
+      var sum = 0;
+      var tr = this[_tRecord].slice(-10);
+      var len = tr.length;
+
+      if (len <= 5) {
+        return NaN;
+      }
+      tr.reduceRight(function (a, b, i) {
+        sum += a - b;return b;
+      });
+
+      return Math.round(1000 * (len - 1) / sum);
+    }
+  }]);
+  return Layer;
+}(_basenode2.default);
+
+exports.default = Layer;
+
+(0, _assign2.default)(Layer.prototype, _group4.default);
+
+(0, _nodetype.registerNodeType)('layer', Layer, true);
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _get2 = __webpack_require__(18);
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _getOwnPropertyDescriptor = __webpack_require__(24);
+
+var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
+
+var _assign = __webpack_require__(9);
+
+var _assign2 = _interopRequireDefault(_assign);
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(16);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(15);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _dec, _dec2, _dec3, _desc, _value, _class, _class2, _temp;
+
+var _basesprite = __webpack_require__(41);
+
+var _basesprite2 = _interopRequireDefault(_basesprite);
+
+var _render = __webpack_require__(42);
+
+var _spriteAnimator = __webpack_require__(53);
+
+var _spriteUtils = __webpack_require__(14);
+
+var _path = __webpack_require__(112);
+
+var _nodetype = __webpack_require__(28);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _applyDecoratedDescriptor = __webpack_require__(29);
+
+_spriteAnimator.Effects.d = _path.pathEffect;
+
+_spriteAnimator.Effects.path = function (path1, path2, p, start, end) {
+  path1 = (0, _path.createSvgPath)(path1);
+  path2 = (0, _path.createSvgPath)(path2);
+  return (0, _path.pathEffect)(path1.d, path2.d, p, start, end);
+};
+
+var PathSpriteAttr = (_dec = (0, _spriteUtils.parseValue)(parseFloat), _dec2 = (0, _spriteUtils.parseValue)(parseFloat), _dec3 = (0, _spriteUtils.deprecate)('Instead use strokeColor.'), (_class = function (_BaseSprite$Attr) {
+  (0, _inherits3.default)(PathSpriteAttr, _BaseSprite$Attr);
+
+  function PathSpriteAttr(subject) {
+    (0, _classCallCheck3.default)(this, PathSpriteAttr);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (PathSpriteAttr.__proto__ || (0, _getPrototypeOf2.default)(PathSpriteAttr)).call(this, subject));
+
+    _this.setDefault({
+      lineWidth: 1,
+      lineDash: null,
+      lineDashOffset: 0,
+      lineCap: 'butt',
+      lineJoin: 'miter',
+      strokeColor: '',
+      fillColor: ''
+    }, {
+      color: function color() {
+        return this.strokeColor;
+      },
+      d: function d() {
+        return this.path ? this.path.d : null;
+      }
+    });
+    return _this;
+  }
+
+  (0, _createClass3.default)(PathSpriteAttr, [{
+    key: 'path',
+    set: function set(val) {
+      this.clearCache();
+      if (val) {
+        val = typeof val === 'string' ? { d: val } : val;
+        this.subject.svg = (0, _path.createSvgPath)(val);
+        this.set('path', val);
+      } else {
+        this.subject.svg = null;
+        this.set('path', null);
+      }
+    }
+  }, {
+    key: 'd',
+    set: function set(val) {
+      if (val) {
+        var path = this.get('path');
+        if (!path) {
+          this.path = { d: val };
+        } else {
+          this.path = (0, _assign2.default)(path, { d: val });
+        }
+      } else {
+        this.path = null;
+      }
+    }
+  }, {
+    key: 'lineWidth',
+    set: function set(val) {
+      this.clearCache();
+      this.set('lineWidth', Math.round(val));
+    }
+  }, {
+    key: 'lineDash',
+    set: function set(val) {
+      this.clearCache();
+      this.set('lineDash', val);
+    }
+  }, {
+    key: 'lineDashOffset',
+    set: function set(val) {
+      this.clearCache();
+      this.set('lineDashOffset', val);
+    }
+
+    /**
+      lineCap: butt|round|square
+     */
+
+  }, {
+    key: 'lineCap',
+    set: function set(val) {
+      this.clearCache();
+      this.set('lineCap', val);
+    }
+
+    /**
+      lineJoin: miter|round|bevel
+     */
+
+  }, {
+    key: 'lineJoin',
+    set: function set(val) {
+      this.clearCache();
+      this.set('lineJoin', val);
+    }
+  }, {
+    key: 'strokeColor',
+    set: function set(val) {
+      this.clearCache();
+      this.set('strokeColor', (0, _spriteUtils.parseColorString)(val));
+    }
+  }, {
+    key: 'fillColor',
+    set: function set(val) {
+      this.clearCache();
+      this.set('fillColor', (0, _spriteUtils.parseColorString)(val));
+    }
+  }, {
+    key: 'color',
+    set: function set(val) {
+      this.strokeColor = val;
+    }
+  }]);
+  return PathSpriteAttr;
+}(_basesprite2.default.Attr), (_applyDecoratedDescriptor(_class.prototype, 'path', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'path'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'd', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'd'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineWidth', [_dec, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineWidth'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineDash', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineDash'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineDashOffset', [_dec2, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineDashOffset'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineCap', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineCap'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'lineJoin', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'lineJoin'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'strokeColor', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'strokeColor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'fillColor', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'fillColor'), _class.prototype), _applyDecoratedDescriptor(_class.prototype, 'color', [_dec3, _spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'color'), _class.prototype)), _class));
+var Path = (_temp = _class2 = function (_BaseSprite) {
+  (0, _inherits3.default)(Path, _BaseSprite);
+
+  function Path(attr) {
+    (0, _classCallCheck3.default)(this, Path);
+
+    if (typeof attr === 'string') {
+      attr = { d: attr };
+    }
+    return (0, _possibleConstructorReturn3.default)(this, (Path.__proto__ || (0, _getPrototypeOf2.default)(Path)).call(this, attr));
+  }
+
+  (0, _createClass3.default)(Path, [{
+    key: 'getPointAtLength',
+    value: function getPointAtLength(length) {
+      if (this.svg) {
+        return this.svg.getPointAtLength(length);
+      }
+      return [0, 0];
+    }
+  }, {
+    key: 'getPathLength',
+    value: function getPathLength() {
+      if (this.svg) {
+        return this.svg.getTotalLength();
+      }
+      return 0;
+    }
+  }, {
+    key: 'findPath',
+    value: function findPath(offsetX, offsetY) {
+      var rect = this.originalRect;
+      var pathOffset = this.pathOffset;
+      if (this.svg && this.svg.isPointInPath(offsetX - rect[0] - pathOffset[0], offsetY - rect[1] - pathOffset[1])) {
+        return [this.svg];
+      }
+      return [];
+    }
+  }, {
+    key: 'pointCollision',
+    value: function pointCollision(evt) {
+      if ((0, _get3.default)(Path.prototype.__proto__ || (0, _getPrototypeOf2.default)(Path.prototype), 'pointCollision', this).call(this, evt)) {
+        var offsetX = evt.offsetX,
+            offsetY = evt.offsetY;
+
+        var svg = this.svg;
+        if (svg) {
+          var bounds = svg.bounds;
+          offsetX += Math.min(0, bounds[0]);
+          offsetY += Math.min(0, bounds[1]);
+        }
+        evt.targetPaths = this.findPath(offsetX, offsetY);
+        return true;
+      }
+      return false;
+    }
+  }, {
+    key: 'render',
+    value: function render(t, drawingContext) {
+      (0, _get3.default)(Path.prototype.__proto__ || (0, _getPrototypeOf2.default)(Path.prototype), 'render', this).call(this, t, drawingContext);
+      var d = this.attr('d'),
+          lineWidth = this.attr('lineWidth'),
+          lineCap = this.attr('lineCap'),
+          lineJoin = this.attr('lineJoin'),
+          lineDash = this.attr('lineDash');
+
+      if (d) {
+        var svg = this.svg;
+
+        var _svg$bounds = (0, _slicedToArray3.default)(svg.bounds, 2),
+            ox = _svg$bounds[0],
+            oy = _svg$bounds[1];
+
+        if (ox < 0 || oy < 0) {
+          drawingContext.translate(-Math.min(0, ox), -Math.min(0, oy));
+        }
+        drawingContext.translate.apply(drawingContext, (0, _toConsumableArray3.default)(this.pathOffset));
+        svg.beginPath().to(drawingContext);
+
+        drawingContext.lineWidth = lineWidth;
+        drawingContext.lineCap = lineCap;
+        drawingContext.lineJoin = lineJoin;
+
+        if (lineDash != null) {
+          drawingContext.setLineDash(lineDash);
+
+          var lineDashOffset = this.attr('lineDashOffset');
+          drawingContext.lineDashOffset = lineDashOffset;
+        }
+
+        var fillColor = (0, _render.findColor)(drawingContext, this, 'fillColor');
+        if (fillColor) {
+          drawingContext.fillStyle = fillColor;
+        }
+
+        var strokeColor = (0, _render.findColor)(drawingContext, this, 'strokeColor');
+
+        if (!strokeColor && !fillColor) {
+          strokeColor = (0, _spriteUtils.parseColorString)('black');
+        }
+        if (strokeColor) {
+          drawingContext.strokeStyle = strokeColor;
+        }
+
+        if (fillColor) {
+          drawingContext.fill();
+        }
+        if (strokeColor) {
+          drawingContext.stroke();
+        }
+      }
+    }
+  }, {
+    key: 'path',
+    set: function set(val) {
+      this.attr('path', val);
+    },
+    get: function get() {
+      return this.attr('path');
+    }
+  }, {
+    key: 'lineWidth',
+    get: function get() {
+      var lineWidth = this.attr('lineWidth'),
+          gradients = this.attr('gradients'),
+          fillColor = this.attr('fillColor'),
+          strokeColor = this.attr('strokeColor');
+
+      var hasStrokeColor = strokeColor || gradients && gradients.strokeColor,
+          hasFillColor = fillColor || gradients && gradients.fillColor;
+
+      if (!hasStrokeColor && hasFillColor) {
+        // fill: ignore stroke
+        return 0;
+      }
+      return lineWidth;
+    }
+  }, {
+    key: 'pathOffset',
+    get: function get() {
+      var lineWidth = this.lineWidth;
+      return [lineWidth * 1.414, lineWidth * 1.414];
+    }
+  }, {
+    key: 'pathSize',
+    get: function get() {
+      return this.svg ? this.svg.size : [0, 0];
+    }
+  }, {
+    key: 'contentSize',
+    get: function get() {
+      if (!this.svg) return (0, _get3.default)(Path.prototype.__proto__ || (0, _getPrototypeOf2.default)(Path.prototype), 'contentSize', this);
+
+      var bounds = this.svg.bounds;
+
+      var _attr = this.attr('size'),
+          _attr2 = (0, _slicedToArray3.default)(_attr, 2),
+          width = _attr2[0],
+          height = _attr2[1];
+
+      var lineWidth = this.lineWidth;
+
+      if (width === '') {
+        width = bounds[2] - Math.min(0, bounds[0]) + 2 * 1.414 * lineWidth | 0;
+      }
+      if (height === '') {
+        height = bounds[3] - Math.min(0, bounds[1]) + 2 * 1.414 * lineWidth | 0;
+      }
+
+      return [width, height];
+    }
+  }, {
+    key: 'originalRect',
+    get: function get() {
+      var rect = (0, _get3.default)(Path.prototype.__proto__ || (0, _getPrototypeOf2.default)(Path.prototype), 'originalRect', this),
+          svg = this.svg;
+      if (svg) {
+        var bounds = svg.bounds;
+        rect[0] += Math.min(0, bounds[0]);
+        rect[1] += Math.min(0, bounds[1]);
+      }
+      return rect;
+    }
+  }]);
+  return Path;
+}(_basesprite2.default), _class2.Attr = PathSpriteAttr, _temp);
+exports.default = Path;
+
+
+(0, _nodetype.registerNodeType)('path', Path);
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _stringify = __webpack_require__(81);
+
+var _stringify2 = _interopRequireDefault(_stringify);
+
+var _toConsumableArray2 = __webpack_require__(5);
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _map = __webpack_require__(23);
+
+var _map2 = _interopRequireDefault(_map);
+
+var _get2 = __webpack_require__(18);
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _getOwnPropertyDescriptor = __webpack_require__(24);
+
+var _getOwnPropertyDescriptor2 = _interopRequireDefault(_getOwnPropertyDescriptor);
+
+var _getPrototypeOf = __webpack_require__(10);
+
+var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+var _possibleConstructorReturn2 = __webpack_require__(16);
+
+var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+var _inherits2 = __webpack_require__(15);
+
+var _inherits3 = _interopRequireDefault(_inherits2);
+
+var _symbol = __webpack_require__(6);
+
+var _symbol2 = _interopRequireDefault(_symbol);
+
+var _desc, _value, _class, _class2, _temp;
+
+var _basesprite = __webpack_require__(41);
+
+var _basesprite2 = _interopRequireDefault(_basesprite);
+
+var _filters = __webpack_require__(198);
+
+var _filters2 = _interopRequireDefault(_filters);
+
+var _spriteUtils = __webpack_require__(14);
+
+var _nodetype = __webpack_require__(28);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _applyDecoratedDescriptor = __webpack_require__(29);
+
+var _texturesCache = (0, _symbol2.default)('_texturesCache');
+var _images = (0, _symbol2.default)('_images');
+
+var TextureAttr = (_class = function (_BaseSprite$Attr) {
+  (0, _inherits3.default)(TextureAttr, _BaseSprite$Attr);
+
+  function TextureAttr(subject) {
+    (0, _classCallCheck3.default)(this, TextureAttr);
+
+    var _this = (0, _possibleConstructorReturn3.default)(this, (TextureAttr.__proto__ || (0, _getPrototypeOf2.default)(TextureAttr)).call(this, subject));
+
+    _this.setDefault({
+      textures: []
+    });
+    return _this;
+  }
+  /*
+    {
+      image: ...,  //texture resource
+      srcRect: ..., //texture clip
+      rect: ....,  //texture in sprite offset
+      filter: ...  //texture filters
+    }
+   */
+
+
+  (0, _createClass3.default)(TextureAttr, [{
+    key: 'loadTextures',
+    value: function loadTextures(textures) {
+      var subject = this.subject;
+
+      // adaptive textures
+      var width = 0,
+          height = 0;
+
+      subject.images = textures.map(function (texture) {
+        var image = texture.image,
+            rect = texture.rect,
+            srcRect = texture.srcRect;
+
+        var w = void 0,
+            h = void 0;
+        if (rect) {
+          w = rect[2] + rect[0];
+          h = rect[3] + rect[1];
+        } else if (srcRect) {
+          w = srcRect[2];
+          h = srcRect[3];
+        } else {
+          w = image.width;
+          h = image.height;
+        }
+        if (width < w) {
+          width = w;
+        }
+        if (height < h) {
+          height = h;
+        }
+        delete texture.image;
+        return image;
+      });
+
+      subject.texturesSize = [width, height];
+      return textures;
+    }
+  }, {
+    key: 'textures',
+    set: function set(textures) {
+      if (!Array.isArray(textures)) {
+        textures = [textures];
+      }
+
+      textures = textures.map(function (texture) {
+        if (!texture.image) {
+          texture = { image: texture };
+        }
+        return texture;
+      });
+
+      this.loadTextures(textures);
+      this.set('textures', textures);
+    }
+  }]);
+  return TextureAttr;
+}(_basesprite2.default.Attr), (_applyDecoratedDescriptor(_class.prototype, 'textures', [_spriteUtils.attr], (0, _getOwnPropertyDescriptor2.default)(_class.prototype, 'textures'), _class.prototype)), _class);
+var Sprite = (_temp = _class2 = function (_BaseSprite) {
+  (0, _inherits3.default)(Sprite, _BaseSprite);
+
+  /**
+    new Sprite({
+      attr: {
+        ...
+      },
+      attributeChangedCallback: function(prop, oldValue, newValue){
+       }
+    })
+   */
+  function Sprite(attr) {
+    (0, _classCallCheck3.default)(this, Sprite);
+
+    if (typeof attr === 'string') {
+      attr = { textures: [attr] };
+    }
+
+    var _this2 = (0, _possibleConstructorReturn3.default)(this, (Sprite.__proto__ || (0, _getPrototypeOf2.default)(Sprite)).call(this));
+
+    _this2[_texturesCache] = new _map2.default();
+    if (attr) {
+      _this2.attr(attr);
+    }
+    return _this2;
+  }
+
+  (0, _createClass3.default)(Sprite, [{
+    key: 'cloneNode',
+    value: function cloneNode() {
+      var _this3 = this;
+
+      var node = (0, _get3.default)(Sprite.prototype.__proto__ || (0, _getPrototypeOf2.default)(Sprite.prototype), 'cloneNode', this).call(this);
+      node.textures = this.textures.map(function (texture, i) {
+        texture.image = _this3.images[i];
+        return texture;
+      });
+      return node;
+    }
+  }, {
+    key: 'pointCollision',
+    value: function pointCollision(evt) {
+      var _this4 = this;
+
+      if ((0, _get3.default)(Sprite.prototype.__proto__ || (0, _getPrototypeOf2.default)(Sprite.prototype), 'pointCollision', this).call(this, evt)) {
+        var textures = this.textures;
+
+        if (textures) {
+          var offsetX = evt.offsetX,
+              offsetY = evt.offsetY;
+
+          evt.targetTextures = [];
+
+          var _attr = this.attr('anchor'),
+              _attr2 = (0, _slicedToArray3.default)(_attr, 2),
+              anchorX = _attr2[0],
+              anchorY = _attr2[1],
+              _contentSize = (0, _slicedToArray3.default)(this.contentSize, 2),
+              width = _contentSize[0],
+              height = _contentSize[1];
+
+          offsetX += width * anchorX;
+          offsetY += height * anchorY;
+
+          textures.forEach(function (texture) {
+            var _ref = texture.rect || [0, 0].concat((0, _toConsumableArray3.default)(_this4.innerSize)),
+                _ref2 = (0, _slicedToArray3.default)(_ref, 4),
+                x = _ref2[0],
+                y = _ref2[1],
+                w = _ref2[2],
+                h = _ref2[3];
+
+            if (offsetX >= x && offsetX - x < w && offsetY >= y && offsetY - y < h) {
+              // touched textures
+              evt.targetTextures.push(texture);
+            }
+          });
+        }
+        return true;
+      }
+      return false;
+    }
+  }, {
+    key: 'render',
+    value: function render(t, drawingContext) {
+      var _this5 = this;
+
+      (0, _get3.default)(Sprite.prototype.__proto__ || (0, _getPrototypeOf2.default)(Sprite.prototype), 'render', this).call(this, t, drawingContext);
+      var textures = this.textures;
+
+      if (this.images) {
+        textures.forEach(function (texture, i) {
+          var img = _this5.images[i];
+          var rect = (texture.rect || [0, 0].concat((0, _toConsumableArray3.default)(_this5.innerSize))).slice(0);
+          var srcRect = texture.srcRect;
+
+          drawingContext.save();
+
+          if (texture.filter) {
+            var outterRect = void 0;
+            var imgRect = srcRect ? [0, 0, srcRect[2], srcRect[3]] : [0, 0, img.width, img.height];
+
+            if (texture.filter.dropShadow) {
+              var dsArr = texture.filter.dropShadow;
+              var shadowRect = [dsArr[0] - 2 * dsArr[2], dsArr[1] - 2 * dsArr[2], imgRect[2] + 4 * dsArr[2], imgRect[3] + 4 * dsArr[2]].map(function (val) {
+                return Math.round(val);
+              });
+
+              outterRect = (0, _spriteUtils.boxToRect)((0, _spriteUtils.boxUnion)((0, _spriteUtils.rectToBox)(shadowRect), (0, _spriteUtils.rectToBox)(imgRect))).map(function (val) {
+                return Math.abs(val);
+              });
+            } else {
+              outterRect = imgRect;
+            }
+
+            var sx = rect[2] / outterRect[2],
+                sy = rect[3] / outterRect[3];
+
+            drawingContext.filter = _filters2.default.compile(texture.filter);
+
+            if (srcRect) {
+              drawingContext.drawImage.apply(drawingContext, [img].concat((0, _toConsumableArray3.default)(srcRect), [sx * outterRect[0] + rect[0], sy * outterRect[1] + rect[1], sx * srcRect[2], sy * srcRect[3]]));
+            } else {
+              drawingContext.drawImage(img, sx * outterRect[0] + rect[0], sy * outterRect[1] + rect[1], sx * img.width, sy * img.height);
+            }
+          } else if (srcRect) {
+            drawingContext.drawImage.apply(drawingContext, [img].concat((0, _toConsumableArray3.default)(srcRect), (0, _toConsumableArray3.default)(rect)));
+          } else {
+            drawingContext.drawImage.apply(drawingContext, [img].concat((0, _toConsumableArray3.default)(rect)));
+          }
+
+          drawingContext.restore();
+        });
+      }
+    }
+  }, {
+    key: 'images',
+    set: function set(images) {
+      this[_images] = images;
+    },
+    get: function get() {
+      return this[_images];
+    }
+  }, {
+    key: 'textures',
+    set: function set(textures) {
+      this.attr('textures', textures);
+    },
+    get: function get() {
+      return this.attr('textures');
+    }
+
+    // override to adapt textures' size
+
+  }, {
+    key: 'contentSize',
+    get: function get() {
+      var _attr3 = this.attr('size'),
+          _attr4 = (0, _slicedToArray3.default)(_attr3, 2),
+          width = _attr4[0],
+          height = _attr4[1];
+
+      var boxSize = this.texturesSize || [0, 0];
+
+      if (width === '') {
+        width = boxSize[0] | 0;
+      }
+      if (height === '') {
+        height = boxSize[1] | 0;
+      }
+
+      return [width, height];
+    }
+  }, {
+    key: 'cache',
+    set: function set(context) {
+      if (context == null) {
+        this[_texturesCache].clear();
+        return;
+      }
+      var key = (0, _stringify2.default)(this.textures),
+          cacheMap = this[_texturesCache];
+
+      if (!cacheMap.has(key)) {
+        cacheMap.set(key, context);
+      }
+    },
+    get: function get() {
+      var key = (0, _stringify2.default)(this.textures),
+          cacheMap = this[_texturesCache];
+      if (cacheMap.has(key)) {
+        return cacheMap.get(key);
+      }
+      return null;
+    }
+  }]);
+  return Sprite;
+}(_basesprite2.default), _class2.Attr = TextureAttr, _temp);
+exports.default = Sprite;
+
+
+(0, _nodetype.registerNodeType)('sprite', Sprite);
+
+/***/ }),
+/* 207 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// from https://github.com/chrisaljoudi/transformatrix.js
+/**
+  default:
+          (1, 0, 0)
+          (0, 1, 0)
+ */
+var Matrix = function Matrix(m) {
+  m = m || [1, 0, 0, 1, 0, 0];
+  this.m = m.slice(0);
+};
+
+Matrix.prototype.unit = function () {
+  this.m = [1, 0, 0, 1, 0, 0];
+  return this;
+};
+
+Matrix.prototype.multiply = function (m) {
+  var m1 = this.m;
+  var m2 = void 0;
+
+  if (m instanceof Matrix) {
+    m2 = m.m;
+  } else {
+    m2 = m;
+  }
+
+  var m11 = m1[0] * m2[0] + m1[2] * m2[1],
+      m12 = m1[1] * m2[0] + m1[3] * m2[1],
+      m21 = m1[0] * m2[2] + m1[2] * m2[3],
+      m22 = m1[1] * m2[2] + m1[3] * m2[3];
+
+  var dx = m1[0] * m2[4] + m1[2] * m2[5] + m1[4],
+      dy = m1[1] * m2[4] + m1[3] * m2[5] + m1[5];
+
+  m1[0] = m11;
+  m1[1] = m12;
+  m1[2] = m21;
+  m1[3] = m22;
+  m1[4] = dx;
+  m1[5] = dy;
+
+  return this;
+};
+
+Matrix.prototype.inverse = function () {
+  var inv = new Matrix(this.m),
+      invm = inv.m;
+
+  var d = 1 / (invm[0] * invm[3] - invm[1] * invm[2]),
+      m0 = invm[3] * d,
+      m1 = -invm[1] * d,
+      m2 = -invm[2] * d,
+      m3 = invm[0] * d,
+      m4 = d * (invm[2] * invm[5] - invm[3] * invm[4]),
+      m5 = d * (invm[1] * invm[4] - invm[0] * invm[5]);
+
+  invm[0] = m0;
+  invm[1] = m1;
+  invm[2] = m2;
+  invm[3] = m3;
+  invm[4] = m4;
+  invm[5] = m5;
+
+  return inv;
+};
+
+/**
+  (1, 0, sx)
+  (0, 1, sy)
+ * */
+Matrix.prototype.translate = function (x, y) {
+  return this.multiply([1, 0, 0, 1, x, y]);
+};
+
+/**
+    (cos, -sin, 0)
+    (sin, cos, 0)
+ */
+Matrix.prototype.rotate = function (deg) {
+  var rad = deg * Math.PI / 180,
+      c = Math.cos(rad),
+      s = Math.sin(rad);
+
+  return this.multiply([c, s, -s, c, 0, 0]);
+};
+
+/**
+    (1, tx, 0)
+    (ty, 1, 0)
+ */
+Matrix.prototype.skew = function (degX, degY) {
+  degY |= 0;
+  var radX = degX * Math.PI / 180,
+      radY = degY * Math.PI / 180;
+  var tx = Math.tan(radX),
+      ty = Math.tan(radY);
+
+  return this.multiply([1, ty, tx, 1, 0, 0]);
+};
+
+/**
+  (sx, 0, 0)
+  (0, sy, 0)
+ */
+Matrix.prototype.scale = function (sx, sy) {
+  return this.multiply([sx, 0, 0, sy, 0, 0]);
+};
+
+Matrix.prototype.transformPoint = function (px, py) {
+  var x = px,
+      y = py;
+  px = x * this.m[0] + y * this.m[2] + this.m[4];
+  py = x * this.m[1] + y * this.m[3] + this.m[5];
+
+  return [px, py];
+};
+
+Matrix.prototype.transformVector = function (px, py) {
+  var x = px,
+      y = py;
+  px = x * this.m[0] + y * this.m[2];
+  py = x * this.m[1] + y * this.m[3];
+
+  return [px, py];
+};
+
+exports.default = Matrix;
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+var _classCallCheck2 = __webpack_require__(3);
+
+var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+var _createClass2 = __webpack_require__(4);
+
+var _createClass3 = _interopRequireDefault(_createClass2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Vector = function () {
+  function Vector(p1) {
+    var p2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [0, 0, 0];
+    (0, _classCallCheck3.default)(this, Vector);
+
+    var _p = (0, _slicedToArray3.default)(p1, 3),
+        x1 = _p[0],
+        y1 = _p[1],
+        z1 = _p[2],
+        _p2 = (0, _slicedToArray3.default)(p2, 3),
+        x2 = _p2[0],
+        y2 = _p2[1],
+        z2 = _p2[2];
+
+    z1 = z1 || 0;
+    z2 = z2 || 0;
+
+    this.x = x1 - x2;
+    this.y = y1 - y2;
+    this.z = z1 - z2;
+  }
+
+  (0, _createClass3.default)(Vector, [{
+    key: "unit",
+    value: function unit() {
+      var length = this.length;
+      return new Vector([this.x / length, this.y / length, this.z / length]);
+    }
+  }, {
+    key: "dot",
+    value: function dot(v) {
+      return this.x * v.x + this.y * v.y + this.z * v.z;
+    }
+  }, {
+    key: "cross",
+    value: function cross(v) {
+      var x1 = this.x,
+          y1 = this.y,
+          z1 = this.z,
+          x2 = v.x,
+          y2 = v.y,
+          z2 = v.z;
+
+      return new Vector([y1 * z2 - z1 * y2, z1 * x2 - x1 * z2, x1 * y2 - x2 * y1]);
+    }
+  }, {
+    key: "length",
+    get: function get() {
+      var x = this.x,
+          y = this.y,
+          z = this.z;
+
+      return Math.sqrt(x * x + y * y + z * z);
+    }
+  }]);
+  return Vector;
+}();
+
+exports.default = Vector;
+
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _slicedToArray2 = __webpack_require__(1);
+
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
+
+exports.nowtime = nowtime;
+exports.formatDelay = formatDelay;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12823,393 +11838,22 @@ function nowtime() {
   return Date.now ? Date.now() : new Date().getTime();
 }
 
-var defaultOptions = {
-  originTime: 0,
-  playbackRate: 1.0
-};
-
-var _timeMark = (0, _symbol2.default)('timeMark'),
-    _playbackRate = (0, _symbol2.default)('playbackRate'),
-    _timers = (0, _symbol2.default)('timers'),
-    _originTime = (0, _symbol2.default)('originTime'),
-    _timerID = (0, _symbol2.default)('timerID'),
-    _setTimer = (0, _symbol2.default)('setTimer'),
-    _parent = (0, _symbol2.default)('parent');
-
-var Timeline = function () {
-  function Timeline(options, parent) {
-    (0, _classCallCheck3.default)(this, Timeline);
-
-    if (options instanceof Timeline) {
-      parent = options;
-      options = {};
-    }
-
-    options = (0, _assign2.default)({}, defaultOptions, options);
-
-    if (parent) {
-      this[_parent] = parent;
-    }
-
-    // timeMark records the reference points on timeline
-    // Each time we change the playbackRate or currentTime or entropy
-    // A new timeMark will be generated
-    // timeMark sorted by entropy
-    // If you reset entropy, all the timeMarks behind the new entropy
-    // should be dropped
-    this[_timeMark] = [{
-      globalTime: this.globalTime,
-      localTime: -options.originTime,
-      entropy: -options.originTime,
-      playbackRate: options.playbackRate
-    }];
-
-    if (this[_parent]) {
-      this[_timeMark][0].globalEntropy = this[_parent].entropy;
-    }
-
-    this[_originTime] = options.originTime;
-    this[_playbackRate] = options.playbackRate;
-    this[_timers] = new _map2.default();
-    this[_timerID] = 0;
+/*
+  delay = 100 -> delay = {delay: 100}
+  delay = {entropy: 100} -> delay = {delay: 100, isEntropy: true}
+ */
+function formatDelay(delay) {
+  if (typeof delay === 'number') {
+    delay = { delay: delay };
+  } else if ('entropy' in delay) {
+    delay = { delay: delay.entropy, isEntropy: true };
   }
-
-  (0, _createClass3.default)(Timeline, [{
-    key: 'fork',
-    value: function fork(options) {
-      return new Timeline(options, this);
-    }
-  }, {
-    key: 'seekGlobalTime',
-    value: function seekGlobalTime(seekEntropy) {
-      var idx = this.seekTimeMark(seekEntropy),
-          timeMark = this[_timeMark][idx];
-
-      var entropy = timeMark.entropy,
-          playbackRate = timeMark.playbackRate,
-          globalTime = timeMark.globalTime;
-
-
-      return globalTime + (seekEntropy - entropy) / Math.abs(playbackRate);
-    }
-  }, {
-    key: 'seekLocalTime',
-    value: function seekLocalTime(seekEntropy) {
-      var idx = this.seekTimeMark(seekEntropy),
-          timeMark = this[_timeMark][idx];
-
-      var localTime = timeMark.localTime,
-          entropy = timeMark.entropy,
-          playbackRate = timeMark.playbackRate;
-
-
-      if (playbackRate > 0) {
-        return localTime + (seekEntropy - entropy);
-      }
-      return localTime - (seekEntropy - entropy);
-    }
-  }, {
-    key: 'seekTimeMark',
-    value: function seekTimeMark(entropy) {
-      var timeMark = this[_timeMark];
-
-      var l = 0,
-          r = timeMark.length - 1;
-
-      if (entropy <= timeMark[l].entropy) {
-        return l;
-      }
-      if (entropy >= timeMark[r].entropy) {
-        return r;
-      }
-
-      var m = Math.floor((l + r) / 2); // binary search
-
-      while (m > l && m < r) {
-        if (entropy === timeMark[m].entropy) {
-          return m;
-        } else if (entropy < timeMark[m].entropy) {
-          r = m;
-        } else if (entropy > timeMark[m].entropy) {
-          l = m;
-        }
-        m = Math.floor((l + r) / 2);
-      }
-
-      return l;
-    }
-  }, {
-    key: 'clearTimeout',
-    value: function (_clearTimeout) {
-      function clearTimeout(_x) {
-        return _clearTimeout.apply(this, arguments);
-      }
-
-      clearTimeout.toString = function () {
-        return _clearTimeout.toString();
-      };
-
-      return clearTimeout;
-    }(function (id) {
-      var timer = this[_timers].get(id);
-      if (timer && timer.timerID != null) {
-        if (this[_parent]) {
-          this[_parent].clearTimeout(timer.timerID);
-        } else {
-          clearTimeout(timer.timerID);
-        }
-      }
-      this[_timers].delete(id);
-    })
-  }, {
-    key: 'clearInterval',
-    value: function clearInterval(id) {
-      return this.clearTimeout(id);
-    }
-  }, {
-    key: 'setTimeout',
-    value: function setTimeout(handler) {
-      var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { time: 0 };
-
-      return this[_setTimer](handler, time, 'timeout');
-    }
-  }, {
-    key: 'setInterval',
-    value: function setInterval(handler) {
-      var time = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : { time: 0 };
-
-      return this[_setTimer](handler, time, 'interval');
-    }
-  }, {
-    key: _setTimer,
-    value: function value(handler, time) {
-      var _this = this;
-
-      var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'timeout';
-
-      if (typeof time === 'number') {
-        time = { time: time };
-      }
-
-      var currentTime = this.currentTime,
-          entropy = this.entropy;
-
-      var id = ++this[_timerID];
-
-      var timerID = null;
-      var delay = void 0;
-
-      if (time.time == null) {
-        // entropy
-        delay = time.entropy / Math.abs(this.playbackRate);
-      } else {
-        delay = time.time / this.playbackRate;
-      }
-
-      if (isFinite(delay)) {
-        var parent = this[_parent],
-            globalTimeout = parent ? parent.setTimeout.bind(parent) : setTimeout,
-            globalInterval = parent ? parent.setInterval.bind(parent) : setInterval;
-
-        delay = Math.ceil(delay);
-
-        if (this[_parent]) {
-          delay = { entropy: delay };
-        }
-
-        if (type === 'timeout') {
-          timerID = globalTimeout(function () {
-            _this[_timers].delete(id);
-            handler();
-          }, delay);
-        } else if (type === 'interval') {
-          timerID = globalInterval(function () {
-            var timer = _this[_timers].get(id);
-            timer.active = true;
-            handler();
-            timer.active = false;
-          }, delay);
-        }
-      }
-
-      this[_timers].set(id, {
-        timerID: timerID,
-        handler: handler,
-        time: time,
-        currentTime: currentTime,
-        entropy: entropy,
-        type: type
-      });
-
-      return id;
-    }
-  }, {
-    key: 'currentTime',
-    get: function get() {
-      var _timeMark2 = this[_timeMark][this[_timeMark].length - 1],
-          localTime = _timeMark2.localTime,
-          globalTime = _timeMark2.globalTime;
-
-      return localTime + (this.globalTime - globalTime) * this.playbackRate;
-    },
-    set: function set(time) {
-      var timeMark = {
-        globalTime: this.globalTime,
-        localTime: time,
-        entropy: this.entropy,
-        playbackRate: this.playbackRate
-      };
-
-      if (this[_parent]) {
-        timeMark.globalEntropy = this[_parent].entropy;
-      }
-
-      this[_timeMark].push(timeMark);
-    }
-    // Both currentTime and entropy should be influenced by playbackRate.
-    // If current playbackRate is negative, the currentTime should go backwards
-    // while the entropy remain to go forwards.
-    // Both of the initial values is set to -originTime
-
-  }, {
-    key: 'entropy',
-    get: function get() {
-      var _timeMark3 = this[_timeMark][this[_timeMark].length - 1],
-          globalTime = _timeMark3.globalTime,
-          entropy = _timeMark3.entropy,
-          globalEntropy = _timeMark3.globalEntropy;
-
-      if (this[_parent]) {
-        return entropy + Math.abs((this[_parent].entropy - globalEntropy) * this.playbackRate);
-      }
-      return entropy + Math.abs((this.globalTime - globalTime) * this.playbackRate);
-    },
-
-    // change entropy will NOT cause currentTime changing but may influence the pass
-    // and the future of the timeline. (It may change the result of seek***Time)
-    // While entropy is set, all the marks behind will be droped
-    set: function set(entropy) {
-      var idx = this.seekTimeMark(entropy);
-      this[_timeMark].length = idx + 1;
-
-      this[_timeMark].push({
-        globalTime: this.globalTime,
-        localTime: this.currentTime,
-        entropy: entropy,
-        playbackRate: this.playbackRate
-      });
-    }
-  }, {
-    key: 'globalTime',
-    get: function get() {
-      if (this[_parent]) {
-        return this[_parent].currentTime;
-      }
-
-      return nowtime();
-    }
-  }, {
-    key: 'playbackRate',
-    get: function get() {
-      return this[_playbackRate];
-    },
-    set: function set(rate) {
-      var _this2 = this;
-
-      if (rate !== this.playbackRate) {
-        var currentTime = this.currentTime;
-        // force currentTime updating
-        this.currentTime = currentTime;
-        this[_playbackRate] = rate;
-        // set new playbackRate in new time mark
-        this[_timeMark][this[_timeMark].length - 1].playbackRate = rate;
-
-        // This should be asynchronous because we may reset playbackRate
-        // in the timer handler ?
-        if (this[_timers].size) {
-          var timers = [].concat((0, _toConsumableArray3.default)(this[_timers]));
-          timers.forEach(function (_ref) {
-            var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
-                id = _ref2[0],
-                timer = _ref2[1];
-
-            _this2.clearTimeout(id);
-
-            var entropy = _this2.entropy,
-                time = timer.time,
-                handler = timer.handler,
-                type = timer.type,
-                active = timer.active;
-
-
-            var timerID = null;
-
-            var delay = void 0;
-            if (time.time == null) {
-              delay = time.entropy - (entropy - timer.entropy);
-              delay /= Math.abs(_this2.playbackRate);
-            } else {
-              delay = time.time - (currentTime - timer.currentTime);
-              delay /= _this2.playbackRate;
-            }
-
-            if (isFinite(delay)) {
-              var parent = _this2[_parent],
-                  globalTimeout = parent ? parent.setTimeout.bind(parent) : setTimeout,
-                  globalInterval = parent ? parent.setInterval.bind(parent) : setInterval;
-
-              delay = Math.ceil(delay);
-
-              if (_this2[_parent]) {
-                delay = { entropy: delay };
-              }
-
-              if (type === 'timeout') {
-                timerID = globalTimeout(function () {
-                  _this2[_timers].delete(id);
-                  handler();
-                }, delay);
-              } else if (type === 'interval') {
-                timerID = globalTimeout(function () {
-                  if (!active) {
-                    handler();
-                  }
-                  if (time.time == null) {
-                    delay = time.entropy / Math.abs(_this2.playbackRate);
-                  } else {
-                    delay = time.time / _this2.playbackRate;
-                  }
-                  if (_this2[_timers].has(id)) {
-                    timerID = globalInterval(function () {
-                      handler();
-                    }, delay);
-                    _this2[_timers].get(id).timerID = timerID;
-                  }
-                }, delay);
-              }
-            }
-
-            _this2[_timers].set(id, {
-              timerID: timerID,
-              handler: handler,
-              time: time,
-              currentTime: currentTime,
-              entropy: entropy,
-              type: type
-            });
-          });
-        }
-      }
-    }
-  }]);
-  return Timeline;
-}();
-
-module.exports = Timeline;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(71)))
+  return delay;
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(106)))
 
 /***/ }),
-/* 211 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13219,7 +11863,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _set = __webpack_require__(50);
+var _set = __webpack_require__(46);
 
 var _set2 = _interopRequireDefault(_set);
 
@@ -13231,11 +11875,33 @@ exports.parseValue = parseValue;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function attr(target, prop, descriptor) {
-  if (descriptor.get) {
-    throw new Error('Attributes\' getter ' + prop + ' can not be override!');
+  target.__attributeNames = target.__attributeNames || [];
+  target.__attributeNames.push(prop);
+  if (!descriptor.get) {
+    descriptor.get = function () {
+      return this.get(prop);
+    };
+  } else {
+    // enable set default to user defined getter
+    var _getter = descriptor.get;
+    descriptor.get = function () {
+      var ret = _getter.call(this);
+      if (ret == null) {
+        ret = this.get(prop);
+      }
+      return ret;
+    };
   }
-  descriptor.get = function () {
-    return this.get(prop);
+  var _setter = descriptor.set;
+  descriptor.set = function (val) {
+    this.__clearCacheTag = false;
+    this.__updateTag = false;
+    _setter.call(this, val);
+    if (this.subject && this.__updateTag) {
+      this.subject.forceUpdate(this.__clearCacheTag);
+    }
+    delete this.__updateTag;
+    delete this.__clearCacheTag;
   };
   return descriptor;
 }
@@ -13321,7 +11987,7 @@ function parseValue() {
 }
 
 /***/ }),
-/* 212 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13330,13 +11996,13 @@ function parseValue() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.appendUnit = exports.rectVertices = exports.rectToBox = exports.boxUnion = exports.boxEqual = exports.boxToRect = exports.boxIntersect = exports.parseStringTransform = exports.fourValuesShortCut = exports.parseColorString = exports.parseStringFloat = exports.parseStringInt = exports.oneOrTwoValues = exports.parseColor = exports.Color = undefined;
+exports.sortOrderedSprites = exports.appendUnit = exports.rectVertices = exports.rectToBox = exports.boxUnion = exports.boxEqual = exports.boxToRect = exports.boxIntersect = exports.parseStringTransform = exports.fourValuesShortCut = exports.parseColorString = exports.parseStringFloat = exports.parseStringInt = exports.oneOrTwoValues = exports.parseColor = exports.Color = undefined;
 
-var _isNan = __webpack_require__(114);
+var _isNan = __webpack_require__(118);
 
 var _isNan2 = _interopRequireDefault(_isNan);
 
-var _toConsumableArray2 = __webpack_require__(7);
+var _toConsumableArray2 = __webpack_require__(5);
 
 var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 
@@ -13354,7 +12020,7 @@ var _createClass3 = _interopRequireDefault(_createClass2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var colorString = __webpack_require__(123);
+var colorString = __webpack_require__(127);
 
 var Color = function () {
   function Color(color) {
@@ -13384,7 +12050,10 @@ var Color = function () {
 
       var model = this.model;
 
-      return model + 'a(' + a + ',' + b + ',' + c + ',' + d + ')';
+      if (model === 'rgb') {
+        return model + 'a(' + a + ',' + b + ',' + c + ',' + d + ')';
+      }
+      return model + 'a(' + a + ',' + b + '%,' + c + '%,' + d + ')';
     }
   }, {
     key: 'str',
@@ -13403,7 +12072,10 @@ var parseColor = function parseColor(color) {
 };
 
 function parseColorString(color) {
-  return parseColor(color).toString();
+  if (color && typeof color === 'string') {
+    return parseColor(color).toString();
+  }
+  return color;
 }
 
 function parseStringTransform(str) {
@@ -13537,6 +12209,22 @@ function appendUnit(value) {
   return value + defaultUnit;
 }
 
+function sortOrderedSprites(sprites) {
+  var reversed = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  return sprites.sort(function (a, b) {
+    if (reversed) {
+      ;
+      var _ref3 = [b, a];
+      a = _ref3[0];
+      b = _ref3[1];
+    }if (a.zIndex === b.zIndex) {
+      return a.zOrder - b.zOrder;
+    }
+    return a.zIndex - b.zIndex;
+  });
+}
+
 exports.parseColor = parseColor;
 exports.oneOrTwoValues = oneOrTwoValues;
 exports.parseStringInt = parseStringInt;
@@ -13551,2276 +12239,203 @@ exports.boxUnion = boxUnion;
 exports.rectToBox = rectToBox;
 exports.rectVertices = rectVertices;
 exports.appendUnit = appendUnit;
+exports.sortOrderedSprites = sortOrderedSprites;
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Convert an arc to a sequence of cubic bézier curves
+//
+
+
+var TAU = Math.PI * 2;
+
+/* eslint-disable space-infix-ops */
+
+// Calculate an angle between two unit vectors
+//
+// Since we measure angle between radii of circular arcs,
+// we can use simplified math (without length normalization)
+//
+function unit_vector_angle(ux, uy, vx, vy) {
+  var sign = ux * vy - uy * vx < 0 ? -1 : 1;
+  var dot = ux * vx + uy * vy;
+
+  // Add this to work with arbitrary vectors:
+  // dot /= Math.sqrt(ux * ux + uy * uy) * Math.sqrt(vx * vx + vy * vy);
+
+  // rounding errors, e.g. -1.0000000000000002 can screw up this
+  if (dot > 1.0) {
+    dot = 1.0;
+  }
+  if (dot < -1.0) {
+    dot = -1.0;
+  }
+
+  return sign * Math.acos(dot);
+}
+
+// Convert from endpoint to center parameterization,
+// see http://www.w3.org/TR/SVG11/implnote.html#ArcImplementationNotes
+//
+// Return [cx, cy, theta1, delta_theta]
+//
+function get_arc_center(x1, y1, x2, y2, fa, fs, rx, ry, sin_phi, cos_phi) {
+  // Step 1.
+  //
+  // Moving an ellipse so origin will be the middlepoint between our two
+  // points. After that, rotate it to line up ellipse axes with coordinate
+  // axes.
+  //
+  var x1p = cos_phi * (x1 - x2) / 2 + sin_phi * (y1 - y2) / 2;
+  var y1p = -sin_phi * (x1 - x2) / 2 + cos_phi * (y1 - y2) / 2;
+
+  var rx_sq = rx * rx;
+  var ry_sq = ry * ry;
+  var x1p_sq = x1p * x1p;
+  var y1p_sq = y1p * y1p;
+
+  // Step 2.
+  //
+  // Compute coordinates of the centre of this ellipse (cx', cy')
+  // in the new coordinate system.
+  //
+  var radicant = rx_sq * ry_sq - rx_sq * y1p_sq - ry_sq * x1p_sq;
+
+  if (radicant < 0) {
+    // due to rounding errors it might be e.g. -1.3877787807814457e-17
+    radicant = 0;
+  }
+
+  radicant /= rx_sq * y1p_sq + ry_sq * x1p_sq;
+  radicant = Math.sqrt(radicant) * (fa === fs ? -1 : 1);
+
+  var cxp = radicant * rx / ry * y1p;
+  var cyp = radicant * -ry / rx * x1p;
+
+  // Step 3.
+  //
+  // Transform back to get centre coordinates (cx, cy) in the original
+  // coordinate system.
+  //
+  var cx = cos_phi * cxp - sin_phi * cyp + (x1 + x2) / 2;
+  var cy = sin_phi * cxp + cos_phi * cyp + (y1 + y2) / 2;
+
+  // Step 4.
+  //
+  // Compute angles (theta1, delta_theta).
+  //
+  var v1x = (x1p - cxp) / rx;
+  var v1y = (y1p - cyp) / ry;
+  var v2x = (-x1p - cxp) / rx;
+  var v2y = (-y1p - cyp) / ry;
+
+  var theta1 = unit_vector_angle(1, 0, v1x, v1y);
+  var delta_theta = unit_vector_angle(v1x, v1y, v2x, v2y);
+
+  if (fs === 0 && delta_theta > 0) {
+    delta_theta -= TAU;
+  }
+  if (fs === 1 && delta_theta < 0) {
+    delta_theta += TAU;
+  }
+
+  return [cx, cy, theta1, delta_theta];
+}
+
+//
+// Approximate one unit arc segment with bézier curves,
+// see http://math.stackexchange.com/questions/873224
+//
+function approximate_unit_arc(theta1, delta_theta) {
+  var alpha = 4 / 3 * Math.tan(delta_theta / 4);
+
+  var x1 = Math.cos(theta1);
+  var y1 = Math.sin(theta1);
+  var x2 = Math.cos(theta1 + delta_theta);
+  var y2 = Math.sin(theta1 + delta_theta);
+
+  return [x1, y1, x1 - y1 * alpha, y1 + x1 * alpha, x2 + y2 * alpha, y2 - x2 * alpha, x2, y2];
+}
+
+module.exports = function a2c(x1, y1, x2, y2, fa, fs, rx, ry, phi) {
+  var sin_phi = Math.sin(phi * TAU / 360);
+  var cos_phi = Math.cos(phi * TAU / 360);
+
+  // Make sure radii are valid
+  //
+  var x1p = cos_phi * (x1 - x2) / 2 + sin_phi * (y1 - y2) / 2;
+  var y1p = -sin_phi * (x1 - x2) / 2 + cos_phi * (y1 - y2) / 2;
+
+  if (x1p === 0 && y1p === 0) {
+    // we're asked to draw line to itself
+    return [];
+  }
+
+  if (rx === 0 || ry === 0) {
+    // one of the radii is zero
+    return [];
+  }
+
+  // Compensate out-of-range radii
+  //
+  rx = Math.abs(rx);
+  ry = Math.abs(ry);
+
+  var lambda = x1p * x1p / (rx * rx) + y1p * y1p / (ry * ry);
+  if (lambda > 1) {
+    rx *= Math.sqrt(lambda);
+    ry *= Math.sqrt(lambda);
+  }
+
+  // Get center parameters (cx, cy, theta1, delta_theta)
+  //
+  var cc = get_arc_center(x1, y1, x2, y2, fa, fs, rx, ry, sin_phi, cos_phi);
+
+  var result = [];
+  var theta1 = cc[2];
+  var delta_theta = cc[3];
+
+  // Split an arc to multiple segments, so each segment
+  // will be less than τ/4 (= 90°)
+  //
+  var segments = Math.max(Math.ceil(Math.abs(delta_theta) / (TAU / 4)), 1);
+  delta_theta /= segments;
+
+  for (var i = 0; i < segments; i++) {
+    result.push(approximate_unit_arc(theta1, delta_theta));
+    theta1 += delta_theta;
+  }
+
+  // We have a bezier approximation of a unit circle,
+  // now need to transform back to the original ellipse
+  //
+  return result.map(function (curve) {
+    for (var i = 0; i < curve.length; i += 2) {
+      var x = curve[i + 0];
+      var y = curve[i + 1];
+
+      // scale
+      x *= rx;
+      y *= ry;
+
+      // rotate
+      var xp = cos_phi * x - sin_phi * y;
+      var yp = sin_phi * x + cos_phi * y;
+
+      // translate
+      curve[i + 0] = xp + cc[0];
+      curve[i + 1] = yp + cc[1];
+    }
+
+    return curve;
+  });
+};
 
 /***/ }),
 /* 213 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// v1.0 exported just the parser function. To maintain backwards compatibility,
-// we export additional named features as properties of that function.
-var parserFunction = __webpack_require__(214).parse;
-parserFunction.parseSVG = parserFunction;
-parserFunction.makeAbsolute = makeSVGPathCommandsAbsolute;
-module.exports = parserFunction;
-
-function makeSVGPathCommandsAbsolute(commands) {
-	var subpathStart, prevCmd={x:0,y:0};
-	var attr = {x:'x0',y:'y0',x1:'x0',y1:'y0',x2:'x0',y2:'y0'};
-	commands.forEach(function(cmd) {
-		if (cmd.command==='moveto') subpathStart=cmd;
-		cmd.x0=prevCmd.x; cmd.y0=prevCmd.y;
-		for (var a in attr) if (a in cmd) cmd[a] += cmd.relative ? cmd[attr[a]] : 0;
-		if (!('x' in cmd)) cmd.x = prevCmd.x; // V
-		if (!('y' in cmd)) cmd.y = prevCmd.y; // X
-		cmd.relative = false;
-		cmd.code = cmd.code.toUpperCase();
-		if (cmd.command=='closepath') {
-			cmd.x = subpathStart.x;
-			cmd.y = subpathStart.y;
-		}
-		prevCmd = cmd;
-	});
-	return commands;
-}
-
-
-/***/ }),
-/* 214 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/*
- * Generated by PEG.js 0.10.0.
- *
- * http://pegjs.org/
- */
-
-
-
-function peg$subclass(child, parent) {
-  function ctor() { this.constructor = child; }
-  ctor.prototype = parent.prototype;
-  child.prototype = new ctor();
-}
-
-function peg$SyntaxError(message, expected, found, location) {
-  this.message  = message;
-  this.expected = expected;
-  this.found    = found;
-  this.location = location;
-  this.name     = "SyntaxError";
-
-  if (typeof Error.captureStackTrace === "function") {
-    Error.captureStackTrace(this, peg$SyntaxError);
-  }
-}
-
-peg$subclass(peg$SyntaxError, Error);
-
-peg$SyntaxError.buildMessage = function(expected, found) {
-  var DESCRIBE_EXPECTATION_FNS = {
-        literal: function(expectation) {
-          return "\"" + literalEscape(expectation.text) + "\"";
-        },
-
-        "class": function(expectation) {
-          var escapedParts = "",
-              i;
-
-          for (i = 0; i < expectation.parts.length; i++) {
-            escapedParts += expectation.parts[i] instanceof Array
-              ? classEscape(expectation.parts[i][0]) + "-" + classEscape(expectation.parts[i][1])
-              : classEscape(expectation.parts[i]);
-          }
-
-          return "[" + (expectation.inverted ? "^" : "") + escapedParts + "]";
-        },
-
-        any: function(expectation) {
-          return "any character";
-        },
-
-        end: function(expectation) {
-          return "end of input";
-        },
-
-        other: function(expectation) {
-          return expectation.description;
-        }
-      };
-
-  function hex(ch) {
-    return ch.charCodeAt(0).toString(16).toUpperCase();
-  }
-
-  function literalEscape(s) {
-    return s
-      .replace(/\\/g, '\\\\')
-      .replace(/"/g,  '\\"')
-      .replace(/\0/g, '\\0')
-      .replace(/\t/g, '\\t')
-      .replace(/\n/g, '\\n')
-      .replace(/\r/g, '\\r')
-      .replace(/[\x00-\x0F]/g,          function(ch) { return '\\x0' + hex(ch); })
-      .replace(/[\x10-\x1F\x7F-\x9F]/g, function(ch) { return '\\x'  + hex(ch); });
-  }
-
-  function classEscape(s) {
-    return s
-      .replace(/\\/g, '\\\\')
-      .replace(/\]/g, '\\]')
-      .replace(/\^/g, '\\^')
-      .replace(/-/g,  '\\-')
-      .replace(/\0/g, '\\0')
-      .replace(/\t/g, '\\t')
-      .replace(/\n/g, '\\n')
-      .replace(/\r/g, '\\r')
-      .replace(/[\x00-\x0F]/g,          function(ch) { return '\\x0' + hex(ch); })
-      .replace(/[\x10-\x1F\x7F-\x9F]/g, function(ch) { return '\\x'  + hex(ch); });
-  }
-
-  function describeExpectation(expectation) {
-    return DESCRIBE_EXPECTATION_FNS[expectation.type](expectation);
-  }
-
-  function describeExpected(expected) {
-    var descriptions = new Array(expected.length),
-        i, j;
-
-    for (i = 0; i < expected.length; i++) {
-      descriptions[i] = describeExpectation(expected[i]);
-    }
-
-    descriptions.sort();
-
-    if (descriptions.length > 0) {
-      for (i = 1, j = 1; i < descriptions.length; i++) {
-        if (descriptions[i - 1] !== descriptions[i]) {
-          descriptions[j] = descriptions[i];
-          j++;
-        }
-      }
-      descriptions.length = j;
-    }
-
-    switch (descriptions.length) {
-      case 1:
-        return descriptions[0];
-
-      case 2:
-        return descriptions[0] + " or " + descriptions[1];
-
-      default:
-        return descriptions.slice(0, -1).join(", ")
-          + ", or "
-          + descriptions[descriptions.length - 1];
-    }
-  }
-
-  function describeFound(found) {
-    return found ? "\"" + literalEscape(found) + "\"" : "end of input";
-  }
-
-  return "Expected " + describeExpected(expected) + " but " + describeFound(found) + " found.";
-};
-
-function peg$parse(input, options) {
-  options = options !== void 0 ? options : {};
-
-  var peg$FAILED = {},
-
-      peg$startRuleFunctions = { svg_path: peg$parsesvg_path },
-      peg$startRuleFunction  = peg$parsesvg_path,
-
-      peg$c0 = function(data) {
-          if (!data) return [];
-          for (var cmds=[],i=0;i<data.length;i++) cmds=cmds.concat.apply(cmds,data[i]);
-          var first=cmds[0];
-          if (first && first.code=='m'){ // Per spec, first moveto is never relative
-            delete first.relative;
-            first.code = 'M';
-          }
-          return cmds;
-        },
-      peg$c1 = function(first, more) { return merge(first,more) },
-      peg$c2 = /^[Mm]/,
-      peg$c3 = peg$classExpectation(["M", "m"], false, false),
-      peg$c4 = function(c, first, more) {
-          var move = commands(c,[first]);
-          if (more) move = move.concat(commands(c=='M' ? 'L' : 'l',more[1]));
-          return move;
-        },
-      peg$c5 = /^[Zz]/,
-      peg$c6 = peg$classExpectation(["Z", "z"], false, false),
-      peg$c7 = function() { return commands('Z') },
-      peg$c8 = /^[Ll]/,
-      peg$c9 = peg$classExpectation(["L", "l"], false, false),
-      peg$c10 = function(c, args) { return commands(c,args) },
-      peg$c11 = /^[Hh]/,
-      peg$c12 = peg$classExpectation(["H", "h"], false, false),
-      peg$c13 = function(c, args) { return commands(c,args.map(function(x){ return {x:x}})) },
-      peg$c14 = /^[Vv]/,
-      peg$c15 = peg$classExpectation(["V", "v"], false, false),
-      peg$c16 = function(c, args) { return commands(c,args.map(function(y){ return {y:y}})) },
-      peg$c17 = /^[Cc]/,
-      peg$c18 = peg$classExpectation(["C", "c"], false, false),
-      peg$c19 = function(a, b, c) { return { x1:a.x, y1:a.y, x2:b.x, y2:b.y, x:c.x, y:c.y } },
-      peg$c20 = /^[Ss]/,
-      peg$c21 = peg$classExpectation(["S", "s"], false, false),
-      peg$c22 = function(b, c) { return { x2:b.x, y2:b.y, x:c.x, y:c.y } },
-      peg$c23 = /^[Qq]/,
-      peg$c24 = peg$classExpectation(["Q", "q"], false, false),
-      peg$c25 = function(a, b) { return { x1:a.x, y1:a.y, x:b.x, y:b.y } },
-      peg$c26 = /^[Tt]/,
-      peg$c27 = peg$classExpectation(["T", "t"], false, false),
-      peg$c28 = /^[Aa]/,
-      peg$c29 = peg$classExpectation(["A", "a"], false, false),
-      peg$c30 = function(rx, ry, xrot, large, sweep, xy) { return { rx:rx, ry:ry, xAxisRotation:xrot, largeArc:large, sweep:sweep, x:xy.x, y:xy.y } },
-      peg$c31 = function(x, y) { return { x:x, y:y } },
-      peg$c32 = function(n) { return n*1 },
-      peg$c33 = function(parts) { return parts.join('')*1 },
-      peg$c34 = /^[01]/,
-      peg$c35 = peg$classExpectation(["0", "1"], false, false),
-      peg$c36 = function(bit) { return bit=='1' },
-      peg$c37 = function() { return '' },
-      peg$c38 = ",",
-      peg$c39 = peg$literalExpectation(",", false),
-      peg$c40 = function(parts) { return parts.join('') },
-      peg$c41 = ".",
-      peg$c42 = peg$literalExpectation(".", false),
-      peg$c43 = /^[eE]/,
-      peg$c44 = peg$classExpectation(["e", "E"], false, false),
-      peg$c45 = /^[+\-]/,
-      peg$c46 = peg$classExpectation(["+", "-"], false, false),
-      peg$c47 = /^[0-9]/,
-      peg$c48 = peg$classExpectation([["0", "9"]], false, false),
-      peg$c49 = function(digits) { return digits.join('') },
-      peg$c50 = /^[ \t\n\r]/,
-      peg$c51 = peg$classExpectation([" ", "\t", "\n", "\r"], false, false),
-
-      peg$currPos          = 0,
-      peg$savedPos         = 0,
-      peg$posDetailsCache  = [{ line: 1, column: 1 }],
-      peg$maxFailPos       = 0,
-      peg$maxFailExpected  = [],
-      peg$silentFails      = 0,
-
-      peg$result;
-
-  if ("startRule" in options) {
-    if (!(options.startRule in peg$startRuleFunctions)) {
-      throw new Error("Can't start parsing from rule \"" + options.startRule + "\".");
-    }
-
-    peg$startRuleFunction = peg$startRuleFunctions[options.startRule];
-  }
-
-  function text() {
-    return input.substring(peg$savedPos, peg$currPos);
-  }
-
-  function location() {
-    return peg$computeLocation(peg$savedPos, peg$currPos);
-  }
-
-  function expected(description, location) {
-    location = location !== void 0 ? location : peg$computeLocation(peg$savedPos, peg$currPos)
-
-    throw peg$buildStructuredError(
-      [peg$otherExpectation(description)],
-      input.substring(peg$savedPos, peg$currPos),
-      location
-    );
-  }
-
-  function error(message, location) {
-    location = location !== void 0 ? location : peg$computeLocation(peg$savedPos, peg$currPos)
-
-    throw peg$buildSimpleError(message, location);
-  }
-
-  function peg$literalExpectation(text, ignoreCase) {
-    return { type: "literal", text: text, ignoreCase: ignoreCase };
-  }
-
-  function peg$classExpectation(parts, inverted, ignoreCase) {
-    return { type: "class", parts: parts, inverted: inverted, ignoreCase: ignoreCase };
-  }
-
-  function peg$anyExpectation() {
-    return { type: "any" };
-  }
-
-  function peg$endExpectation() {
-    return { type: "end" };
-  }
-
-  function peg$otherExpectation(description) {
-    return { type: "other", description: description };
-  }
-
-  function peg$computePosDetails(pos) {
-    var details = peg$posDetailsCache[pos], p;
-
-    if (details) {
-      return details;
-    } else {
-      p = pos - 1;
-      while (!peg$posDetailsCache[p]) {
-        p--;
-      }
-
-      details = peg$posDetailsCache[p];
-      details = {
-        line:   details.line,
-        column: details.column
-      };
-
-      while (p < pos) {
-        if (input.charCodeAt(p) === 10) {
-          details.line++;
-          details.column = 1;
-        } else {
-          details.column++;
-        }
-
-        p++;
-      }
-
-      peg$posDetailsCache[pos] = details;
-      return details;
-    }
-  }
-
-  function peg$computeLocation(startPos, endPos) {
-    var startPosDetails = peg$computePosDetails(startPos),
-        endPosDetails   = peg$computePosDetails(endPos);
-
-    return {
-      start: {
-        offset: startPos,
-        line:   startPosDetails.line,
-        column: startPosDetails.column
-      },
-      end: {
-        offset: endPos,
-        line:   endPosDetails.line,
-        column: endPosDetails.column
-      }
-    };
-  }
-
-  function peg$fail(expected) {
-    if (peg$currPos < peg$maxFailPos) { return; }
-
-    if (peg$currPos > peg$maxFailPos) {
-      peg$maxFailPos = peg$currPos;
-      peg$maxFailExpected = [];
-    }
-
-    peg$maxFailExpected.push(expected);
-  }
-
-  function peg$buildSimpleError(message, location) {
-    return new peg$SyntaxError(message, null, null, location);
-  }
-
-  function peg$buildStructuredError(expected, found, location) {
-    return new peg$SyntaxError(
-      peg$SyntaxError.buildMessage(expected, found),
-      expected,
-      found,
-      location
-    );
-  }
-
-  function peg$parsesvg_path() {
-    var s0, s1, s2, s3, s4;
-
-    s0 = peg$currPos;
-    s1 = [];
-    s2 = peg$parsewsp();
-    while (s2 !== peg$FAILED) {
-      s1.push(s2);
-      s2 = peg$parsewsp();
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = peg$parsemoveTo_drawTo_commandGroups();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = [];
-        s4 = peg$parsewsp();
-        while (s4 !== peg$FAILED) {
-          s3.push(s4);
-          s4 = peg$parsewsp();
-        }
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c0(s2);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsemoveTo_drawTo_commandGroups() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsemoveTo_drawTo_commandGroup();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = [];
-      s5 = peg$parsewsp();
-      while (s5 !== peg$FAILED) {
-        s4.push(s5);
-        s5 = peg$parsewsp();
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsemoveTo_drawTo_commandGroup();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = [];
-        s5 = peg$parsewsp();
-        while (s5 !== peg$FAILED) {
-          s4.push(s5);
-          s5 = peg$parsewsp();
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsemoveTo_drawTo_commandGroup();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsemoveTo_drawTo_commandGroup() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsemoveto();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = [];
-      s5 = peg$parsewsp();
-      while (s5 !== peg$FAILED) {
-        s4.push(s5);
-        s5 = peg$parsewsp();
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsedrawto_command();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = [];
-        s5 = peg$parsewsp();
-        while (s5 !== peg$FAILED) {
-          s4.push(s5);
-          s5 = peg$parsewsp();
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsedrawto_command();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsedrawto_command() {
-    var s0;
-
-    s0 = peg$parseclosepath();
-    if (s0 === peg$FAILED) {
-      s0 = peg$parselineto();
-      if (s0 === peg$FAILED) {
-        s0 = peg$parsehorizontal_lineto();
-        if (s0 === peg$FAILED) {
-          s0 = peg$parsevertical_lineto();
-          if (s0 === peg$FAILED) {
-            s0 = peg$parsecurveto();
-            if (s0 === peg$FAILED) {
-              s0 = peg$parsesmooth_curveto();
-              if (s0 === peg$FAILED) {
-                s0 = peg$parsequadratic_bezier_curveto();
-                if (s0 === peg$FAILED) {
-                  s0 = peg$parsesmooth_quadratic_bezier_curveto();
-                  if (s0 === peg$FAILED) {
-                    s0 = peg$parseelliptical_arc();
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    return s0;
-  }
-
-  function peg$parsemoveto() {
-    var s0, s1, s2, s3, s4, s5, s6;
-
-    s0 = peg$currPos;
-    if (peg$c2.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c3); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsecoordinate_pair();
-        if (s3 !== peg$FAILED) {
-          s4 = peg$currPos;
-          s5 = peg$parsecomma_wsp();
-          if (s5 === peg$FAILED) {
-            s5 = null;
-          }
-          if (s5 !== peg$FAILED) {
-            s6 = peg$parselineto_argument_sequence();
-            if (s6 !== peg$FAILED) {
-              s5 = [s5, s6];
-              s4 = s5;
-            } else {
-              peg$currPos = s4;
-              s4 = peg$FAILED;
-            }
-          } else {
-            peg$currPos = s4;
-            s4 = peg$FAILED;
-          }
-          if (s4 === peg$FAILED) {
-            s4 = null;
-          }
-          if (s4 !== peg$FAILED) {
-            peg$savedPos = s0;
-            s1 = peg$c4(s1, s3, s4);
-            s0 = s1;
-          } else {
-            peg$currPos = s0;
-            s0 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parseclosepath() {
-    var s0, s1;
-
-    s0 = peg$currPos;
-    if (peg$c5.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c6); }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c7();
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parselineto() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c8.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c9); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parselineto_argument_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c10(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parselineto_argument_sequence() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsecoordinate_pair();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = peg$parsecomma_wsp();
-      if (s4 === peg$FAILED) {
-        s4 = null;
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsecoordinate_pair();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = peg$parsecomma_wsp();
-        if (s4 === peg$FAILED) {
-          s4 = null;
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsecoordinate_pair();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsehorizontal_lineto() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c11.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c12); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsecoordinate_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c13(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsecoordinate_sequence() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsenumber();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = peg$parsecomma_wsp();
-      if (s4 === peg$FAILED) {
-        s4 = null;
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsenumber();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = peg$parsecomma_wsp();
-        if (s4 === peg$FAILED) {
-          s4 = null;
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsenumber();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsevertical_lineto() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c14.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c15); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsecoordinate_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c16(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsecurveto() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c17.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c18); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsecurveto_argument_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c10(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsecurveto_argument_sequence() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsecurveto_argument();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = peg$parsecomma_wsp();
-      if (s4 === peg$FAILED) {
-        s4 = null;
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsecurveto_argument();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = peg$parsecomma_wsp();
-        if (s4 === peg$FAILED) {
-          s4 = null;
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsecurveto_argument();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsecurveto_argument() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsecoordinate_pair();
-    if (s1 !== peg$FAILED) {
-      s2 = peg$parsecomma_wsp();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsecoordinate_pair();
-        if (s3 !== peg$FAILED) {
-          s4 = peg$parsecomma_wsp();
-          if (s4 === peg$FAILED) {
-            s4 = null;
-          }
-          if (s4 !== peg$FAILED) {
-            s5 = peg$parsecoordinate_pair();
-            if (s5 !== peg$FAILED) {
-              peg$savedPos = s0;
-              s1 = peg$c19(s1, s3, s5);
-              s0 = s1;
-            } else {
-              peg$currPos = s0;
-              s0 = peg$FAILED;
-            }
-          } else {
-            peg$currPos = s0;
-            s0 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsesmooth_curveto() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c20.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c21); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsesmooth_curveto_argument_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c10(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsesmooth_curveto_argument_sequence() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsesmooth_curveto_argument();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = peg$parsecomma_wsp();
-      if (s4 === peg$FAILED) {
-        s4 = null;
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsesmooth_curveto_argument();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = peg$parsecomma_wsp();
-        if (s4 === peg$FAILED) {
-          s4 = null;
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsesmooth_curveto_argument();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsesmooth_curveto_argument() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    s1 = peg$parsecoordinate_pair();
-    if (s1 !== peg$FAILED) {
-      s2 = peg$parsecomma_wsp();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsecoordinate_pair();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c22(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsequadratic_bezier_curveto() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c23.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c24); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsequadratic_bezier_curveto_argument_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c10(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsequadratic_bezier_curveto_argument_sequence() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsequadratic_bezier_curveto_argument();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = peg$parsecomma_wsp();
-      if (s4 === peg$FAILED) {
-        s4 = null;
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsequadratic_bezier_curveto_argument();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = peg$parsecomma_wsp();
-        if (s4 === peg$FAILED) {
-          s4 = null;
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsequadratic_bezier_curveto_argument();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsequadratic_bezier_curveto_argument() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    s1 = peg$parsecoordinate_pair();
-    if (s1 !== peg$FAILED) {
-      s2 = peg$parsecomma_wsp();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsecoordinate_pair();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c25(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsesmooth_quadratic_bezier_curveto() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c26.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c27); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsesmooth_quadratic_bezier_curveto_argument_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c10(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsesmooth_quadratic_bezier_curveto_argument_sequence() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parsecoordinate_pair();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = peg$parsecomma_wsp();
-      if (s4 === peg$FAILED) {
-        s4 = null;
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parsecoordinate_pair();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = peg$parsecomma_wsp();
-        if (s4 === peg$FAILED) {
-          s4 = null;
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parsecoordinate_pair();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parseelliptical_arc() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    if (peg$c28.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c29); }
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$parsewsp();
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$parsewsp();
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parseelliptical_arc_argument_sequence();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c10(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parseelliptical_arc_argument_sequence() {
-    var s0, s1, s2, s3, s4, s5;
-
-    s0 = peg$currPos;
-    s1 = peg$parseelliptical_arc_argument();
-    if (s1 !== peg$FAILED) {
-      s2 = [];
-      s3 = peg$currPos;
-      s4 = peg$parsecomma_wsp();
-      if (s4 === peg$FAILED) {
-        s4 = null;
-      }
-      if (s4 !== peg$FAILED) {
-        s5 = peg$parseelliptical_arc_argument();
-        if (s5 !== peg$FAILED) {
-          s4 = [s4, s5];
-          s3 = s4;
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s3;
-        s3 = peg$FAILED;
-      }
-      while (s3 !== peg$FAILED) {
-        s2.push(s3);
-        s3 = peg$currPos;
-        s4 = peg$parsecomma_wsp();
-        if (s4 === peg$FAILED) {
-          s4 = null;
-        }
-        if (s4 !== peg$FAILED) {
-          s5 = peg$parseelliptical_arc_argument();
-          if (s5 !== peg$FAILED) {
-            s4 = [s4, s5];
-            s3 = s4;
-          } else {
-            peg$currPos = s3;
-            s3 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s3;
-          s3 = peg$FAILED;
-        }
-      }
-      if (s2 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c1(s1, s2);
-        s0 = s1;
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parseelliptical_arc_argument() {
-    var s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11;
-
-    s0 = peg$currPos;
-    s1 = peg$parsenonnegative_number();
-    if (s1 !== peg$FAILED) {
-      s2 = peg$parsecomma_wsp();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsenonnegative_number();
-        if (s3 !== peg$FAILED) {
-          s4 = peg$parsecomma_wsp();
-          if (s4 === peg$FAILED) {
-            s4 = null;
-          }
-          if (s4 !== peg$FAILED) {
-            s5 = peg$parsenumber();
-            if (s5 !== peg$FAILED) {
-              s6 = peg$parsecomma_wsp();
-              if (s6 !== peg$FAILED) {
-                s7 = peg$parseflag();
-                if (s7 !== peg$FAILED) {
-                  s8 = peg$parsecomma_wsp();
-                  if (s8 === peg$FAILED) {
-                    s8 = null;
-                  }
-                  if (s8 !== peg$FAILED) {
-                    s9 = peg$parseflag();
-                    if (s9 !== peg$FAILED) {
-                      s10 = peg$parsecomma_wsp();
-                      if (s10 === peg$FAILED) {
-                        s10 = null;
-                      }
-                      if (s10 !== peg$FAILED) {
-                        s11 = peg$parsecoordinate_pair();
-                        if (s11 !== peg$FAILED) {
-                          peg$savedPos = s0;
-                          s1 = peg$c30(s1, s3, s5, s7, s9, s11);
-                          s0 = s1;
-                        } else {
-                          peg$currPos = s0;
-                          s0 = peg$FAILED;
-                        }
-                      } else {
-                        peg$currPos = s0;
-                        s0 = peg$FAILED;
-                      }
-                    } else {
-                      peg$currPos = s0;
-                      s0 = peg$FAILED;
-                    }
-                  } else {
-                    peg$currPos = s0;
-                    s0 = peg$FAILED;
-                  }
-                } else {
-                  peg$currPos = s0;
-                  s0 = peg$FAILED;
-                }
-              } else {
-                peg$currPos = s0;
-                s0 = peg$FAILED;
-              }
-            } else {
-              peg$currPos = s0;
-              s0 = peg$FAILED;
-            }
-          } else {
-            peg$currPos = s0;
-            s0 = peg$FAILED;
-          }
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsecoordinate_pair() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    s1 = peg$parsenumber();
-    if (s1 !== peg$FAILED) {
-      s2 = peg$parsecomma_wsp();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsenumber();
-        if (s3 !== peg$FAILED) {
-          peg$savedPos = s0;
-          s1 = peg$c31(s1, s3);
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-
-    return s0;
-  }
-
-  function peg$parsenonnegative_number() {
-    var s0, s1;
-
-    s0 = peg$currPos;
-    s1 = peg$parsefloating_point_constant();
-    if (s1 === peg$FAILED) {
-      s1 = peg$parsedigit_sequence();
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c32(s1);
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parsenumber() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    s1 = peg$currPos;
-    s2 = peg$parsesign();
-    if (s2 === peg$FAILED) {
-      s2 = null;
-    }
-    if (s2 !== peg$FAILED) {
-      s3 = peg$parsefloating_point_constant();
-      if (s3 !== peg$FAILED) {
-        s2 = [s2, s3];
-        s1 = s2;
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s1;
-      s1 = peg$FAILED;
-    }
-    if (s1 === peg$FAILED) {
-      s1 = peg$currPos;
-      s2 = peg$parsesign();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parsedigit_sequence();
-        if (s3 !== peg$FAILED) {
-          s2 = [s2, s3];
-          s1 = s2;
-        } else {
-          peg$currPos = s1;
-          s1 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c33(s1);
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parseflag() {
-    var s0, s1;
-
-    s0 = peg$currPos;
-    if (peg$c34.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c35); }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c36(s1);
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parsecomma_wsp() {
-    var s0, s1, s2, s3, s4;
-
-    s0 = peg$currPos;
-    s1 = [];
-    s2 = peg$parsewsp();
-    if (s2 !== peg$FAILED) {
-      while (s2 !== peg$FAILED) {
-        s1.push(s2);
-        s2 = peg$parsewsp();
-      }
-    } else {
-      s1 = peg$FAILED;
-    }
-    if (s1 !== peg$FAILED) {
-      s2 = peg$parsecomma();
-      if (s2 === peg$FAILED) {
-        s2 = null;
-      }
-      if (s2 !== peg$FAILED) {
-        s3 = [];
-        s4 = peg$parsewsp();
-        while (s4 !== peg$FAILED) {
-          s3.push(s4);
-          s4 = peg$parsewsp();
-        }
-        if (s3 !== peg$FAILED) {
-          s1 = [s1, s2, s3];
-          s0 = s1;
-        } else {
-          peg$currPos = s0;
-          s0 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s0;
-        s0 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s0;
-      s0 = peg$FAILED;
-    }
-    if (s0 === peg$FAILED) {
-      s0 = peg$currPos;
-      s1 = peg$currPos;
-      s2 = peg$parsecomma();
-      if (s2 !== peg$FAILED) {
-        s3 = [];
-        s4 = peg$parsewsp();
-        while (s4 !== peg$FAILED) {
-          s3.push(s4);
-          s4 = peg$parsewsp();
-        }
-        if (s3 !== peg$FAILED) {
-          s2 = [s2, s3];
-          s1 = s2;
-        } else {
-          peg$currPos = s1;
-          s1 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-      if (s1 !== peg$FAILED) {
-        peg$savedPos = s0;
-        s1 = peg$c37();
-      }
-      s0 = s1;
-    }
-
-    return s0;
-  }
-
-  function peg$parsecomma() {
-    var s0;
-
-    if (input.charCodeAt(peg$currPos) === 44) {
-      s0 = peg$c38;
-      peg$currPos++;
-    } else {
-      s0 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c39); }
-    }
-
-    return s0;
-  }
-
-  function peg$parsefloating_point_constant() {
-    var s0, s1, s2, s3;
-
-    s0 = peg$currPos;
-    s1 = peg$currPos;
-    s2 = peg$parsefractional_constant();
-    if (s2 !== peg$FAILED) {
-      s3 = peg$parseexponent();
-      if (s3 === peg$FAILED) {
-        s3 = null;
-      }
-      if (s3 !== peg$FAILED) {
-        s2 = [s2, s3];
-        s1 = s2;
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s1;
-      s1 = peg$FAILED;
-    }
-    if (s1 === peg$FAILED) {
-      s1 = peg$currPos;
-      s2 = peg$parsedigit_sequence();
-      if (s2 !== peg$FAILED) {
-        s3 = peg$parseexponent();
-        if (s3 !== peg$FAILED) {
-          s2 = [s2, s3];
-          s1 = s2;
-        } else {
-          peg$currPos = s1;
-          s1 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c40(s1);
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parsefractional_constant() {
-    var s0, s1, s2, s3, s4;
-
-    s0 = peg$currPos;
-    s1 = peg$currPos;
-    s2 = peg$parsedigit_sequence();
-    if (s2 === peg$FAILED) {
-      s2 = null;
-    }
-    if (s2 !== peg$FAILED) {
-      if (input.charCodeAt(peg$currPos) === 46) {
-        s3 = peg$c41;
-        peg$currPos++;
-      } else {
-        s3 = peg$FAILED;
-        if (peg$silentFails === 0) { peg$fail(peg$c42); }
-      }
-      if (s3 !== peg$FAILED) {
-        s4 = peg$parsedigit_sequence();
-        if (s4 !== peg$FAILED) {
-          s2 = [s2, s3, s4];
-          s1 = s2;
-        } else {
-          peg$currPos = s1;
-          s1 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s1;
-      s1 = peg$FAILED;
-    }
-    if (s1 === peg$FAILED) {
-      s1 = peg$currPos;
-      s2 = peg$parsedigit_sequence();
-      if (s2 !== peg$FAILED) {
-        if (input.charCodeAt(peg$currPos) === 46) {
-          s3 = peg$c41;
-          peg$currPos++;
-        } else {
-          s3 = peg$FAILED;
-          if (peg$silentFails === 0) { peg$fail(peg$c42); }
-        }
-        if (s3 !== peg$FAILED) {
-          s2 = [s2, s3];
-          s1 = s2;
-        } else {
-          peg$currPos = s1;
-          s1 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c40(s1);
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parseexponent() {
-    var s0, s1, s2, s3, s4;
-
-    s0 = peg$currPos;
-    s1 = peg$currPos;
-    if (peg$c43.test(input.charAt(peg$currPos))) {
-      s2 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s2 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c44); }
-    }
-    if (s2 !== peg$FAILED) {
-      s3 = peg$parsesign();
-      if (s3 === peg$FAILED) {
-        s3 = null;
-      }
-      if (s3 !== peg$FAILED) {
-        s4 = peg$parsedigit_sequence();
-        if (s4 !== peg$FAILED) {
-          s2 = [s2, s3, s4];
-          s1 = s2;
-        } else {
-          peg$currPos = s1;
-          s1 = peg$FAILED;
-        }
-      } else {
-        peg$currPos = s1;
-        s1 = peg$FAILED;
-      }
-    } else {
-      peg$currPos = s1;
-      s1 = peg$FAILED;
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c40(s1);
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parsesign() {
-    var s0;
-
-    if (peg$c45.test(input.charAt(peg$currPos))) {
-      s0 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s0 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c46); }
-    }
-
-    return s0;
-  }
-
-  function peg$parsedigit_sequence() {
-    var s0, s1, s2;
-
-    s0 = peg$currPos;
-    s1 = [];
-    if (peg$c47.test(input.charAt(peg$currPos))) {
-      s2 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s2 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c48); }
-    }
-    if (s2 !== peg$FAILED) {
-      while (s2 !== peg$FAILED) {
-        s1.push(s2);
-        if (peg$c47.test(input.charAt(peg$currPos))) {
-          s2 = input.charAt(peg$currPos);
-          peg$currPos++;
-        } else {
-          s2 = peg$FAILED;
-          if (peg$silentFails === 0) { peg$fail(peg$c48); }
-        }
-      }
-    } else {
-      s1 = peg$FAILED;
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c49(s1);
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-  function peg$parsewsp() {
-    var s0, s1;
-
-    s0 = peg$currPos;
-    if (peg$c50.test(input.charAt(peg$currPos))) {
-      s1 = input.charAt(peg$currPos);
-      peg$currPos++;
-    } else {
-      s1 = peg$FAILED;
-      if (peg$silentFails === 0) { peg$fail(peg$c51); }
-    }
-    if (s1 !== peg$FAILED) {
-      peg$savedPos = s0;
-      s1 = peg$c37();
-    }
-    s0 = s1;
-
-    return s0;
-  }
-
-
-    function merge(first,more){
-      if (!more) return [first];
-      for (var a=[first],i=0,l=more.length;i<l;i++) a[i+1]=more[i][1];
-      return a;
-    }
-
-    var cmds = {m:'moveto',l:'lineto',h:'horizontal lineto',v:'vertical lineto',c:'curveto',s:'smooth curveto',q:'quadratic curveto',t:'smooth quadratic curveto',a:'elliptical arc',z:'closepath'};
-    for (var code in cmds) cmds[code.toUpperCase()]=cmds[code];
-    function commands(code,args){
-      if (!args) args=[{}];
-      for (var i=args.length;i--;){
-        var cmd={code:code,command:cmds[code]};
-        if (code==code.toLowerCase()) cmd.relative=true;
-        for (var k in args[i]) cmd[k]=args[i][k];
-        args[i] = cmd;
-      }
-      return args;
-    }
-
-
-  peg$result = peg$startRuleFunction();
-
-  if (peg$result !== peg$FAILED && peg$currPos === input.length) {
-    return peg$result;
-  } else {
-    if (peg$result !== peg$FAILED && peg$currPos < input.length) {
-      peg$fail(peg$endExpectation());
-    }
-
-    throw peg$buildStructuredError(
-      peg$maxFailExpected,
-      peg$maxFailPos < input.length ? input.charAt(peg$maxFailPos) : null,
-      peg$maxFailPos < input.length
-        ? peg$computeLocation(peg$maxFailPos, peg$maxFailPos + 1)
-        : peg$computeLocation(peg$maxFailPos, peg$maxFailPos)
-    );
-  }
-}
-
-module.exports = {
-  SyntaxError: peg$SyntaxError,
-  parse:       peg$parse
-};
-
-
-/***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getBounds = undefined;
-
-var _toConsumableArray2 = __webpack_require__(7);
-
-var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
-
-var _assign = __webpack_require__(16);
-
-var _assign2 = _interopRequireDefault(_assign);
-
-exports.pathToCanvas = pathToCanvas;
-
-var _svgArcToCubicBezier = __webpack_require__(74);
-
-var _svgArcToCubicBezier2 = _interopRequireDefault(_svgArcToCubicBezier);
-
-var _pathBounds = __webpack_require__(217);
-
-var _pathBounds2 = _interopRequireDefault(_pathBounds);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _require = __webpack_require__(213),
-    parseSVG = _require.parseSVG,
-    makeAbsolute = _require.makeAbsolute;
-
-function pathToCanvas(d) {
-  var commands = makeAbsolute(parseSVG(d));
-  var parsedCommands = [];
-  commands.forEach(function (command) {
-    if (command.code === 'A') {
-      var x0 = command.x0,
-          y0 = command.y0,
-          x = command.x,
-          y = command.y,
-          rx = command.rx,
-          ry = command.ry,
-          xAxisRotation = command.xAxisRotation,
-          largeArc = command.largeArc,
-          sweep = command.sweep;
-
-      var curves = (0, _svgArcToCubicBezier2.default)({
-        px: x0,
-        py: y0,
-        cx: x,
-        cy: y,
-        rx: rx,
-        ry: ry,
-        xAxisRotation: xAxisRotation,
-        largeArcFlag: largeArc,
-        sweepFlag: sweep
-      }).map(function (curve) {
-        var x1 = curve.x1,
-            y1 = curve.y1,
-            x2 = curve.x2,
-            y2 = curve.y2,
-            x = curve.x,
-            y = curve.y;
-
-        return (0, _assign2.default)({
-          x1: Math.round(x1),
-          y1: Math.round(y1),
-          x2: Math.round(x2),
-          y2: Math.round(y2),
-          x: Math.round(x),
-          y: Math.round(y) }, { code: 'c', command: 'curveto' });
-      });
-      parsedCommands.push.apply(parsedCommands, (0, _toConsumableArray3.default)(curves));
-    } else {
-      parsedCommands.push(command);
-    }
-  });
-  var footprint = [0, 0];
-  var prev = null;
-  var canvasCommands = [];
-  for (var i = 0; i < parsedCommands.length; i++) {
-    var cmd = parsedCommands[i];
-    if (cmd.code !== 'c') {
-      var x0 = cmd.x0,
-          y0 = cmd.y0;
-
-      if (footprint[0] !== x0 || footprint[1] !== y0) {
-        canvasCommands.push({ cmd: 'moveTo', args: [x0, y0] });
-      }
-    }
-    if (cmd.code === 'M') {
-      var x = cmd.x,
-          y = cmd.y;
-
-      footprint = [x, y];
-      canvasCommands.push({ cmd: 'moveTo', args: [x, y] });
-    } else if (cmd.code === 'L') {
-      var _x = cmd.x,
-          _y = cmd.y;
-
-      footprint = [_x, _y];
-      canvasCommands.push({ cmd: 'lineTo', args: [_x, _y] });
-    } else if (cmd.code === 'V') {
-      var _y2 = cmd.y;
-
-      footprint = [footprint[0], _y2];
-      canvasCommands.push({ cmd: 'lineTo', args: [].concat((0, _toConsumableArray3.default)(footprint)) });
-    } else if (cmd.code === 'H') {
-      var _x2 = cmd.x;
-
-      footprint = [_x2, footprint[1]];
-      canvasCommands.push({ cmd: 'lineTo', args: [].concat((0, _toConsumableArray3.default)(footprint)) });
-    } else if (cmd.code === 'C' || cmd.code === 'c') {
-      var x1 = cmd.x1,
-          y1 = cmd.y1,
-          x2 = cmd.x2,
-          y2 = cmd.y2,
-          _x3 = cmd.x,
-          _y3 = cmd.y;
-
-      footprint = [_x3, _y3];
-      prev = [x1, y1];
-      canvasCommands.push({ cmd: 'bezierCurveTo', args: [x1, y1, x2, y2, _x3, _y3] });
-    } else if (cmd.code === 'S') {
-      var _x4 = cmd.x2,
-          _y4 = cmd.y2,
-          _x5 = cmd.x,
-          _y5 = cmd.y;
-
-      footprint = [_x5, _y5];
-      canvasCommands.push({ cmd: 'bezierCurveTo', args: [].concat((0, _toConsumableArray3.default)(prev), [_x4, _y4, _x5, _y5]) });
-    } else if (cmd.code === 'Q') {
-      var _x6 = cmd.x1,
-          _y6 = cmd.y1,
-          _x7 = cmd.x,
-          _y7 = cmd.y;
-
-      footprint = [_x7, _y7];
-      prev = [_x6, _y6];
-      canvasCommands.push({ cmd: 'quadraticCurveTo', args: [_x6, _y6, _x7, _y7] });
-    } else if (cmd.code === 'T') {
-      var _x8 = cmd.x,
-          _y8 = cmd.y;
-
-      footprint = [_x8, _y8];
-      canvasCommands.push({ cmd: 'quadraticCurveTo', args: [].concat((0, _toConsumableArray3.default)(prev), [_x8, _y8]) });
-    } else if (cmd.code === 'Z') {
-      canvasCommands.push({ cmd: 'closePath', args: [] });
-    }
-  }
-  return { commands: canvasCommands, d: d };
-}
-
-exports.getBounds = _pathBounds2.default;
-
-/***/ }),
-/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15896,57 +12511,7 @@ function absolutize(path) {
 /* eslint-enable */
 
 /***/ }),
-/* 217 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = pathBounds;
-var parse = __webpack_require__(220);
-var abs = __webpack_require__(216);
-var normalize = __webpack_require__(219);
-var isSvgPath = __webpack_require__(218);
-var assert = __webpack_require__(76);
-
-function pathBounds(path) {
-  // ES6 string tpl call
-  if (Array.isArray(path) && path.length === 1 && typeof path[0] === 'string') path = path[0];
-
-  // svg path string
-  if (typeof path === 'string') {
-    assert(isSvgPath(path), 'String is not an SVG path.');
-    path = parse(path);
-  }
-
-  assert(Array.isArray(path), 'Argument should be a string or an array of path segments.');
-
-  path = abs(path);
-  path = normalize(path);
-
-  if (!path.length) return [0, 0, 0, 0];
-
-  var bounds = [Infinity, Infinity, -Infinity, -Infinity];
-
-  for (var i = 0, l = path.length; i < l; i++) {
-    var points = path[i].slice(1);
-
-    for (var j = 0; j < points.length; j += 2) {
-      if (points[j + 0] < bounds[0]) bounds[0] = points[j + 0];
-      if (points[j + 1] < bounds[1]) bounds[1] = points[j + 1];
-      if (points[j + 0] > bounds[2]) bounds[2] = points[j + 0];
-      if (points[j + 1] > bounds[3]) bounds[3] = points[j + 1];
-    }
-  }
-
-  return bounds;
-}
-
-/***/ }),
-/* 218 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15964,23 +12529,23 @@ module.exports = function isPath(str) {
 };
 
 /***/ }),
-/* 219 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _svgArcToCubicBezier = __webpack_require__(74);
+var _slicedToArray2 = __webpack_require__(1);
 
-var _svgArcToCubicBezier2 = _interopRequireDefault(_svgArcToCubicBezier);
+var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = normalize;
 
+var a2c = __webpack_require__(212);
+
 /* eslint-disable */
-
-
 function normalize(path) {
   // init state
   var prev;
@@ -16004,20 +12569,23 @@ function normalize(path) {
         startY = seg[2];
         break;
       case 'A':
-        var curves = (0, _svgArcToCubicBezier2.default)({
-          px: x,
-          py: y,
-          cx: seg[6],
-          cy: seg[7],
-          rx: seg[1],
-          ry: seg[2],
-          xAxisRotation: seg[3],
-          largeArcFlag: seg[4],
-          sweepFlag: seg[5]
-        });
+        var curves = a2c(x, y, seg[6], seg[7], seg[4], seg[5], seg[1], seg[2], seg[3]);
 
-        // null-curves
         if (!curves.length) continue;
+
+        curves = curves.map(function (curve) {
+          var _curve = (0, _slicedToArray3.default)(curve, 8),
+              x0 = _curve[0],
+              y0 = _curve[1],
+              x1 = _curve[2],
+              y1 = _curve[3],
+              x2 = _curve[4],
+              y2 = _curve[5],
+              x = _curve[6],
+              y = _curve[7];
+
+          return { x1: x1, y1: y1, x2: x2, y2: y2, x: x, y: y };
+        });
 
         for (var j = 0, c; j < curves.length; j++) {
           c = curves[j];
@@ -16092,7 +12660,7 @@ function quadratic(x1, y1, cx, cy, x2, y2) {
 /* eslint-enable */
 
 /***/ }),
-/* 220 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16157,637 +12725,46 @@ function parseValues(args) {
 /* eslint-enable */
 
 /***/ }),
-/* 221 */
-/***/ (function(module, exports) {
-
-if (typeof Object.create === 'function') {
-  // implementation from standard node.js 'util' module
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    ctor.prototype = Object.create(superCtor.prototype, {
-      constructor: {
-        value: ctor,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-  };
-} else {
-  // old school shim for old browsers
-  module.exports = function inherits(ctor, superCtor) {
-    ctor.super_ = superCtor
-    var TempCtor = function () {}
-    TempCtor.prototype = superCtor.prototype
-    ctor.prototype = new TempCtor()
-    ctor.prototype.constructor = ctor
-  }
-}
-
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports) {
-
-module.exports = function isBuffer(arg) {
-  return arg && typeof arg === 'object'
-    && typeof arg.copy === 'function'
-    && typeof arg.fill === 'function'
-    && typeof arg.readUInt8 === 'function';
-}
-
-/***/ }),
-/* 223 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-var formatRegExp = /%[sdj%]/g;
-exports.format = function(f) {
-  if (!isString(f)) {
-    var objects = [];
-    for (var i = 0; i < arguments.length; i++) {
-      objects.push(inspect(arguments[i]));
-    }
-    return objects.join(' ');
-  }
-
-  var i = 1;
-  var args = arguments;
-  var len = args.length;
-  var str = String(f).replace(formatRegExp, function(x) {
-    if (x === '%%') return '%';
-    if (i >= len) return x;
-    switch (x) {
-      case '%s': return String(args[i++]);
-      case '%d': return Number(args[i++]);
-      case '%j':
-        try {
-          return JSON.stringify(args[i++]);
-        } catch (_) {
-          return '[Circular]';
-        }
-      default:
-        return x;
-    }
-  });
-  for (var x = args[i]; i < len; x = args[++i]) {
-    if (isNull(x) || !isObject(x)) {
-      str += ' ' + x;
-    } else {
-      str += ' ' + inspect(x);
-    }
-  }
-  return str;
-};
+"use strict";
 
 
-// Mark that a method should not be used.
-// Returns a modified function which warns once by default.
-// If --no-deprecation is set, then it is a no-op.
-exports.deprecate = function(fn, msg) {
-  // Allow for deprecating things in the process of starting up.
-  if (isUndefined(global.process)) {
-    return function() {
-      return exports.deprecate(fn, msg).apply(this, arguments);
-    };
-  }
-
-  if (process.noDeprecation === true) {
-    return fn;
-  }
-
-  var warned = false;
-  function deprecated() {
-    if (!warned) {
-      if (process.throwDeprecation) {
-        throw new Error(msg);
-      } else if (process.traceDeprecation) {
-        console.trace(msg);
-      } else {
-        console.error(msg);
-      }
-      warned = true;
-    }
-    return fn.apply(this, arguments);
-  }
-
-  return deprecated;
-};
-
-
-var debugs = {};
-var debugEnviron;
-exports.debuglog = function(set) {
-  if (isUndefined(debugEnviron))
-    debugEnviron = process.env.NODE_DEBUG || '';
-  set = set.toUpperCase();
-  if (!debugs[set]) {
-    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
-      var pid = process.pid;
-      debugs[set] = function() {
-        var msg = exports.format.apply(exports, arguments);
-        console.error('%s %d: %s', set, pid, msg);
-      };
-    } else {
-      debugs[set] = function() {};
-    }
-  }
-  return debugs[set];
-};
-
-
-/**
- * Echos the value of a value. Trys to print the value out
- * in the best way possible given the different types.
- *
- * @param {Object} obj The object to print out.
- * @param {Object} opts Optional options object that alters the output.
- */
-/* legacy: obj, showHidden, depth, colors*/
-function inspect(obj, opts) {
-  // default options
-  var ctx = {
-    seen: [],
-    stylize: stylizeNoColor
-  };
-  // legacy...
-  if (arguments.length >= 3) ctx.depth = arguments[2];
-  if (arguments.length >= 4) ctx.colors = arguments[3];
-  if (isBoolean(opts)) {
-    // legacy...
-    ctx.showHidden = opts;
-  } else if (opts) {
-    // got an "options" object
-    exports._extend(ctx, opts);
-  }
-  // set default options
-  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
-  if (isUndefined(ctx.depth)) ctx.depth = 2;
-  if (isUndefined(ctx.colors)) ctx.colors = false;
-  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
-  if (ctx.colors) ctx.stylize = stylizeWithColor;
-  return formatValue(ctx, obj, ctx.depth);
-}
-exports.inspect = inspect;
-
-
-// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
-inspect.colors = {
-  'bold' : [1, 22],
-  'italic' : [3, 23],
-  'underline' : [4, 24],
-  'inverse' : [7, 27],
-  'white' : [37, 39],
-  'grey' : [90, 39],
-  'black' : [30, 39],
-  'blue' : [34, 39],
-  'cyan' : [36, 39],
-  'green' : [32, 39],
-  'magenta' : [35, 39],
-  'red' : [31, 39],
-  'yellow' : [33, 39]
-};
-
-// Don't use 'blue' not visible on cmd.exe
-inspect.styles = {
-  'special': 'cyan',
-  'number': 'yellow',
-  'boolean': 'yellow',
-  'undefined': 'grey',
-  'null': 'bold',
-  'string': 'green',
-  'date': 'magenta',
-  // "name": intentionally not styling
-  'regexp': 'red'
-};
-
-
-function stylizeWithColor(str, styleType) {
-  var style = inspect.styles[styleType];
-
-  if (style) {
-    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
-           '\u001b[' + inspect.colors[style][1] + 'm';
-  } else {
-    return str;
-  }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getPointAtLength = getPointAtLength;
+exports.getTotalLength = getTotalLength;
+exports.isPointInPath = isPointInPath;
+function createSvgPath(d) {
+  var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  path.setAttribute('d', d);
+  return path;
 }
 
+function getPointAtLength(d, len) {
+  var path = createSvgPath(d);
 
-function stylizeNoColor(str, styleType) {
-  return str;
+  var _path$getPointAtLengt = path.getPointAtLength(len),
+      x = _path$getPointAtLengt.x,
+      y = _path$getPointAtLengt.y;
+
+  return [x, y];
 }
 
-
-function arrayToHash(array) {
-  var hash = {};
-
-  array.forEach(function(val, idx) {
-    hash[val] = true;
-  });
-
-  return hash;
+function getTotalLength(d, len) {
+  var path = createSvgPath(d);
+  return path.getTotalLength(len);
 }
 
+function isPointInPath(_ref, x, y) {
+  var d = _ref.d;
 
-function formatValue(ctx, value, recurseTimes) {
-  // Provide a hook for user-specified inspect functions.
-  // Check that value is an object with an inspect function on it
-  if (ctx.customInspect &&
-      value &&
-      isFunction(value.inspect) &&
-      // Filter out the util module, it's inspect function is special
-      value.inspect !== exports.inspect &&
-      // Also filter out any prototype objects using the circular check.
-      !(value.constructor && value.constructor.prototype === value)) {
-    var ret = value.inspect(recurseTimes, ctx);
-    if (!isString(ret)) {
-      ret = formatValue(ctx, ret, recurseTimes);
-    }
-    return ret;
-  }
-
-  // Primitive types cannot have properties
-  var primitive = formatPrimitive(ctx, value);
-  if (primitive) {
-    return primitive;
-  }
-
-  // Look up the keys of the object.
-  var keys = Object.keys(value);
-  var visibleKeys = arrayToHash(keys);
-
-  if (ctx.showHidden) {
-    keys = Object.getOwnPropertyNames(value);
-  }
-
-  // IE doesn't make error fields non-enumerable
-  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
-  if (isError(value)
-      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
-    return formatError(value);
-  }
-
-  // Some type of object without properties can be shortcutted.
-  if (keys.length === 0) {
-    if (isFunction(value)) {
-      var name = value.name ? ': ' + value.name : '';
-      return ctx.stylize('[Function' + name + ']', 'special');
-    }
-    if (isRegExp(value)) {
-      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-    }
-    if (isDate(value)) {
-      return ctx.stylize(Date.prototype.toString.call(value), 'date');
-    }
-    if (isError(value)) {
-      return formatError(value);
-    }
-  }
-
-  var base = '', array = false, braces = ['{', '}'];
-
-  // Make Array say that they are Array
-  if (isArray(value)) {
-    array = true;
-    braces = ['[', ']'];
-  }
-
-  // Make functions say that they are functions
-  if (isFunction(value)) {
-    var n = value.name ? ': ' + value.name : '';
-    base = ' [Function' + n + ']';
-  }
-
-  // Make RegExps say that they are RegExps
-  if (isRegExp(value)) {
-    base = ' ' + RegExp.prototype.toString.call(value);
-  }
-
-  // Make dates with properties first say the date
-  if (isDate(value)) {
-    base = ' ' + Date.prototype.toUTCString.call(value);
-  }
-
-  // Make error with message first say the error
-  if (isError(value)) {
-    base = ' ' + formatError(value);
-  }
-
-  if (keys.length === 0 && (!array || value.length == 0)) {
-    return braces[0] + base + braces[1];
-  }
-
-  if (recurseTimes < 0) {
-    if (isRegExp(value)) {
-      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-    } else {
-      return ctx.stylize('[Object]', 'special');
-    }
-  }
-
-  ctx.seen.push(value);
-
-  var output;
-  if (array) {
-    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
-  } else {
-    output = keys.map(function(key) {
-      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
-    });
-  }
-
-  ctx.seen.pop();
-
-  return reduceToSingleString(output, base, braces);
+  var path = new Path2D(d);
+  var context = document.createElement('canvas').getContext('2d');
+  return context.isPointInPath(path, x, y);
 }
-
-
-function formatPrimitive(ctx, value) {
-  if (isUndefined(value))
-    return ctx.stylize('undefined', 'undefined');
-  if (isString(value)) {
-    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
-                                             .replace(/'/g, "\\'")
-                                             .replace(/\\"/g, '"') + '\'';
-    return ctx.stylize(simple, 'string');
-  }
-  if (isNumber(value))
-    return ctx.stylize('' + value, 'number');
-  if (isBoolean(value))
-    return ctx.stylize('' + value, 'boolean');
-  // For some reason typeof null is "object", so special case here.
-  if (isNull(value))
-    return ctx.stylize('null', 'null');
-}
-
-
-function formatError(value) {
-  return '[' + Error.prototype.toString.call(value) + ']';
-}
-
-
-function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
-  var output = [];
-  for (var i = 0, l = value.length; i < l; ++i) {
-    if (hasOwnProperty(value, String(i))) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          String(i), true));
-    } else {
-      output.push('');
-    }
-  }
-  keys.forEach(function(key) {
-    if (!key.match(/^\d+$/)) {
-      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-          key, true));
-    }
-  });
-  return output;
-}
-
-
-function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
-  var name, str, desc;
-  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
-  if (desc.get) {
-    if (desc.set) {
-      str = ctx.stylize('[Getter/Setter]', 'special');
-    } else {
-      str = ctx.stylize('[Getter]', 'special');
-    }
-  } else {
-    if (desc.set) {
-      str = ctx.stylize('[Setter]', 'special');
-    }
-  }
-  if (!hasOwnProperty(visibleKeys, key)) {
-    name = '[' + key + ']';
-  }
-  if (!str) {
-    if (ctx.seen.indexOf(desc.value) < 0) {
-      if (isNull(recurseTimes)) {
-        str = formatValue(ctx, desc.value, null);
-      } else {
-        str = formatValue(ctx, desc.value, recurseTimes - 1);
-      }
-      if (str.indexOf('\n') > -1) {
-        if (array) {
-          str = str.split('\n').map(function(line) {
-            return '  ' + line;
-          }).join('\n').substr(2);
-        } else {
-          str = '\n' + str.split('\n').map(function(line) {
-            return '   ' + line;
-          }).join('\n');
-        }
-      }
-    } else {
-      str = ctx.stylize('[Circular]', 'special');
-    }
-  }
-  if (isUndefined(name)) {
-    if (array && key.match(/^\d+$/)) {
-      return str;
-    }
-    name = JSON.stringify('' + key);
-    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
-      name = name.substr(1, name.length - 2);
-      name = ctx.stylize(name, 'name');
-    } else {
-      name = name.replace(/'/g, "\\'")
-                 .replace(/\\"/g, '"')
-                 .replace(/(^"|"$)/g, "'");
-      name = ctx.stylize(name, 'string');
-    }
-  }
-
-  return name + ': ' + str;
-}
-
-
-function reduceToSingleString(output, base, braces) {
-  var numLinesEst = 0;
-  var length = output.reduce(function(prev, cur) {
-    numLinesEst++;
-    if (cur.indexOf('\n') >= 0) numLinesEst++;
-    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
-  }, 0);
-
-  if (length > 60) {
-    return braces[0] +
-           (base === '' ? '' : base + '\n ') +
-           ' ' +
-           output.join(',\n  ') +
-           ' ' +
-           braces[1];
-  }
-
-  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
-}
-
-
-// NOTE: These type checking functions intentionally don't use `instanceof`
-// because it is fragile and can be easily faked with `Object.create()`.
-function isArray(ar) {
-  return Array.isArray(ar);
-}
-exports.isArray = isArray;
-
-function isBoolean(arg) {
-  return typeof arg === 'boolean';
-}
-exports.isBoolean = isBoolean;
-
-function isNull(arg) {
-  return arg === null;
-}
-exports.isNull = isNull;
-
-function isNullOrUndefined(arg) {
-  return arg == null;
-}
-exports.isNullOrUndefined = isNullOrUndefined;
-
-function isNumber(arg) {
-  return typeof arg === 'number';
-}
-exports.isNumber = isNumber;
-
-function isString(arg) {
-  return typeof arg === 'string';
-}
-exports.isString = isString;
-
-function isSymbol(arg) {
-  return typeof arg === 'symbol';
-}
-exports.isSymbol = isSymbol;
-
-function isUndefined(arg) {
-  return arg === void 0;
-}
-exports.isUndefined = isUndefined;
-
-function isRegExp(re) {
-  return isObject(re) && objectToString(re) === '[object RegExp]';
-}
-exports.isRegExp = isRegExp;
-
-function isObject(arg) {
-  return typeof arg === 'object' && arg !== null;
-}
-exports.isObject = isObject;
-
-function isDate(d) {
-  return isObject(d) && objectToString(d) === '[object Date]';
-}
-exports.isDate = isDate;
-
-function isError(e) {
-  return isObject(e) &&
-      (objectToString(e) === '[object Error]' || e instanceof Error);
-}
-exports.isError = isError;
-
-function isFunction(arg) {
-  return typeof arg === 'function';
-}
-exports.isFunction = isFunction;
-
-function isPrimitive(arg) {
-  return arg === null ||
-         typeof arg === 'boolean' ||
-         typeof arg === 'number' ||
-         typeof arg === 'string' ||
-         typeof arg === 'symbol' ||  // ES6 symbol
-         typeof arg === 'undefined';
-}
-exports.isPrimitive = isPrimitive;
-
-exports.isBuffer = __webpack_require__(222);
-
-function objectToString(o) {
-  return Object.prototype.toString.call(o);
-}
-
-
-function pad(n) {
-  return n < 10 ? '0' + n.toString(10) : n.toString(10);
-}
-
-
-var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-              'Oct', 'Nov', 'Dec'];
-
-// 26 Feb 16:19:34
-function timestamp() {
-  var d = new Date();
-  var time = [pad(d.getHours()),
-              pad(d.getMinutes()),
-              pad(d.getSeconds())].join(':');
-  return [d.getDate(), months[d.getMonth()], time].join(' ');
-}
-
-
-// log is just a thin wrapper to console.log that prepends a timestamp
-exports.log = function() {
-  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
-};
-
-
-/**
- * Inherit the prototype methods from one constructor into another.
- *
- * The Function.prototype.inherits from lang.js rewritten as a standalone
- * function (not on Function.prototype). NOTE: If this file is to be loaded
- * during bootstrapping this function needs to be rewritten using some native
- * functions as prototype setup using normal JavaScript does not work as
- * expected during bootstrapping (see mirror.js in r114903).
- *
- * @param {function} ctor Constructor function which needs to inherit the
- *     prototype.
- * @param {function} superCtor Constructor function to inherit prototype from.
- */
-exports.inherits = __webpack_require__(221);
-
-exports._extend = function(origin, add) {
-  // Don't do anything if add isn't an object
-  if (!add || !isObject(add)) return origin;
-
-  var keys = Object.keys(add);
-  var i = keys.length;
-  while (i--) {
-    origin[keys[i]] = add[keys[i]];
-  }
-  return origin;
-};
-
-function hasOwnProperty(obj, prop) {
-  return Object.prototype.hasOwnProperty.call(obj, prop);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(108), __webpack_require__(71)))
 
 /***/ })
 /******/ ]);

@@ -1,6 +1,7 @@
-import {Sprite} from 'sprite-core'
-import {attr} from 'sprite-utils'
+import {Sprite, utils} from 'sprite-core'
 import Resource from './resource'
+
+const attr = utils.attr
 
 class ResAttr extends Sprite.Attr {
   /*
@@ -26,6 +27,7 @@ class ResAttr extends Sprite.Attr {
     })
 
     this.loadTextures(textures)
+    this.set('textures', textures)
   }
 
   loadTextures(textures) {
@@ -35,7 +37,6 @@ class ResAttr extends Sprite.Attr {
       if(!texture.image) texture.image = texture.src
       return texture
     })
-    this.set('textures', textures)
     super.loadTextures(textures)
   }
 }

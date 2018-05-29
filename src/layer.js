@@ -5,6 +5,12 @@ class ExLayer extends Layer {
     if(this.parent) return this.parent.rpx
     return 1
   }
+  toLocalPos(x, y) {
+    return this.parent && this.parent.toLocalPos(x, y)
+  }
+  toGlobalPos(x, y) {
+    return this.parent && this.parent.toGlobalPos(x, y)
+  }
   drawSprites(renderEls, t) {
     const context = this.outputContext
     context.save()

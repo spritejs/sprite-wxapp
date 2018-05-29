@@ -38,8 +38,9 @@ module.exports = function (env = {}) {
       filename: env.production ? 'sprite-wxapp.js' : 'spritejs.js',
       path,
       publicPath: '/js/',
-      // library: 'spritejs',
       libraryTarget: 'commonjs-module',
+      // library: 'spritejs',
+      // libraryTarget: 'umd',
     },
 
     plugins,
