@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "sprite-core": "^1.6.5",
+    "sprite-core": "^1.7.1",
     "sprite-math": "^1.0.0",
     "sprite-utils": "^1.0.3"
   },
