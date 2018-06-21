@@ -1,14 +1,12 @@
 # spritejs 微信小程序版
 
-这是 [spritejs](https://github.com/spritejs/spritejs) 的微信小程序版
-
-目前支持 spritejs v 1.16.0 的大部分功能，具体可以参考[帮助文档](https://github.com/spritejs/spritejs/tree/master/docs#%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84)
+这是 [spritejs](https://github.com/spritejs/spritejs) 的微信小程序版，目前支持 spritejs v 1.16.0 的大部分功能，具体可以参考[帮助文档](https://github.com/spritejs/spritejs/tree/master/docs#%E6%95%B4%E4%BD%93%E7%BB%93%E6%9E%84)
 
 ## 特性
 
 - Sprite属性更新自动（分批）重绘
 - 以rpx为默认单位
-- 动画支持web animation api
+- 动画支持Web Animations API
 - 支持事件机制
 
 ## 快速使用
