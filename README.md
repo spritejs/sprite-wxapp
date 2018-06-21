@@ -175,15 +175,11 @@ scene.layer().append(sprite2)
 ### 目前不支持的特性
 
 * 微信不支持动态创建Dom元素，不兼容d3，目前d3的功能暂时不支持（未来打算通过shim适配）。
-
 * 微信context不支持滤镜，所以滤镜filter无效果。
-
 * 微信canvas不支持渐变（linearGradients 和 createRadialGradient)，如果在 attr 中使用渐变属性会出错。
-
 * 微信的canvas不支持动态创建context，因此无法使用缓存优化。
 
 ### 目前暂时无法解决的Bug
 
 * 由于微信的模拟器的clip有问题，所以在模拟器下sprite元素的clip区域可能不正确
-
 * 微信的canvas的globalAlpha只有setter没有getter，因此小程序设置opacity属性的时候没法层叠，子元素的opacity会覆盖父容器的opacity值
