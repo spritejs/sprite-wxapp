@@ -1,6 +1,6 @@
 {
   "name": "sprite-wxapp",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "spritejs 微信小程序版",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "dependencies": {
     "babel-decorators-runtime": "^0.2.0",
     "babel-runtime": "^6.26.0",
-    "sprite-core": "^1.27.4"
+    "sprite-core": "^2.0.36-beta"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -13,7 +13,7 @@
 
 ## 快速使用
 
-[下载](https://s2.ssl.qhres.com/!5491de36/sprite-wxapp.js)
+[下载](https://s1.ssl.qhres.com/!03c4aebb/sprite-wxapp.js)
 
 将文件保存到小程序对应的目录（比如lib目录下），然后使用：
 
@@ -181,3 +181,9 @@ scene.layer().append(sprite2)
 微信canvas不支持渐变（linearGradients 和 createRadialGradient)，如果在 attr 中使用渐变属性会出错。
 
 微信的canvas不支持动态创建context，因此无法使用缓存优化。
+
+### 目前暂时无法解决的Bug
+
+由于微信的模拟器的clip有问题，所以在模拟器下sprite元素的clip区域可能不正确
+
+微信的canvas的globalAlpha只有setter没有getter，因此小程序设置opacity属性的时候没法层叠，子元素的opacity会覆盖父容器的opacity值
