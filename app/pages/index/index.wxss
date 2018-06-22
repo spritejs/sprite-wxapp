@@ -1,0 +1,25 @@
+/**index.wxss**/
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.bgimg {
+  width: 100%;
+  height: 100%;
+}
+
+view.container {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+canvas {
+  width: 750rpx;
+  height: 1334rpx;
+  position: absolute;
+  top: 668rpx;
+  margin-top: -667rpx;
+}

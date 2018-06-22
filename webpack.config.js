@@ -52,7 +52,9 @@ module.exports = function (env = {}) {
         use: jsLoaders,
       }],
     },
-
+    resolve: {
+      aliasFields: ['default'],
+    },
     // devServer: {
     //   open: true,
     //   proxy: {

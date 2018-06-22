@@ -13,7 +13,7 @@
 
 ## 快速使用
 
-[下载](https://s1.ssl.qhres.com/!03c4aebb/sprite-wxapp.js)
+[下载](https://s3.ssl.qhres.com/!80f1235d/sprite-wxapp.js)
 
 将文件保存到小程序对应的目录（比如lib目录下），然后使用：
 
@@ -171,6 +171,20 @@ sprite2.attr({
 
 scene.layer().append(sprite2)
 ```
+
+### 调试示例代码
+
+我们放了一个“十滴水”小游戏的例子在 `app` 文件夹下。
+
+要调试示例代码，可以启动webpack编译
+
+```bash
+npm start
+```
+
+然后用微信开发者工具调试代码
+
+![示例小程序](https://p1.ssl.qhimg.com/t01c8802b28edfcb127.gif)
 
 ### 目前不支持的特性
 
