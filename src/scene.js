@@ -7,9 +7,8 @@ const _rpx = Symbol('rpx')
 
 export default class extends BaseNode {
   /* eslint-disable no-undef */
-  constructor(host, vwr = 1) { // 默认宽度 750，即 1rpx = 1
+  constructor(vwr = 1) { // 默认宽度 750，即 1rpx = 1
     super()
-    this.host = host
     this[_layerMap] = {}
     if(vwr > 0) {
       this[_rpx] = wx.getSystemInfoSync().windowWidth * vwr / 750
@@ -44,7 +43,7 @@ export default class extends BaseNode {
     let layer = this[_layerMap][id]
     if(!layer) {
       /* eslint-disable no-undef */
-      const context = wx.createCanvasContext(id, this.host)
+      const context = wx.createCanvasContext(id)
       /* eslint-enable no-undef */
       layer = new Layer({context})
       layer.connect(this)
