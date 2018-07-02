@@ -6391,14 +6391,13 @@ var _default = function (_BaseNode) {
   (0, _inherits3.default)(_default, _BaseNode);
 
   /* eslint-disable no-undef */
-  function _default(host) {
-    var vwr = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  function _default() {
+    var vwr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
     (0, _classCallCheck3.default)(this, _default);
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_default.__proto__ || (0, _getPrototypeOf2.default)(_default)).call(this)); // 默认宽度 750，即 1rpx = 1
 
 
-    _this.host = host;
     _this[_layerMap] = {};
     if (vwr > 0) {
       _this[_rpx] = wx.getSystemInfoSync().windowWidth * vwr / 750;
@@ -6442,7 +6441,7 @@ var _default = function (_BaseNode) {
       var layer = this[_layerMap][id];
       if (!layer) {
         /* eslint-disable no-undef */
-        var context = wx.createCanvasContext(id, this.host);
+        var context = wx.createCanvasContext(id);
         /* eslint-enable no-undef */
         layer = new _layer2.default({ context: context });
         layer.connect(this);
@@ -6679,7 +6678,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _spriteCore.registerNodeType)('layer', _layer2.default, true);
 (0, _spriteCore.registerNodeType)('sprite', _sprite2.default);
 
-var version = '1.4.0';
+var version = '1.5.0';
 
 exports.version = version;
 exports.math = _spriteCore.math;
