@@ -19,6 +19,7 @@ Page({
       anchor: 0.5,
       pos: [width / 2, 120],
       border: [5, 'red'],
+      borderRadius: 10,
     })
     layer.append(label)
 
