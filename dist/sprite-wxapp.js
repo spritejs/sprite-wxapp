@@ -6678,7 +6678,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _spriteCore.registerNodeType)('layer', _layer2.default, true);
 (0, _spriteCore.registerNodeType)('sprite', _sprite2.default);
 
-var version = '1.5.0';
+var version = '1.5.1';
 
 exports.version = version;
 exports.math = _spriteCore.math;

@@ -1,5 +1,10 @@
 module.exports = {
   "extends":  "eslint-config-75team",
+  globals: {
+    getApp: true,
+    wx: true,
+    Page: true,
+  },
   rules: {
     'import/no-dynamic-require': 'off',
     'semi-style': ["error", "first"],

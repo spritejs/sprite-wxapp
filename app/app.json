@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/robot/robot",
+    "pages/water/water"
   ],
   "window":{
     "backgroundTextStyle":"light",

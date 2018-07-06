@@ -1,0 +1,7 @@
+<!--water.wxml-->
+<view class="container" id="container" catchtouchmove="noop">
+  <image src="../../assets/img/bg.jpg" class="bgimg"></image>
+  <block wx:for="{{layers}}" wx:key="{{item}}">
+    <canvas canvas-id="{{item}}" disable-scroll="true"  bindtouchstart="onTouchStart" bindtouchmove="noop"></canvas>
+  </block>
+</view>

@@ -5,15 +5,14 @@ page {
 }
 
 view.container {
-  display: block;
-  padding: 20px 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-navigator {
-  display: block;
-  text-align: center;
-  line-height: 30px;
+canvas {
+  width: 750rpx;
+  height: 1334rpx;
+  position: absolute;
 }

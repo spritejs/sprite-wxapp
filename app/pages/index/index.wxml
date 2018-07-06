@@ -1,7 +1,6 @@
 <!--index.wxml-->
 <view class="container" id="container" catchtouchmove="noop">
-  <image src="../../assets/img/bg.jpg" class="bgimg"></image>
-  <block wx:for="{{layers}}" wx:key="{{item}}">
-    <canvas canvas-id="{{item}}" disable-scroll="true"  bindtouchstart="onTouchStart" bindtouchmove="noop"></canvas>
+  <block wx:for="{{demos}}" wx:for-item="item" wx:key="item.url">
+    <navigator url="{{item.url}}" hover-class="navigator-hover">{{item.label}}</navigator>
   </block>
 </view>
