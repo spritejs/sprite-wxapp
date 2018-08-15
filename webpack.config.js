@@ -1,4 +1,5 @@
 // const conf = require('./package.json')
+const webpack = require("webpack")
 
 module.exports = function (env = {}) {
   const fs = require('fs')
@@ -11,15 +12,15 @@ module.exports = function (env = {}) {
   if(env.production) {
     path = 'dist'
     // compress js in production environment
-    // plugins.push(new webpack.optimize.UglifyJsPlugin({
-    //   output: {
-    //     comments: false, // remove all comments
-    //   },
-    //   compress: {
-    //     warnings: false,
-    //     drop_console: false,
-    //   },
-    // }))
+    plugins.push(new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false, // remove all comments
+      },
+      compress: {
+        warnings: false,
+        drop_console: false,
+      },
+    }))
   }
   path = require('path').resolve(__dirname, path)
 

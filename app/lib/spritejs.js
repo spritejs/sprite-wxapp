@@ -2872,7 +2872,7 @@ var Resource = {
     if (typeof texture === 'string') {
       texture = { id: texture, src: texture };
     }
-    if (!texture.id) texture.src = texture.id;
+    if (!texture.id) texture.id = texture.src;
     loadedResources.set(texture.id, texture);
     return texture;
   },

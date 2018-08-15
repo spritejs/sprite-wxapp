@@ -28,7 +28,7 @@ function uploadToCDN(stats) {
     console.log('file uploaded, CDN URL: %s', res[file])
     const readmeFile = path.resolve(__dirname, '..', 'README.md')
     let content = fs.readFileSync(readmeFile, 'utf-8')
-    content = content.replace(/\[下载\]\((.*)\)/igm, `[下载](${res[file]})`)
+    content = content.replace(/\[CDN下载\]\((.*)\)/igm, `[CDN下载](${res[file]})`)
     fs.writeFileSync(readmeFile, content)
   })
 }
