@@ -133,6 +133,9 @@ Page({
 
     const layer = scene.layer('fglayer')
     
+    // 如果在自定义组件中使用，传递第二个参数为组件实例的引用。
+    // const layer = scene.layer('fglayer', this)
+    
     ...
   },
 })
