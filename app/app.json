@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/robot/robot",
-    "pages/water/water"
+    "pages/water/water",
+    "pages/block/block"
   ],
   "window":{
     "backgroundTextStyle":"light",
