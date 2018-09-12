@@ -39,11 +39,11 @@ export default class extends BaseNode {
     })
   }
 
-  layer(id = 'default') {
+  layer(id = 'default', componentInstance = null) {
     let layer = this[_layerMap][id]
     if(!layer) {
       /* eslint-disable no-undef */
-      const context = wx.createCanvasContext(id)
+      const context = wx.createCanvasContext(id, componentInstance)
       /* eslint-enable no-undef */
       layer = new Layer({context})
       layer.connect(this)
