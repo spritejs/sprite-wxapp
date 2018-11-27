@@ -2,7 +2,7 @@
   "name": "sprite-wxapp",
   "version": "1.6.0",
   "description": "spritejs 微信小程序版",
-  "main": "index.js",
+  "main": "dist/sprite-wxapp.js",
   "scripts": {
     "lint": "eslint 'src/**/*.js' --fix",
     "start": "webpack --watch",
