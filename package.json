@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint 'src/**/*.js' --fix",
     "start": "webpack --watch",
+    "start:game": "webpack --env.target=game --watch",
     "compile": "webpack",
     "prepublishOnly": "node script/build",
     "test": "echo \"Error: no test specified\" && exit 1"

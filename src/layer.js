@@ -17,7 +17,9 @@ class ExLayer extends Layer {
     context.scale(this.rpx, this.rpx)
     super.drawSprites(renderEls, t)
     context.restore()
-    context.draw()
+    if(context.draw) {
+      context.draw()
+    }
   }
 }
 

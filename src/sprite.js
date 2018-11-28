@@ -4,6 +4,12 @@ import Resource from './resource'
 const attr = utils.attr
 
 class ResAttr extends Sprite.Attr {
+  constructor(subject) {
+    super(subject)
+    this.setDefault({
+      enableCache: false,
+    })
+  }
   /*
     {
       src: ...,   //texture path

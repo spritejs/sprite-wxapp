@@ -1,5 +1,5 @@
 // const conf = require('./package.json')
-const webpack = require("webpack")
+const webpack = require('webpack')
 
 module.exports = function (env = {}) {
   const fs = require('fs')
@@ -8,6 +8,10 @@ module.exports = function (env = {}) {
     jsLoaders = []
 
   let path = 'app/lib'
+
+  if(env.target === 'game') {
+    path = 'game/js/libs'
+  }
 
   if(env.production) {
     path = 'dist'

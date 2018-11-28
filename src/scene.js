@@ -22,6 +22,10 @@ export default class extends BaseNode {
     return this[_rpx]
   }
 
+  get children() {
+    return Object.values(this[_layerMap])
+  }
+
   toGlobalPos(x, y) {
     return [x * this[_rpx], y * this[_rpx]]
   }
@@ -42,10 +46,36 @@ export default class extends BaseNode {
   layer(id = 'default', componentInstance = null) {
     let layer = this[_layerMap][id]
     if(!layer) {
-      /* eslint-disable no-undef */
-      const context = wx.createCanvasContext(id, componentInstance)
-      /* eslint-enable no-undef */
-      layer = new Layer({context})
+      if(wx.createCanvasContext) {
+        // 小程序
+        const context = wx.createCanvasContext(id, componentInstance)
+        layer = new Layer({context})
+      } else if(wx.createCanvas) {
+        // 小游戏
+        const context = wx.createCanvas().getContext('2d')
+        layer = new Layer({context})
+        if(this.firstLayer) {
+          // 多个 canvas，需要非主动渲染
+          this.firstLayer.autoRender = false
+          layer.autoRender = false
+          if(this.ticker == null) {
+            const ticker = () => {
+              const layers = this.children
+              this.firstLayer.clearContext()
+              for(let i = layers.length - 1; i > 0; i--) {
+                const layer = layers[i]
+                layer.draw()
+                this.firstLayer.outputContext.drawImage(layer.canvas, 0, 0, layer.canvas.width, layer.canvas.height)
+              }
+              this.firstLayer.draw(false)
+              this.ticker = requestAnimationFrame(ticker)
+            }
+            this.ticker = requestAnimationFrame(ticker)
+          }
+        } else {
+          this.firstLayer = layer
+        }
+      }
       layer.connect(this)
       this[_layerMap][id] = layer
     }
