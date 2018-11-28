@@ -6,16 +6,26 @@ import Resource from './resource'
 import {
   BaseNode,
   BaseSprite,
+  DataNode,
   Label,
   Group,
   Effects,
+  Easings,
+  Timeline,
   Path,
   registerNodeType,
+  isValidNodeType,
   createNode,
+  createElement,
   Color,
 
+  use,
   utils,
   math,
+
+  querySelector,
+  querySelectorAll,
+  stylesheet,
 } from 'sprite-core'
 
 registerNodeType('layer', Layer, true)
@@ -25,11 +35,13 @@ const version = require('../package.json').version
 
 export {
   version,
+  use,
   math,
   utils,
 
   BaseNode,
   BaseSprite,
+  DataNode,
   Sprite,
   Label,
   Path,
@@ -38,9 +50,17 @@ export {
   Scene,
 
   registerNodeType,
+  isValidNodeType,
   createNode,
+  createElement,
   Color,
 
   Resource,
   Effects,
+  Easings,
+  Timeline,
+
+  querySelector,
+  querySelectorAll,
+  stylesheet,
 }
