@@ -1,5 +1,6 @@
 // const app = getApp()
-const spritejs = require('../../lib/spritejs')
+const spritejs = require('../../lib/sprite-wxapp')
+
 const {Scene, Sprite} = spritejs
 
 Page({

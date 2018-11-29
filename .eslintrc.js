@@ -22,9 +22,10 @@ module.exports = {
     // 因为我们可能模块内定义一个 decorate，这个 decorate 有可能和变量同名
     'no-shadow': 'warn',
     // 因为函数签名中可能声明未使用的变量
-    'no-unused-vars': ['error', {args: "none"}],
+    'no-unused-vars': ['warn', {args: "none"}],
     'prefer-destructuring': 'off',
     'object-curly-newline': 'off',
+    'import/prefer-default-export': 'off',
     // 'no-restricted-syntax': [
     //   'error',
     //   'ForInStatement',

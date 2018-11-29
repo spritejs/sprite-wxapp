@@ -38,9 +38,12 @@ module.exports = function (env = {}) {
   }
 
   return {
-    entry: './src/index.js',
+    entry: {
+      'sprite-wxapp': './src/index.js',
+      'sprite-component': './component/index.js',
+    },
     output: {
-      filename: env.production ? 'sprite-wxapp.js' : 'spritejs.js',
+      filename: '[name].js',
       path,
       publicPath: '/js/',
       libraryTarget: 'commonjs-module',
