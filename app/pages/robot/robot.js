@@ -1,17 +1,17 @@
 // const app = getApp()
-const spritejs = require('../../lib/sprite-wxapp')
-const {init} = require('../../lib/sprite-component')
+const spritejs = require('../../lib/sprite-wxapp');
+const {init} = require('../../lib/sprite-component');
 
-const {Scene, Layer, Sprite, Label} = spritejs
+const {Scene, Layer, Sprite, Label} = spritejs;
 
 Page({
   data: {
     layers: ['fglayer'],
   },
   onReady() {
-    const scene = new Scene()
+    const scene = new Scene();
     // console.log(scene.attributes.__attributesSet)
-    init(spritejs, scene)
+    init(spritejs, scene);
     // const width = 750,
     //   height = 1344
 
@@ -36,4 +36,4 @@ Page({
     // })
     // layer.append(s)
   },
-})
+});

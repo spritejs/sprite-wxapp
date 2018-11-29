@@ -1,8 +1,3 @@
-import Layer from './layer'
-import Sprite from './sprite'
-import Scene from './scene'
-import Resource from './resource'
-
 import {
   BaseNode,
   BaseSprite,
@@ -26,12 +21,17 @@ import {
   querySelector,
   querySelectorAll,
   stylesheet,
-} from 'sprite-core'
+} from 'sprite-core';
 
-registerNodeType('layer', Layer, true)
-registerNodeType('sprite', Sprite)
+import Layer from './layer';
+import Sprite from './sprite';
+import Scene from './scene';
+import Resource from './resource';
 
-const version = require('../package.json').version
+registerNodeType('layer', Layer, true);
+registerNodeType('sprite', Sprite);
+
+const version = require('../package.json').version;
 
 export {
   version,
@@ -63,4 +63,4 @@ export {
   querySelector,
   querySelectorAll,
   stylesheet,
-}
+};

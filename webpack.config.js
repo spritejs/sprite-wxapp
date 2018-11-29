@@ -1,20 +1,20 @@
 // const conf = require('./package.json')
-const webpack = require('webpack')
+const webpack = require('webpack');
 
 module.exports = function (env = {}) {
-  const fs = require('fs')
+  const fs = require('fs');
 
   const plugins = [],
-    jsLoaders = []
+    jsLoaders = [];
 
-  let path = 'app/lib'
+  let path = 'app/lib';
 
   if(env.target === 'game') {
-    path = 'game/js/libs'
+    path = 'game/js/libs';
   }
 
   if(env.production) {
-    path = 'dist'
+    path = 'dist';
     // compress js in production environment
     plugins.push(new webpack.optimize.UglifyJsPlugin({
       output: {
@@ -24,17 +24,17 @@ module.exports = function (env = {}) {
         warnings: false,
         drop_console: false,
       },
-    }))
+    }));
   }
-  path = require('path').resolve(__dirname, path)
+  path = require('path').resolve(__dirname, path);
 
   if(fs.existsSync('./.babelrc')) {
     // use babel
-    const babelConf = JSON.parse(fs.readFileSync('.babelrc'))
+    const babelConf = JSON.parse(fs.readFileSync('.babelrc'));
     jsLoaders.push({
       loader: 'babel-loader',
       options: babelConf,
-    })
+    });
   }
 
   return {
@@ -70,5 +70,5 @@ module.exports = function (env = {}) {
     //   },
     // },
     // devtool: 'inline-source-map',
-  }
-}
+  };
+};
