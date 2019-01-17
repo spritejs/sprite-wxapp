@@ -10,7 +10,7 @@ class ExLayer extends Layer {
     }
     if(!options.context) {
       if(wx.createCanvasContext) { // 小程序
-        options.context = wx.createCanvasContext(id);
+        options.context = wx.createCanvasContext(id, options.componentInstance);
       } else if(wx.createCanvas) { // 小游戏
         options.context = wx.createCanvas().getContext('2d');
       }

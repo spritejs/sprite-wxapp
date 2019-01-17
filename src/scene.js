@@ -105,10 +105,10 @@ export default class extends BaseNode {
     return this.removeLayer(layer.id);
   }
 
-  layer(id = 'default') {
+  layer(id = 'default', componentInstance = null) {
     let layer = this[_layerMap][id];
     if(!layer) {
-      layer = new Layer(id);
+      layer = new Layer(id, {componentInstance});
       if(wx.createCanvas) {
         // 小游戏
         if(this.firstLayer) {
