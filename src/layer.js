@@ -21,9 +21,11 @@ class ExLayer extends Layer {
   get id() {
     return this[_id];
   }
-  get rpx() {
-    if(this.parent) return this.parent.rpx;
-    return 1;
+  get resolution() {
+    return this.parent.resolution;
+  }
+  get viewport() {
+    return this.parent.viewport;
   }
   toLocalPos(x, y) {
     return this.parent && this.parent.toLocalPos(x, y);
@@ -34,7 +36,7 @@ class ExLayer extends Layer {
   drawSprites(renderEls, t) {
     const context = this.outputContext;
     context.save();
-    context.scale(this.rpx, this.rpx);
+    context.scale(this.viewport[0] / this.resolution[0], this.viewport[1] / this.resolution[1]);
     super.drawSprites(renderEls, t);
     context.restore();
     if(context.draw) {

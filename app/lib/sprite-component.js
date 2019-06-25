@@ -3261,7 +3261,7 @@ var _preact = __webpack_require__(172);
 
 function init(spritejs, root) {
   (0, _preact.use)(spritejs);
-  (0, _preact.render)((0, _preact.h)(
+  var layer = (0, _preact.render)((0, _preact.h)(
     "layer",
     { id: "fglayer" },
     (0, _preact.h)("sprite", { pos: [100, 100], size: [100, 100], bgcolor: "red" })

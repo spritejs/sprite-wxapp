@@ -9,8 +9,10 @@ Page({
   },
   onReady() {
     const scene = new Scene();
-    const width = 750,
-      height = 1344;
+    const width = scene.resolution[0],
+      height = scene.resolution[1];
+
+    console.log(scene.viewport, scene.resolution);
 
     const layer = scene.layer('fglayer');
     console.log(layer.outputContext);

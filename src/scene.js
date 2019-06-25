@@ -6,7 +6,7 @@ const _layerMap = Symbol('layerMap');
 const _attr = Symbol('attr');
 
 export default class extends BaseNode {
-  constructor(vwr = 1) { // 默认宽度 750，即 1rpx = 1
+  constructor({resolution, viewport} = {}) {
     super();
     this[_layerMap] = {};
     this[_attr] = {};
@@ -17,15 +17,28 @@ export default class extends BaseNode {
       },
     });
 
-    if(vwr > 0) {
-      this[_attr].rpx = wx.getSystemInfoSync().windowWidth * vwr / 750;
-    } else {
-      this[_attr].rpx = 1;
+    if(!viewport) {
+      const {windowWidth, windowHeight} = wx.getSystemInfoSync();
+      viewport = [windowWidth, windowHeight];
     }
+    if(!resolution) {
+      resolution = [750, viewport[1] * 750 / viewport[0]];
+    }
+
+    this[_attr].viewport = viewport;
+    this[_attr].resolution = resolution;
   }
 
   get attributes() {
     return this[_attr];
+  }
+
+  get viewport() {
+    return this[_attr].viewport;
+  }
+
+  get resolution() {
+    return this[_attr].resolution;
   }
 
   setAttribute(key, value) {
@@ -41,31 +54,19 @@ export default class extends BaseNode {
     delete this.attributes[key];
   }
 
-  get rpx() {
-    return this[_attr].rpx;
-  }
-
-  get viewport() {
-    return [750, 1344];
-  }
-
-  get resolution() {
-    return [750 / this.rpx, 1344 / this.rpx];
-  }
-
   get children() {
     return Object.values(this[_layerMap]);
   }
 
   get childNodes() {
-    return this.children();
+    return this.children;
   }
 
   toGlobalPos(x, y) {
-    return [x * this.rpx, y * this.rpx];
+    return [x * this.viewport[0] / this.resolution[0], y * this.viewport[1] / this.resolution[1]];
   }
   toLocalPos(x, y) {
-    return [x / this.rpx, y / this.rpx];
+    return [x * this.resolution[0] / this.viewport[0], y * this.resolution[1] / this.viewport[1]];
   }
 
   preload(...resources) {
@@ -80,33 +81,45 @@ export default class extends BaseNode {
 
   appendChild(layer) {
     const id = layer.id;
-    if(this[_layerMap][id]) delete this[_layerMap][id];
+    if(this[_layerMap][id]) {
+      this.removeLayer(id);
+    }
+    layer.connect(this);
     this[_layerMap][id] = layer;
   }
 
   insertBefore(newChild, refChild) {
-    const layers = Object.entries(this[_layerMap]);
-    this[_layerMap] = {};
-    layers.forEach(([id, value]) => {
-      if(value === refChild) {
-        this[_layerMap][newChild.id] = newChild;
-        this[_layerMap][refChild.id] = refChild;
-      } else {
-        this[_layerMap][id] = value;
-      }
-    });
+    if(this[_layerMap][refChild.id] === refChild) {
+      const layers = Object.entries(this[_layerMap]);
+      this[_layerMap] = {};
+      layers.forEach(([id, value]) => {
+        if(value === refChild) {
+          this[_layerMap][newChild.id] = newChild;
+          this[_layerMap][refChild.id] = refChild;
+        } else {
+          this[_layerMap][id] = value;
+        }
+      });
+      newChild.connect(this);
+    } else {
+      this.appendChild(newChild);
+    }
   }
 
   replaceChild(newChild, oldChild) {
-    const layers = Object.entries(this[_layerMap]);
-    this[_layerMap] = {};
-    layers.forEach(([id, value]) => {
-      if(value === oldChild) {
-        this[_layerMap][newChild.id] = newChild;
-      } else {
-        this[_layerMap][id] = value;
-      }
-    });
+    if(this[_layerMap][oldChild.id] === oldChild) {
+      const layers = Object.entries(this[_layerMap]);
+      this[_layerMap] = {};
+      layers.forEach(([id, value]) => {
+        if(value === oldChild) {
+          this[_layerMap][newChild.id] = newChild;
+        } else {
+          this[_layerMap][id] = value;
+        }
+      });
+      oldChild.disconnect(this);
+      newChild.connect(this);
+    }
   }
 
   removeChild(layer) {
@@ -147,6 +160,10 @@ export default class extends BaseNode {
     return layer;
   }
   removeLayer(id) {
-    delete this[_layerMap][id];
+    const layer = this[_layerMap][id];
+    if(layer) {
+      layer.disconnect(this);
+      delete this[_layerMap][id];
+    }
   }
 }

@@ -12,6 +12,7 @@ Page({
     const scene = new Scene();
     // console.log(scene.attributes.__attributesSet)
     init(spritejs, scene);
+    console.log(scene.viewport, scene.resolution);
     // const width = 750,
     //   height = 1344
 

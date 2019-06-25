@@ -8786,7 +8786,7 @@ var ExLayer = function (_Layer) {
     value: function drawSprites(renderEls, t) {
       var context = this.outputContext;
       context.save();
-      context.scale(this.rpx, this.rpx);
+      context.scale(this.viewport[0] / this.resolution[0], this.viewport[1] / this.resolution[1]);
       (0, _get3.default)(ExLayer.prototype.__proto__ || (0, _getPrototypeOf2.default)(ExLayer.prototype), 'drawSprites', this).call(this, renderEls, t);
       context.restore();
       if (context.draw) {
@@ -8799,10 +8799,14 @@ var ExLayer = function (_Layer) {
       return this[_id];
     }
   }, {
-    key: 'rpx',
+    key: 'resolution',
     get: function get() {
-      if (this.parent) return this.parent.rpx;
-      return 1;
+      return this.parent.resolution;
+    }
+  }, {
+    key: 'viewport',
+    get: function get() {
+      return this.parent.viewport;
     }
   }]);
   return ExLayer;
@@ -13841,11 +13845,13 @@ var _default = function (_BaseNode) {
   (0, _inherits3.default)(_default, _BaseNode);
 
   function _default() {
-    var vwr = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+    var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        resolution = _ref.resolution,
+        viewport = _ref.viewport;
+
     (0, _classCallCheck3.default)(this, _default);
 
-    var _this = (0, _possibleConstructorReturn3.default)(this, (_default.__proto__ || (0, _getPrototypeOf2.default)(_default)).call(this)); // 默认宽度 750，即 1rpx = 1
-
+    var _this = (0, _possibleConstructorReturn3.default)(this, (_default.__proto__ || (0, _getPrototypeOf2.default)(_default)).call(this));
 
     _this[_layerMap] = {};
     _this[_attr] = {};
@@ -13856,11 +13862,19 @@ var _default = function (_BaseNode) {
       }
     });
 
-    if (vwr > 0) {
-      _this[_attr].rpx = wx.getSystemInfoSync().windowWidth * vwr / 750;
-    } else {
-      _this[_attr].rpx = 1;
+    if (!viewport) {
+      var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
+          windowWidth = _wx$getSystemInfoSync.windowWidth,
+          windowHeight = _wx$getSystemInfoSync.windowHeight;
+
+      viewport = [windowWidth, windowHeight];
     }
+    if (!resolution) {
+      resolution = [750, viewport[1] * 750 / viewport[0]];
+    }
+
+    _this[_attr].viewport = viewport;
+    _this[_attr].resolution = resolution;
     return _this;
   }
 
@@ -13882,12 +13896,12 @@ var _default = function (_BaseNode) {
   }, {
     key: 'toGlobalPos',
     value: function toGlobalPos(x, y) {
-      return [x * this.rpx, y * this.rpx];
+      return [x * this.viewport[0] / this.resolution[0], y * this.viewport[1] / this.resolution[1]];
     }
   }, {
     key: 'toLocalPos',
     value: function toLocalPos(x, y) {
-      return [x / this.rpx, y / this.rpx];
+      return [x * this.resolution[0] / this.viewport[0], y * this.resolution[1] / this.viewport[1]];
     }
   }, {
     key: 'preload',
@@ -13908,7 +13922,10 @@ var _default = function (_BaseNode) {
     key: 'appendChild',
     value: function appendChild(layer) {
       var id = layer.id;
-      if (this[_layerMap][id]) delete this[_layerMap][id];
+      if (this[_layerMap][id]) {
+        this.removeLayer(id);
+      }
+      layer.connect(this);
       this[_layerMap][id] = layer;
     }
   }, {
@@ -13916,39 +13933,48 @@ var _default = function (_BaseNode) {
     value: function insertBefore(newChild, refChild) {
       var _this2 = this;
 
-      var layers = (0, _entries2.default)(this[_layerMap]);
-      this[_layerMap] = {};
-      layers.forEach(function (_ref) {
-        var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
-            id = _ref2[0],
-            value = _ref2[1];
+      if (this[_layerMap][refChild.id] === refChild) {
+        var layers = (0, _entries2.default)(this[_layerMap]);
+        this[_layerMap] = {};
+        layers.forEach(function (_ref2) {
+          var _ref3 = (0, _slicedToArray3.default)(_ref2, 2),
+              id = _ref3[0],
+              value = _ref3[1];
 
-        if (value === refChild) {
-          _this2[_layerMap][newChild.id] = newChild;
-          _this2[_layerMap][refChild.id] = refChild;
-        } else {
-          _this2[_layerMap][id] = value;
-        }
-      });
+          if (value === refChild) {
+            _this2[_layerMap][newChild.id] = newChild;
+            _this2[_layerMap][refChild.id] = refChild;
+          } else {
+            _this2[_layerMap][id] = value;
+          }
+        });
+        newChild.connect(this);
+      } else {
+        this.appendChild(newChild);
+      }
     }
   }, {
     key: 'replaceChild',
     value: function replaceChild(newChild, oldChild) {
       var _this3 = this;
 
-      var layers = (0, _entries2.default)(this[_layerMap]);
-      this[_layerMap] = {};
-      layers.forEach(function (_ref3) {
-        var _ref4 = (0, _slicedToArray3.default)(_ref3, 2),
-            id = _ref4[0],
-            value = _ref4[1];
+      if (this[_layerMap][oldChild.id] === oldChild) {
+        var layers = (0, _entries2.default)(this[_layerMap]);
+        this[_layerMap] = {};
+        layers.forEach(function (_ref4) {
+          var _ref5 = (0, _slicedToArray3.default)(_ref4, 2),
+              id = _ref5[0],
+              value = _ref5[1];
 
-        if (value === oldChild) {
-          _this3[_layerMap][newChild.id] = newChild;
-        } else {
-          _this3[_layerMap][id] = value;
-        }
-      });
+          if (value === oldChild) {
+            _this3[_layerMap][newChild.id] = newChild;
+          } else {
+            _this3[_layerMap][id] = value;
+          }
+        });
+        oldChild.disconnect(this);
+        newChild.connect(this);
+      }
     }
   }, {
     key: 'removeChild',
@@ -13998,7 +14024,11 @@ var _default = function (_BaseNode) {
   }, {
     key: 'removeLayer',
     value: function removeLayer(id) {
-      delete this[_layerMap][id];
+      var layer = this[_layerMap][id];
+      if (layer) {
+        layer.disconnect(this);
+        delete this[_layerMap][id];
+      }
     }
   }, {
     key: 'attributes',
@@ -14006,19 +14036,14 @@ var _default = function (_BaseNode) {
       return this[_attr];
     }
   }, {
-    key: 'rpx',
-    get: function get() {
-      return this[_attr].rpx;
-    }
-  }, {
     key: 'viewport',
     get: function get() {
-      return [750, 1344];
+      return this[_attr].viewport;
     }
   }, {
     key: 'resolution',
     get: function get() {
-      return [750 / this.rpx, 1344 / this.rpx];
+      return this[_attr].resolution;
     }
   }, {
     key: 'children',
@@ -14028,7 +14053,7 @@ var _default = function (_BaseNode) {
   }, {
     key: 'childNodes',
     get: function get() {
-      return this.children();
+      return this.children;
     }
   }]);
   return _default;
