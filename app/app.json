@@ -1,14 +1,16 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/robot/robot",
     "pages/water/water",
-    "pages/block/block"
+    "pages/block/block",
+    "pages/qchart/qchart"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
 }

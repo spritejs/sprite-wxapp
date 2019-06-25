@@ -1,0 +1,6 @@
+<!--robot.wxml-->
+<view class="container" id="container" catchtouchmove="noop">
+  <block wx:for="{{layers}}" wx:key="{{item}}">
+    <canvas canvas-id="{{item}}" disable-scroll="true"></canvas>
+  </block>
+</view>

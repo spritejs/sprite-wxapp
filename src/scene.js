@@ -45,6 +45,14 @@ export default class extends BaseNode {
     return this[_attr].rpx;
   }
 
+  get viewport() {
+    return [750, 1344];
+  }
+
+  get resolution() {
+    return [750 / this.rpx, 1344 / this.rpx];
+  }
+
   get children() {
     return Object.values(this[_layerMap]);
   }
