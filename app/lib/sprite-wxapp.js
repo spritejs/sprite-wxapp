@@ -13862,7 +13862,7 @@ var _default = function (_BaseNode) {
       }
     });
 
-    if (!viewport) {
+    if (!viewport && !resolution) {
       var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
           windowWidth = _wx$getSystemInfoSync.windowWidth,
           windowHeight = _wx$getSystemInfoSync.windowHeight;
@@ -13871,6 +13871,12 @@ var _default = function (_BaseNode) {
     }
     if (!resolution) {
       resolution = [750, viewport[1] * 750 / viewport[0]];
+    } else if (!viewport) {
+      var _wx$getSystemInfoSync2 = wx.getSystemInfoSync(),
+          _windowWidth = _wx$getSystemInfoSync2.windowWidth;
+
+      var rate = _windowWidth / 750;
+      viewport = [resolution[0] * rate, resolution[1] * rate];
     }
 
     _this[_attr].viewport = viewport;

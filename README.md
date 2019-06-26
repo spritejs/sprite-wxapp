@@ -39,7 +39,7 @@ Page({
     this.scene.layer('fglayer').dispatchEvent('touchstart', {originEvent: event, layerX, layerY})
   },
   onReady: function() { 
-    const scene = new spritejs.Scene(1)
+    const scene = new spritejs.Scene()
     this.scene = scene
     
     // 预加载资源
@@ -91,13 +91,22 @@ Page({
 
 ### Scene 的参数差异
 
-不同于web/node版，小程序版的Scene构造函数只支持一个参数vwRate，默认vwRate=1.0，此时Scene中的精灵默认单位为rpx，即画布上元素大小为1时，实际呈现效果为1rpx。rpx是微信小程序特有的单位，具体描述参考[文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html)。
+不同于web/node版，小程序版的Scene构造函数可以单独传viewport或resolution参数，viewport单位是px，resolution单位是rpx，Scene会自动根据传入的参数计算另一个。rpx是微信小程序特有的单位，具体描述参考[文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html)。
 
 ```js
-const scene = new Scene(2.0) //设置为2rpx，相当于屏幕宽度对应canvas宽度为325
+const info = wx.getSystemInfoSync();
+const scene = new Scene({
+  viewport: [info.windowWidth, info.windowHeight],
+});
 ```
 
-当Scene的vwRate参数为其他非0数值时，实际精灵的默认单位为vwRate * 1rpx，例如设置vwRate=2.0，那么精灵的默认单位则为2rpx。
+或者
+
+```js
+const scene = new Scene({
+  resolution: [750, 1433],  // 单位是rpx
+});
+```
 
 ### 事件处理的差异
 
@@ -129,7 +138,7 @@ Page({
     this.scene.layer('fglayer').dispatchEvent('tap', {originEvent: event, layerX, layerY})
   },
   onReady: function() { 
-    const scene = new spritejs.Scene(1)
+    const scene = new spritejs.Scene()
     this.scene = scene
 
     const layer = scene.layer('fglayer')
@@ -150,7 +159,7 @@ Page({
 
 目前不支持远程url的加载，只支持本地图片素材，另外web/node版的Sprite可以预加载图片并获得图片宽高，所以sprite可以默认自适应宽高，而微信小程序版除非使用texturepacker打包图片，否则不能获得默认的宽高，必须指定宽高才可以将sprite对象显示出来。
 
-另外**注意**scene.preload预加frames资源载时，不支持从json文件加载frameData，必须是json对象，可以将frameData存成js，然后在app中require进来。
+另外**注意**scene.preload预加frames资源载时，不支持从json文件加载frameData，必须是js对象，可以将frameData存成js，然后在app中require进来。
 
 另外目前不支持 texture packer 的 rotated 和 trimmed 功能。
 

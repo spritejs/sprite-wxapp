@@ -15,7 +15,7 @@ Page({
     console.log(scene.viewport, scene.resolution);
 
     const layer = scene.layer('fglayer');
-    console.log(layer.outputContext);
+    console.log(layer.outputContext.ellipse);
     layer.append(new Sprite({
       pos: [0, 0],
       size: [100, 100],

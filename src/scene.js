@@ -17,12 +17,16 @@ export default class extends BaseNode {
       },
     });
 
-    if(!viewport) {
+    if(!viewport && !resolution) {
       const {windowWidth, windowHeight} = wx.getSystemInfoSync();
       viewport = [windowWidth, windowHeight];
     }
     if(!resolution) {
       resolution = [750, viewport[1] * 750 / viewport[0]];
+    } else if(!viewport) {
+      const {windowWidth} = wx.getSystemInfoSync();
+      const rate = windowWidth / 750;
+      viewport = [resolution[0] * rate, resolution[1] * rate];
     }
 
     this[_attr].viewport = viewport;

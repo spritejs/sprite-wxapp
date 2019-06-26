@@ -13,47 +13,40 @@ Page({
     console.log(qcharts);
     global.qcharts = qcharts;
     const data = [
-      {date: '05-01', catgory: '图例一', sales: 15.2},
-      {date: '05-02', catgory: '图例一', sales: 39.2},
-      {date: '05-03', catgory: '图例一', sales: 31.2},
-      {date: '05-04', catgory: '图例一', sales: 65.2},
-      {date: '05-05', catgory: '图例一', sales: 55.2},
-      {date: '05-06', catgory: '图例一', sales: 75.2},
-      {date: '05-07', catgory: '图例一', sales: 95.2},
-      {date: '05-08', catgory: '图例一', sales: 65.2},
-    ];
+      { label: '分类一', category: '类别一', value: 19 },
+      { label: '分类二', category: '类别一', value: 74 },
+      { label: '分类三', category: '类别一', value: 40 },
+      { label: '分类四', category: '类别一', value: 46 },
+      { label: '分类五', category: '类别一', value: 30 },
+      { label: '分类六', category: '类别一', value: 62 },
 
-    const {Chart, Line, Legend, Tooltip, Axis} = qcharts;
+      { label: '分类一', category: '类别二', value: 69 },
+      { label: '分类二', category: '类别二', value: 14 },
+      { label: '分类三', category: '类别二', value: 70 },
+      { label: '分类四', category: '类别二', value: 26 },
+      { label: '分类五', category: '类别二', value: 50 },
+      { label: '分类六', category: '类别二', value: 52 }
+    ]
 
+    const { Chart, Radar, Tooltip, Legend } = qcharts
+    const info = wx.getSystemInfoSync();
     const chart = new Chart({
       container: '#app',
       layer: 'fglayer',
-    });
-
+      viewport: [info.windowWidth, info.windowHeight * 0.8],
+    })
     chart.source(data, {
-      row: 'catgory',
-      value: 'sales',
-      text: 'date',
-    });
+      row: 'category',
+      value: 'value',
+      text: 'label'
+    })
 
-    const line = new Line();
-    line.style('point', {color: '#fff'});
+    const radar = new Radar()
 
-    const tooltip = new Tooltip({
-      formatter(data) {
-        return `${data.date} ${data.sales}`;
-      },
-    });
+    radar.style('point', false)
 
-    const axisBottom = new Axis();
-
-    const axisLeft = new Axis({orient: 'left'})
-      .style('axis', false).style('scale', false);
-
-    const legend = new Legend({align: ['center', 'bottom']})
-      .style('icon', {borderRadius: 10}).style('text', {fontSize: 12});
-
-    chart.add([line, tooltip, axisBottom, axisLeft, legend]);
-    chart.render();
+    const legend = new Legend({ align: ['center', 'bottom'] })
+    chart.add([radar, legend])
+    chart.render()
   },
 });
