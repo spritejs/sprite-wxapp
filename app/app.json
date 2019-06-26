@@ -4,7 +4,9 @@
     "pages/robot/robot",
     "pages/water/water",
     "pages/block/block",
-    "pages/qchart/qchart"
+    "pages/qchart/qchart",
+    "pages/comp/comp",
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,5 +14,8 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "s-scene": "components/s-scene/s-scene"
+  }
 }

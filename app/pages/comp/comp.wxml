@@ -1,0 +1,3 @@
+<view>
+  <s-scene id="container" sceneID="my-scene" layers="fglayer,bglayer"></s-scene>
+</view>
