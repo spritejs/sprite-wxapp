@@ -1,5 +1,5 @@
 {
-  "name": "sprite-wxapp",
+  "name": "@spritejs/wxapp",
   "version": "1.8.0",
   "description": "spritejs 微信小程序版",
   "main": "dist/sprite-wxapp.js",
