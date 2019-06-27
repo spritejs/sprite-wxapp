@@ -11,66 +11,148 @@
 
 ## 快速使用
 
-[CDN下载](http://unpkg.com/sprite-wxapp)
+### 安装
 
-将文件保存到小程序对应的目录（比如lib目录下），然后使用：
+v1.10.0 版本之后，小程序版支持使用 NPM 安装。
 
-```js
-const spritejs = requrie('../../lib/sprite-wxapp')
+```bash
+npm install @spritejs/wxapp --save
 ```
 
-加载整个代码库
+然后在微信小程序中[构建 NPM 包](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)。
+
+### 通过组件使用
+
+安装并构建之后，要使用 SpriteJS，最简单的方式是通过内置的 scene 组件使用。
+
+在小程序配置 app.json 中注册组件：
+
+```json
+  "usingComponents": {
+    "s-scene": "@spritejs/wxapp/scene"
+  }
+```
+
+然后在要使用的页面引入组件：
+
+```xml
+<view>
+  <s-scene id="container"
+    layers="bglayer,fglayer"
+    width="500"
+    height="500"
+    bindSceneCreated="onSceneCreated"
+  ></s-scene>
+</view>
+```
+
+参数layers表示创建几个layer以及它们的ID，缺省为default，width、height为画布大小，缺省为全屏宽高，单位是rpx。
+
+bindSceneCreated为创建Scene后的回调事件，事件方法中传回所创建的layers：
 
 ```js
-//index.js
-//获取应用实例
-const app = getApp()
-const spritejs = require('../../lib/spritejs')
+const { Sprite } = require('@spritejs/wxapp');
+
+Page({
+  onSceneCreated({ detail: layers }) {
+    const { bglayer, fglayer } = layers;
+    const s = new Sprite({
+      size: [100, 100],
+      pos: [300, 300],
+      bgcolor: 'red',
+    });
+    fglayer.append(s);
+
+    const s2 = new Sprite({
+      size: [300, 300],
+      pos: [200, 200],
+      bgcolor: 'blue',
+    });
+    bglayer.append(s2);
+
+    s.on('touchstart', () => {
+      s.attr('bgcolor', 'green');
+    });
+    s.on('touchmove', () => {
+      s.attr('bgcolor', 'yellow');
+    });
+    s.on('touchend', () => {
+      s.attr('bgcolor', 'red');
+    });
+  },
+});
+```
+
+### 自定义使用
+
+如果不想使用组件，你也可以自己创建canvas，然后构造scene
+
+```xml
+<view class="scene-layout" id="container" catchtouchmove="noop">
+  <block wx:for="{{layers}}" wx:key="{{item}}">
+    <canvas canvas-id="{{item}}" disable-scroll="true"></canvas>
+  </block>
+</view>
+```
+
+```js
+const spritejs = require('@spritejs/wxapp');
 
 Page({
   data: {
     layers: ['fglayer'],
+    eventOffset: [0, 0],
   },
-  onTouchStart: function(event) {
-    const {x, y} = event.touches[0]
-    const [layerX, layerY] = this.scene.toLocalPos(x, y)
+  onTouchStart(event) {
     // 派发 touchstart 事件
-    this.scene.layer('fglayer').dispatchEvent('touchstart', {originEvent: event, layerX, layerY})
+    this.scene.layer('fglayer').dispatchEvent(event, this.data.eventOffset);
   },
-  onReady: function() { 
-    const scene = new spritejs.Scene()
-    this.scene = scene
+  onReady: function() {
+    // 由于代理事件的 scene-layout 相对窗口可能有偏移，所以需要传入这个偏移量
+    // 以正确定位事件坐标
+    const query = wx.createSelectorQuery();
+    query.select('.scene-layout').boundingClientRect().exec(([rect]) => {
+      if(rect) {
+        this.setData({
+          eventOffset: [rect.left, rect.top],
+        });
+      }
+    });
+
+    const scene = new spritejs.Scene();
+    this.scene = scene;
+    const layer = scene.layer('fglayer');
     
     // 预加载资源
-    scene.preload(['../../assets/img/birds.png', require('../../assets/img/birds.json.js')])
+    scene.preload(['../../assets/img/birds.png', require('../../assets/img/birds.json.js')]);
     
-    const bird = new spritejs.Sprite('bird1.png')
+    const bird = new spritejs.Sprite('bird1.png');
     bird.attr({
       anchor: [0.5, 0.5],
       pos: [100, 200],
-    })
+    });
 
     // 添加 ontouch 事件
     bird.on('touchstart', evt => {
       console.log(evt)
-    })
+    });
 
     // 纹理动画
-    let i = 0
+    let i = 0;
     setInterval(() => {
-      bird.textures = [`bird${i++%3+1}.png`]
-    }, 100)
+      bird.textures = [`bird${i++%3+1}.png`];
+    }, 100);
 
     // 添加文字
-    const text = new spritejs.Label('Hello\n World!')
+    const text = new spritejs.Label('Hello\n World!');
     text.attr({
       //anchor: [0.5, 0.5],
       font: '44px Arial',
       border: [2, 'red'],
-    })
+    });
 
-    const posFrom = [0, 0]
-    const posTo = [100, 0]
+    const posFrom = [0, 0];
+    const posTo = [100, 0];
 
     // 播放一个移位动画
     text.animate([
@@ -78,42 +160,36 @@ Page({
       {pos: posTo},
     ], {
       duration: 2000
-    })
+    });
 
     // 将两个精灵添加到 layer
-    layer.append(bird, text)
+    layer.append(bird, text);
   },
 })
 ```
+
+**注意**，自己调用的时候，创建canvas需要设置canvas-id属性与创建的layer的ID一致。
 
 ## 小程序版与原版限制/差异
 
 ### Scene 的参数差异
 
-不同于web/node版，小程序版的Scene构造函数可以单独传viewport或resolution参数，viewport单位是px，resolution单位是rpx，Scene会自动根据传入的参数计算另一个。rpx是微信小程序特有的单位，具体描述参考[文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html)。
+不同于web/node版，小程序版的Scene构造函数只能传width和height，单位是rpx。rpx是微信小程序特有的单位，具体描述参考[文档](https://mp.weixin.qq.com/debug/wxadoc/dev/framework/view/wxss.html)。
 
 ```js
 const info = wx.getSystemInfoSync();
-const scene = new Scene({
-  viewport: [info.windowWidth, info.windowHeight],
-});
-```
-
-或者
-
-```js
-const scene = new Scene({
-  resolution: [750, 1433],  // 单位是rpx
-});
+const scene = new Scene(750, 1433); // 单位是rpx
 ```
 
 ### 事件处理的差异
 
-小程序版不提供Scene.prototype.delegateEvent来自动代理事件，微信小程序事件直接调用layer.dispatchEvent分发到相应的层。因为微信小程序的机制限制，目前只有将事件绑定在canvas对象上的touch\*事件才可以获取事件相对于canvas元素的坐标，而tap、longtap等事件拿不到相对于canvas坐标。当然如果canvas是全屏展示，我们也可以拿clientX、clientY代替。
+如果通过组件加载方式使用，`touchstart, touchend, touchmove, tap, longpress` 等事件被scene自动代理，所以你可以在sprite元素中添加对应的事件处理函数，能够正常触发事件。
 
-```html
+如果是自己创建scene，那么需要自己手动代理事件：
+
+```xml
 <!--index.wxml-->
-<view class="container" id="container">
+<view class="scene-layout" id="container">
   <block wx:for="{{layers}}" wx:key="{{item}}">
     <canvas canvas-id="{{item}}" bindtouchstart="touched"></canvas>
   </block>
@@ -121,26 +197,32 @@ const scene = new Scene({
 ```
 
 ```js
-//index.js
-//获取应用实例
-const app = getApp()
-const spritejs = require('../../lib/spritejs')
+const spritejs = require('@spritejs/wxapp')
 
 Page({
   data: {
     layers: ['fglayer'],
+    eventOffset: [0, 0],
   },
   touched: function(event) {
-    const {x, y} = event.touches[0]
-    const [layerX, layerY] = this.scene.toLocalPos(x, y)
-    // 传递 layerX、layerY，以使得 layer 中的 sprite 能够捕获到事件
-    this.scene.layer('fglayer').dispatchEvent('tap', {originEvent: event, layerX, layerY})
+    this.scene.layer('fglayer').delegateEvent(event, this.data.eventOffset);
   },
-  onReady: function() { 
-    const scene = new spritejs.Scene()
-    this.scene = scene
+  onReady: function() {
+    // 由于代理事件的 scene-layout 相对窗口可能有偏移，所以需要传入这个偏移量
+    // 以正确定位事件坐标
+    const query = wx.createSelectorQuery();
+    query.select('.scene-layout').boundingClientRect().exec(([rect]) => {
+      if(rect) {
+        this.setData({
+          eventOffset: [rect.left, rect.top],
+        });
+      }
+    });
 
-    const layer = scene.layer('fglayer')
+    const scene = new spritejs.Scene();
+    this.scene = scene;
+
+    const layer = scene.layer('fglayer');
     
     // 如果在自定义组件中使用，传递第二个参数为组件实例的引用。
     // const layer = scene.layer('fglayer', this)

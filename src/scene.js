@@ -6,7 +6,7 @@ const _layerMap = Symbol('layerMap');
 const _attr = Symbol('attr');
 
 export default class extends BaseNode {
-  constructor({resolution, viewport} = {}) {
+  constructor(width, height) {
     super();
     this[_layerMap] = {};
     this[_attr] = {};
@@ -17,20 +17,14 @@ export default class extends BaseNode {
       },
     });
 
-    if(!viewport && !resolution) {
-      const {windowWidth, windowHeight} = wx.getSystemInfoSync();
-      viewport = [windowWidth, windowHeight];
-    }
-    if(!resolution) {
-      resolution = [750, viewport[1] * 750 / viewport[0]];
-    } else if(!viewport) {
-      const {windowWidth} = wx.getSystemInfoSync();
-      const rate = windowWidth / 750;
-      viewport = [resolution[0] * rate, resolution[1] * rate];
-    }
+    const {windowWidth, windowHeight} = wx.getSystemInfoSync();
+    const ratio = 750 / windowWidth;
 
-    this[_attr].viewport = viewport;
-    this[_attr].resolution = resolution;
+    if(width == null) width = 750;
+    if(height == null) height = windowHeight * ratio;
+
+    this[_attr].viewport = [width / ratio, height / ratio];
+    this[_attr].resolution = [width, height];
   }
 
   get attributes() {
@@ -130,9 +124,8 @@ export default class extends BaseNode {
     return this.removeLayer(layer.id);
   }
 
-  delegateEvent(event) {
+  delegateEvent(event, [offsetLeft, offsetTop] = [0, 0]) {
     const type = event.type;
-    const {offsetLeft, offsetTop} = event.target;
     const pointers = event.changedTouches;
     const originalCoordinates = [];
     for(let i = 0; i < pointers.length; i++) {

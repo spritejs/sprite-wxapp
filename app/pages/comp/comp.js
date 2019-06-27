@@ -26,5 +26,8 @@ Page({
     s.on('touchend', () => {
       s.attr('bgcolor', 'red');
     });
+    s.on('longpress', () => {
+      s.attr('bgcolor', 'black');
+    });
   },
 });
