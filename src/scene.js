@@ -145,7 +145,7 @@ export default class extends BaseNode {
         const layer = layers[i];
         if(layer.handleEvent !== false) {
           const [x, y] = layer.toLocalPos(originalCoordinate.x, originalCoordinate.y);
-          const evt = Object.assign({}, {
+          let evt = Object.assign({}, {
             originalEvent: event,
             type,
             layerX: x,
@@ -157,6 +157,11 @@ export default class extends BaseNode {
             identifier: originalCoordinate.identifier,
           });
           layer.dispatchEvent(type, evt);
+          if(type === 'tap') {
+            evt = Object.assign({}, evt);
+            evt.type = 'click';
+            layer.dispatchEvent('click', evt);
+          }
         }
       }
     });
