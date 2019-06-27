@@ -11,8 +11,7 @@
 
 ## 快速使用
 
-[CDN下载](http://unpkg.com/sprite-wxapp/dist/sprite-wxapp.js)
-[Dist下载](https://raw.githubusercontent.com/spritejs/sprite-wxapp/master/dist/sprite-wxapp.js)
+[CDN下载](http://unpkg.com/sprite-wxapp)
 
 将文件保存到小程序对应的目录（比如lib目录下），然后使用：
 

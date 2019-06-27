@@ -2,14 +2,16 @@
   "name": "@spritejs/wxapp",
   "version": "1.8.0",
   "description": "spritejs 微信小程序版",
-  "main": "dist/sprite-wxapp.js",
+  "main": "dist",
+  "miniprogram": "dist",
   "scripts": {
     "lint": "eslint 'src/**/*.js' --fix",
     "lint-app": "eslint 'app/pages/**/*.js' --fix",
     "start": "webpack --watch",
     "start:game": "webpack --env.target=game --watch",
     "compile": "webpack",
-    "prepublishOnly": "node script/build",
+    "build": "rm -rf dist/* && node script/build && cp -R component/scene dist/",
+    "prepublishOnly": "run run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

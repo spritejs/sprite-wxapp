@@ -16,6 +16,6 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "s-scene": "components/s-scene/s-scene"
+    "s-scene": "components/scene/scene"
   }
 }

@@ -1,6 +1,6 @@
 // const app = getApp()
 const spritejs = require('../../lib/sprite-wxapp');
-const {init} = require('../../lib/sprite-component');
+const {init} = require('../../lib/sprite-preact');
 
 const {Scene, Layer, Sprite, Label} = spritejs;
 

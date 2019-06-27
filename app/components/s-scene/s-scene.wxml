@@ -1,5 +1,0 @@
-<view class="scene-layout" id="{{sceneID}}" data-layers="{{layers}}">
-  <block wx:for="{{_layers}}" wx:key="{{item}}">
-    <canvas canvas-id="{{item}}" disable-scroll="true"></canvas>
-  </block>
-</view>

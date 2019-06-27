@@ -8,6 +8,7 @@ module.exports = function (env = {}) {
     jsLoaders = [];
 
   let path = 'app/lib';
+  let filename = '[name].js';
 
   if(env.target === 'game') {
     path = 'game/js/libs';
@@ -15,6 +16,7 @@ module.exports = function (env = {}) {
 
   if(env.production) {
     path = 'dist';
+    filename = 'index.js';
     // compress js in production environment
     plugins.push(new webpack.optimize.UglifyJsPlugin({
       output: {
@@ -40,10 +42,9 @@ module.exports = function (env = {}) {
   return {
     entry: {
       'sprite-wxapp': './src/index.js',
-      'sprite-component': './component/index.js',
     },
     output: {
-      filename: '[name].js',
+      filename,
       path,
       publicPath: '/js/',
       libraryTarget: 'commonjs-module',

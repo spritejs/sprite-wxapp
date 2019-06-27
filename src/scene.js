@@ -130,6 +130,45 @@ export default class extends BaseNode {
     return this.removeLayer(layer.id);
   }
 
+  delegateEvent(event) {
+    const type = event.type;
+    const {offsetLeft, offsetTop} = event.target;
+    const pointers = event.changedTouches;
+    const originalCoordinates = [];
+    for(let i = 0; i < pointers.length; i++) {
+      const pointer = pointers[i];
+      const identifier = pointer.identifier;
+      const {clientX, clientY} = pointer;
+      originalCoordinates.push({
+        x: Math.round((clientX | 0) - offsetLeft),
+        y: Math.round((clientY | 0) - offsetTop),
+        identifier,
+      });
+    }
+
+    const layers = this.children;
+    originalCoordinates.forEach((originalCoordinate) => {
+      for(let i = 0; i < layers.length; i++) {
+        const layer = layers[i];
+        if(layer.handleEvent !== false) {
+          const [x, y] = layer.toLocalPos(originalCoordinate.x, originalCoordinate.y);
+          const evt = Object.assign({}, {
+            originalEvent: event,
+            type,
+            layerX: x,
+            layerY: y,
+            originalX: originalCoordinate.x,
+            originalY: originalCoordinate.y,
+            x,
+            y,
+            identifier: originalCoordinate.identifier,
+          });
+          layer.dispatchEvent(type, evt);
+        }
+      }
+    });
+  }
+
   layer(id = 'default', componentInstance = null) {
     let layer = this[_layerMap][id];
     if(!layer) {
