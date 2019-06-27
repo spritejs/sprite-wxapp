@@ -33,7 +33,7 @@ Page({
     const chart = new Chart({
       container: '#app',
       layer: 'fglayer',
-      viewport: [info.windowWidth, info.windowHeight * 0.8],
+      size: [750, 0.8 * info.windowHeight * 750 / info.windowWidth],
     })
     chart.source(data, {
       row: 'category',
