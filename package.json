@@ -11,7 +11,7 @@
     "start:game": "webpack --env.target=game --watch",
     "compile": "webpack",
     "build": "rm -rf dist/* && node script/build && cp -R component/scene dist/",
-    "prepublishOnly": "run run build",
+    "prepublishOnly": "run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
