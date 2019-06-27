@@ -1,17 +1,13 @@
-const {Scene} = require('../../lib/sprite-wxapp');
+const spritejs = require('../../lib/sprite-wxapp'); // eslint-disable-line no-unused-vars
+const {Chart} = require('../../lib/q-charts');
 const info = wx.getSystemInfoSync();
 
 /* globals Component: true */
 Component({
   properties: {
-    layers: {
+    chartId: {
       type: String,
-      value: 'default',
-      observer(newVal) {
-        this.setData({
-          _layers: newVal.split(',').map(v => v.trim()),
-        });
-      },
+      value: 'q-chart',
     },
     width: {
       type: Number,
@@ -55,12 +51,15 @@ Component({
   },
   ready() {
     if(!this.data.eventOffset) this.updateEventOffset();
-    const scene = new Scene(this.data.width, this.data.height);
-    const args = {};
-    this.data._layers.forEach((layer) => {
-      args[layer] = scene.layer(layer, this);
+
+    const chart = new Chart({
+      container: '#app',
+      component: this,
+      layer: this.data.chartId,
+      size: [this.data.width, this.data.height],
     });
-    this.triggerEvent('SceneCreated', args);
-    this.scene = scene;
+    this.triggerEvent('ChartCreated', {chart});
+    this.chart = chart;
+    this.scene = chart.layer.parent;
   },
 });

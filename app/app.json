@@ -6,6 +6,7 @@
     "pages/block/block",
     "pages/qchart/qchart",
     "pages/comp/comp",
+    "pages/compchart/compchart",
     "pages/logs/logs"
   ],
   "window": {
@@ -16,6 +17,7 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "s-scene": "components/scene/index"
+    "s-scene": "components/scene/index",
+    "q-chart": "components/chart/index"
   }
 }

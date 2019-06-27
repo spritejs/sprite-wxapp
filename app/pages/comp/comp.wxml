@@ -1,5 +1,5 @@
 <view>
-  <s-scene id="container" sceneID="my-scene" layers="bglayer,fglayer"
+  <s-scene id="container" layers="bglayer,fglayer"
     bindSceneCreated="onSceneCreated"
   ></s-scene>
 </view>

@@ -1,4 +1,5 @@
 const {Scene} = require('../index');
+const info = wx.getSystemInfoSync();
 
 /* globals Component: true */
 Component({
@@ -18,7 +19,7 @@ Component({
     },
     height: {
       type: Number,
-      value: wx.getSystemInfoSync().windowHeight,
+      value: 750 * info.windowHeight / info.windowWidth,
     },
     eventOffset: {
       type: Array,

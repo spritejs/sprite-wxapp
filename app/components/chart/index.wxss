@@ -1,0 +1,9 @@
+.chart-layout {
+  position: relative;
+}
+
+.chart-layout canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

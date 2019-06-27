@@ -1,0 +1,5 @@
+<view>
+  <q-chart id="container" chartId="my-chart"
+    bindChartCreated="onChartCreated"
+  ></q-chart>
+</view>
