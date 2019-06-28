@@ -17,41 +17,44 @@ Component({
       type: Number,
       value: 750 * info.windowHeight / info.windowWidth,
     },
-    eventOffset: {
-      type: Array,
-      value: null,
-    },
   },
   methods: {
-    updateEventOffset() {
-      const query = wx.createSelectorQuery().in(this);
-      query.select('.scene-layout').boundingClientRect().exec(([rect]) => {
+    updateEventOffset(handler) {
+      this.getBoundingClientRect.exec(([rect]) => {
         if(rect) {
-          this.setData({
-            eventOffset: [rect.left, rect.top],
-          });
+          handler([rect.left, rect.top]);
         }
       });
     },
     onTouchStart(event) {
-      this.scene.delegateEvent(event, this.data.eventOffset);
+      this.updateEventOffset((eventOffset) => {
+        this.scene.delegateEvent(event, eventOffset);
+      });
     },
     onTouchMove(event) {
-      this.scene.delegateEvent(event, this.data.eventOffset);
+      this.updateEventOffset((eventOffset) => {
+        this.scene.delegateEvent(event, eventOffset);
+      });
     },
     onTouchEnd(event) {
-      this.scene.delegateEvent(event, this.data.eventOffset);
+      this.updateEventOffset((eventOffset) => {
+        this.scene.delegateEvent(event, eventOffset);
+      });
     },
     onTap(event) {
-      this.scene.delegateEvent(event, this.data.eventOffset);
+      this.updateEventOffset((eventOffset) => {
+        this.scene.delegateEvent(event, eventOffset);
+      });
     },
     onLongPress(event) {
-      this.scene.delegateEvent(event, this.data.eventOffset);
+      this.updateEventOffset((eventOffset) => {
+        this.scene.delegateEvent(event, eventOffset);
+      });
     },
   },
   ready() {
-    if(!this.data.eventOffset) this.updateEventOffset();
-
+    this.getBoundingClientRect = wx.createSelectorQuery().in(this)
+      .select('.chart-layout').boundingClientRect();
     const chart = new Chart({
       container: '#app',
       component: this,
