@@ -13028,10 +13028,15 @@ var _default = function (_BaseNode) {
               identifier: originalCoordinate.identifier
             });
             layer.dispatchEvent(type, evt);
-            if (type === 'tap') {
+            var secondType = void 0;
+            if (_i === 0 && type === 'tap') secondType = 'click';
+            if (_i === 0 && type === 'touchstart') secondType = 'mousedown';
+            if (_i === 0 && type === 'touchmove') secondType = 'mousemove';
+            if (_i === 0 && type === 'touchend') secondType = 'mouseup';
+            if (secondType) {
               evt = (0, _assign2.default)({}, evt);
-              evt.type = 'click';
-              layer.dispatchEvent('click', evt);
+              evt.type = secondType;
+              layer.dispatchEvent(secondType, evt);
             }
           }
         }
@@ -13563,7 +13568,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _spriteCore.registerNodeType)('layer', _layer2.default, true);
 (0, _spriteCore.registerNodeType)('sprite', _sprite2.default);
 
-var version = '1.11.2';
+var version = '1.11.4';
 
 exports.version = version;
 exports.use = _spriteCore.use;

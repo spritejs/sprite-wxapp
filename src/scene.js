@@ -157,10 +157,15 @@ export default class extends BaseNode {
             identifier: originalCoordinate.identifier,
           });
           layer.dispatchEvent(type, evt);
-          if(type === 'tap') {
+          let secondType;
+          if(i === 0 && type === 'tap') secondType = 'click';
+          if(i === 0 && type === 'touchstart') secondType = 'mousedown';
+          if(i === 0 && type === 'touchmove') secondType = 'mousemove';
+          if(i === 0 && type === 'touchend') secondType = 'mouseup';
+          if(secondType) {
             evt = Object.assign({}, evt);
-            evt.type = 'click';
-            layer.dispatchEvent('click', evt);
+            evt.type = secondType;
+            layer.dispatchEvent(secondType, evt);
           }
         }
       }

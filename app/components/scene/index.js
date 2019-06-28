@@ -8,8 +8,9 @@ Component({
       type: String,
       value: 'default',
       observer(newVal) {
+        const salt = Math.random().toString(16).slice(2, 14);
         this.setData({
-          _layers: newVal.split(',').map(v => v.trim()),
+          _layers: newVal.split(',').map(v => `${v.trim()}:${salt}`),
         });
       },
     },
@@ -62,7 +63,7 @@ Component({
     const scene = new Scene(this.data.width, this.data.height);
     const args = {};
     this.data._layers.forEach((layer) => {
-      args[layer] = scene.layer(layer, this);
+      args[layer.replace(/:[0-9a-f]+$/ig, '')] = scene.layer(layer, this);
     });
     this.triggerEvent('SceneCreated', args);
     this.scene = scene;
