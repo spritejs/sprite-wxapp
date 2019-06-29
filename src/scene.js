@@ -162,7 +162,7 @@ export default class extends BaseNode {
           if(i === 0 && type === 'tap') secondType = 'click';
           if(i === 0 && type === 'touchstart') secondType = 'mousedown,mousemove';
           if(i === 0 && type === 'touchmove') secondType = 'mousemove';
-          if(i === 0 && type === 'touchend') secondType = 'mouseup,mouseleave';
+          if(i === 0 && type === 'touchend') secondType = 'mouseup';
           if(secondType) {
             secondType.split(',').forEach((type) => {
               evt = Object.assign({}, evt);

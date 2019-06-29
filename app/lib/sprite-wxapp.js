@@ -13034,7 +13034,7 @@ var _default = function (_BaseNode) {
             if (_i === 0 && type === 'tap') secondType = 'click';
             if (_i === 0 && type === 'touchstart') secondType = 'mousedown,mousemove';
             if (_i === 0 && type === 'touchmove') secondType = 'mousemove';
-            if (_i === 0 && type === 'touchend') secondType = 'mouseup,mouseleave';
+            if (_i === 0 && type === 'touchend') secondType = 'mouseup';
             if (secondType) {
               secondType.split(',').forEach(function (type) {
                 evt = (0, _assign2.default)({}, evt);
@@ -13576,7 +13576,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _spriteCore.registerNodeType)('layer', _layer2.default, true);
 (0, _spriteCore.registerNodeType)('sprite', _sprite2.default);
 
-var version = '1.11.4';
+var version = '1.11.5';
 
 exports.version = version;
 exports.use = _spriteCore.use;
