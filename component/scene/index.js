@@ -1,5 +1,4 @@
 const {Scene} = require('../index');
-const info = wx.getSystemInfoSync();
 
 /* globals Component: true */
 Component({
@@ -14,13 +13,9 @@ Component({
         });
       },
     },
-    width: {
-      type: Number,
-      value: 750,
-    },
-    height: {
-      type: Number,
-      value: 750 * info.windowHeight / info.windowWidth,
+    pixelUnit: {
+      type: String,
+      value: 'rpx',
     },
   },
   methods: {
@@ -60,12 +55,15 @@ Component({
   ready() {
     this.getBoundingClientRect = wx.createSelectorQuery().in(this)
       .select('.scene-layout').boundingClientRect();
-    const scene = new Scene(this.data.width, this.data.height);
-    const args = {};
-    this.data._layers.forEach((layer) => {
-      args[layer.replace(/:[0-9a-f]+$/ig, '')] = scene.layer(layer, this);
+    this.getBoundingClientRect.exec(([rect]) => {
+      const scene = new Scene(rect.width, rect.height, this.data.pixelUnit);
+      const args = {};
+      this.data._layers.forEach((layer) => {
+        args[layer.replace(/:[0-9a-f]+$/ig, '')] = scene.layer(layer, this);
+      });
+      this.scene = scene;
+
+      this.triggerEvent('SceneCreated', args);
     });
-    this.triggerEvent('SceneCreated', args);
-    this.scene = scene;
   },
 });

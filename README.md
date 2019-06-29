@@ -39,14 +39,12 @@ npm install @spritejs/wxapp --save
 <view>
   <s-scene id="container"
     layers="bglayer,fglayer"
-    width="500"
-    height="500"
     bindSceneCreated="onSceneCreated"
   ></s-scene>
 </view>
 ```
 
-参数layers表示创建几个layer以及它们的ID，缺省为default，width、height为画布大小，缺省为全屏宽高，单位是rpx。
+参数layers表示创建几个layer以及它们的ID，缺省为default。
 
 bindSceneCreated为创建Scene后的回调事件，事件方法中传回所创建的layers：
 

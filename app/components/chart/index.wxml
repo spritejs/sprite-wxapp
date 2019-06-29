@@ -1,12 +1,9 @@
 <view class="chart-layout"
-  data-layers="{{layers}}"
   bindtouchstart="onTouchStart"
   bindtouchmove="onTouchMove"
   bindtouchend="onTouchEnd"
   bindtap="onTap"
   bindlongpress="onLongPress"
 >
-  <canvas canvas-id="{{chartId}}" disable-scroll="true"
-    style="width:{{width}}rpx;height:{{height}}rpx"
-  ></canvas>
+  <canvas canvas-id="{{chartId}}" disable-scroll="true"></canvas>
 </view>

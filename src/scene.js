@@ -6,7 +6,7 @@ const _layerMap = Symbol('layerMap');
 const _attr = Symbol('attr');
 
 export default class extends BaseNode {
-  constructor(width, height) {
+  constructor(width, height, unit = 'rpx') {
     super();
     this[_layerMap] = {};
     this[_attr] = {};
@@ -18,13 +18,14 @@ export default class extends BaseNode {
     });
 
     const {windowWidth, windowHeight} = wx.getSystemInfoSync();
-    const ratio = 750 / windowWidth;
+    const ratio = unit !== 'px' ? 750 / windowWidth : 1;
 
-    if(width == null) width = 750;
-    if(height == null) height = windowHeight * ratio;
+    if(width == null) width = windowWidth;
+    if(height == null) height = windowHeight;
 
-    this[_attr].viewport = [width / ratio, height / ratio];
-    this[_attr].resolution = [width, height];
+    this[_attr].viewport = [width, height];
+    this[_attr].resolution = [width * ratio, height * ratio];
+    this[_attr].pixelRatio = ratio;
   }
 
   get attributes() {
@@ -159,13 +160,15 @@ export default class extends BaseNode {
           layer.dispatchEvent(type, evt);
           let secondType;
           if(i === 0 && type === 'tap') secondType = 'click';
-          if(i === 0 && type === 'touchstart') secondType = 'mousedown';
+          if(i === 0 && type === 'touchstart') secondType = 'mousedown,mousemove';
           if(i === 0 && type === 'touchmove') secondType = 'mousemove';
-          if(i === 0 && type === 'touchend') secondType = 'mouseup';
+          if(i === 0 && type === 'touchend') secondType = 'mouseup,mouseleave';
           if(secondType) {
-            evt = Object.assign({}, evt);
-            evt.type = secondType;
-            layer.dispatchEvent(secondType, evt);
+            secondType.split(',').forEach((type) => {
+              evt = Object.assign({}, evt);
+              evt.type = type;
+              layer.dispatchEvent(type, evt);
+            });
           }
         }
       }

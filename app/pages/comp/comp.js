@@ -1,6 +1,10 @@
 const {Sprite} = require('../../lib/sprite-wxapp');
 
 Page({
+  data: {
+    width: 400,
+    height: 400,
+  },
   onSceneCreated({detail: layers}) {
     const {bglayer, fglayer} = layers;
     const s = new Sprite({
@@ -29,5 +33,13 @@ Page({
     s.on('longpress', () => {
       s.attr('bgcolor', 'black');
     });
+
+    setTimeout(() => {
+      this.setData({
+        width: 500,
+        height: 500,
+      });
+      console.log('resized');
+    }, 2000);
   },
 });

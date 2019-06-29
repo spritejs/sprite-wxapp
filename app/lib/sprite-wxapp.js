@@ -12852,6 +12852,7 @@ var _default = function (_BaseNode) {
   (0, _inherits3.default)(_default, _BaseNode);
 
   function _default(width, height) {
+    var unit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'rpx';
     (0, _classCallCheck3.default)(this, _default);
 
     var _this = (0, _possibleConstructorReturn3.default)(this, (_default.__proto__ || (0, _getPrototypeOf2.default)(_default)).call(this));
@@ -12869,13 +12870,14 @@ var _default = function (_BaseNode) {
         windowWidth = _wx$getSystemInfoSync.windowWidth,
         windowHeight = _wx$getSystemInfoSync.windowHeight;
 
-    var ratio = 750 / windowWidth;
+    var ratio = unit !== 'px' ? 750 / windowWidth : 1;
 
-    if (width == null) width = 750;
-    if (height == null) height = windowHeight * ratio;
+    if (width == null) width = windowWidth;
+    if (height == null) height = windowHeight;
 
-    _this[_attr].viewport = [width / ratio, height / ratio];
-    _this[_attr].resolution = [width, height];
+    _this[_attr].viewport = [width, height];
+    _this[_attr].resolution = [width * ratio, height * ratio];
+    _this[_attr].pixelRatio = ratio;
     return _this;
   }
 
@@ -13008,7 +13010,7 @@ var _default = function (_BaseNode) {
 
       var layers = this.children;
       originalCoordinates.forEach(function (originalCoordinate) {
-        for (var _i = 0; _i < layers.length; _i++) {
+        var _loop = function _loop(_i) {
           var layer = layers[_i];
           if (layer.handleEvent !== false) {
             var _layer$toLocalPos = layer.toLocalPos(originalCoordinate.x, originalCoordinate.y),
@@ -13030,15 +13032,21 @@ var _default = function (_BaseNode) {
             layer.dispatchEvent(type, evt);
             var secondType = void 0;
             if (_i === 0 && type === 'tap') secondType = 'click';
-            if (_i === 0 && type === 'touchstart') secondType = 'mousedown';
+            if (_i === 0 && type === 'touchstart') secondType = 'mousedown,mousemove';
             if (_i === 0 && type === 'touchmove') secondType = 'mousemove';
-            if (_i === 0 && type === 'touchend') secondType = 'mouseup';
+            if (_i === 0 && type === 'touchend') secondType = 'mouseup,mouseleave';
             if (secondType) {
-              evt = (0, _assign2.default)({}, evt);
-              evt.type = secondType;
-              layer.dispatchEvent(secondType, evt);
+              secondType.split(',').forEach(function (type) {
+                evt = (0, _assign2.default)({}, evt);
+                evt.type = type;
+                layer.dispatchEvent(type, evt);
+              });
             }
           }
+        };
+
+        for (var _i = 0; _i < layers.length; _i++) {
+          _loop(_i);
         }
       });
     }
