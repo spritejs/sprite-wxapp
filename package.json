@@ -19,11 +19,12 @@
     "url": "https://github.com/spritejs/sprite-wxapp"
   },
   "dependencies": {
-
+    "@spritejs/core": "^2.31.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-decorators-runtime": "^0.2.0",
     "babel-eslint": "^8.1.1",
     "babel-loader": "^6.4.1",
     "babel-plugin-inline-package-json": "^2.0.0",
@@ -32,13 +33,11 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
+    "babel-runtime": "^6.26.0",
     "eslint": "^4.17.0",
     "eslint-config-sprite": "^1.0.6",
     "install": "^0.11.0",
-    "webpack": "^2.3.3",
-    "babel-decorators-runtime": "^0.2.0",
-    "babel-runtime": "^6.26.0",
-    "sprite-core": "^2.31.3"
+    "webpack": "^2.3.3"
   },
   "author": "akira-cn",
   "license": "MIT"

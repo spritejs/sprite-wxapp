@@ -1,4 +1,4 @@
-import {BaseNode} from 'sprite-core';
+import {BaseNode} from '@spritejs/core';
 import Layer from './layer';
 import Resource from './resource';
 

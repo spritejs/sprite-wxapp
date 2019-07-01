@@ -21,7 +21,7 @@ import {
   querySelector,
   querySelectorAll,
   stylesheet,
-} from 'sprite-core';
+} from '@spritejs/core';
 
 import Layer from './layer';
 import Sprite from './sprite';

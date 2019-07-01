@@ -1,4 +1,4 @@
-import {Layer} from 'sprite-core';
+import {Layer} from '@spritejs/core';
 
 const _id = Symbol('id');
 
