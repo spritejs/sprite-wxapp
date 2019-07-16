@@ -29,6 +29,11 @@ class ResAttr extends Sprite.Attr {
         texture = {id: texture, src: texture};
       }
 
+      if(wx.createCanvas) {
+        texture.image = wx.createImage();
+        texture.image.src = texture.src;
+      }
+
       return texture;
     });
 

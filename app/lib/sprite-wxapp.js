@@ -13229,6 +13229,11 @@ var ResAttr = (_class = function (_Sprite$Attr) {
           texture = { id: texture, src: texture };
         }
 
+        if (wx.createCanvas) {
+          texture.image = wx.createImage();
+          texture.image.src = texture.src;
+        }
+
         return texture;
       });
 
@@ -17599,7 +17604,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _core.registerNodeType)('layer', _layer2.default, true);
 (0, _core.registerNodeType)('sprite', _sprite2.default);
 
-var version = '1.11.6';
+var version = '1.11.8';
 
 exports.version = version;
 exports.use = _core.use;

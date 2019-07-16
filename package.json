@@ -1,6 +1,6 @@
 {
   "name": "@spritejs/wxapp",
-  "version": "1.11.7",
+  "version": "1.11.8",
   "description": "spritejs 微信小程序版",
   "main": "dist",
   "miniprogram": "dist",

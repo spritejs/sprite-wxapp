@@ -8,10 +8,11 @@
 		"newFeature": true
 	},
 	"compileType": "game",
-	"libVersion": "game",
-	"appid": "touristappid",
+	"libVersion": "1.9.94",
+	"appid": "wx38cd7841c2951bc6",
 	"projectname": "game",
-	"isGameTourist": true,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
